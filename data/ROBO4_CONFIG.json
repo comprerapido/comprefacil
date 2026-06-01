@@ -1,0 +1,51 @@
+{
+  "robo_numero": 4,
+  "nome_site": "Radar Ninja",
+  "url_base": "https://comprerapido.github.io",
+  "descricao": "As melhores ofertas em Celulares, Games, TV e Vídeo e Moda",
+  "categorias": [
+    {
+      "id": "celular",
+      "nome": "Celulares",
+      "descricao": "Smartphones, acessórios e dispositivos móveis",
+      "keywords": ["celular", "smartphone", "iphone", "samsung", "xiaomi", "motorola"],
+      "ml_filters": ["category:celulares-telefones"]
+    },
+    {
+      "id": "games",
+      "nome": "Games",
+      "descricao": "Consoles, jogos, acessórios e periféricos gamer",
+      "keywords": ["game", "console", "playstation", "xbox", "nintendo", "jogo", "gamer"],
+      "ml_filters": ["category:games"]
+    },
+    {
+      "id": "tv",
+      "nome": "TV e Vídeo",
+      "descricao": "Televisores, projetores e acessórios audiovisuais",
+      "keywords": ["tv", "televisor", "4K", "smart TV", "OLED", "QLED"],
+      "ml_filters": ["category:televisores"]
+    },
+    {
+      "id": "moda",
+      "nome": "Moda",
+      "descricao": "Roupas, calçados, acessórios e tendências",
+      "keywords": ["roupa", "moda", "calcado", "tenis", "vestido", "camisa"],
+      "ml_filters": ["category:moda"]
+    }
+  ],
+  "configuracoes_tecnicas": {
+    "linguagem": "pt-BR",
+    "moeda": "BRL",
+    "timezone": "America/Sao_Paulo",
+    "atualizacao_horaria": true,
+    "frequencia_atualizacao_horas": 1,
+    "limite_produtos_por_categoria": 50,
+    "limite_posts_blog_por_dia": 5,
+    "sitemap_automatico": true
+  },
+  "configuracoes_afiliados": {
+    "programa": "Mercado Livre Afiliados",
+    "parametro": "matt_tool=vendas0nline",
+    "rastreamento": "utm_source=superninja&utm_medium=afiliado"
+  }
+}

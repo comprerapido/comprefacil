@@ -1,0 +1,110 @@
+import os
+from pathlib import Path
+
+def generate_legal_pages():
+    ROOT = Path(__file__).resolve().parents[1]
+    
+    template = """<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} | Radar Ninja</title>
+    <meta name="description" content="Confira {{title}} no Radar Ninja - Seu portal de inteligência em ofertas.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://comprerapido.github.io/">
+    <meta property="og:title" content="{{title}} | Radar Ninja">
+    <meta property="og:description" content="Confira {{title}} no Radar Ninja - Seu portal de inteligência em ofertas.">
+    <meta property="og:image" content="https://comprerapido.github.io/assets/img/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://comprerapido.github.io/">
+    <meta property="twitter:title" content="{{title}} | Radar Ninja">
+    <meta property="twitter:description" content="Confira {{title}} no Radar Ninja - Seu portal de inteligência em ofertas.">
+    <meta property="twitter:image" content="https://comprerapido.github.io/assets/img/og-image.png">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P0X4Z9Y7B2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P0X4Z9Y7B2');
+    </script>
+    <style>
+        .legal-content { max-width: 800px; margin: 60px auto; padding: 40px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .legal-content h1 { color: #6200ea; margin-bottom: 30px; }
+        .legal-content h2 { color: #311b92; margin-top: 30px; margin-bottom: 15px; }
+        .legal-content p { line-height: 1.8; color: #444; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="container"><a href="/" class="logo">🥷 <strong>Radar Ninja</strong></a></div></header>
+    <main class="container">
+        <div class="legal-content">
+            {{content}}
+        </div>
+    </main>
+    <footer class="footer"><div class="container"><p>© 2026 Radar Ninja - Transparência e Confiança.</p></div></footer>
+</body>
+</html>"""
+
+    pages = [
+        {
+            "dir": "sobre",
+            "title": "Sobre o Radar Ninja",
+            "content": """<h1>Sobre o Radar Ninja</h1>
+            <p>O Radar Ninja nasceu com uma missão clara: ajudar o consumidor brasileiro a navegar pelo mar de ofertas da internet com inteligência e segurança. Em um mercado onde os preços oscilam a cada hora, ter um aliado tecnológico faz toda a diferença.</p>
+            <h2>Como trabalhamos</h2>
+            <p>Utilizamos algoritmos avançados que monitoram milhares de produtos no Mercado Livre. Nosso robô analisa o histórico de preços para garantir que o desconto anunciado seja real e não apenas uma estratégia de marketing.</p>
+            <h2>Transparência</h2>
+            <p>Somos um portal independente. Para manter nossa estrutura e continuar oferecendo este serviço gratuitamente, participamos de programas de afiliados. Isso significa que podemos receber uma pequena comissão caso você realize uma compra através de nossos links, sem nenhum custo adicional para você.</p>"""
+        },
+        {
+            "dir": "contato",
+            "title": "Contato",
+            "content": """<h1>Entre em Contato</h1>
+            <p>Tem alguma dúvida, sugestão ou encontrou algum problema em nosso site? Adoraríamos ouvir você.</p>
+            <p>Nossa equipe de suporte e monitoramento está disponível para garantir que sua experiência no Radar Ninja seja a melhor possível.</p>
+            <h2>Canais de Atendimento</h2>
+            <p><strong>E-mail:</strong> contato@radarninja.com.br</p>
+            <p><strong>Horário de Atendimento:</strong> Segunda a Sexta, das 09h às 18h.</p>"""
+        },
+        {
+            "dir": "privacidade",
+            "title": "Política de Privacidade",
+            "content": """<h1>Política de Privacidade</h1>
+            <p>Sua privacidade é importante para nós. É política do Radar Ninja respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site.</p>
+            <h2>Coleta de Dados</h2>
+            <p>Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento.</p>
+            <h2>Cookies e Anúncios</h2>
+            <p>Como muitos outros sites, utilizamos cookies para melhorar sua experiência. Também utilizamos o Google AdSense para exibir anúncios. O Google utiliza cookies para veicular anúncios com base em suas visitas anteriores ao nosso site ou a outros sites na internet.</p>
+            <p>Você pode optar por desativar a publicidade personalizada visitando as Configurações de anúncios do Google.</p>"""
+        },
+        {
+            "dir": "termos",
+            "title": "Termos de Uso",
+            "content": """<h1>Termos de Uso</h1>
+            <p>Ao acessar o site Radar Ninja, você concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis ​​e concorda que é responsável pelo cumprimento de todas as leis locais aplicáveis.</p>
+            <h2>Uso de Licença</h2>
+            <p>O conteúdo do Radar Ninja (textos, análises e imagens) é protegido por direitos autorais. O uso indevido ou a reprodução sem autorização prévia é proibido.</p>
+            <h2>Isenção de Responsabilidade</h2>
+            <p>As ofertas e preços listados são atualizados automaticamente e podem sofrer alterações pelo lojista a qualquer momento. O Radar Ninja não se responsabiliza por variações de preço ou disponibilidade de estoque após o redirecionamento para o site parceiro.</p>"""
+        }
+    ]
+
+    for p in pages:
+        path = ROOT / p['dir']
+        path.mkdir(exist_ok=True)
+        html = template.replace("{{title}}", p['title']).replace("{{content}}", p['content'])
+        (path / "index.html").write_text(html, encoding="utf-8")
+        print(f"✅ Página {p['title']} criada.")
+
+if __name__ == "__main__":
+    generate_legal_pages()

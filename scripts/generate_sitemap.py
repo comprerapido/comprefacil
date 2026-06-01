@@ -1,5 +1,6 @@
 import os
 import json
+import re
 from datetime import datetime
 from pathlib import Path
 
@@ -49,17 +50,21 @@ def generate_sitemap():
             urls.append(url_entry)
             
     # XML Sitemap
-    xml = ["<?xml version=\"1.0\" encoding=\"UTF-8\"?>"]
-    xml.append("<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xmlns:image=\"http://www.google.com/schemas/sitemap-image/1.1\">")
+    xml = ['<?xml version="1.0" encoding="UTF-8"?>']
+    xml.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">')
     
     for url in urls:
         xml.append("  <url>")
-        xml.append(f"    <loc>{url[\"loc\"]}</loc>")
-        xml.append(f"    <lastmod>{url[\"lastmod\"]}</lastmod>")
-        xml.append(f"    <priority>{url[\"priority\"]}</priority>")
+        loc = url["loc"]
+        lastmod = url["lastmod"]
+        priority = url["priority"]
+        xml.append(f"    <loc>{loc}</loc>")
+        xml.append(f"    <lastmod>{lastmod}</lastmod>")
+        xml.append(f"    <priority>{priority}</priority>")
         if "image" in url:
             xml.append("    <image:image>")
-            xml.append(f"      <image:loc>{url[\"image\"]}</image:loc>")
+            image_loc = url["image"]
+            xml.append(f"      <image:loc>{image_loc}</image:loc>")
             xml.append("    </image:image>")
         xml.append("  </url>")
         

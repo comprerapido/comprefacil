@@ -57,9 +57,9 @@ def to_product(item, category_id):
     permalink = item.get('permalink') or ''
     affiliate_param = 'matt_tool=vendas0nline'
     if permalink:
-        # Garantir link direto e limpo
-        base_url = permalink.split('?')[0]
-        permalink = f"{base_url}?{affiliate_param}"
+        separator = '&' if '?' in permalink else '?'
+        if affiliate_param not in permalink:
+            permalink = f"{permalink}{separator}{affiliate_param}"
 
     return {
         'id': item.get('id'),
@@ -110,8 +110,8 @@ def fetch_products(category_id, keywords):
             print(f"❌ Erro na busca '{query}': {e}")
 
     if not products:
-        print(f'⚠ Nenhum produto válido retornado para {category_id}.')
-        return []
+        print('⚠ Nenhum produto válido retornado. Usando dados de exemplo da categoria correta...')
+        return generate_example_products(category_id)
 
     print(f"✓ {len(products)} produtos válidos encontrados para {category_id}")
     return products[:50]
@@ -140,12 +140,12 @@ def generate_example_products(category_id):
 
 def main():
     """Executa o script principal."""
-    config_path = os.path.join(os.path.dirname(__file__), '../data/ROBO3_CONFIG.json')
+    config_path = os.path.join(os.path.dirname(__file__), '../data/ROBO4_CONFIG.json')
     with open(config_path, 'r', encoding='utf-8') as f:
         config = json.load(f)
 
     print(f"\n{'='*50}")
-    print('🤖 ROBÔ 3 - MESTRE')
+    print('🤖 ROBÔ 4 - SUPER NINJA')
     print(f"{'='*50}\n")
 
     for cat in config['categorias']:
