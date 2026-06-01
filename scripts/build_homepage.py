@@ -92,7 +92,7 @@ def format_price(value) -> str:
     return f"{float(value or 0):.2f}"
 
 def affiliate_url(product: dict) -> str:
-    return product.get("custom_affiliate_url") or product.get("permalink") or f"https://www.mercadolivre.com.br/p/{product.get(\'id\')}?matt_tool=vendas0nline"
+    return product.get("custom_affiliate_url") or product.get("permalink") or f"https://www.mercadolivre.com.br/p/{product.get('id')}?matt_tool=vendas0nline"
 
 def build_homepage(input_path: str, template_path: str, output_path: str) -> None:
     logger.info("Gerando homepage com filtro estrito de categoria e deduplicação...")
@@ -125,7 +125,7 @@ def build_homepage(input_path: str, template_path: str, output_path: str) -> Non
     hero_old = hero.get("original_price") or hero.get("originalPrice") or hero_price
     hero_img = hero.get("image") or hero.get("thumbnail") or ""
 
-    hero_html = f\"\"\"
+    hero_html = f"""
     <div class="hero-container">
         <div class="hero-card-premium">
             <div class="hero-img-box">
@@ -152,7 +152,7 @@ def build_homepage(input_path: str, template_path: str, output_path: str) -> Non
             </div>
         </div>
     </div>
-    \"\"\"
+    """
 
     products_html = ""
     for product in products[1:25]:
@@ -161,23 +161,23 @@ def build_homepage(input_path: str, template_path: str, output_path: str) -> Non
         discount = product.get("custom_discount_pct", 0)
         old_price = product.get("original_price") or product.get("originalPrice") or product.get("price")
 
-        products_html += f\"\"\"
+        products_html += f"""
         <div class="product-card">
             <span class="badge">↓ {discount}% OFF</span>
             <div class="product-img">
-                <img src="{product.get(\'image\') or product.get(\'thumbnail\')}" alt="{name}" loading="lazy" width="260" height="200">
+                <img src="{product.get('image') or product.get('thumbnail')}" alt="{name}" loading="lazy" width="260" height="200">
             </div>
             <div class="product-info">
                 <span class="category-tag">{cat}</span>
-                <h3>{name[:60]}{\'...\' if len(name) > 60 else \'\'}</h3>
+                <h3>{name[:60]}{'...' if len(name) > 60 else ''}</h3>
                 <div class="price">
                     <span class="old-price">R$ {format_price(old_price)}</span>
-                    <span class="current-price">R$ {format_price(product.get(\'price\'))}</span>
+                    <span class="current-price">R$ {format_price(product.get('price'))}</span>
                 </div>
                 <a href="{affiliate_url(product)}" class="btn" target="_blank" rel="noopener noreferrer">Ver Oferta no ML</a>
             </div>
         </div>
-        \"\"\"
+        """
 
     content = template.replace("{{hero_section}}", hero_html)
     content = content.replace("{{featured_products_grid}}", products_html)

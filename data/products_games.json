@@ -1,0 +1,30 @@
+[
+  {
+    "id": "MLB3",
+    "title": "Console PlayStation 5 Slim",
+    "name": "Console PlayStation 5 Slim",
+    "price": 3500.0,
+    "original_price": 4000.0,
+    "originalPrice": 4000.0,
+    "permalink": "https://www.mercadolivre.com.br",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
+    "condition": "new",
+    "custom_category_slug": "games",
+    "custom_discount_pct": 12
+  },
+  {
+    "id": "MLB4",
+    "title": "Jogo God of War Ragnarök PS5",
+    "name": "Jogo God of War Ragnarök PS5",
+    "price": 200.0,
+    "original_price": 300.0,
+    "originalPrice": 300.0,
+    "permalink": "https://www.mercadolivre.com.br",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
+    "condition": "new",
+    "custom_category_slug": "games",
+    "custom_discount_pct": 33
+  }
+]

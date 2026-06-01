@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{seo.title}}</title>
+    <meta name="description" content="{{meta.description}}">
+    <link rel="canonical" href="{{canonical.url}}">
+    <style>
+        body { font-family: sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .hero-container { background: #fff; padding: 40px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+        .product-card { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
+        .product-card img { max-width: 100%; height: auto; border-radius: 4px; }
+        .btn { display: inline-block; background: #ffdb00; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 10px; }
+        .hero-cta-btn { background: #00a650; color: #fff; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Radar Ninja</h1>
+            <nav>{{explorar_menu}}</nav>
+        </header>
+        
+        <section id="hero">
+            {{hero_section}}
+        </section>
+
+        <section id="products">
+            <h2>Ofertas em Destaque</h2>
+            <div class="product-grid">
+                {{featured_products_grid}}
+            </div>
+        </section>
+    </div>
+</body>
+</html>

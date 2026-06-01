@@ -1,0 +1,30 @@
+[
+  {
+    "id": "MLB7",
+    "title": "Tênis Esportivo Masculino Nike",
+    "name": "Tênis Esportivo Masculino Nike",
+    "price": 300.0,
+    "original_price": 400.0,
+    "originalPrice": 400.0,
+    "permalink": "https://www.mercadolivre.com.br",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
+    "condition": "new",
+    "custom_category_slug": "moda",
+    "custom_discount_pct": 25
+  },
+  {
+    "id": "MLB8",
+    "title": "Vestido Longo Feminino Floral",
+    "name": "Vestido Longo Feminino Floral",
+    "price": 150.0,
+    "original_price": 200.0,
+    "originalPrice": 200.0,
+    "permalink": "https://www.mercadolivre.com.br",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
+    "condition": "new",
+    "custom_category_slug": "moda",
+    "custom_discount_pct": 25
+  }
+]

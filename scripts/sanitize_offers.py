@@ -88,8 +88,24 @@ def sanitize(products):
     return clean, removed_category, removed_duplicates
 
 def main():
-    products = json.loads(OFFERS_PATH.read_text(encoding='utf-8'))
+    products = []
+    # Carrega todos os arquivos products_*.json da pasta data
+    data_dir = ROOT / 'data'
+    for file in data_dir.glob('products_*.json'):
+        try:
+            products.extend(json.loads(file.read_text(encoding='utf-8')))
+        except Exception as e:
+            print(f"Erro ao carregar {file}: {e}")
+
+    if not products:
+        print("Nenhum produto encontrado nos arquivos individuais.")
+        return
+
     clean, removed_category, removed_duplicates = sanitize(products)
+    
+    # Garante que a pasta de saída existe
+    OFFERS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    
     OFFERS_PATH.write_text(json.dumps(clean, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(f'Produtos originais: {len(products)}')
     print(f'Produtos finais: {len(clean)}')

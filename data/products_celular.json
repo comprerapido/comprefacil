@@ -1,0 +1,30 @@
+[
+  {
+    "id": "MLB1",
+    "title": "Celular Samsung Galaxy A07 256GB",
+    "name": "Celular Samsung Galaxy A07 256GB",
+    "price": 1200.0,
+    "original_price": 1500.0,
+    "originalPrice": 1500.0,
+    "permalink": "https://www.mercadolivre.com.br",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
+    "condition": "new",
+    "custom_category_slug": "celulares",
+    "custom_discount_pct": 20
+  },
+  {
+    "id": "MLB2",
+    "title": "iPhone 15 Pro Max 256GB",
+    "name": "iPhone 15 Pro Max 256GB",
+    "price": 8000.0,
+    "original_price": 9000.0,
+    "originalPrice": 9000.0,
+    "permalink": "https://www.mercadolivre.com.br",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
+    "condition": "new",
+    "custom_category_slug": "celulares",
+    "custom_discount_pct": 11
+  }
+]
