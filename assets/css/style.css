@@ -429,11 +429,26 @@ body {
   right: 8px;
   background: var(--error);
   color: white;
-  padding: 3px 8px;
-  border-radius: 4px;
-  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 10px;
   font-weight: 800;
   z-index: 5;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  text-transform: uppercase;
+}
+
+.badge-novidade { background: #6200ea !important; right: auto; left: 8px; }
+.badge-explosiva { background: #ff3d00 !important; animation: pulse 1.5s infinite; }
+.badge-quente { background: #ff6d00 !important; }
+.badge-oportunidade { background: #0091ea !important; }
+.badge-pechincha { background: #00c853 !important; }
+.badge-frete-gratis { background: #2979ff !important; top: 35px; }
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 /* Footer */

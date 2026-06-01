@@ -121,13 +121,25 @@ function renderRadarPremium(products) {
 function getProfessionalBadges(product, idx) {
   let badges = [];
   const discount = product.custom_discount_pct || 0;
+  const price = product.price || 0;
   
-  if (idx === 0) badges.push('<span class="badge badge-menor-preco">🥇 MELHOR PREÇO DO MÊS</span>');
-  else if (idx === 1) badges.push('<span class="badge badge-mais-vendido">🥈 TOP VENDEDOR</span>');
-  else if (idx === 2) badges.push('<span class="badge badge-custo-beneficio">🥉 MAIS CLICADO</span>');
+  if (idx < 3) badges.push('<span class="badge badge-novidade">✨ NOVIDADE</span>');
+  
+  if (discount >= 60) {
+    badges.push('<span class="badge badge-explosiva">💥 OFERTA EXPLOSIVA</span>');
+  } else if (discount >= 50) {
+    badges.push('<span class="badge badge-quente">🔥 OFERTA QUENTE</span>');
+  } else if (discount >= 30) {
+    badges.push('<span class="badge badge-oportunidade">💎 OPORTUNIDADE</span>');
+  }
 
-  if (discount >= 60) badges.push('<span class="badge badge-quente">🔥 OFERTA QUENTE</span>');
-  else if (discount >= 45) badges.push('<span class="badge badge-baixou">📉 PREÇO BAIXOU</span>');
+  if (price < 100 && discount > 40) {
+    badges.push('<span class="badge badge-pechincha">💸 PECHINCHA</span>');
+  }
+  
+  if (product.shipping === 'free' || product.free_shipping) {
+    badges.push('<span class="badge badge-frete-gratis">🚚 FRETE GRÁTIS</span>');
+  }
   
   return badges.join('');
 }
@@ -239,9 +251,9 @@ function renderNews() {
   if (!main || document.getElementById('newsSection')) return;
 
   const newsData = [
-    { title: "Samsung Galaxy A17 5G Chega ao Brasil", summary: "Confira as especificações e o preço agressivo do novo intermediário da Samsung.", img: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400", url: "/radar/noticias/posts/samsung-galaxy-a17-5g-lancamento.html" },
-    { title: "Notebooks Lenovo com 40% de Desconto", summary: "IdeaPad e ThinkPad em promoção histórica no Mercado Livre. Confira!", img: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400", url: "/radar/noticias/posts/notebooks-lenovo-promocao.html" },
-    { title: "Amazon Prime Day 2026 Confirmado", summary: "Tudo o que você precisa saber para economizar no maior evento da Amazon.", img: "https://images.unsplash.com/photo-1523475496153-3d6cc0f0bf19?w=400", url: "/radar/noticias/posts/amazon-prime-day-2026.html" }
+    { title: "Melhores Ofertas de Celulares Hoje", summary: "Monitoramos as quedas de preço em tempo real no Mercado Livre para você.", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400", url: "noticias/index.html" },
+    { title: "Guia de Moda 2026: Como Economizar", summary: "Novas categorias de moda integradas com descontos de até 70%.", img: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=400", url: "noticias/index.html" },
+    { title: "Como Identificar Ofertas Reais", summary: "Aprenda a usar nossa metodologia de score para não cair em falsas promoções.", img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400", url: "noticias/index.html" }
   ];
 
   const newsHtml = `
@@ -288,10 +300,11 @@ async function init() {
       
       allProducts = deduplicateProducts(rawProducts);
       await loadUserState();
+    // Ordenação por timestamp para garantir que os novos produtos apareçam no topo
     const sorted = [...allProducts].sort((a, b) => {
-      const dateA = new Date(a.last_seen || 0);
-      const dateB = new Date(b.last_seen || 0);
-      return dateB - dateA; // Mais recente primeiro
+      const dateA = new Date(a.timestamp || a.last_seen || 0);
+      const dateB = new Date(b.timestamp || b.last_seen || 0);
+      return dateB - dateA;
     });
     
     renderCarousel(sorted);
@@ -321,10 +334,11 @@ function setupCategoryFilters() {
       tab.classList.add('active');
       
       if (category === 'todos') {
-        const sorted = [...allProducts].sort((a, b) => {
-      const dateA = new Date(a.last_seen || 0);
-      const dateB = new Date(b.last_seen || 0);
-      return dateB - dateA; // Mais recente primeiro
+        // Ordenação por timestamp para garantir que os novos produtos apareçam no topo
+    const sorted = [...allProducts].sort((a, b) => {
+      const dateA = new Date(a.timestamp || a.last_seen || 0);
+      const dateB = new Date(b.timestamp || b.last_seen || 0);
+      return dateB - dateA;
     });
         const premiumItems = [...allProducts].sort((a, b) => {
           const dateA = new Date(a.last_seen || 0);
