@@ -6,11 +6,6 @@ INPUT_FILE = "data/products/offers.json"
 TEMPLATE_FILE = "templates/homepage.html"
 OUTPUT_FILE = "index.html"
 
-def get_proxy_image(url):
-    if not url: return ""
-    # Proxy robusto para evitar hotlink
-    return f"https://wsrv.nl/?url={url}&w=400&h=400&fit=contain&output=jpg"
-
 def format_price(value) -> str:
     try:
         return f"{float(value or 0):.2f}"
@@ -18,7 +13,7 @@ def format_price(value) -> str:
         return "0.00"
 
 def build_homepage():
-    logger.info("🏠 Construindo homepage definitiva...")
+    logger.info("🏠 Construindo homepage com imagens locais garantidas...")
     
     if not os.path.exists(INPUT_FILE) or not os.path.exists(TEMPLATE_FILE):
         return
@@ -33,7 +28,8 @@ def build_homepage():
 
     # Hero Section
     hero = products[0]
-    hero_img = get_proxy_image(hero.get("image"))
+    # Usar caminho local relativo à raiz do site
+    hero_img = hero.get("image_local", "").lstrip("/")
     
     hero_html = f'''
     <div class="hero-product">
@@ -46,7 +42,7 @@ def build_homepage():
     # Featured Grid
     grid_html = ""
     for p in products[1:9]:
-        p_img = get_proxy_image(p.get("image"))
+        p_img = p.get("image_local", "").lstrip("/")
         grid_html += f'''
         <div class="card" style="background: white; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0; position: relative;">
             <div class="card-discount">↓ {p.get("custom_discount_pct")}%</div>
@@ -70,7 +66,7 @@ def build_homepage():
     
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(content)
-    logger.info("✅ Homepage definitiva pronta.")
+    logger.info("✅ Homepage com imagens locais pronta.")
 
 if __name__ == "__main__":
     build_homepage()
