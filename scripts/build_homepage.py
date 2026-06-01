@@ -6,6 +6,11 @@ INPUT_FILE = "data/products/offers.json"
 TEMPLATE_FILE = "templates/homepage.html"
 OUTPUT_FILE = "index.html"
 
+def get_proxy_image(url):
+    if not url: return ""
+    # Proxy robusto para evitar hotlink
+    return f"https://wsrv.nl/?url={url}&w=400&h=400&fit=contain&output=jpg"
+
 def format_price(value) -> str:
     try:
         return f"{float(value or 0):.2f}"
@@ -13,7 +18,7 @@ def format_price(value) -> str:
         return "0.00"
 
 def build_homepage():
-    logger.info("🏠 Construindo homepage com imagens locais...")
+    logger.info("🏠 Construindo homepage definitiva...")
     
     if not os.path.exists(INPUT_FILE) or not os.path.exists(TEMPLATE_FILE):
         return
@@ -28,8 +33,7 @@ def build_homepage():
 
     # Hero Section
     hero = products[0]
-    # Usa imagem local se disponível, senão usa original (fallback)
-    hero_img = hero.get("image_local") or hero.get("image")
+    hero_img = get_proxy_image(hero.get("image"))
     
     hero_html = f'''
     <div class="hero-product">
@@ -42,9 +46,10 @@ def build_homepage():
     # Featured Grid
     grid_html = ""
     for p in products[1:9]:
-        p_img = p.get("image_local") or p.get("image")
+        p_img = get_proxy_image(p.get("image"))
         grid_html += f'''
-        <div class="card" style="background: white; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0;">
+        <div class="card" style="background: white; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0; position: relative;">
+            <div class="card-discount">↓ {p.get("custom_discount_pct")}%</div>
             <div class="card-img" style="height: 160px; display: flex; align-items: center; justify-content: center;">
                 <img src="{p_img}" alt="{p.get("title")}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
             </div>
@@ -56,13 +61,16 @@ def build_homepage():
         </div>
         '''
 
-    content = template.replace("{{hero_section}}", hero_html)
+    # Substituições Finais
+    content = template.replace("{{seo.title}}", "Radar Ninja — As Melhores Ofertas do Mercado Livre Hoje")
+    content = content.replace("{{meta.description}}", "Economize com o Radar Ninja. Monitoramos os menores preços do Mercado Livre em celulares, games e muito mais.")
+    content = content.replace("{{hero_section}}", hero_html)
     content = content.replace("{{featured_products_grid}}", grid_html)
     content = content.replace("{{table_rows}}", "")
     
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(content)
-    logger.info("✅ Homepage pronta com imagens locais.")
+    logger.info("✅ Homepage definitiva pronta.")
 
 if __name__ == "__main__":
     build_homepage()
