@@ -1,8 +1,9 @@
 {
   "robo_numero": 3,
-  "nome_site": "Radar Ninja",
+  "status": "Mestre",
+  "nome_site": "Radar Ninja - Robô Mestre",
   "url_base": "https://comprerapido.github.io",
-  "descricao": "As melhores ofertas em Celulares, Games, TV e Vídeo e Moda",
+  "descricao": "Sistema autônomo mestre de monitoramento de ofertas e reviews inteligentes.",
   "categorias": [
     {
       "id": "celular",

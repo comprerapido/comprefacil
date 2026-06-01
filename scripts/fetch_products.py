@@ -145,7 +145,7 @@ def main():
         config = json.load(f)
 
     print(f"\n{'='*50}")
-    print('🤖 ROBÔ 4 - SUPER NINJA')
+    print('🤖 ROBÔ 3 - MESTRE')
     print(f"{'='*50}\n")
 
     for cat in config['categorias']:

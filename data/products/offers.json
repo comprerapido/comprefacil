@@ -14,6 +14,20 @@
     "custom_discount_pct": 33
   },
   {
+    "id": "MLB6",
+    "title": "TV 43\" Full HD com Conversor",
+    "name": "TV 43\" Full HD com Conversor",
+    "price": 899.0,
+    "original_price": 1199.0,
+    "originalPrice": 1199.0,
+    "permalink": "https://www.mercadolivre.com.br",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
+    "condition": "new",
+    "custom_category_slug": "tv-e-video",
+    "custom_discount_pct": 25
+  },
+  {
     "id": "MLB7",
     "title": "Tênis Esportivo Masculino Nike",
     "name": "Tênis Esportivo Masculino Nike",
@@ -39,20 +53,6 @@
     "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
     "condition": "new",
     "custom_category_slug": "moda",
-    "custom_discount_pct": 25
-  },
-  {
-    "id": "MLB6",
-    "title": "TV 43\" Full HD com Conversor",
-    "name": "TV 43\" Full HD com Conversor",
-    "price": 899.0,
-    "original_price": 1199.0,
-    "originalPrice": 1199.0,
-    "permalink": "https://www.mercadolivre.com.br",
-    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
-    "condition": "new",
-    "custom_category_slug": "tv-e-video",
     "custom_discount_pct": 25
   },
   {

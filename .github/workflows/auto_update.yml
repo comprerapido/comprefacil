@@ -1,4 +1,4 @@
-name: Automação Radar Ninja
+name: Radar Ninja - Robô Mestre
 on:
   schedule:
     - cron: '0 * * * *'

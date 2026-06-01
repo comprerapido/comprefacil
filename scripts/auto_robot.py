@@ -3,28 +3,28 @@ import sys
 import os
 import time
 from datetime import datetime
+from logger import logger
 
 def run_script(script_name):
-    print(f"[{datetime.now().strftime('%H:%M:%S')}] Executando {script_name}...")
+    logger.info(f"🚀 [MESTRE] Iniciando etapa: {script_name}")
     try:
-        # Tenta executar o script a partir da pasta scripts/
-        script_path = f"scripts/{script_name}"
+        script_path = os.path.join("scripts", script_name)
         if not os.path.exists(script_path):
-             print(f"Erro: {script_path} não encontrado.")
+             logger.error(f"❌ Erro: {script_path} não encontrado.")
              return False
              
         result = subprocess.run([sys.executable, script_path], check=True, capture_output=True, text=True)
         print(result.stdout)
         return True
     except subprocess.CalledProcessError as e:
-        print(f"Erro ao executar {script_name}: {e}")
+        logger.error(f"❌ Erro ao executar {script_name}: {e}")
         print(e.stderr)
         return False
 
 def main():
-    print(f"\n{'='*50}")
-    print(f"🤖 RADAR NINJA - CICLO DE AUTOMAÇÃO TOTAL")
-    print(f"{'='*50}\n")
+    print(f"\n{'='*60}")
+    print(f"🥷  RADAR NINJA - SISTEMA MESTRE (ROBÔ 3)  🥷")
+    print(f"{'='*60}\n")
     
     steps = [
         "fetch_products.py",
@@ -35,24 +35,24 @@ def main():
         "generate_sitemap.py"
     ]
     
-    success = True
+    start_time = time.time()
+    success_count = 0
+    
     for step in steps:
-        if not run_script(step):
-            # Alguns scripts podem falhar se não houver dados, mas build_homepage é crítico
-            if step == "build_homepage.py":
-                success = False
-                break
-            print(f"Aviso: {step} falhou, mas continuando...")
+        if run_script(step):
+            success_count += 1
+        else:
+            if step in ["fetch_products.py", "build_homepage.py"]:
+                logger.error(f"⛔ Falha em etapa crítica: {step}. Abortando ciclo.")
+                sys.exit(1)
+            logger.warning(f"⚠ Etapa {step} falhou, mas continuando ciclo mestre...")
             
-    if success:
-        print(f"\n{'='*50}")
-        print(f"✅ Ciclo de automação concluído com sucesso!")
-        print(f"{'='*50}\n")
-    else:
-        print(f"\n{'='*50}")
-        print(f"❌ Falha no ciclo de automação.")
-        print(f"{'='*50}\n")
-        sys.exit(1)
+    duration = time.time() - start_time
+    print(f"\n{'='*60}")
+    print(f"✅ CICLO MESTRE CONCLUÍDO!")
+    print(f"📊 Etapas: {success_count}/{len(steps)}")
+    print(f"⏱ Duração: {duration:.2f}s")
+    print(f"{'='*60}\n")
 
 if __name__ == "__main__":
     main()
