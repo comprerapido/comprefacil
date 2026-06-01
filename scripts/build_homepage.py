@@ -86,7 +86,8 @@ def sanitize_products(products: list[dict]) -> list[dict]:
         seen.add(soft_key)
         sanitized.append(product)
 
-    return sorted(sanitized, key=lambda item: item.get("custom_discount_pct", 0), reverse=True)
+    # Prioriza o produto mais recente (último capturado) para o destaque
+    return sanitized[::-1]
 
 def format_price(value) -> str:
     return f"{float(value or 0):.2f}"
@@ -126,30 +127,20 @@ def build_homepage(input_path: str, template_path: str, output_path: str) -> Non
     hero_img = (hero.get("image") or hero.get("thumbnail") or "").split("?")[0].replace("-I.jpg", "-O.jpg")
 
     hero_html = f"""
-    <div class="hero-container">
-        <div class="hero-card-premium">
-            <div class="hero-img-box">
-                <div class="hero-ninja-badge">NINJA CHOICE</div>
-                <img src="{hero_img}" alt="{hero_name}" loading="lazy" width="360" height="280">
+    <div class="hero-grid">
+        <div class="hero-info">
+            <span class="hero-badge">🥷 NINJA CHOICE DO DIA</span>
+            <h1 class="hero-title">{hero_name}</h1>
+            <div class="hero-price-box">
+                <span class="hero-current-price">R$ {format_price(hero_price)}</span>
+                <span class="hero-old-price">R$ {format_price(hero_old)}</span>
             </div>
-            <div class="hero-info-box">
-                <div class="hero-cat-label">
-                    <span>{hero_cat}</span>
-                    <span class="hero-cat-line"></span>
-                </div>
-                <h2 class="hero-title">{hero_name}</h2>
-                <div class="hero-price-container">
-                    <div class="hero-price-stack">
-                        <span class="hero-old-price">R$ {format_price(hero_old)}</span>
-                        <span class="hero-current-price">R$ {format_price(hero_price)}</span>
-                    </div>
-                    <div class="hero-discount-tag">-{hero_discount}%</div>
-                </div>
-                <a href="{affiliate_url(hero)}" target="_blank" rel="noopener noreferrer" class="hero-cta-btn">
-                    PEGAR OFERTA NO MERCADO LIVRE
-                </a>
-                <p class="hero-verified">Verificado pelo Robô 3 agora pouco</p>
-            </div>
+            <a href="{affiliate_url(hero)}" target="_blank" rel="noopener noreferrer" class="hero-btn">
+                APROVEITAR OFERTA AGORA
+            </a>
+        </div>
+        <div class="hero-img-container">
+            <img src="{hero_img}" alt="{hero_name}" loading="lazy">
         </div>
     </div>
     """
@@ -164,19 +155,17 @@ def build_homepage(input_path: str, template_path: str, output_path: str) -> Non
         img_url = (product.get('image') or product.get('thumbnail') or "").split("?")[0].replace("-I.jpg", "-O.jpg").replace("-V.jpg", "-O.jpg")
         products_html += f"""
         <div class="product-card">
-            <span class="badge">↓ {discount}% OFF</span>
+            <span class="discount-badge">-{discount}% OFF</span>
             <div class="product-img">
-                <img src="{img_url}" alt="{name}" loading="lazy" width="260" height="200">
+                <img src="{img_url}" alt="{name}" loading="lazy">
             </div>
-            <div class="product-info">
-                <span class="category-tag">{cat}</span>
-                <h3>{name[:60]}{'...' if len(name) > 60 else ''}</h3>
-                <div class="price">
-                    <span class="old-price">R$ {format_price(old_price)}</span>
-                    <span class="current-price">R$ {format_price(product.get('price'))}</span>
-                </div>
-                <a href="{affiliate_url(product)}" class="btn" target="_blank" rel="noopener noreferrer">Ver Oferta no ML</a>
+            <span class="product-cat">{cat}</span>
+            <h3 class="product-title">{name[:60]}{'...' if len(name) > 60 else ''}</h3>
+            <div class="product-prices">
+                <span class="price-old">R$ {format_price(old_price)}</span>
+                <span class="price-new">R$ {format_price(product.get('price'))}</span>
             </div>
+            <a href="{affiliate_url(product)}" class="product-btn" target="_blank" rel="noopener noreferrer">Ver Oferta</a>
         </div>
         """
 
