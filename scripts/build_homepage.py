@@ -13,7 +13,7 @@ def format_price(value) -> str:
         return "0.00"
 
 def build_homepage():
-    logger.info("🏠 Construindo homepage com imagens locais garantidas...")
+    logger.info("🏠 Construindo homepage com caminhos de imagem relativos...")
     
     if not os.path.exists(INPUT_FILE) or not os.path.exists(TEMPLATE_FILE):
         return
@@ -28,7 +28,7 @@ def build_homepage():
 
     # Hero Section
     hero = products[0]
-    # Usar caminho local relativo à raiz do site
+    # Usar caminho relativo direto (sem a barra inicial para funcionar em subpastas ou raiz)
     hero_img = hero.get("image_local", "").lstrip("/")
     
     hero_html = f'''
@@ -66,7 +66,7 @@ def build_homepage():
     
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(content)
-    logger.info("✅ Homepage com imagens locais pronta.")
+    logger.info("✅ Homepage com caminhos relativos pronta.")
 
 if __name__ == "__main__":
     build_homepage()
