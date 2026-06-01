@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "id": "MLB5",
+    "title": "Smart TV 55\" 4K Ultra HD",
+    "name": "Smart TV 55\" 4K Ultra HD",
+    "price": 1899.9,
+    "original_price": 2399.9,
+    "originalPrice": 2399.9,
+    "permalink": "https://www.mercadolivre.com.br",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
+    "condition": "new",
+    "custom_category_slug": "tv-e-video",
+    "custom_discount_pct": 21
+  },
+  {
+    "id": "MLB6",
+    "title": "TV 43\" Full HD com Conversor",
+    "name": "TV 43\" Full HD com Conversor",
+    "price": 899.0,
+    "original_price": 1199.0,
+    "originalPrice": 1199.0,
+    "permalink": "https://www.mercadolivre.com.br",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB44622340767_012021-O.webp",
+    "condition": "new",
+    "custom_category_slug": "tv-e-video",
+    "custom_discount_pct": 25
+  }
+]

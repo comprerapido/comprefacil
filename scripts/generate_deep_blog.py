@@ -3,59 +3,22 @@ import json
 import unicodedata
 from datetime import datetime
 from logger import logger
-from openai import OpenAI
-
-# Inicializa o cliente OpenAI
-client = OpenAI()
 
 def slugify(text):
     text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
     text = text.lower().replace(" ", "-")
     return "".join(c for c in text if c.isalnum() or c == "-")
 
-def generate_long_content_with_ai(product):
-    name = product.get("name") or product.get("title")
-    cat = (product.get("custom_category_slug") or "OFERTAS").upper()
-    price = f"R$ {product.get("price", 0):.2f}"
-    old_price = f"R$ {product.get("originalPrice", 0) or product.get("original_price", 0):.2f}"
-    discount = f"{product.get("custom_discount_pct", 0)}%"
-
-    prompt = f"""
-    Gere um artigo de blog detalhado e otimizado para SEO sobre o produto "{name}" da categoria "{cat}".
-    O artigo deve ter as seguintes seções:
-    1.  **Introdução:** Por que o produto está em destaque hoje, mencionando o desconto de {discount} e o preço de {price}.
-    2.  **Análise Técnica Detalhada:** Detalhes sobre o produto, diferenciais e especificações (invente se necessário, mas de forma crível).
-    3.  **Tabela Comparativa:** Compare o "{name}" com dois concorrentes fictícios (Concorrente A e Concorrente B) em termos de Preço Atual, Desconto e Avaliação de Usuários. Use os preços {price} e {discount} para o produto principal.
-    4.  **Vale a pena comprar?** Uma análise se o produto vale a pena, reforçando o desconto e a legitimidade da oferta (preço original {old_price}).
-    5.  **FAQ:** Duas perguntas frequentes sobre o produto (ex: garantia, entrega).
-    6.  **Conclusão:** Veredito final e chamada para ação.
-    7.  **Dicas de Economia Ninja:** Três dicas curtas e relevantes para o consumidor.
-
-    Use HTML para formatar o conteúdo, incluindo tags `<h2>` para títulos de seção, `<ul>` para listas, `<p>` para parágrafos e `<strong>` para destaque. A tabela deve ter a classe `specs-table`.
-    """
-
-    try:
-        response = client.chat.completions.create(
-            model="gpt-4.1-mini", # Usando o modelo gpt-4.1-mini
-            messages=[
-                {"role": "system", "content": "Você é um especialista em reviews de produtos e SEO, focado em ajudar consumidores a encontrar as melhores ofertas."},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.7,
-            max_tokens=1500
-        )
-        return response.choices[0].message.content
-    except Exception as e:
-        logger.error(f"Erro ao gerar conteúdo com IA para {name}: {e}")
-        # Fallback para conteúdo estático se a IA falhar
-        return generate_long_content_static(product)
-
 def generate_long_content_static(product):
     name = product.get("name") or product.get("title")
     cat = (product.get("custom_category_slug") or "OFERTAS").upper()
-    price = f"R$ {product.get("price", 0):.2f}"
-    old_price = f"R$ {product.get("originalPrice", 0) or product.get("original_price", 0):.2f}"
-    discount = f"{product.get("custom_discount_pct", 0)}%"
+    price_val = product.get("price", 0)
+    old_price_val = product.get("originalPrice", 0) or product.get("original_price", 0)
+    discount_val = product.get("custom_discount_pct", 0)
+    
+    price = f"R$ {price_val:.2f}"
+    old_price = f"R$ {old_price_val:.2f}"
+    discount = f"{discount_val}%"
     
     sections = [
         f"<h2>Introdução: Por que o {name} está chamando atenção hoje?</h2>",
@@ -67,10 +30,10 @@ def generate_long_content_static(product):
         f"<ul><li><strong>Desempenho:</strong> Testes realizados mostram uma eficiência 30% superior à média da categoria.</li><li><strong>Design:</strong> Acabamento refinado que se adapta a qualquer ambiente.</li><li><strong>Conectividade:</strong> Integração total com os ecossistemas mais modernos.</li></ul>",
         
         f"<h2>Tabela Comparativa: {name} vs Concorrentes</h2>",
-        f"<table class=\'specs-table\'><tr><th>Característica</th><th>{name}</th><th>Concorrente A</th><th>Concorrente B</th></tr><tr><td>Preço Atual</td><td>{price}</td><td>R$ 1.200,00</td><td>R$ 1.450,00</td></tr><tr><td>Desconto</td><td>{discount}</td><td>10%</td><td>5%</td></tr><tr><td>Avaliação Usuários</td><td>4.9/5.0</td><td>4.2/5.0</td><td>4.5/5.0</td></tr></table>",
+        f"<table class='specs-table'><tr><th>Característica</th><th>{name}</th><th>Concorrente A</th><th>Concorrente B</th></tr><tr><td>Preço Atual</td><td>{price}</td><td>R$ 1.200,00</td><td>R$ 1.450,00</td></tr><tr><td>Desconto</td><td>{discount}</td><td>10%</td><td>5%</td></tr><tr><td>Avaliação Usuários</td><td>4.9/5.0</td><td>4.2/5.0</td><td>4.5/5.0</td></tr></table>",
         
         f"<h2>Vale a pena comprar o {name} com {discount} de desconto?</h2>",
-        f"<p>A resposta curta é: <strong>Sim!</strong> Quando um produto de alta procura como este chega a um desconto de {discount}, a tendência é que o estoque se esgote rapidamente. No Radar Ninja, usamos algoritmos de inteligência artificial para verificar se o desconto é \'maquiado\' ou real. No caso do {name}, confirmamos que o preço original de {old_price} era o valor praticado nos últimos 90 dias, o que torna a oferta de hoje uma oportunidade legítima.</p>",
+        f"<p>A resposta curta é: <strong>Sim!</strong> Quando um produto de alta procura como este chega a um desconto de {discount}, a tendência é que o estoque se esgote rapidamente. No Radar Ninja, usamos algoritmos de inteligência artificial para verificar se o desconto é 'maquiado' ou real. No caso do {name}, confirmamos que o preço original de {old_price} era o valor praticado nos últimos 90 dias, o que torna a oferta de hoje uma oportunidade legítima.</p>",
         
         f"<h2>FAQ - Perguntas Frequentes sobre o {name}</h2>",
         f"<h3>1. O {name} possui garantia oficial?</h3><p>Sim, ao comprar pelo link oficial do Mercado Livre que disponibilizamos, você tem a garantia total do fabricante e a proteção de compra do Mercado Pago.</p>",
@@ -107,7 +70,7 @@ def generate_blog():
     for p in top_products:
         name = p.get("name") or p.get("title")
         slug = slugify(name)
-        content = generate_long_content_with_ai(p) # Usar a função com IA
+        content = generate_long_content_static(p)
         image = p.get("image") or p.get("thumbnail")
         affiliate_url = p.get("custom_affiliate_url") or p.get("permalink")
         price = p.get("price", 0)
@@ -186,7 +149,7 @@ def generate_blog():
         with open("noticias/index.html", "w", encoding="utf-8") as f:
             f.write(blog_html)
     
-    logger.info(f"✅ Blog regenerado com links no topo e final.")
+    logger.info(f"✅ Blog regenerado com {len(posts_meta)} posts.")
 
 if __name__ == "__main__":
     generate_blog()
