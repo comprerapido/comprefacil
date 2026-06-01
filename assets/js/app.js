@@ -63,6 +63,22 @@ function deduplicateProducts(products) {
 }
 
 // --- Estatísticas Dinâmicas ---
+function animateCounter(element, target, duration = 1500) {
+  const start = 0;
+  const increment = target / (duration / 16);
+  let current = start;
+  
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      element.textContent = target.toLocaleString();
+      clearInterval(timer);
+    } else {
+      element.textContent = Math.floor(current).toLocaleString();
+    }
+  }, 16);
+}
+
 function renderStats(products) {
   const statsContainer = document.getElementById('statsBar');
   if (!statsContainer) return;
@@ -73,22 +89,29 @@ function renderStats(products) {
   
   statsContainer.innerHTML = `
     <div class="stat-card">
-      <span class="stat-value">📦 ${total.toLocaleString()}</span>
-      <span class="stat-label">Produtos</span>
+      <span class="stat-value"><span class="stat-counter">0</span></span>
+      <span class="stat-label">📦 Produtos</span>
     </div>
     <div class="stat-card">
-      <span class="stat-value">💸 ${avgDiscount}%</span>
-      <span class="stat-label">Economia Média</span>
+      <span class="stat-value"><span class="stat-counter">0</span>%</span>
+      <span class="stat-label">💸 Economia Média</span>
     </div>
     <div class="stat-card">
-      <span class="stat-value">🛒 ${offersToday}</span>
-      <span class="stat-label">Ofertas Hoje</span>
+      <span class="stat-value"><span class="stat-counter">0</span></span>
+      <span class="stat-label">🛒 Ofertas Hoje</span>
     </div>
     <div class="stat-card">
       <span class="stat-value">⚡ Ativo</span>
       <span class="stat-label">Atualizado Agora</span>
     </div>
   `;
+  
+  setTimeout(() => {
+    const counters = statsContainer.querySelectorAll('.stat-counter');
+    if (counters[0]) animateCounter(counters[0], total);
+    if (counters[1]) animateCounter(counters[1], avgDiscount);
+    if (counters[2]) animateCounter(counters[2], offersToday);
+  }, 100);
 }
 
 // --- Achado Certo Premium ---
