@@ -1,10 +1,23 @@
 import json
 import os
+import base64
 from logger import logger
 
 INPUT_FILE = "data/products/offers.json"
 TEMPLATE_FILE = "templates/homepage.html"
 OUTPUT_FILE = "index.html"
+
+def get_file_as_base64(path):
+    try:
+        if path.startswith("/"):
+            path = path.lstrip("/")
+        if os.path.exists(path):
+            with open(path, "rb") as f:
+                encoded = base64.b64encode(f.read()).decode('utf-8')
+                return f"data:image/gif;base64,{encoded}"
+    except Exception as e:
+        logger.error(f"Erro base64: {e}")
+    return ""
 
 def format_price(value) -> str:
     try:
@@ -13,7 +26,7 @@ def format_price(value) -> str:
         return "0.00"
 
 def build_homepage():
-    logger.info("🏠 Construindo homepage com caminhos de imagem relativos...")
+    logger.info("🏠 Construindo homepage com Base64 Real...")
     
     if not os.path.exists(INPUT_FILE) or not os.path.exists(TEMPLATE_FILE):
         return
@@ -28,8 +41,7 @@ def build_homepage():
 
     # Hero Section
     hero = products[0]
-    # Usar caminho relativo direto (sem a barra inicial para funcionar em subpastas ou raiz)
-    hero_img = hero.get("image_local", "").lstrip("/")
+    hero_img = get_file_as_base64(hero.get("image_local", ""))
     
     hero_html = f'''
     <div class="hero-product">
@@ -42,7 +54,7 @@ def build_homepage():
     # Featured Grid
     grid_html = ""
     for p in products[1:9]:
-        p_img = p.get("image_local", "").lstrip("/")
+        p_img = get_file_as_base64(p.get("image_local", ""))
         grid_html += f'''
         <div class="card" style="background: white; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0; position: relative;">
             <div class="card-discount">↓ {p.get("custom_discount_pct")}%</div>
@@ -66,7 +78,7 @@ def build_homepage():
     
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(content)
-    logger.info("✅ Homepage com caminhos relativos pronta.")
+    logger.info("✅ Homepage com Base64 Real pronta.")
 
 if __name__ == "__main__":
     build_homepage()
