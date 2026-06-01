@@ -3,41 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Radar Ninja - Notícias e Reviews</title>
+    <title>Blog Radar Ninja - Reviews Profundos e Ofertas Reais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        .post-card { background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .post-card h2 { margin-top: 0; }
-        .post-card a { color: #6200ea; text-decoration: none; font-weight: bold; }
-        .tag { background: #6200ea; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 0.8em; }
+        :root {
+            --primary: #6200ea;
+            --secondary: #ffab00;
+            --dark: #121212;
+            --light: #f5f5f7;
+            --white: #ffffff;
+            --gray: #8e8e93;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        
+        header { background: var(--dark); padding: 30px 0; text-align: center; margin-bottom: 60px; }
+        .logo { font-size: 32px; font-weight: 900; color: var(--white); text-decoration: none; }
+        .logo span { color: var(--secondary); }
+
+        .blog-header { text-align: center; margin-bottom: 60px; }
+        .blog-header h1 { font-size: 48px; font-weight: 900; margin-bottom: 20px; }
+        .blog-header p { font-size: 18px; color: var(--gray); }
+
+        .posts-list { display: grid; gap: 40px; margin-bottom: 80px; }
+        .post-card { background: var(--white); border-radius: 30px; padding: 40px; text-decoration: none; color: inherit; transition: 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); }
+        .post-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+        .post-tag { background: var(--primary); color: var(--white); padding: 6px 15px; border-radius: 10px; font-weight: 700; font-size: 12px; margin-bottom: 20px; display: inline-block; }
+        .post-title { font-size: 28px; font-weight: 900; margin-bottom: 15px; line-height: 1.2; }
+        .post-excerpt { font-size: 16px; color: var(--gray); margin-bottom: 25px; }
+        .post-meta { display: flex; align-items: center; gap: 20px; font-size: 14px; font-weight: 700; color: var(--dark); }
+        .post-meta span { display: flex; align-items: center; gap: 5px; }
+
+        footer { background: var(--dark); color: var(--white); padding: 40px 0; text-align: center; margin-top: 80px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Blog Radar Ninja</h1>
-            <a href="/">← Voltar para a Home</a>
-        </header>
-        <div id="posts-list">
-            <!-- Os posts serão inseridos aqui pelo script -->
+
+    <header>
+        <a href="/" class="logo">RADAR <span>NINJA</span></a>
+    </header>
+
+    <main class="container">
+        <div class="blog-header">
+            <h1>Blog Mestre</h1>
+            <p>Reviews independentes com mais de 1000 palavras para você comprar com segurança.</p>
         </div>
-    </div>
+
+        <div class="posts-list" id="posts-container">
+            <!-- Posts serão inseridos aqui -->
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Radar Ninja - Conteúdo de Autoridade Técnica</p>
+    </footer>
+
     <script>
         const posts = {{NEWS_JSON}};
-        const list = document.getElementById('posts-list');
+        const container = document.getElementById('posts-container');
+        
         posts.forEach(post => {
-            const card = document.createElement('div');
+            const card = document.createElement('a');
+            card.href = post.url;
             card.className = 'post-card';
             card.innerHTML = `
-                <span class="tag">${post.tagLabel}</span>
-                <h2>${post.title}</h2>
-                <p>${post.excerpt}</p>
-                <a href="${post.url}">Ler Review Completa ${post.icon}</a>
-                <p><small>${post.date} • ${post.readTime} de leitura</small></p>
+                <span class="post-tag">${post.tagLabel}</span>
+                <h2 class="post-title">${post.title}</h2>
+                <p class="post-excerpt">${post.excerpt}</p>
+                <div class="post-meta">
+                    <span>📅 ${post.date}</span>
+                    <span>⏱️ ${post.readTime} de leitura</span>
+                    <span>💎 Review Mestre</span>
+                </div>
             `;
-            list.appendChild(card);
+            container.appendChild(card);
         });
     </script>
+
 </body>
 </html>
