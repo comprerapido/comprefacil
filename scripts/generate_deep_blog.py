@@ -9,10 +9,6 @@ def slugify(text):
     text = text.lower().replace(" ", "-")
     return "".join(c for c in text if c.isalnum() or c == "-")
 
-def get_proxy_image(url):
-    if not url: return ""
-    return f"https://wsrv.nl/?url={url}&w=800&h=600&fit=contain&output=jpg"
-
 def generate_blog():
     with open("data/products/offers.json", "r", encoding="utf-8") as f:
         products = json.load(f)
@@ -22,7 +18,11 @@ def generate_blog():
     for p in products:
         name = p.get("title")
         slug = slugify(name)
-        image = get_proxy_image(p.get("image"))
+        image = p.get("image_local") or p.get("image")
+        
+        # Ajustar caminho para subpasta
+        if image.startswith("/"):
+            image = "../../" + image.lstrip("/")
         
         html = f"""
         <!DOCTYPE html>
@@ -50,7 +50,7 @@ def generate_blog():
         """
         with open(f"noticias/posts/{slug}.html", "w", encoding="utf-8") as f:
             f.write(html)
-    logger.info("✅ Blog com proxy gerado.")
+    logger.info("✅ Blog com imagens locais gerado.")
 
 if __name__ == "__main__":
     generate_blog()

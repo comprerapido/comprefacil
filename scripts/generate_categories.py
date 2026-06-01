@@ -9,12 +9,8 @@ CAT_SLUG_MAP = {
     "moda": "moda"
 }
 
-def get_proxy_image(url):
-    if not url: return ""
-    return f"https://wsrv.nl/?url={url}&w=400&h=400&fit=contain&output=jpg"
-
 def generate_categories():
-    logger.info("🎨 Gerando categorias com proxy de imagens...")
+    logger.info("🎨 Gerando categorias com imagens locais...")
     with open("data/products/offers.json", "r", encoding="utf-8") as f:
         products = json.load(f)
     with open("templates/category_template.html", "r", encoding="utf-8") as f:
@@ -25,7 +21,11 @@ def generate_categories():
         
         html = ""
         for p in cat_products:
-            p_img = get_proxy_image(p.get("image"))
+            p_img = p.get("image_local") or p.get("image")
+            # Ajustar caminho para subpasta
+            if p_img.startswith("/"):
+                p_img = "../../" + p_img.lstrip("/")
+                
             html += f'''
             <div class="product-card">
                 <div class="product-img">
