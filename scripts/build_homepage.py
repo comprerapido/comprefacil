@@ -77,7 +77,7 @@ def sanitize_products(products: list[dict]) -> list[dict]:
 
         key = product_key(product)
         name_key = " ".join(normalize_text(product.get("name") or product.get("title")).split()[:8])
-        image_key = str(product.get("image") or product.get("thumbnail") or "").split("?")[0]
+        image_key = str(product.get("image") or product.get("thumbnail") or "").split("?")[0].replace("-I.jpg", "-O.jpg")
         soft_key = f"{name_key}|{image_key}"
 
         if key in seen or soft_key in seen:
@@ -123,7 +123,7 @@ def build_homepage(input_path: str, template_path: str, output_path: str) -> Non
     hero_discount = hero.get("custom_discount_pct", 0)
     hero_price = hero.get("price", 0)
     hero_old = hero.get("original_price") or hero.get("originalPrice") or hero_price
-    hero_img = hero.get("image") or hero.get("thumbnail") or ""
+    hero_img = (hero.get("image") or hero.get("thumbnail") or "").split("?")[0].replace("-I.jpg", "-O.jpg")
 
     hero_html = f"""
     <div class="hero-container">
@@ -161,11 +161,12 @@ def build_homepage(input_path: str, template_path: str, output_path: str) -> Non
         discount = product.get("custom_discount_pct", 0)
         old_price = product.get("original_price") or product.get("originalPrice") or product.get("price")
 
+        img_url = (product.get('image') or product.get('thumbnail') or "").split("?")[0].replace("-I.jpg", "-O.jpg").replace("-V.jpg", "-O.jpg")
         products_html += f"""
         <div class="product-card">
             <span class="badge">↓ {discount}% OFF</span>
             <div class="product-img">
-                <img src="{product.get('image') or product.get('thumbnail')}" alt="{name}" loading="lazy" width="260" height="200">
+                <img src="{img_url}" alt="{name}" loading="lazy" width="260" height="200">
             </div>
             <div class="product-info">
                 <span class="category-tag">{cat}</span>

@@ -108,7 +108,7 @@ def generate_blog():
         name = p.get("name") or p.get("title")
         slug = slugify(name)
         content = generate_long_content_with_ai(p) # Usar a função com IA
-        image = p.get("image") or p.get("thumbnail")
+        image = (p.get("image") or p.get("thumbnail") or "").split("?")[0].replace("-I.jpg", "-O.jpg").replace("-V.jpg", "-O.jpg")
         affiliate_url = p.get("custom_affiliate_url") or p.get("permalink")
         price = p.get("price", 0)
         old_price = p.get("originalPrice", 0) or p.get("original_price", 0)
@@ -148,7 +148,7 @@ def generate_blog():
                 <p style="font-size: 20px; margin-bottom: 10px; color: #666;">Oferta em destaque:</p>
                 <p style="font-size: 32px; font-weight: bold; color: #6200ea; margin-bottom: 5px;">R$ {price:.2f}</p>
                 <p style="text-decoration: line-through; color: #999; margin-bottom: 20px;">De R$ {old_price:.2f} ({discount}% OFF)</p>
-                <a href="{affiliate_url}" class="btn-buy" target="_blank">APROVEITAR OFERTA NO ML 🚀</a>
+                <a href="{affiliate_url}" class="btn-buy" target="_blank" rel="noopener noreferrer">APROVEITAR OFERTA NO ML 🚀</a>
             </div>
 
             {content}
@@ -156,7 +156,7 @@ def generate_blog():
             <div class="buy-card" style="margin-top:50px; background: #fff3e0; border-color: #ff9800;">
                 <h3 style="color: #e65100; margin-bottom: 15px;">🚨 Alerta de Estoque Baixo!</h3>
                 <p>O <strong>{name}</strong> é um dos itens mais clicados de hoje. O preço de <strong>R$ {price:.2f}</strong> pode expirar a qualquer momento.</p>
-                <a href="{affiliate_url}" class="btn-buy" target="_blank" style="background: #ff9800;">PEGAR OFERTA AGORA 🛒</a>
+                <a href="{affiliate_url}" class="btn-buy" target="_blank" rel="noopener noreferrer" style="background: #ff9800;">PEGAR OFERTA AGORA 🛒</a>
             </div>
         </article>
     </main>
