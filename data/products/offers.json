@@ -11,7 +11,7 @@
     "image_local": "/assets/img/products/MLB3542109828.gif"
   },
   {
-    "id": "MLB4699104432",
+    "id": "MLB2789104432",
     "title": "Apple iPhone 15 128GB Preto",
     "price": 4699.0,
     "originalPrice": 5299.0,
@@ -22,35 +22,35 @@
     "image_local": "/assets/img/products/MLB4699104432.gif"
   },
   {
-    "id": "MLB31000132",
+    "id": "MLB18546143",
     "title": "Nintendo Switch OLED 64GB Branco",
     "price": 2589.0,
     "originalPrice": 2999.0,
     "custom_discount_pct": 13,
     "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB48003100013_102021-V.jpg",
-    "custom_affiliate_url": "https://www.mercadolivre.com.br/nintendo-switch-oled-64gb-branco/p/MLB31000132?matt_tool=vendas0nline",
+    "custom_affiliate_url": "https://www.mercadolivre.com.br/nintendo-switch-oled-64gb-standard-cor-branco-e-preto/p/MLB18546143?matt_tool=vendas0nline",
     "custom_category_slug": "games",
     "image_local": "/assets/img/products/MLB31000132.gif"
   },
   {
-    "id": "MLBU34610982",
+    "id": "MLB22646633",
     "title": "Smart TV 50\" 4K UHD Samsung Crystal",
     "price": 2399.0,
     "originalPrice": 2899.0,
     "custom_discount_pct": 17,
     "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB75346109828_032024-V.jpg",
-    "custom_affiliate_url": "https://www.mercadolivre.com.br/smart-tv-50-4k-uhd-samsung/p/MLBU34610982?matt_tool=vendas0nline",
+    "custom_affiliate_url": "https://www.mercadolivre.com.br/smart-tv-50-4k-uhd-samsung-crystal-uhd-un50cu7700gxzd/p/MLB22646633?matt_tool=vendas0nline",
     "custom_category_slug": "tv-e-video",
     "image_local": "/assets/img/products/MLBU34610982.gif"
   },
   {
-    "id": "MLB25020899",
+    "id": "MLB19515560",
     "title": "Tênis Puma Flyer Runner Mesh BDP",
     "price": 208.99,
     "originalPrice": 250.0,
     "custom_discount_pct": 17,
     "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB54229104437_032023-V.jpg",
-    "custom_affiliate_url": "https://www.mercadolivre.com.br/tenis-puma-flyer-runner-mesh-bdp/p/MLB54229104437?matt_tool=vendas0nline",
+    "custom_affiliate_url": "https://www.mercadolivre.com.br/tenis-puma-flyer-runner-mesh-bdp-unissex/p/MLB19515560?matt_tool=vendas0nline",
     "custom_category_slug": "moda",
     "image_local": "/assets/img/products/MLB25020899.gif"
   }
