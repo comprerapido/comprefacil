@@ -42,11 +42,12 @@ def matches_category(item, category_id):
     required = rules.get('must_have_any', [])
     return not required or any(term in title for term in required)
 
-def get_high_res_image(url):
+def get_safe_image(url):
     if not url:
         return ""
-    # Mercado Livre: substitui -I.jpg ou -V.jpg por -O.jpg para alta resolução
-    return url.replace("-I.jpg", "-O.jpg").replace("-V.jpg", "-O.jpg")
+    # O formato -O as vezes é bloqueado ou não carrega em iframes/github pages. 
+    # O formato -V ou -I é mais estável para exibição direta.
+    return url.replace("-O.jpg", "-V.jpg").replace("-I.jpg", "-V.jpg")
 
 def to_product(item, category_id):
     rules = CATEGORY_RULES.get(category_id, {})
@@ -62,12 +63,11 @@ def to_product(item, category_id):
     permalink = item.get('permalink') or ''
     affiliate_param = 'matt_tool=vendas0nline'
     if permalink:
-        # Garante que o link de afiliado esteja presente
         if affiliate_param not in permalink:
             separator = '&' if '?' in permalink else '?'
             permalink = f"{permalink}{separator}{affiliate_param}"
 
-    img = get_high_res_image(item.get('thumbnail') or "")
+    img = get_safe_image(item.get('thumbnail') or "")
 
     return {
         'id': item.get('id'),
@@ -112,33 +112,7 @@ def fetch_products(category_id, keywords):
         except Exception as e:
             print(f"❌ Erro na busca '{query}': {e}")
 
-    if not products:
-        return generate_example_products(category_id)
     return products[:50]
-
-def generate_example_products(category_id):
-    examples = {
-        'celular': [
-            {'id': 'MLB3542109828', 'title': 'Samsung Galaxy A15 5G 128GB Azul Escuro', 'name': 'Samsung Galaxy A15 5G 128GB Azul Escuro', 'price': 1099.0, 'original_price': 1399.0, 'permalink': 'https://www.mercadolivre.com.br/samsung-galaxy-a15-5g-128gb-azul-escuro/p/MLB3542109828?matt_tool=vendas0nline', 'thumbnail': 'https://http2.mlstatic.com/D_NQ_NP_614131-MLB74622340767_022024-O.jpg', 'image': 'https://http2.mlstatic.com/D_NQ_NP_614131-MLB74622340767_022024-O.jpg', 'custom_category_slug': 'celulares', 'custom_discount_pct': 21},
-            {'id': 'MLB2789104432', 'title': 'Apple iPhone 15 128GB Preto', 'name': 'Apple iPhone 15 128GB Preto', 'price': 4699.0, 'original_price': 5299.0, 'permalink': 'https://www.mercadolivre.com.br/apple-iphone-15-128gb-preto/p/MLB2789104432?matt_tool=vendas0nline', 'thumbnail': 'https://http2.mlstatic.com/D_NQ_NP_614131-MLB71786659170_092023-O.jpg', 'image': 'https://http2.mlstatic.com/D_NQ_NP_614131-MLB71786659170_092023-O.jpg', 'custom_category_slug': 'celulares', 'custom_discount_pct': 11},
-        ],
-        'games': [
-            {'id': 'MLB31000132', 'title': 'Nintendo Switch OLED 64GB Branco', 'name': 'Nintendo Switch OLED 64GB Branco', 'price': 2589.0, 'original_price': 2999.0, 'permalink': 'https://www.mercadolivre.com.br/nintendo-switch-oled-64gb-branco/p/MLB31000132?matt_tool=vendas0nline', 'thumbnail': 'https://http2.mlstatic.com/D_NQ_NP_614131-MLB48003100013_102021-O.jpg', 'image': 'https://http2.mlstatic.com/D_NQ_NP_614131-MLB48003100013_102021-O.jpg', 'custom_category_slug': 'games', 'custom_discount_pct': 13},
-        ],
-        'tv': [
-            {'id': 'MLBU34610982', 'title': 'Smart TV 50" 4K UHD Samsung Crystal', 'name': 'Smart TV 50" 4K UHD Samsung Crystal', 'price': 2399.0, 'original_price': 2899.0, 'permalink': 'https://www.mercadolivre.com.br/smart-tv-50-4k-uhd-samsung/p/MLBU34610982?matt_tool=vendas0nline', 'thumbnail': 'https://http2.mlstatic.com/D_NQ_NP_614131-MLB75346109828_032024-O.jpg', 'image': 'https://http2.mlstatic.com/D_NQ_NP_614131-MLB75346109828_032024-O.jpg', 'custom_category_slug': 'tv-e-video', 'custom_discount_pct': 17},
-        ],
-        'moda': [
-            {'id': 'MLB54229104437', 'title': 'Tênis Puma Flyer Runner Mesh BDP', 'name': 'Tênis Puma Flyer Runner Mesh BDP', 'price': 208.99, 'original_price': 250.00, 'permalink': 'https://www.mercadolivre.com.br/tenis-puma-flyer-runner-mesh-bdp/p/MLB54229104437?matt_tool=vendas0nline', 'thumbnail': 'https://http2.mlstatic.com/D_NQ_NP_614131-MLB54229104437_032023-O.jpg', 'image': 'https://http2.mlstatic.com/D_NQ_NP_614131-MLB54229104437_032023-O.jpg', 'custom_category_slug': 'moda', 'custom_discount_pct': 17},
-        ]
-    }
-    # Adiciona campos extras para compatibilidade
-    res = examples.get(category_id, [])
-    for r in res:
-        r['originalPrice'] = r['original_price']
-        r['custom_affiliate_url'] = r['permalink']
-        r['status'] = 'active'
-    return res
 
 def main():
     config_path = os.path.join(os.path.dirname(__file__), '../data/ROBO4_CONFIG.json')
@@ -153,7 +127,6 @@ def main():
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(products, f, indent=2, ensure_ascii=False)
 
-    # Salva também o arquivo central
     central_path = os.path.join(os.path.dirname(__file__), '../data/products/offers.json')
     os.makedirs(os.path.dirname(central_path), exist_ok=True)
     with open(central_path, 'w', encoding='utf-8') as f:
