@@ -69,6 +69,7 @@ def run_automation_cycle():
     steps = [
         ("fetch_products.py", "1️⃣  Buscando novos produtos do Mercado Livre"),
         ("score_products.py", "2️⃣  Pontuando produtos por relevância"),
+        ("update_database.py", "2️⃣.5️⃣  Sincronizando database para a página principal"),
         ("generate_blog_posts.py", "3️⃣  Gerando novo artigo de blog"),
         ("build_homepage.py", "4️⃣  Atualizando homepage com novos produtos"),
         ("generate_radar_index.py", "5️⃣  Gerando índice de radar"),
