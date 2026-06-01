@@ -1,137 +1,61 @@
 import json
 import os
-import re
-import unicodedata
-from datetime import datetime
 import requests
-
-# Mapeamento para garantir consistência
-CAT_SLUG_MAP = {
-    "celular": "celulares",
-    "games": "games",
-    "tv": "tv-e-video",
-    "moda": "moda"
-}
-
-CATEGORY_RULES = {
-    'celular': {
-        'slug': 'celulares',
-        'must_have_any': ['celular', 'smartphone', 'iphone', 'samsung', 'xiaomi', 'motorola'],
-        'block': ['capa', 'pelicula', 'fone', 'carregador', 'suporte']
-    },
-    'games': {
-        'slug': 'games',
-        'must_have_any': ['game', 'console', 'playstation', 'xbox', 'nintendo', 'jogo', 'gamer', 'controle', 'headset'],
-        'block': ['capa', 'adesivo', 'suporte']
-    },
-    'tv': {
-        'slug': 'tv-e-video',
-        'must_have_any': ['tv', 'smart tv', 'televisao', 'televisor', 'monitor', 'projetor', 'chromecast', 'roku'],
-        'block': ['controle remoto', 'suporte tv', 'cabo hdmi']
-    },
-    'moda': {
-        'slug': 'moda',
-        'must_have_any': ['roupa', 'moda', 'calcado', 'tenis', 'vestido', 'camisa', 'calca', 'sapato', 'oculos', 'bolsa'],
-        'block': ['acessorio', 'bijuteria', 'joia', 'relogio']
-    }
-}
-
-def normalize_text(value):
-    value = unicodedata.normalize('NFKD', str(value or '')).encode('ascii', 'ignore').decode('ascii')
-    value = value.lower()
-    value = re.sub(r'[^a-z0-9]+', ' ', value)
-    return re.sub(r'\s+', ' ', value).strip()
-
-def matches_category(item, category_id):
-    rules = CATEGORY_RULES.get(category_id, {})
-    title = normalize_text(item.get('title'))
-    if any(blocked in title for blocked in rules.get('block', [])):
-        return False
-    required = rules.get('must_have_any', [])
-    return not required or any(term in title for term in required)
+from datetime import datetime
 
 def get_safe_image(url):
     if not url: return ""
-    # O formato -V é o mais estável para evitar bloqueios de hotlink
-    return url.replace("-O.jpg", "-V.jpg").replace("-I.jpg", "-V.jpg")
-
-def to_product(item, category_id):
-    rules = CATEGORY_RULES.get(category_id, {})
-    original_price = item.get('original_price') or item.get('price')
-    price = item.get('price') or 0
-    discount = 0
-    try:
-        if original_price and original_price > price:
-            discount = round((original_price - price) / original_price * 100)
-    except:
-        discount = 0
-
-    permalink = item.get('permalink') or ''
-    affiliate_param = 'matt_tool=vendas0nline'
-    if permalink and affiliate_param not in permalink:
-        separator = '&' if '?' in permalink else '?'
-        permalink = f"{permalink}{separator}{affiliate_param}"
-
-    img = get_safe_image(item.get('thumbnail') or "")
-
-    return {
-        'id': item.get('id'),
-        'title': item.get('title'),
-        'name': item.get('title'),
-        'price': price,
-        'original_price': original_price,
-        'originalPrice': original_price,
-        'permalink': permalink,
-        'custom_affiliate_url': permalink,
-        'thumbnail': img,
-        'image': img,
-        'custom_category_slug': rules.get('slug', category_id),
-        'custom_discount_pct': discount,
-        'status': 'active',
-        'last_seen': datetime.now().isoformat()
-    }
+    return url.replace("-I.jpg", "-V.jpg").replace("-O.jpg", "-V.jpg")
 
 def fetch_products(category_id, keywords):
     print(f"🔍 Buscando produtos para: {category_id}...")
-    queries = keywords[:3] if isinstance(keywords, list) else [str(keywords)]
+    url = 'https://api.mercadolibre.com/sites/MLB/search'
+    # Busca simplificada para garantir resultados
+    params = {'q': keywords[0] if isinstance(keywords, list) else keywords, 'limit': 20, 'condition': 'new'}
     products = []
-    seen_ids = set()
+    try:
+        response = requests.get(url, params=params, timeout=10)
+        if response.status_code == 200:
+            data = response.json()
+            for item in data.get('results', []):
+                price = item.get('price', 0)
+                old_price = item.get('original_price') or price
+                discount = round(((old_price - price) / old_price * 100)) if old_price > price else 0
+                
+                permalink = item.get('permalink', '')
+                if 'matt_tool=' not in permalink:
+                    permalink += ('&' if '?' in permalink else '?') + 'matt_tool=vendas0nline'
 
-    for query in queries:
-        url = 'https://api.mercadolibre.com/sites/MLB/search'
-        params = {'q': query, 'limit': 30, 'condition': 'new'}
-        try:
-            response = requests.get(url, params=params, timeout=10)
-            if response.status_code == 200:
-                data = response.json()
-                for item in data.get('results', []):
-                    item_id = item.get('id')
-                    if item_id and item_id not in seen_ids and matches_category(item, category_id):
-                        seen_ids.add(item_id)
-                        products.append(to_product(item, category_id))
-        except:
-            continue
+                products.append({
+                    'id': item.get('id'),
+                    'title': item.get('title'),
+                    'price': price,
+                    'originalPrice': old_price,
+                    'custom_discount_pct': discount,
+                    'image': get_safe_image(item.get('thumbnail')),
+                    'custom_affiliate_url': permalink,
+                    'custom_category_slug': category_id
+                })
+    except Exception as e:
+        print(f"Erro: {e}")
     return products
 
 def main():
-    # Caminho absoluto para evitar erros de execução via shell
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     config_path = os.path.join(base_dir, 'data/ROBO4_CONFIG.json')
-    
     with open(config_path, 'r', encoding='utf-8') as f:
         config = json.load(f)
 
     all_products = []
     for cat in config['categorias']:
-        products = fetch_products(cat['id'], cat['keywords'])
-        all_products.extend(products)
+        res = fetch_products(cat['id'], cat['keywords'])
+        all_products.extend(res)
 
     central_path = os.path.join(base_dir, 'data/products/offers.json')
     os.makedirs(os.path.dirname(central_path), exist_ok=True)
     with open(central_path, 'w', encoding='utf-8') as f:
         json.dump(all_products, f, indent=2, ensure_ascii=False)
-    
-    print(f"✅ Busca concluída: {len(all_products)} produtos salvos.")
+    print(f"✅ Total: {len(all_products)} produtos.")
 
 if __name__ == '__main__':
     main()
