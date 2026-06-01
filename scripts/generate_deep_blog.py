@@ -4,6 +4,14 @@ import unicodedata
 from datetime import datetime
 from logger import logger
 
+# Mapeamento fixo para garantir consistência
+CAT_SLUG_MAP = {
+    "celular": "celulares",
+    "games": "games",
+    "tv": "tv-e-video",
+    "moda": "moda"
+}
+
 def slugify(text):
     text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
     text = text.lower().replace(" ", "-")
@@ -11,7 +19,8 @@ def slugify(text):
 
 def generate_long_content_static(product):
     name = product.get("name") or product.get("title")
-    cat = (product.get("custom_category_slug") or "OFERTAS").upper()
+    cat_id = product.get("custom_category_slug") or "oferta"
+    cat = CAT_SLUG_MAP.get(cat_id, cat_id).upper()
     price_val = product.get("price", 0)
     old_price_val = product.get("originalPrice", 0) or product.get("original_price", 0)
     discount_val = product.get("custom_discount_pct", 0)
@@ -67,13 +76,16 @@ def generate_blog():
     
     for p in products:
         name = p.get("name") or p.get("title")
-        slug = slugify(name)
+        # Usar ID ou Título slugificado para o nome do arquivo
+        post_slug = slugify(name)
         content = generate_long_content_static(p)
         image = p.get("image") or p.get("thumbnail")
         affiliate_url = p.get("custom_affiliate_url") or p.get("permalink")
         price = p.get("price", 0)
         old_price = p.get("originalPrice", 0) or p.get("original_price", 0)
         discount = p.get("custom_discount_pct", 0)
+        cat_id = p.get("custom_category_slug") or "oferta"
+        cat_label = CAT_SLUG_MAP.get(cat_id, cat_id).upper()
         
         html = f"""<!DOCTYPE html>
 <html lang="pt-BR">
@@ -85,29 +97,31 @@ def generate_blog():
     <link rel="stylesheet" href="../../assets/css/style.css">
     <style>
         .post-body {{ max-width: 800px; margin: 40px auto; padding: 20px; background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }}
-        .post-body h1 {{ color: #6200ea; font-size: 32px; margin-bottom: 20px; text-align: center; }}
-        .post-body h2 {{ color: #311b92; margin-top: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px; }}
+        .post-body h1 {{ color: #28a745; font-size: 32px; margin-bottom: 20px; text-align: center; }}
+        .post-body h2 {{ color: #0f172a; margin-top: 30px; border-bottom: 20px solid #f8fafc; padding-bottom: 10px; }}
         .post-body p {{ font-size: 18px; line-height: 1.8; color: #444; margin-bottom: 20px; }}
-        .buy-card {{ background: #f3e5f5; padding: 30px; border-radius: 12px; text-align: center; margin: 30px 0; border: 2px dashed #6200ea; }}
-        .btn-buy {{ background: #6200ea; color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 20px; display: inline-block; transition: 0.3s; }}
-        .btn-buy:hover {{ background: #311b92; transform: scale(1.05); }}
+        .buy-card {{ background: #f0fdf4; padding: 30px; border-radius: 12px; text-align: center; margin: 30px 0; border: 2px dashed #28a745; }}
+        .btn-buy {{ background: #28a745; color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 20px; display: inline-block; transition: 0.3s; }}
+        .btn-buy:hover {{ background: #218838; transform: scale(1.05); }}
         .product-hero-img {{ text-align: center; margin-bottom: 30px; }}
         .product-hero-img img {{ max-width: 100%; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }}
     </style>
 </head>
 <body>
-    <header class="header"><div class="container"><a href="/" class="logo">🥷 <strong>Radar Ninja</strong></a></div></header>
+    <header style="background: white; padding: 20px 0; border-bottom: 1px solid #e2e8f0;">
+        <div class="container"><a href="/" style="font-size: 24px; font-weight: 800; color: #0f172a; text-decoration: none;">🥷 <strong>Radar Ninja</strong></a></div>
+    </header>
     <main class="container">
         <article class="post-body">
             <h1>{name} - Vale a pena? Análise Completa de 2026</h1>
             
             <div class="product-hero-img">
-                <img src="{image}" alt="{name}" loading="lazy">
+                <img src="{image}" alt="{name}" loading="lazy" onerror="this.src='https://placehold.co/400x400?text=Imagem+Indisponivel'">
             </div>
 
             <div class="buy-card">
                 <p style="font-size: 20px; margin-bottom: 10px; color: #666;">Oferta em destaque:</p>
-                <p style="font-size: 32px; font-weight: bold; color: #6200ea; margin-bottom: 5px;">R$ {price:.2f}</p>
+                <p style="font-size: 32px; font-weight: bold; color: #28a745; margin-bottom: 5px;">R$ {price:.2f}</p>
                 <p style="text-decoration: line-through; color: #999; margin-bottom: 20px;">De R$ {old_price:.2f} ({discount}% OFF)</p>
                 <a href="{affiliate_url}" class="btn-buy" target="_blank">APROVEITAR OFERTA NO ML 🚀</a>
             </div>
@@ -121,18 +135,20 @@ def generate_blog():
             </div>
         </article>
     </main>
-    <footer class="footer"><div class="container"><p>© 2026 Radar Ninja - Conteúdo gerado para auxílio ao consumidor.</p></div></footer>
+    <footer style="background: #0f172a; color: white; padding: 40px 0; text-align: center;">
+        <div class="container"><p>© 2026 Radar Ninja - Conteúdo gerado para auxílio ao consumidor.</p></div>
+    </footer>
 </body>
 </html>"""
         
-        with open(f"noticias/posts/{slug}.html", "w", encoding="utf-8") as f:
+        with open(f"noticias/posts/{post_slug}.html", "w", encoding="utf-8") as f:
             f.write(html)
             
         posts_meta.append({
             "title": name,
-            "url": f"posts/{slug}.html",
+            "url": f"posts/{post_slug}.html",
             "excerpt": f"Análise completa: O {name} está com {discount}% de desconto. Vale a pena?",
-            "tagLabel": (p.get("custom_category_slug") or "OFERTA").upper(),
+            "tagLabel": cat_label,
             "date": datetime.now().strftime("%d/%m/%Y"),
             "readTime": "8 min"
         })
@@ -140,28 +156,32 @@ def generate_blog():
     template_path = "templates/blog_premium.html"
     if os.path.exists(template_path):
         with open(template_path, "r", encoding="utf-8") as f:
-            template = f.read()
+            blog_template = f.read()
             
         posts_html = ""
         for post in posts_meta:
             posts_html += f"""
-            <a href="{post['url']}" class="post-card">
-                <span class="post-tag">{post['tagLabel']}</span>
-                <h2 class="post-title">{post['title']}</h2>
-                <p class="post-excerpt">{post['excerpt']}</p>
-                <div class="post-meta">
-                    <span>📅 {post['date']}</span>
-                    <span>⏱️ {post['readTime']} de leitura</span>
+            <a href="{post['url']}" class="post-card" style="display: block; background: white; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-decoration: none; color: inherit;">
+                <span class="post-tag" style="background: #28a745; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold;">{post['tagLabel']}</span>
+                <h2 class="post-title" style="margin: 10px 0; font-size: 20px;">{post['title']}</h2>
+                <p class="post-excerpt" style="color: #64748b; font-size: 14px;">{post['excerpt']}</p>
+                <div class="post-meta" style="margin-top: 15px; font-size: 12px; color: #94a3b8;">
+                    <span>📅 {post['date']}</span> • 
+                    <span>⏱️ {post['readTime']} de leitura</span> • 
                     <span>💎 Review Mestre</span>
                 </div>
             </a>
             """
         
-        blog_html = template.replace("{{POSTS_HTML}}", posts_html)
+        blog_html = blog_template.replace("{{POSTS_HTML}}", posts_html)
+        # Adicionar link de volta para a home no blog_template se não existir
+        if '← VOLTAR' not in blog_html:
+            blog_html = blog_html.replace('<body>', '<body><div class="container" style="padding: 20px 0;"><a href="/" style="color: #28a745; font-weight: bold; text-decoration: none;">← VOLTAR AO RADAR</a></div>')
+            
         with open("noticias/index.html", "w", encoding="utf-8") as f:
             f.write(blog_html)
     
-    logger.info(f"✅ Blog regenerado com {len(posts_meta)} posts sincronizados e 100% estático.")
+    logger.info(f"✅ Blog regenerado com {len(posts_meta)} posts sincronizados.")
 
 if __name__ == "__main__":
     generate_blog()
