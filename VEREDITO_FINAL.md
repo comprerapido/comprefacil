@@ -51,7 +51,7 @@ O Radar de Preços evoluiu de um projeto com problemas técnicos críticos para 
 ### Infraestrutura
 - **Redirecionamento de Raiz:** ✅ Funcional
 - **GitHub Pages:** ✅ Configurado corretamente
-- **Domínio:** `radardeprecos.github.io/radar/`
+- **Domínio:** `comprerapido.github.io/`
 - **HTTPS:** ✅ Habilitado
 - **Política de Privacidade:** ✅ LGPD-compliant
 - **Arquivo ads.txt:** ✅ Presente

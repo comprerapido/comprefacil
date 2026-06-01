@@ -11,6 +11,9 @@ def generate_long_content(product):
     category = product.get('custom_category_slug', 'Geral')
     
     content = f"""
+    <div style="text-align: center; margin-bottom: 30px;">
+        <img src="{product.get('image', product.get('thumbnail', ''))}" alt="{name}" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+    </div>
     <p>No cenário atual de compras online, encontrar uma oferta é fácil, mas encontrar <strong>valor real</strong> e informação confiável é um desafio crescente. O Achado Certo identificou uma oportunidade imperdível para o <strong>{name}</strong>, que está com um desconto agressivo de {discount}%. Mas será que vale a pena para você? Nesta análise profunda, vamos explorar cada detalhe deste produto.</p>
 
     <h2>1. Introdução ao {name}</h2>
@@ -97,7 +100,7 @@ def generate_blog_content():
             <article>
                 <header style="margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
                     <h1>{post_title}</h1>
-                    <p style="color: #666;">Publicado por Equipe Achado Certo em {now.strftime(\'%d/%m/%Y %H:%M\')} | Leitura de 15 min</p>
+                    <p style="color: #666;">Publicado por Equipe Achado Certo em {now.strftime("%d/%m/%Y %H:%M")} | Leitura de 15 min</p>
                 </header>
                 <div class="content" style="line-height: 1.8; font-size: 16px; color: #333;">
                     {article_body}

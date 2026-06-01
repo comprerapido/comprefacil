@@ -212,7 +212,7 @@ O **Radar de Preços** foi completamente auditado e otimizado para aprovação d
 ### 1. Submeter para Google AdSense
 - Acesse: https://www.google.com/adsense/
 - Clique em "Inscrever-se agora"
-- Insira o domínio: radardeprecos.github.io
+- Insira o domínio: comprerapido.github.io
 - Aguarde revisão (3-7 dias)
 
 ### 2. Monitorar Aprovação

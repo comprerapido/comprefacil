@@ -4,7 +4,7 @@ import unicodedata
 from typing import Dict, Any, List
 from logger import logger
 
-BASE_URL = "https://radardeprecos.github.io/radar/"
+BASE_URL = "https://comprerapido.github.io/"
 
 def slugify(text: str) -> str:
     """Converte texto em slug amigável para URL."""

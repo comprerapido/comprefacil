@@ -41,7 +41,7 @@ Todas as 5 páginas institucionais foram completamente reescritas com conteúdo 
 
 **Canonical Tags:**
 - ✅ Adicionadas em 100% das páginas
-- ✅ URLs corretas: `https://radardeprecos.github.io/radar/[página]/`
+- ✅ URLs corretas: `https://comprerapido.github.io/[página]/`
 - ✅ Formato: `<link rel="canonical" href="...">`
 
 **Meta Descriptions:**
@@ -53,7 +53,7 @@ Todas as 5 páginas institucionais foram completamente reescritas com conteúdo 
 **Exemplo:**
 ```html
 <meta name="description" content="Conheça a política de privacidade do Radar de Preços e como protegemos seus dados pessoais em conformidade com a LGPD.">
-<link rel="canonical" href="https://radardeprecos.github.io/radar/privacidade/">
+<link rel="canonical" href="https://comprerapido.github.io/privacidade/">
 ```
 
 ### 3. Schema Markup Implementado
@@ -273,13 +273,13 @@ Como o site ainda não possui aprovação do Google AdSense, foram removidas:
 
 ### 1. Google PageSpeed Insights
 ```
-URL: https://radardeprecos.github.io/radar/
+URL: https://comprerapido.github.io/
 Objetivo: Score >90 em Desktop e Mobile
 ```
 
 ### 2. Google Mobile-Friendly Test
 ```
-URL: https://radardeprecos.github.io/radar/
+URL: https://comprerapido.github.io/
 Objetivo: Compatível com dispositivos móveis
 ```
 

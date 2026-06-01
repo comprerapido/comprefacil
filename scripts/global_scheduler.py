@@ -10,9 +10,9 @@ Coordena publicações de múltiplos sites com:
 - Distribuição entre 07:00 e 23:00
 
 Configuração:
-- 10 sites ativos
+- 12 sites ativos
 - Cada site com offset de 6 minutos
-- Total: 160 publicações/dia (10 sites × 16 horas)
+- Total: 192 publicações/dia (12 sites × 16 horas)
 """
 
 import os
@@ -37,6 +37,8 @@ class GlobalScheduler:
         "achado-certo-fitness": {"offset": 42, "name": "Achado Certo Fitness", "category": "Fitness"},
         "achado-certo-auto": {"offset": 48, "name": "Achado Certo Auto", "category": "Automóvel"},
         "achado-certo-ferramentas": {"offset": 54, "name": "Achado Certo Ferramentas", "category": "Ferramentas"},
+        "achado-certo-moda": {"offset": 2, "name": "Achado Certo Moda", "category": "Moda"},
+        "achado-certo-celulares": {"offset": 8, "name": "Achado Certo Celulares", "category": "Celulares"},
     }
     
     # Horário de operação
