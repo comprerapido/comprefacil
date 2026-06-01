@@ -333,7 +333,7 @@ async function init() {
     renderCarousel(sorted);
     renderStats(allProducts);
     const premiumItems = renderRadarPremium(allProducts);
-    renderGrid(allProducts, [...premiumItems, ...sorted.slice(0, 8)]);
+    renderGrid(allProducts, [...premiumItems, ...sorted.slice(0, 12)]);
     renderNews();
     
     setupCategoryFilters();
@@ -368,7 +368,7 @@ function setupCategoryFilters() {
           const dateB = new Date(b.last_seen || 0);
           return dateB - dateA; // Mais recente primeiro
         }).slice(0, 5);
-        renderGrid(allProducts, [...premiumItems, ...sorted.slice(0, 8)]);
+        renderGrid(allProducts, [...premiumItems, ...sorted.slice(0, 12)]);
       } else {
         const filtered = allProducts.filter(p => p.custom_category_slug === category);
         renderGrid(filtered);
