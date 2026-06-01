@@ -29,7 +29,7 @@
         .blog-header p { font-size: 18px; color: var(--gray); }
 
         .posts-list { display: grid; gap: 40px; margin-bottom: 80px; }
-        .post-card { background: var(--white); border-radius: 30px; padding: 40px; text-decoration: none; color: inherit; transition: 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); }
+        .post-card { background: var(--white); border-radius: 30px; padding: 40px; text-decoration: none; color: inherit; transition: 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); display: block; }
         .post-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
         .post-tag { background: var(--primary); color: var(--white); padding: 6px 15px; border-radius: 10px; font-weight: 700; font-size: 12px; margin-bottom: 20px; display: inline-block; }
         .post-title { font-size: 28px; font-weight: 900; margin-bottom: 15px; line-height: 1.2; }
@@ -53,35 +53,13 @@
         </div>
 
         <div class="posts-list" id="posts-container">
-            <!-- Posts serão inseridos aqui -->
+            {{POSTS_HTML}}
         </div>
     </main>
 
     <footer>
         <p>© 2026 Radar Ninja - Conteúdo de Autoridade Técnica</p>
     </footer>
-
-    <script>
-        const posts = {{NEWS_JSON}};
-        const container = document.getElementById('posts-container');
-        
-        posts.forEach(post => {
-            const card = document.createElement('a');
-            card.href = post.url;
-            card.className = 'post-card';
-            card.innerHTML = `
-                <span class="post-tag">${post.tagLabel}</span>
-                <h2 class="post-title">${post.title}</h2>
-                <p class="post-excerpt">${post.excerpt}</p>
-                <div class="post-meta">
-                    <span>📅 ${post.date}</span>
-                    <span>⏱️ ${post.readTime} de leitura</span>
-                    <span>💎 Review Mestre</span>
-                </div>
-            `;
-            container.appendChild(card);
-        });
-    </script>
 
 </body>
 </html>

@@ -29,7 +29,7 @@
         .blog-header p { font-size: 18px; color: var(--gray); }
 
         .posts-list { display: grid; gap: 40px; margin-bottom: 80px; }
-        .post-card { background: var(--white); border-radius: 30px; padding: 40px; text-decoration: none; color: inherit; transition: 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); }
+        .post-card { background: var(--white); border-radius: 30px; padding: 40px; text-decoration: none; color: inherit; transition: 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); display: block; }
         .post-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
         .post-tag { background: var(--primary); color: var(--white); padding: 6px 15px; border-radius: 10px; font-weight: 700; font-size: 12px; margin-bottom: 20px; display: inline-block; }
         .post-title { font-size: 28px; font-weight: 900; margin-bottom: 15px; line-height: 1.2; }
@@ -115,74 +115,6 @@
     <footer>
         <p>© 2026 Radar Ninja - Conteúdo de Autoridade Técnica</p>
     </footer>
-
-    <script>
-        const posts = [
-  {
-    "title": "Samsung Galaxy A15 5G 128GB Azul Escuro",
-    "url": "posts/samsung-galaxy-a15-5g-128gb-azul-escuro.html",
-    "excerpt": "Análise completa: O Samsung Galaxy A15 5G 128GB Azul Escuro está com 21% de desconto. Vale a pena?",
-    "tagLabel": "CELULARES",
-    "date": "01/06/2026",
-    "readTime": "8 min",
-    "icon": "🔥"
-  },
-  {
-    "title": "Smart TV 50\" 4K UHD Samsung Crystal",
-    "url": "posts/smart-tv-50-4k-uhd-samsung-crystal.html",
-    "excerpt": "Análise completa: O Smart TV 50\" 4K UHD Samsung Crystal está com 17% de desconto. Vale a pena?",
-    "tagLabel": "TV-E-VIDEO",
-    "date": "01/06/2026",
-    "readTime": "8 min",
-    "icon": "🔥"
-  },
-  {
-    "title": "Tênis Puma Flyer Runner Mesh BDP",
-    "url": "posts/tenis-puma-flyer-runner-mesh-bdp.html",
-    "excerpt": "Análise completa: O Tênis Puma Flyer Runner Mesh BDP está com 17% de desconto. Vale a pena?",
-    "tagLabel": "MODA",
-    "date": "01/06/2026",
-    "readTime": "8 min",
-    "icon": "🔥"
-  },
-  {
-    "title": "Nintendo Switch OLED 64GB Branco",
-    "url": "posts/nintendo-switch-oled-64gb-branco.html",
-    "excerpt": "Análise completa: O Nintendo Switch OLED 64GB Branco está com 13% de desconto. Vale a pena?",
-    "tagLabel": "GAMES",
-    "date": "01/06/2026",
-    "readTime": "8 min",
-    "icon": "🔥"
-  },
-  {
-    "title": "Apple iPhone 15 128GB Preto",
-    "url": "posts/apple-iphone-15-128gb-preto.html",
-    "excerpt": "Análise completa: O Apple iPhone 15 128GB Preto está com 11% de desconto. Vale a pena?",
-    "tagLabel": "CELULARES",
-    "date": "01/06/2026",
-    "readTime": "8 min",
-    "icon": "🔥"
-  }
-];
-        const container = document.getElementById('posts-container');
-        
-        posts.forEach(post => {
-            const card = document.createElement('a');
-            card.href = post.url;
-            card.className = 'post-card';
-            card.innerHTML = `
-                <span class="post-tag">${post.tagLabel}</span>
-                <h2 class="post-title">${post.title}</h2>
-                <p class="post-excerpt">${post.excerpt}</p>
-                <div class="post-meta">
-                    <span>📅 ${post.date}</span>
-                    <span>⏱️ ${post.readTime} de leitura</span>
-                    <span>💎 Review Mestre</span>
-                </div>
-            `;
-            container.appendChild(card);
-        });
-    </script>
 
 </body>
 </html>
