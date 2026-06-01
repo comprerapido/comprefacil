@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 OFFERS_PATH = ROOT / 'data/products/offers.json'
-CONFIG_PATH = ROOT / 'data/ROBO4_CONFIG.json'
+CONFIG_PATH = ROOT / 'data/ROBO3_CONFIG.json'
 
 CATEGORY_ALIASES = {
     'celular': {'celular', 'celulares', 'smartphones'},

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Radar Ninja - Notícias e Reviews</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .post-card { background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .post-card h2 { margin-top: 0; }
+        .post-card a { color: #6200ea; text-decoration: none; font-weight: bold; }
+        .tag { background: #6200ea; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Blog Radar Ninja</h1>
+            <a href="/">← Voltar para a Home</a>
+        </header>
+        <div id="posts-list">
+            <!-- Os posts serão inseridos aqui pelo script -->
+        </div>
+    </div>
+    <script>
+        const posts = [
+  {
+    "title": "Jogo God of War Ragnarök PS5",
+    "url": "posts/jogo-god-of-war-ragnarok-ps5.html",
+    "excerpt": "Análise completa: O Jogo God of War Ragnarök PS5 está com 33% de desconto. Vale a pena?",
+    "tagLabel": "GAMES",
+    "date": "01/06/2026",
+    "readTime": "8 min",
+    "icon": "🔥"
+  },
+  {
+    "title": "TV 43\" Full HD com Conversor",
+    "url": "posts/tv-43-full-hd-com-conversor.html",
+    "excerpt": "Análise completa: O TV 43\" Full HD com Conversor está com 25% de desconto. Vale a pena?",
+    "tagLabel": "TV-E-VIDEO",
+    "date": "01/06/2026",
+    "readTime": "8 min",
+    "icon": "🔥"
+  },
+  {
+    "title": "Tênis Esportivo Masculino Nike",
+    "url": "posts/tenis-esportivo-masculino-nike.html",
+    "excerpt": "Análise completa: O Tênis Esportivo Masculino Nike está com 25% de desconto. Vale a pena?",
+    "tagLabel": "MODA",
+    "date": "01/06/2026",
+    "readTime": "8 min",
+    "icon": "🔥"
+  },
+  {
+    "title": "Vestido Longo Feminino Floral",
+    "url": "posts/vestido-longo-feminino-floral.html",
+    "excerpt": "Análise completa: O Vestido Longo Feminino Floral está com 25% de desconto. Vale a pena?",
+    "tagLabel": "MODA",
+    "date": "01/06/2026",
+    "readTime": "8 min",
+    "icon": "🔥"
+  },
+  {
+    "title": "Smart TV 55\" 4K Ultra HD",
+    "url": "posts/smart-tv-55-4k-ultra-hd.html",
+    "excerpt": "Análise completa: O Smart TV 55\" 4K Ultra HD está com 21% de desconto. Vale a pena?",
+    "tagLabel": "TV-E-VIDEO",
+    "date": "01/06/2026",
+    "readTime": "8 min",
+    "icon": "🔥"
+  },
+  {
+    "title": "Celular Samsung Galaxy A07 256GB",
+    "url": "posts/celular-samsung-galaxy-a07-256gb.html",
+    "excerpt": "Análise completa: O Celular Samsung Galaxy A07 256GB está com 20% de desconto. Vale a pena?",
+    "tagLabel": "CELULARES",
+    "date": "01/06/2026",
+    "readTime": "8 min",
+    "icon": "🔥"
+  },
+  {
+    "title": "Console PlayStation 5 Slim",
+    "url": "posts/console-playstation-5-slim.html",
+    "excerpt": "Análise completa: O Console PlayStation 5 Slim está com 12% de desconto. Vale a pena?",
+    "tagLabel": "GAMES",
+    "date": "01/06/2026",
+    "readTime": "8 min",
+    "icon": "🔥"
+  },
+  {
+    "title": "iPhone 15 Pro Max 256GB",
+    "url": "posts/iphone-15-pro-max-256gb.html",
+    "excerpt": "Análise completa: O iPhone 15 Pro Max 256GB está com 11% de desconto. Vale a pena?",
+    "tagLabel": "CELULARES",
+    "date": "01/06/2026",
+    "readTime": "8 min",
+    "icon": "🔥"
+  }
+];
+        const list = document.getElementById('posts-list');
+        posts.forEach(post => {
+            const card = document.createElement('div');
+            card.className = 'post-card';
+            card.innerHTML = `
+                <span class="tag">${post.tagLabel}</span>
+                <h2>${post.title}</h2>
+                <p>${post.excerpt}</p>
+                <a href="${post.url}">Ler Review Completa ${post.icon}</a>
+                <p><small>${post.date} • ${post.readTime} de leitura</small></p>
+            `;
+            list.appendChild(card);
+        });
+    </script>
+</body>
+</html>

@@ -140,7 +140,7 @@ def generate_example_products(category_id):
 
 def main():
     """Executa o script principal."""
-    config_path = os.path.join(os.path.dirname(__file__), '../data/ROBO4_CONFIG.json')
+    config_path = os.path.join(os.path.dirname(__file__), '../data/ROBO3_CONFIG.json')
     with open(config_path, 'r', encoding='utf-8') as f:
         config = json.load(f)
 

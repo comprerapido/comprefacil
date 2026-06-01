@@ -9,7 +9,7 @@ BASE_URL = "https://comprerapido.github.io/"
 DEFAULT_INPUT = "data/products/offers.json"
 DEFAULT_TEMPLATE = "templates/homepage.html"
 DEFAULT_OUTPUT = "index.html"
-CONFIG_PATH = "data/ROBO4_CONFIG.json"
+CONFIG_PATH = "data/ROBO3_CONFIG.json"
 
 CATEGORY_ALIASES = {
     "celular": {"celular", "celulares", "smartphones"},
