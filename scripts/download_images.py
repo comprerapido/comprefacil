@@ -4,7 +4,7 @@ import requests
 from logger import logger
 
 def download_images():
-    logger.info("📸 Baixando imagens para hospedagem local...")
+    logger.info("📸 Baixando imagens reais (GIF/JPG)...")
     
     if not os.path.exists("data/products/offers.json"):
         return
@@ -22,18 +22,17 @@ def download_images():
     for p in products:
         img_url = p.get("image")
         if img_url and img_url.startswith("http"):
-            file_name = f"{p['id']}.jpg"
+            # O Mercado Livre às vezes retorna GIF para o thumbnail
+            file_name = f"{p['id']}.gif"
             local_path = f"assets/img/products/{file_name}"
             
             try:
-                if not os.path.exists(local_path):
-                    response = requests.get(img_url, headers=headers, timeout=10)
-                    if response.status_code == 200:
-                        with open(local_path, "wb") as f:
-                            f.write(response.content)
-                        logger.info(f"✓ Baixada: {file_name}")
+                response = requests.get(img_url, headers=headers, timeout=10)
+                if response.status_code == 200:
+                    with open(local_path, "wb") as f:
+                        f.write(response.content)
+                    logger.info(f"✓ Baixada: {file_name}")
                 
-                # Atualiza para o caminho relativo do site
                 p["image_local"] = f"/assets/img/products/{file_name}"
             except Exception as e:
                 logger.error(f"Erro ao baixar {img_url}: {e}")

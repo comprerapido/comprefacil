@@ -8,7 +8,7 @@
     "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB74622340767_022024-V.jpg",
     "custom_affiliate_url": "https://www.mercadolivre.com.br/samsung-galaxy-a15-5g-128gb-azul-escuro/p/MLB3542109828?matt_tool=vendas0nline",
     "custom_category_slug": "celulares",
-    "image_local": "/assets/img/products/MLB3542109828.jpg"
+    "image_local": "/assets/img/products/MLB3542109828.gif"
   },
   {
     "id": "MLB4699104432",
@@ -19,7 +19,7 @@
     "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB71786659170_092023-V.jpg",
     "custom_affiliate_url": "https://www.mercadolivre.com.br/apple-iphone-15-128gb-preto/p/MLB2789104432?matt_tool=vendas0nline",
     "custom_category_slug": "celulares",
-    "image_local": "/assets/img/products/MLB4699104432.jpg"
+    "image_local": "/assets/img/products/MLB4699104432.gif"
   },
   {
     "id": "MLB31000132",
@@ -30,7 +30,7 @@
     "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB48003100013_102021-V.jpg",
     "custom_affiliate_url": "https://www.mercadolivre.com.br/nintendo-switch-oled-64gb-branco/p/MLB31000132?matt_tool=vendas0nline",
     "custom_category_slug": "games",
-    "image_local": "/assets/img/products/MLB31000132.jpg"
+    "image_local": "/assets/img/products/MLB31000132.gif"
   },
   {
     "id": "MLBU34610982",
@@ -41,7 +41,7 @@
     "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB75346109828_032024-V.jpg",
     "custom_affiliate_url": "https://www.mercadolivre.com.br/smart-tv-50-4k-uhd-samsung/p/MLBU34610982?matt_tool=vendas0nline",
     "custom_category_slug": "tv-e-video",
-    "image_local": "/assets/img/products/MLBU34610982.jpg"
+    "image_local": "/assets/img/products/MLBU34610982.gif"
   },
   {
     "id": "MLB25020899",
@@ -52,6 +52,6 @@
     "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB54229104437_032023-V.jpg",
     "custom_affiliate_url": "https://www.mercadolivre.com.br/tenis-puma-flyer-runner-mesh-bdp/p/MLB54229104437?matt_tool=vendas0nline",
     "custom_category_slug": "moda",
-    "image_local": "/assets/img/products/MLB25020899.jpg"
+    "image_local": "/assets/img/products/MLB25020899.gif"
   }
 ]
