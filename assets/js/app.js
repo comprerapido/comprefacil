@@ -1,7 +1,7 @@
 
-// Radar de Preços - Script Principal Profissional v2.1 (Correção de Scroll e Renderização)
+// Achado Certo - Script Principal Profissional v2.1 (Correção de Scroll e Renderização)
 
-function getRadarBasePrefix() {
+function getAchadoCertoBasePrefix() {
   const path = window.location.pathname;
   const isRoot = path === '/' || path === '/index.html';
   if (isRoot) return '';
@@ -16,8 +16,8 @@ function getRadarBasePrefix() {
   const depth = parts.length - radarIndex - 1;
   return '../'.repeat(Math.max(0, depth));
 }
-const RADAR_BASE_PREFIX = getRadarBasePrefix();
-const DATA_URL = RADAR_BASE_PREFIX + 'data/database/all_products.json';
+const ACHADO_CERTO_BASE_PREFIX = getAchadoCertoBasePrefix();
+const DATA_URL = ACHADO_CERTO_BASE_PREFIX + 'data/database/all_products.json';
 
 
 let allProducts = [];
@@ -91,7 +91,7 @@ function renderStats(products) {
   `;
 }
 
-// --- Radar Premium ---
+// --- Achado Certo Premium ---
 function renderRadarPremium(products) {
   const premiumContainer = document.getElementById('radarPremium');
   if (!premiumContainer) return [];
@@ -101,11 +101,11 @@ function renderRadarPremium(products) {
     .slice(0, 5);
 
   premiumContainer.innerHTML = `
-    <div class="section-header"><h2>👑 Radar Premium</h2></div>
+    <div class="section-header"><h2>👑 Achado Certo Premium</h2></div>
     <div class="premium-grid">
       ${premiumItems.map(p => `
         <div class="product-card radar-premium-card">
-          <span class="badge badge-premium-choice">👑 Escolha do Radar</span>
+          <span class="badge badge-premium-choice">👑 Escolha do Achado Certo</span>
           <div class="card-img"><img src="${escapeHtml(p.image || p.thumbnail)}" alt="${escapeHtml(p.name)}" loading="lazy"></div>
           <h3>${escapeHtml(p.name).substring(0, 50)}...</h3>
           <div class="price-tag">R$ ${formatPrice(p.price)}</div>
@@ -216,7 +216,7 @@ function renderGrid(products, excludeItems = []) {
     const badges = getProfessionalBadges(p, idx);
     const favClass = isFavorite(p.id) ? 'active' : '';
     const alertClass = hasAlert(p.id) ? 'active' : '';
-    const decision = getRadarDecision(p);
+    const decision = getAchadoCertoDecision(p);
     return `
       <div class="product-card" data-product-id="${escapeHtml(p.id)}" data-category="${escapeHtml(p.custom_category_slug || '')}">
         <button class="fav-btn ${favClass}" title="Favoritar" onclick="event.preventDefault(); toggleFavorite('${p.id}')">♥</button>
@@ -225,7 +225,7 @@ function renderGrid(products, excludeItems = []) {
         ${badges}
         <div class="card-img"><img src="${escapeHtml(p.image || p.thumbnail)}" alt="${escapeHtml(p.name)}" loading="lazy"></div>
         <h3>${escapeHtml(p.name).substring(0, 60)}...</h3>
-        <div class="radar-decision ${decision.className}">${decision.label}</div>
+        <div class="achado-certo-decision ${decision.className}">${decision.label}</div>
         <div class="price-tag">R$ ${formatPrice(p.price)}</div>
         <a href="${escapeHtml(safeAffiliateUrl(p))}" class="btn" target="_blank" rel="nofollow sponsored" onclick="trackOfferClick('${p.id}')" style="width:100%">Ver Detalhes</a>
       </div>
@@ -479,7 +479,7 @@ function buildPriceHistory(product) {
   ];
 }
 
-function getRadarDecision(product) {
+function getAchadoCertoDecision(product) {
   const discount = Number(product.custom_discount_pct || 0);
   const price = Number(product.price || 0);
   const original = Number(product.originalPrice || product.original_price || price);
