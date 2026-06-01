@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": "MLB3542109828",
+    "title": "Samsung Galaxy A15 5G 128GB Azul Escuro",
+    "price": 1099.0,
+    "originalPrice": 1399.0,
+    "custom_discount_pct": 21,
+    "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB74622340767_022024-V.jpg",
+    "custom_affiliate_url": "https://www.mercadolivre.com.br/samsung-galaxy-a15-5g-128gb-azul-escuro/p/MLB3542109828?matt_tool=vendas0nline",
+    "custom_category_slug": "celulares"
+  },
+  {
+    "id": "MLB31000132",
+    "title": "Nintendo Switch OLED 64GB Branco",
+    "price": 2589.0,
+    "originalPrice": 2999.0,
+    "custom_discount_pct": 13,
+    "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB48003100013_102021-V.jpg",
+    "custom_affiliate_url": "https://www.mercadolivre.com.br/nintendo-switch-oled-64gb-branco/p/MLB31000132?matt_tool=vendas0nline",
+    "custom_category_slug": "games"
+  },
+  {
+    "id": "MLBU34610982",
+    "title": "Smart TV 50\" 4K UHD Samsung Crystal",
+    "price": 2399.0,
+    "originalPrice": 2899.0,
+    "custom_discount_pct": 17,
+    "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB75346109828_032024-V.jpg",
+    "custom_affiliate_url": "https://www.mercadolivre.com.br/smart-tv-50-4k-uhd-samsung/p/MLBU34610982?matt_tool=vendas0nline",
+    "custom_category_slug": "tv-e-video"
+  },
+  {
+    "id": "MLB25020899",
+    "title": "Tênis Puma Flyer Runner Mesh BDP",
+    "price": 208.99,
+    "originalPrice": 250.0,
+    "custom_discount_pct": 17,
+    "image": "https://http2.mlstatic.com/D_NQ_NP_614131-MLB54229104437_032023-V.jpg",
+    "custom_affiliate_url": "https://www.mercadolivre.com.br/tenis-puma-flyer-runner-mesh-bdp/p/MLB54229104437?matt_tool=vendas0nline",
+    "custom_category_slug": "moda"
+  }
+]
