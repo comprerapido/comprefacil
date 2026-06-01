@@ -48,8 +48,15 @@ function safeAffiliateUrl(product) {
 // --- Deduplicação ---
 function deduplicateProducts(products) {
   const uniqueMap = new Map();
+  const nameNormalizer = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, '').substring(0, 40);
+  
   products.forEach(p => {
-    const key = p.id || p.permalink || `${p.name}_${p.price}`;
+    let key = p.id;
+    if (!key) {
+      const normalizedName = nameNormalizer(p.name || '');
+      const price = Math.round(p.price || 0);
+      key = `${normalizedName}_${price}`;
+    }
     if (!uniqueMap.has(key)) {
       uniqueMap.set(key, p);
     } else {
@@ -330,10 +337,13 @@ async function init() {
       return dateB - dateA;
     });
     
-    renderCarousel(sorted);
+    const carouselProducts = sorted.slice(0, 8);
+    renderCarousel(carouselProducts);
     renderStats(allProducts);
     const premiumItems = renderRadarPremium(allProducts);
-    renderGrid(allProducts, [...premiumItems, ...sorted.slice(0, 12)]);
+    // Excluir: Carrossel (8) + Premium (5) + primeiros 12 ordenados = até 25 produtos
+    const excludedIds = new Set([...carouselProducts, ...premiumItems, ...sorted.slice(0, 12)].map(p => p.id));
+    renderGrid(allProducts, Array.from(excludedIds).map(id => ({ id })));
     renderNews();
     
     setupCategoryFilters();
