@@ -239,7 +239,7 @@ function renderGrid(products, excludeItems = []) {
         <h3>${escapeHtml(p.name).substring(0, 60)}...</h3>
         <div class="achado-certo-decision ${decision.className}">${decision.label}</div>
         <div class="price-tag">R$ ${formatPrice(p.price)}</div>
-        <a href="${escapeHtml(safeAffiliateUrl(p))}" class="btn" target="_blank" rel="nofollow sponsored" onclick="trackOfferClick('${p.id}')" style="width:100%">Ver Detalhes</a>
+        <a href="${escapeHtml(safeAffiliateUrl(p))}" class="btn btn-primary" target="_blank" rel="nofollow sponsored" onclick="trackOfferClick('${p.id}')" style="width:100%; font-weight: 600; letter-spacing: 0.5px;">🛒 VER OFERTA</a>
       </div>
     `;
   }).join('');

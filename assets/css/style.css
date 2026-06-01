@@ -308,6 +308,22 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
+.btn-primary {
+  background: linear-gradient(135deg, #00c853 0%, #00a840 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(0, 200, 83, 0.25);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #00a840 0%, #008c2e 100%);
+  box-shadow: 0 6px 20px rgba(0, 200, 83, 0.4);
+  transform: translateY(-3px);
+}
+
 /* Stats Dashboard */
 .stats-bar {
   display: grid;
