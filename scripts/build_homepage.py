@@ -1,24 +1,15 @@
 import json
 import os
-import requests
-import base64
 from logger import logger
 
 INPUT_FILE = "data/products/offers.json"
 TEMPLATE_FILE = "templates/homepage.html"
 OUTPUT_FILE = "index.html"
 
-def get_as_base64(url):
-    try:
-        headers = {'User-Agent': 'Mozilla/5.0'}
-        response = requests.get(url, headers=headers, timeout=5)
-        if response.status_code == 200:
-            encoded = base64.b64encode(response.content).decode('utf-8')
-            mime = response.headers.get('Content-Type', 'image/jpeg')
-            return f"data:{mime};base64,{encoded}"
-    except:
-        pass
-    return url
+def get_proxy_image(url):
+    if not url: return ""
+    # Usando o proxy do WSrv.nl que é gratuito e contorna bloqueios de hotlink
+    return f"https://wsrv.nl/?url={url}&w=400&h=400&fit=contain&output=jpg"
 
 def format_price(value) -> str:
     try:
@@ -27,7 +18,7 @@ def format_price(value) -> str:
         return "0.00"
 
 def build_homepage():
-    logger.info("🏠 Construindo homepage com imagens embutidas...")
+    logger.info("🏠 Construindo homepage com proxy de imagens estável...")
     
     if not os.path.exists(INPUT_FILE) or not os.path.exists(TEMPLATE_FILE):
         return
@@ -40,9 +31,9 @@ def build_homepage():
 
     products = sorted(products, key=lambda x: x.get("custom_discount_pct", 0), reverse=True)
 
-    # Hero Section - Converter para Base64 para garantir exibição
+    # Hero Section
     hero = products[0]
-    hero_img = get_as_base64(hero.get("image"))
+    hero_img = get_proxy_image(hero.get("image"))
     
     hero_html = f'''
     <div class="hero-product">
@@ -55,7 +46,7 @@ def build_homepage():
     # Featured Grid
     grid_html = ""
     for p in products[1:9]:
-        p_img = get_as_base64(p.get("image"))
+        p_img = get_proxy_image(p.get("image"))
         grid_html += f'''
         <div class="card" style="background: white; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0;">
             <div class="card-img" style="height: 160px; display: flex; align-items: center; justify-content: center;">
@@ -71,11 +62,11 @@ def build_homepage():
 
     content = template.replace("{{hero_section}}", hero_html)
     content = content.replace("{{featured_products_grid}}", grid_html)
-    content = content.replace("{{table_rows}}", "") # Limpar tabela por enquanto
+    content = content.replace("{{table_rows}}", "")
     
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(content)
-    logger.info("✅ Homepage pronta.")
+    logger.info("✅ Homepage pronta com Proxy.")
 
 if __name__ == "__main__":
     build_homepage()
