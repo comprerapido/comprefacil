@@ -6,14 +6,29 @@ def calculate_score(product):
     discount_pct = product.get("custom_discount_pct", 0)
     price = product.get("price", 0)
     original_price = product.get("originalPrice", 0)
+    timestamp = product.get("timestamp", "")
 
-    # Pontuação baseada no percentual de desconto (maior desconto = maior pontuação)
-    score = discount_pct * 10 # Multiplicador para dar mais peso ao desconto
+    # Pontuação baseada no percentual de desconto
+    score = discount_pct * 5 
+
+    # Peso para a NOVIDADE (Timestamp)
+    # Se o produto foi atualizado nas últimas 24 horas, ganha um bônus massivo
+    try:
+        if timestamp:
+            from datetime import datetime
+            dt = datetime.fromisoformat(timestamp)
+            diff = (datetime.now() - dt).total_seconds()
+            if diff < 86400: # 24 horas
+                score += 500 # Bônus de novidade para subir ao destaque
+            elif diff < 172800: # 48 horas
+                score += 200
+    except:
+        pass
 
     # Adicionar pontuação baseada no valor absoluto do desconto
     if original_price > 0:
         absolute_discount = original_price - price
-        score += absolute_discount / 10 # Adiciona 1 ponto a cada R$10 de desconto absoluto
+        score += absolute_discount / 20 
 
     # Priorizar produtos com mais de 20% de desconto
     if discount_pct >= 20:
