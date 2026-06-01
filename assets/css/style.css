@@ -1,0 +1,38 @@
+:root {
+    --primary: #28a745;
+    --primary-dark: #218838;
+    --dark: #0f172a;
+    --gray-dark: #334155;
+    --gray: #64748b;
+    --gray-light: #f1f5f9;
+    --white: #ffffff;
+    --border: #e2e8f0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: var(--dark); line-height: 1.5; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+a { text-decoration: none; color: inherit; transition: 0.2s; }
+
+/* Header & Nav */
+header { background: var(--white); padding: 20px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
+.logo { font-size: 24px; font-weight: 800; }
+.logo span { color: var(--primary); }
+
+/* Product Cards */
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; padding: 20px 0; }
+.card { background: var(--white); border-radius: 12px; padding: 16px; border: 1px solid var(--border); transition: 0.3s; position: relative; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+.card-img { height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; }
+.card-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.card-title { font-size: 16px; font-weight: 600; margin-bottom: 10px; height: 48px; overflow: hidden; }
+.card-price { font-size: 22px; font-weight: 800; color: var(--primary-dark); }
+.card-btn { display: block; background: var(--primary); color: white; text-align: center; padding: 12px; border-radius: 8px; font-weight: 700; margin-top: 15px; }
+
+/* Blog Specific */
+.post-body { max-width: 800px; margin: 40px auto; padding: 20px; background: white; border-radius: 16px; }
+.specs-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+.specs-table th, .specs-table td { border: 1px solid var(--border); padding: 12px; text-align: left; }
+
+/* Footer */
+footer { background: var(--dark); color: white; padding: 40px 0; margin-top: 60px; }
