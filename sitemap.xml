@@ -50,4 +50,12 @@
       <image:loc>https://http2.mlstatic.com/D_NQ_NP_614131-MLB54229104437_032023-O.jpg</image:loc>
     </image:image>
   </url>
+  <url>
+    <loc>https://comprerapido.github.io/noticias/posts/samsung-galaxy-a15-5g-128gb-azul-escuro.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://http2.mlstatic.com/D_NQ_NP_614131-MLB74622340767_022024-O.jpg</image:loc>
+    </image:image>
+  </url>
 </urlset>

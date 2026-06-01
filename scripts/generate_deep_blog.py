@@ -65,9 +65,8 @@ def generate_blog():
     os.makedirs("noticias/posts", exist_ok=True)
     posts_meta = []
     
-    top_products = products[:10]
-    
-    for p in top_products:
+    # Gera posts para TODOS os produtos da base para garantir sincronização
+    for p in products:
         name = p.get("name") or p.get("title")
         slug = slugify(name)
         content = generate_long_content_static(p)
@@ -145,11 +144,30 @@ def generate_blog():
         with open(template_path, "r", encoding="utf-8") as f:
             template = f.read()
             
+        # Gera HTML estático para os posts no index para evitar dependência de JS para visualização
+        posts_html = ""
+        for post in posts_meta:
+            posts_html += f"""
+            <a href="{post['url']}" class="post-card">
+                <span class="post-tag">{post['tagLabel']}</span>
+                <h2 class="post-title">{post['title']}</h2>
+                <p class="post-excerpt">{post['excerpt']}</p>
+                <div class="post-meta">
+                    <span>📅 {post['date']}</span>
+                    <span>⏱️ {post['readTime']} de leitura</span>
+                    <span>💎 Review Mestre</span>
+                </div>
+            </a>
+            """
+        
+        # Substitui tanto o JSON (para compatibilidade) quanto injeta o HTML estático
         blog_html = template.replace("{{NEWS_JSON}}", json.dumps(posts_meta, indent=2, ensure_ascii=False))
+        blog_html = blog_html.replace("<!-- Posts serão inseridos aqui -->", posts_html)
+        
         with open("noticias/index.html", "w", encoding="utf-8") as f:
             f.write(blog_html)
     
-    logger.info(f"✅ Blog regenerado com {len(posts_meta)} posts.")
+    logger.info(f"✅ Blog regenerado com {len(posts_meta)} posts sincronizados.")
 
 if __name__ == "__main__":
     generate_blog()

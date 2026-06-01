@@ -31,33 +31,39 @@ def generate_categories():
     categories_config = {cat["id"]: cat["nome"] for cat in config["categorias"]}
 
     for cat_slug, cat_name in categories_config.items():
-        cat_products = [p for p in products if p.get("custom_category_slug") == cat_slug]
+        # Filtra produtos pela categoria correta
+        cat_products = [p for p in products if p.get("custom_category_slug") in [cat_slug, cat_slug + "s"]]
         
         products_html = ""
         if not cat_products:
-            products_html = "<p style=\'grid-column: 1/-1; text-align: center; padding: 50px;\'>Em breve novas ofertas para esta categoria!</p>"
+            products_html = "<p style='grid-column: 1/-1; text-align: center; padding: 50px;'>Em breve novas ofertas para esta categoria!</p>"
         else:
             for p in cat_products:
-                p_name = p.get("name", "")
+                p_name = p.get("name") or p.get("title") or ""
                 discount = p.get("custom_discount_pct", 0)
+                price = p.get("price", 0)
+                old_price = p.get("originalPrice") or p.get("original_price") or price
+                image = p.get("image") or p.get("thumbnail") or ""
+                # Usa o link de afiliado pronto do dado
+                affiliate_url = p.get("custom_affiliate_url") or p.get("permalink")
                 
-                products_html += f\'\'\'
+                products_html += f'''
                 <div class="product-card">
                     <span class="badge">↓ {discount}% OFF</span>
                     <div class="product-img">
-                        <img src="{p.get(\'image\')}" alt="{p_name}" loading="lazy">
+                        <img src="{image}" alt="{p_name}" loading="lazy">
                     </div>
                     <div class="product-info">
                         <span class="category-tag">{cat_name.upper()}</span>
                         <h3>{p_name[:60]}...</h3>
                         <div class="price">
-                            <span class="old-price">R$ {p.get(\'originalPrice\', 0):.2f}</span>
-                            <span class="current-price">R$ {p.get(\'price\', 0):.2f}</span>
+                            <span class="old-price">R$ {old_price:.2f}</span>
+                            <span class="current-price">R$ {price:.2f}</span>
                         </div>
-                        <a href="https://www.mercadolivre.com.br/p/{p.get(\'id\')}?matt_tool=vendas0nline" class="btn" target="_blank">Ver Oferta no ML</a>
+                        <a href="{affiliate_url}" class="btn" target="_blank">Ver Oferta no ML</a>
                     </div>
                 </div>
-                \'\'\'
+                '''
 
         content = template.replace("{{category.name}}", cat_name)
         content = content.replace("{{category.products}}", products_html)
