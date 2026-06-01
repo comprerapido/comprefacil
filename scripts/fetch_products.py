@@ -57,9 +57,9 @@ def to_product(item, category_id):
     permalink = item.get('permalink') or ''
     affiliate_param = 'matt_tool=vendas0nline'
     if permalink:
-        separator = '&' if '?' in permalink else '?'
-        if affiliate_param not in permalink:
-            permalink = f"{permalink}{separator}{affiliate_param}"
+        # Remove parâmetros antigos se existirem para evitar duplicidade
+        permalink = permalink.split('?')[0]
+        permalink = f"{permalink}?{affiliate_param}"
 
     return {
         'id': item.get('id'),

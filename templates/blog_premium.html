@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Radar Ninja - Notícias e Reviews</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .post-card { background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .post-card h2 { margin-top: 0; }
+        .post-card a { color: #6200ea; text-decoration: none; font-weight: bold; }
+        .tag { background: #6200ea; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Blog Radar Ninja</h1>
+            <a href="/">← Voltar para a Home</a>
+        </header>
+        <div id="posts-list">
+            <!-- Os posts serão inseridos aqui pelo script -->
+        </div>
+    </div>
+    <script>
+        const posts = {{NEWS_JSON}};
+        const list = document.getElementById('posts-list');
+        posts.forEach(post => {
+            const card = document.createElement('div');
+            card.className = 'post-card';
+            card.innerHTML = `
+                <span class="tag">${post.tagLabel}</span>
+                <h2>${post.title}</h2>
+                <p>${post.excerpt}</p>
+                <a href="${post.url}">Ler Review Completa ${post.icon}</a>
+                <p><small>${post.date} • ${post.readTime} de leitura</small></p>
+            `;
+            list.appendChild(card);
+        });
+    </script>
+</body>
+</html>

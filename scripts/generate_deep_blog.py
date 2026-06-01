@@ -16,9 +16,9 @@ def slugify(text):
 def generate_long_content_with_ai(product):
     name = product.get("name") or product.get("title")
     cat = (product.get("custom_category_slug") or "OFERTAS").upper()
-    price = f"R$ {product.get("price", 0):.2f}"
-    old_price = f"R$ {product.get("originalPrice", 0) or product.get("original_price", 0):.2f}"
-    discount = f"{product.get("custom_discount_pct", 0)}%"
+    price = f"R$ {product.get('price', 0):.2f}"
+    old_price = f"R$ {product.get('originalPrice', 0) or product.get('original_price', 0):.2f}"
+    discount = f"{product.get('custom_discount_pct', 0)}%"
 
     prompt = f"""
     Gere um artigo de blog detalhado e otimizado para SEO sobre o produto "{name}" da categoria "{cat}".
@@ -53,9 +53,9 @@ def generate_long_content_with_ai(product):
 def generate_long_content_static(product):
     name = product.get("name") or product.get("title")
     cat = (product.get("custom_category_slug") or "OFERTAS").upper()
-    price = f"R$ {product.get("price", 0):.2f}"
-    old_price = f"R$ {product.get("originalPrice", 0) or product.get("original_price", 0):.2f}"
-    discount = f"{product.get("custom_discount_pct", 0)}%"
+    price = f"R$ {product.get('price', 0):.2f}"
+    old_price = f"R$ {product.get('originalPrice', 0) or product.get('original_price', 0):.2f}"
+    discount = f"{product.get('custom_discount_pct', 0)}%"
     
     sections = [
         f"<h2>Introdução: Por que o {name} está chamando atenção hoje?</h2>",
