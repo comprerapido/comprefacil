@@ -5,16 +5,19 @@ from datetime import datetime
 
 def get_safe_image(url):
     if not url: return ""
-    return url.replace("-I.jpg", "-V.jpg").replace("-O.jpg", "-V.jpg")
+    # O formato -V é essencial para funcionar no GitHub Pages sem bloqueio
+    return url.replace("-O.jpg", "-V.jpg").replace("-I.jpg", "-V.jpg").replace("-L.jpg", "-V.jpg")
 
 def fetch_products(category_id, keywords):
     print(f"🔍 Buscando produtos para: {category_id}...")
     url = 'https://api.mercadolibre.com/sites/MLB/search'
-    # Busca simplificada para garantir resultados
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    }
     params = {'q': keywords[0] if isinstance(keywords, list) else keywords, 'limit': 20, 'condition': 'new'}
     products = []
     try:
-        response = requests.get(url, params=params, timeout=10)
+        response = requests.get(url, params=params, headers=headers, timeout=15)
         if response.status_code == 200:
             data = response.json()
             for item in data.get('results', []):
@@ -49,13 +52,18 @@ def main():
     all_products = []
     for cat in config['categorias']:
         res = fetch_products(cat['id'], cat['keywords'])
-        all_products.extend(res)
+        if res:
+            all_products.extend(res)
 
-    central_path = os.path.join(base_dir, 'data/products/offers.json')
-    os.makedirs(os.path.dirname(central_path), exist_ok=True)
-    with open(central_path, 'w', encoding='utf-8') as f:
-        json.dump(all_products, f, indent=2, ensure_ascii=False)
-    print(f"✅ Total: {len(all_products)} produtos.")
+    # Se a API falhar, não sobrescrevemos com vazio para não quebrar o site
+    if all_products:
+        central_path = os.path.join(base_dir, 'data/products/offers.json')
+        os.makedirs(os.path.dirname(central_path), exist_ok=True)
+        with open(central_path, 'w', encoding='utf-8') as f:
+            json.dump(all_products, f, indent=2, ensure_ascii=False)
+        print(f"✅ Total: {len(all_products)} produtos atualizados.")
+    else:
+        print("⚠️ Nenhuma oferta nova encontrada. Mantendo dados atuais.")
 
 if __name__ == '__main__':
     main()
