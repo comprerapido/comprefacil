@@ -27,16 +27,16 @@ class GlobalScheduler:
     
     # Configuração de sites e offsets (em minutos)
     SITES_CONFIG = {
-        "radar-tech": {"offset": 0, "name": "Radar Tech", "category": "Tecnologia"},
-        "radar-gamer": {"offset": 6, "name": "Radar Gamer", "category": "Games"},
-        "radar-casa": {"offset": 12, "name": "Radar Casa", "category": "Casa"},
-        "radar-eletro": {"offset": 18, "name": "Radar Eletro", "category": "Eletrônicos"},
-        "radar-pet": {"offset": 24, "name": "Radar Pet", "category": "Pets"},
-        "radar-bebe": {"offset": 30, "name": "Radar Bebê", "category": "Bebê"},
-        "radar-beleza": {"offset": 36, "name": "Radar Beleza", "category": "Beleza"},
-        "radar-fitness": {"offset": 42, "name": "Radar Fitness", "category": "Fitness"},
-        "radar-auto": {"offset": 48, "name": "Radar Auto", "category": "Automóvel"},
-        "radar-ferramentas": {"offset": 54, "name": "Radar Ferramentas", "category": "Ferramentas"},
+        "achado-certo-tech": {"offset": 0, "name": "Achado Certo Tech", "category": "Tecnologia"},
+        "achado-certo-gamer": {"offset": 6, "name": "Achado Certo Gamer", "category": "Games"},
+        "achado-certo-casa": {"offset": 12, "name": "Achado Certo Casa", "category": "Casa"},
+        "achado-certo-eletro": {"offset": 18, "name": "Achado Certo Eletro", "category": "Eletrônicos"},
+        "achado-certo-pet": {"offset": 24, "name": "Achado Certo Pet", "category": "Pets"},
+        "achado-certo-bebe": {"offset": 30, "name": "Achado Certo Bebê", "category": "Bebê"},
+        "achado-certo-beleza": {"offset": 36, "name": "Achado Certo Beleza", "category": "Beleza"},
+        "achado-certo-fitness": {"offset": 42, "name": "Achado Certo Fitness", "category": "Fitness"},
+        "achado-certo-auto": {"offset": 48, "name": "Achado Certo Auto", "category": "Automóvel"},
+        "achado-certo-ferramentas": {"offset": 54, "name": "Achado Certo Ferramentas", "category": "Ferramentas"},
     }
     
     # Horário de operação
@@ -91,8 +91,8 @@ class GlobalScheduler:
         
         Retorna dicionário com:
         {
-            "radar-tech": [("07:00", "artigo1"), ("08:00", "artigo2"), ...],
-            "radar-gamer": [("07:06", "artigo1"), ("08:06", "artigo2"), ...],
+            "achado-certo-tech": [("07:00", "artigo1"), ("08:00", "artigo2"), ...],
+            "achado-certo-gamer": [("07:06", "artigo1"), ("08:06", "artigo2"), ...],
             ...
         }
         """

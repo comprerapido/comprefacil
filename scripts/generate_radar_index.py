@@ -41,4 +41,4 @@ if __name__ == "__main__":
     data = generate_radar_index_data()
     with open(RADAR_INDEX_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    print(f"Dados do Radar Index™ gerados em {RADAR_INDEX_FILE}")
+    print(f"Dados do Achado Certo Index™ gerados em {RADAR_INDEX_FILE}")

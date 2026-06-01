@@ -4,7 +4,7 @@ import unicodedata
 import random
 from logger import logger
 
-BASE_URL = "https://radardeprecos.github.io/radar/"
+BASE_URL = "https://comprerapido.github.io/"
 
 def slugify(text: str) -> str:
     text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('ascii')
@@ -54,9 +54,9 @@ def build_homepage(input_path: str, template_path: str, output_path: str) -> Non
     remaining_products = [p for p in sorted_products if p["id"] != hero_product["id"]]
     
     # Frases dinâmicas para o destaque
-    badges = ["🔥 DESTAQUE DO DIA", "⚡ PREÇO BAIXOU!", "✨ NOVIDADE NO RADAR", "💎 ACHADO IMPERDÍVEL", "🚀 MELHOR DESCONTO"]
+    badges = ["🔥 DESTAQUE DO DIA", "⚡ PREÇO BAIXOU!", "✨ NOVIDADE NO ACHADO CERTO", "💎 ACHADO IMPERDÍVEL", "🚀 MELHOR DESCONTO"]
     catchy_phrases = [
-        "Aproveite o maior desconto de hoje no Radar de Preços!",
+        "Aproveite o maior desconto de hoje no Achado Certo!",
         "Economize agora com esta oferta selecionada pelo nosso robô.",
         "Preço imbatível detectado! Confira os detalhes abaixo.",
         "Não perca essa oportunidade de pagar menos hoje.",
@@ -75,7 +75,7 @@ def build_homepage(input_path: str, template_path: str, output_path: str) -> Non
     # Grid de produtos - agora gerenciado pelo app.js para ser 100% dinâmico
     products_html = '<div id="featuredGrid" class="products-grid"></div>'
     
-    seo_title = "Radar de Preços — As Melhores Ofertas do Mercado Livre Hoje"
+    seo_title = "Achado Certo — As Melhores Ofertas do Mercado Livre Hoje"
     meta_description = "Economize com as melhores ofertas curadas do Mercado Livre. Descubra produtos com desconto de até 70% em eletrônicos, casa, beleza e muito mais."
     canonical_url = BASE_URL
     

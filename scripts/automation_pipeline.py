@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Pipeline de Automação Completo do Radar de Preços
+Pipeline de Automação Completo do Achado Certo
 Coordena: Fetch → Score → Generate Content → Deduplicate → Publish
 """
 
@@ -13,8 +13,8 @@ from datetime import datetime
 from pathlib import Path
 from logger import logger
 
-class RadarAutomationPipeline:
-    """Coordena todo o pipeline de automação do Radar de Preços."""
+class AchadoCertoAutomationPipeline:
+    """Coordena todo o pipeline de automação do Achado Certo."""
     
     def __init__(self, project_root: str = "."):
         self.project_root = project_root
@@ -141,7 +141,7 @@ class RadarAutomationPipeline:
         Executa o pipeline completo de automação.
         """
         logger.info("=" * 80)
-        logger.info("🚀 INICIANDO PIPELINE DE AUTOMAÇÃO DO RADAR DE PREÇOS")
+        logger.info("🚀 INICIANDO PIPELINE DE AUTOMAÇÃO DO ACHADO CERTO")
         logger.info("=" * 80)
         
         pipeline_steps = [
@@ -216,7 +216,7 @@ def main():
     project_root = os.path.dirname(script_dir)
     
     # Criar e executar pipeline
-    pipeline = RadarAutomationPipeline(project_root)
+    pipeline = AchadoCertoAutomationPipeline(project_root)
     success = pipeline.run_full_pipeline()
     
     # Retornar código de saída apropriado

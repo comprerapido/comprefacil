@@ -11,7 +11,7 @@ from datetime import datetime
 from typing import Dict, Any
 from logger import logger
 
-BASE_URL = "https://radardeprecos.github.io/radar/"
+BASE_URL = "https://comprerapido.github.io/"
 
 def slugify(text: str) -> str:
     """Converte texto em slug amigável para URL."""
@@ -80,8 +80,8 @@ def generate_product_page_v2(product: Dict[str, Any], template_path: str, output
     generated_content = product.get('generated_description', '')
     
     # SEO
-    seo_title = f"{product_name} com {discount_pct}% de Desconto | Radar de Preços"
-    meta_description = f"Confira a oferta de {product_name} no Radar de Preços. Economize com os melhores descontos do Mercado Livre. {discount_pct}% OFF!"
+    seo_title = f"{product_name} com {discount_pct}% de Desconto | Achado Certo"
+    meta_description = f"Confira a oferta de {product_name} no Achado Certo. Economize com os melhores descontos do Mercado Livre. {discount_pct}% OFF!"
     canonical_url = f"{BASE_URL}ofertas/{category_slug}/{product_slug}-{product_id}.html"
     
     # Schema.json
@@ -93,7 +93,7 @@ def generate_product_page_v2(product: Dict[str, Any], template_path: str, output
         "description": f"Oferta de {product_name} com {discount_pct}% de desconto. Preço: R$ {price:.2f}",
         "brand": {
             "@type": "Brand",
-            "name": "Radar de Preços"
+            "name": "Achado Certo"
         },
         "offers": {
             "@type": "Offer",

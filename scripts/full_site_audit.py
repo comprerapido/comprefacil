@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Auditoria de "Pente Fino" do Radar de Preços
+Auditoria de "Pente Fino" do Achado Certo
 Verifica integridade, SEO, AdSense e performance de todas as 208 páginas
 """
 
@@ -70,7 +70,7 @@ def audit_product_page(product):
 def main():
     """Executa auditoria completa."""
     print("=" * 80)
-    print("AUDITORIA DE PENTE FINO - RADAR DE PREÇOS")
+    print("AUDITORIA DE PENTE FINO - ACHADO CERTO")
     print("=" * 80)
     print()
     
