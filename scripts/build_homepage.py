@@ -1,23 +1,10 @@
 import json
 import os
-import base64
 from logger import logger
 
 INPUT_FILE = "data/products/offers.json"
 TEMPLATE_FILE = "templates/homepage.html"
 OUTPUT_FILE = "index.html"
-
-def get_file_as_base64(path):
-    try:
-        # Remover barra inicial se houver
-        clean_path = path.lstrip("/")
-        if os.path.exists(clean_path):
-            with open(clean_path, "rb") as f:
-                encoded = base64.b64encode(f.read()).decode('utf-8')
-                return f"data:image/gif;base64,{encoded}"
-    except Exception as e:
-        logger.error(f"Erro base64 para {path}: {e}")
-    return ""
 
 def format_price(value) -> str:
     try:
@@ -26,7 +13,7 @@ def format_price(value) -> str:
         return "0.00"
 
 def build_homepage():
-    logger.info("🏠 Construindo homepage definitiva com Base64...")
+    logger.info("🏠 Construindo homepage com imagens REAIS e estáveis...")
     
     if not os.path.exists(INPUT_FILE) or not os.path.exists(TEMPLATE_FILE):
         logger.error("Arquivos necessários não encontrados!")
@@ -38,40 +25,34 @@ def build_homepage():
     with open(TEMPLATE_FILE, "r", encoding="utf-8") as f:
         template = f.read()
 
-    # Ordenar por desconto
-    products = sorted(products, key=lambda x: x.get("custom_discount_pct", 0), reverse=True)
-
     if not products:
         logger.error("Nenhum produto encontrado no JSON!")
         return
 
     # Hero Section
     hero = products[0]
-    hero_img_base64 = get_file_as_base64(hero.get("image_local", ""))
-    
     hero_html = f'''
     <div class="hero-product">
         <div class="hero-badge" style="background: #ef4444; color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 10px; display: inline-block;">MENOR PREÇO DA HISTÓRIA ↑</div>
-        <img src="{hero_img_base64}" alt="{hero.get("title")}" style="background: white; padding: 15px; border-radius: 12px; width: 100%; max-width: 300px; display: block; margin: 0 auto;">
+        <img src="{hero.get("image")}" alt="{hero.get("title")}" style="background: white; padding: 15px; border-radius: 12px; width: 100%; max-width: 300px; display: block; margin: 0 auto;">
         <div class="hero-price" style="font-size: 32px; font-weight: 800; margin-top: 15px;">R$ {format_price(hero.get("price"))}</div>
     </div>
     '''
 
     # Featured Grid
     grid_html = ""
-    for p in products[1:9]:
-        p_img_base64 = get_file_as_base64(p.get("image_local", ""))
+    for p in products:
         grid_html += f'''
-        <div class="card" style="background: white; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0; position: relative;">
-            <div class="card-discount">↓ {p.get("custom_discount_pct")}%</div>
-            <div class="card-img" style="height: 160px; display: flex; align-items: center; justify-content: center;">
-                <img src="{p_img_base64}" alt="{p.get("title")}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        <div class="card" style="background: white; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0; position: relative; display: flex; flex-direction: column;">
+            <div class="card-discount" style="position: absolute; top: 10px; right: 10px; background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 12px;">↓ {p.get("custom_discount_pct")}%</div>
+            <div class="card-img" style="height: 160px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                <img src="{p.get("image")}" alt="{p.get("title")}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
             </div>
-            <h3 style="font-size: 14px; margin: 10px 0; height: 40px; overflow: hidden;">{p.get("title")[:50]}...</h3>
-            <div class="price-row">
-                <span style="font-size: 18px; font-weight: 800; color: #28a745;">R$ {format_price(p.get("price"))}</span>
+            <h3 style="font-size: 14px; margin: 0 0 10px 0; height: 40px; overflow: hidden; color: #1e293b;">{p.get("title")}</h3>
+            <div class="price-row" style="margin-top: auto;">
+                <span style="font-size: 18px; font-weight: 800; color: #059669;">R$ {format_price(p.get("price"))}</span>
             </div>
-            <a href="{p.get("custom_affiliate_url")}" target="_blank" style="display: block; background: #28a745; color: white; text-align: center; padding: 8px; border-radius: 6px; margin-top: 15px; font-weight: bold; text-decoration: none;">Ver oferta</a>
+            <a href="{p.get("custom_affiliate_url")}" target="_blank" style="display: block; background: #059669; color: white; text-align: center; padding: 10px; border-radius: 8px; margin-top: 15px; font-weight: bold; text-decoration: none; font-size: 14px;">Ver oferta no Mercado Livre</a>
         </div>
         '''
 
@@ -81,7 +62,6 @@ def build_homepage():
     content = content.replace("{{meta.description}}", "Economize com o Radar Ninja. Monitoramos os menores preços do Mercado Livre em celulares, games e muito mais.")
     content = content.replace("{{hero_section}}", hero_html)
     content = content.replace("{{featured_products_grid}}", grid_html)
-    content = content.replace("{{table_rows}}", "")
     
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(content)
