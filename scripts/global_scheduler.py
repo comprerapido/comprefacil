@@ -12,7 +12,7 @@ Coordena publicações de múltiplos sites com:
 Configuração:
 - 12 sites ativos
 - Cada site com offset de 6 minutos
-- Total: 192 publicações/dia (12 sites × 16 horas)
+- Total: 288 publicações/dia (12 sites × 24 horas)
 """
 
 import os
@@ -42,9 +42,9 @@ class GlobalScheduler:
     }
     
     # Horário de operação
-    START_HOUR = 7    # 07:00
-    END_HOUR = 23     # 23:00
-    HOURS_PER_DAY = END_HOUR - START_HOUR  # 16 horas
+    START_HOUR = 0    # 00:00
+    END_HOUR = 24     # 23:59
+    HOURS_PER_DAY = 24 # 24 horas
     
     def __init__(self, db_path: str = "data/scheduler.db"):
         self.db_path = db_path
