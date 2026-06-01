@@ -57,9 +57,9 @@ def to_product(item, category_id):
     permalink = item.get('permalink') or ''
     affiliate_param = 'matt_tool=vendas0nline'
     if permalink:
-        # Remove parâmetros antigos se existirem para evitar duplicidade
-        permalink = permalink.split('?')[0]
-        permalink = f"{permalink}?{affiliate_param}"
+        # Garantir link direto e limpo
+        base_url = permalink.split('?')[0]
+        permalink = f"{base_url}?{affiliate_param}"
 
     return {
         'id': item.get('id'),
@@ -110,8 +110,8 @@ def fetch_products(category_id, keywords):
             print(f"❌ Erro na busca '{query}': {e}")
 
     if not products:
-        print('⚠ Nenhum produto válido retornado. Usando dados de exemplo da categoria correta...')
-        return generate_example_products(category_id)
+        print(f'⚠ Nenhum produto válido retornado para {category_id}.')
+        return []
 
     print(f"✓ {len(products)} produtos válidos encontrados para {category_id}")
     return products[:50]
