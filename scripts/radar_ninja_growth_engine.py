@@ -732,6 +732,22 @@ def main() -> Dict[str, Any]:
     write_health_report(stats)
     save_json(DATA_DIR / "growth_engine_report.json", {"updated_at": TODAY_ISO, "stats": stats})
     print(json.dumps(stats, ensure_ascii=False, indent=2))
+    
+    # Salvar histórico de estatísticas para monitoramento
+    stats_history_path = os.path.join(DATA_DIR, 'stats_history.json')
+    history = []
+    if os.path.exists(stats_history_path):
+        try:
+            with open(stats_history_path, 'r') as f:
+                history = json.load(f)
+        except: pass
+    
+    stats['timestamp'] = datetime.now(timezone.utc).isoformat()
+    history.append(stats)
+    # Manter apenas os últimos 50 registros
+    with open(stats_history_path, 'w') as f:
+        json.dump(history[-50:], f, indent=2)
+
     return stats
 
 
