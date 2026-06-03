@@ -590,5 +590,101 @@
       "original_price": 289.0,
       "discount_pct": 5
     }
+  ],
+  "MLB3892456701": [
+    {
+      "date": "2026-06-03T14:14:13Z",
+      "price": 1899.99,
+      "original_price": 2399.0,
+      "discount_pct": 21
+    }
+  ],
+  "MLB4123789056": [
+    {
+      "date": "2026-06-03T14:14:13Z",
+      "price": 2799.0,
+      "original_price": 3499.0,
+      "discount_pct": 20
+    }
+  ],
+  "MLB5678234190": [
+    {
+      "date": "2026-06-03T14:14:13Z",
+      "price": 4299.0,
+      "original_price": 5999.0,
+      "discount_pct": 28
+    }
+  ],
+  "MLB6901345278": [
+    {
+      "date": "2026-06-03T14:14:13Z",
+      "price": 449.9,
+      "original_price": 599.0,
+      "discount_pct": 25
+    }
+  ],
+  "MLB7234567890": [
+    {
+      "date": "2026-06-03T14:14:13Z",
+      "price": 1599.0,
+      "original_price": 2199.0,
+      "discount_pct": 27
+    }
+  ],
+  "MLB8345678901": [
+    {
+      "date": "2026-06-03T14:14:13Z",
+      "price": 299.9,
+      "original_price": 399.0,
+      "discount_pct": 25
+    }
+  ],
+  "MLB9456789012": [
+    {
+      "date": "2026-06-03T14:14:13Z",
+      "price": 449.99,
+      "original_price": 649.99,
+      "discount_pct": 31
+    }
+  ],
+  "MLB1023456789": [
+    {
+      "date": "2026-06-03T14:14:13Z",
+      "price": 389.9,
+      "original_price": 549.0,
+      "discount_pct": 29
+    }
+  ],
+  "MLB1134567890": [
+    {
+      "date": "2026-06-03T14:14:13Z",
+      "price": 1299.0,
+      "original_price": 1799.0,
+      "discount_pct": 28
+    }
+  ],
+  "MLB1245678901": [
+    {
+      "date": "2026-06-03T14:14:13Z",
+      "price": 2199.0,
+      "original_price": 2699.0,
+      "discount_pct": 19
+    }
+  ],
+  "MLB1356789012": [
+    {
+      "date": "2026-06-03T14:14:13Z",
+      "price": 299.0,
+      "original_price": 399.0,
+      "discount_pct": 25
+    }
+  ],
+  "MLB1467890123": [
+    {
+      "date": "2026-06-03T14:14:13Z",
+      "price": 1499.0,
+      "original_price": 2099.0,
+      "discount_pct": 29
+    }
   ]
 }

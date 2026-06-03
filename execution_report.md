@@ -2,7 +2,7 @@
 
 | Métrica | Detalhe |
 | :--- | :--- |
-| **Data/Hora** | 03/06/2026 11:35:18 UTC |
+| **Data/Hora** | 03/06/2026 13:59:21 UTC |
 | **Status Geral** | SUCESSO |
 | **Novos Produtos Coletados** | 0 |
 | **Total de Produtos Ativos** | 66 |
