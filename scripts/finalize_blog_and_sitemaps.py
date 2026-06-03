@@ -93,61 +93,78 @@ def extract_published(content: str) -> str:
     return f"{day} {months.get(month, month)} {year}"
 
 
-def has_image(content: str) -> bool:
-    return bool(re.search(r"<img\s+[^>]*src=[\"'][^\"']+[\"']", content, re.I))
+def has_image(content: str, post_name: str) -> bool:
+    # Para posts que não são de produtos (sem MLB\d+ no nome), não exigimos imagem.
+    if not re.search(r"MLB\d+", post_name):
+        return True
+    return bool(re.search(r"<img\s+[^>]*src=['\"]([^'\"]+)['\"]", content, re.I))
 
 
 def cleanup_news_posts() -> list[Path]:
     posts_dir = ROOT / "noticias" / "posts"
-    posts = sorted(posts_dir.glob("*.html")) if posts_dir.exists() else []
-    groups: dict[str, list[Path]] = defaultdict(list)
+    posts = sorted(posts_dir.glob("**/*.html")) if posts_dir.exists() else []
+    product_groups: dict[str, list[Path]] = defaultdict(list)
+    non_product_posts: list[Path] = []
+
     for post in posts:
         product_match = re.search(r"(MLB\d+)", post.name)
-        key = product_match.group(1) if product_match else post.stem
-        groups[key].append(post)
+        if product_match:
+            key = product_match.group(1)
+            product_groups[key].append(post)
+        else:
+            non_product_posts.append(post)
 
-    kept: list[Path] = []
-    for _, items in groups.items():
-        valid_items = [p for p in items if has_image(p.read_text(encoding="utf-8", errors="ignore"))]
+    kept_product_posts: list[Path] = []
+    for _, items in product_groups.items():
+        valid_items = [p for p in items if has_image(p.read_text(encoding="utf-8", errors="ignore"), p.name)]
         if not valid_items:
             for p in items:
                 p.unlink()
             continue
         latest = max(valid_items, key=lambda p: p.name)
-        kept.append(latest)
+        kept_product_posts.append(latest)
         for p in items:
             if p != latest:
                 p.unlink()
-    return sorted(kept, reverse=True)
 
+    all_valid_posts = non_product_posts + kept_product_posts
+    print(f"DEBUG: all_valid_posts antes de retornar: {[p.name for p in all_valid_posts]}")
+    return sorted(all_valid_posts, key=lambda p: p.name, reverse=True)
+
+
+from bs4 import BeautifulSoup
 
 def rewrite_news_index(valid_posts: list[Path]) -> None:
-    index = ROOT / "noticias" / "index.html"
-    if not index.exists():
+    index_path = ROOT / "noticias" / "index.html"
+    if not index_path.exists():
         return
-    entries = []
-    for idx, post in enumerate(valid_posts):
+
+    with open(index_path, "r", encoding="utf-8") as f:
+        soup = BeautifulSoup(f, "html.parser")
+
+    # Encontrar a lista de artigos existente
+    article_list = soup.find("main", class_="wrap").find("ul")
+    if not article_list:
+        # Se não encontrar, criar uma nova lista
+        article_list = soup.new_tag("ul")
+        soup.find("main", class_="wrap").append(article_list)
+    else:
+        # Limpar os itens existentes
+        article_list.clear()
+
+    for post in valid_posts:
         content = post.read_text(encoding="utf-8", errors="ignore")
         title = extract_title(content)
-        excerpt = extract_description(content)
-        date = extract_published(content)
-        url = post.relative_to(index.parent).as_posix()
-        entries.append(
-            "      {\n"
-            f"        id: {idx}, tag: 'analise', tagLabel: '📊 Análise', tagClass: 'tag-analise',\n"
-            "        icon: '🛒', "
-            f"title: {title!r},\n"
-            f"        excerpt: {excerpt!r},\n"
-            f"        date: {date!r}, readTime: '15 min', featured: {str(idx == 0).lower()}, url: {url!r}\n"
-            "      }"
-        )
-    new_array = "    const NEWS = [\n" + ",\n".join(entries) + "\n    ];"
-    content = index.read_text(encoding="utf-8", errors="ignore")
-    pattern = r"\s*const NEWS = \[.*?\n\s*\];"
-    if not re.search(pattern, content, flags=re.S):
-        raise RuntimeError("Não foi possível localizar o array NEWS no índice de notícias.")
-    updated = re.sub(pattern, "\n" + new_array, content, flags=re.S)
-    index.write_text(updated, encoding="utf-8")
+        url = rel_url(post)
+
+        li_tag = soup.new_tag("li")
+        a_tag = soup.new_tag("a", href=url)
+        a_tag.string = title
+        li_tag.append(a_tag)
+        article_list.append(li_tag)
+
+    with open(index_path, "w", encoding="utf-8") as f:
+        f.write(str(soup))
 
 
 def html_files() -> list[Path]:
