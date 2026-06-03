@@ -14,9 +14,18 @@ function formatPrice(value) {
 
 function ensureAffiliateLink(url) {
     if (!url) return '#';
-    if (url.includes(AFFILIATE_PARAM)) return url;
-    const separator = url.includes('?') ? '&' : '?';
-    return `${url}${separator}${AFFILIATE_PARAM}`;
+    
+    // 1. Remover qualquer matt_tool existente para evitar duplicatas ou conflitos
+    let cleanUrl = url.replace(/([?&])matt_tool=[^&]*/g, '');
+    
+    // 2. Limpar possíveis separadores órfãos no final (& ou ?)
+    cleanUrl = cleanUrl.replace(/[?&]$/, '');
+    
+    // 3. Adicionar o nosso parâmetro soberano
+    const separator = cleanUrl.includes('?') ? '&' : '?';
+    const finalUrl = `${cleanUrl}${separator}${AFFILIATE_PARAM}`;
+    
+    return finalUrl;
 }
 function getRandomProducts(products, count) {
     return [...products].sort(() => Math.random() - 0.5).slice(0, count);
