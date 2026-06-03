@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-03T16:14:09Z",
+  "updated_at": "2026-06-03T21:37:08Z",
   "default_site": {
     "domain": "comprerapido.github.io",
     "site_name": "Compre Rápido",
@@ -29,22 +29,6 @@
       "products": 12
     },
     {
-      "slug": "ferramentas",
-      "name": "Ferramentas",
-      "pillar": "/guias/guia-de-compra-ferramentas-2026/",
-      "category_page": "/categorias/ferramentas/",
-      "best_page": "/melhores-2026/melhores-ferramentas-2026/",
-      "products": 4
-    },
-    {
-      "slug": "eletrodomesticos",
-      "name": "Eletrodomésticos",
-      "pillar": "/guias/guia-de-compra-eletrodomesticos-2026/",
-      "category_page": "/categorias/eletrodomesticos/",
-      "best_page": "/melhores-2026/melhores-eletrodomesticos-2026/",
-      "products": 8
-    },
-    {
       "slug": "casa",
       "name": "Casa e cozinha",
       "pillar": "/guias/guia-de-compra-casa-2026/",
@@ -61,12 +45,20 @@
       "products": 13
     },
     {
-      "slug": "games",
-      "name": "Games e consoles",
-      "pillar": "/guias/guia-de-compra-games-2026/",
-      "category_page": "/categorias/games/",
-      "best_page": "/melhores-2026/melhores-games-2026/",
-      "products": 11
+      "slug": "eletrodomesticos",
+      "name": "Eletrodomésticos",
+      "pillar": "/guias/guia-de-compra-eletrodomesticos-2026/",
+      "category_page": "/categorias/eletrodomesticos/",
+      "best_page": "/melhores-2026/melhores-eletrodomesticos-2026/",
+      "products": 8
+    },
+    {
+      "slug": "ferramentas",
+      "name": "Ferramentas",
+      "pillar": "/guias/guia-de-compra-ferramentas-2026/",
+      "category_page": "/categorias/ferramentas/",
+      "best_page": "/melhores-2026/melhores-ferramentas-2026/",
+      "products": 4
     },
     {
       "slug": "informatica",
@@ -74,6 +66,14 @@
       "pillar": "/guias/guia-de-compra-informatica-2026/",
       "category_page": "/categorias/informatica/",
       "best_page": "/melhores-2026/melhores-informatica-2026/",
+      "products": 11
+    },
+    {
+      "slug": "games",
+      "name": "Games e consoles",
+      "pillar": "/guias/guia-de-compra-games-2026/",
+      "category_page": "/categorias/games/",
+      "best_page": "/melhores-2026/melhores-games-2026/",
       "products": 11
     },
     {
