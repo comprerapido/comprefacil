@@ -1,6 +1,15 @@
 User-agent: *
 Allow: /
-Disallow: /data/
-Disallow: /assets/js/
-
+Disallow: /admin/
+Disallow: /api/
+Disallow: /temp/
+Disallow: /*.json$
+# Crawl delay
+Crawl-delay: 1
+# Sitemaps do Portal Radar de Preços
 Sitemap: https://comprerapido.github.io/sitemap.xml
+Sitemap: https://comprerapido.github.io/sitemap-paginas.xml
+Sitemap: https://comprerapido.github.io/sitemap-categorias.xml
+Sitemap: https://comprerapido.github.io/sitemap-produtos.xml
+Sitemap: https://comprerapido.github.io/sitemap-guias.xml
+Sitemap: https://comprerapido.github.io/sitemap-noticias.xml

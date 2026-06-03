@@ -1,0 +1,69 @@
+
+[92m============================================================[0m
+[92m🤖 INICIANDO CICLO COMPLETO DE AUTOMAÇÃO[0m
+[92mTimestamp: 2026-06-03 02:47:39[0m
+[92m============================================================[0m
+
+[94m============================================================[0m
+[94m▶ 1️⃣  Buscando novos produtos do Mercado Livre[0m
+[94m============================================================[0m
+[92m✓ 1️⃣  Buscando novos produtos do Mercado Livre concluído com sucesso[0m
+
+[94m============================================================[0m
+[94m▶ 2️⃣  Pontuando produtos por relevância[0m
+[94m============================================================[0m
+[92m✓ 2️⃣  Pontuando produtos por relevância concluído com sucesso[0m
+
+[94m============================================================[0m
+[94m▶ 3️⃣  Gerando novo artigo de blog[0m
+[94m============================================================[0m
+Artigo longo gerado: noticias/posts/analise-completa-ROBO_2_AFILIADO-2026-06-03-02-47-39.html
+
+[92m✓ 3️⃣  Gerando novo artigo de blog concluído com sucesso[0m
+
+[94m============================================================[0m
+[94m▶ 4️⃣  Atualizando homepage com novos produtos[0m
+[94m============================================================[0m
+[92m✓ 4️⃣  Atualizando homepage com novos produtos concluído com sucesso[0m
+
+[94m============================================================[0m
+[94m▶ 5️⃣  Gerando índice de radar[0m
+[94m============================================================[0m
+Dados do Achado Certo Index™ gerados em /home/ubuntu/comprerapido.github.io/data/radar-index.json
+
+[92m✓ 5️⃣  Gerando índice de radar concluído com sucesso[0m
+
+[94m============================================================[0m
+[94m▶ 6️⃣  Finalizando blog e regenerando sitemaps[0m
+[94m============================================================[0m
+Finalização concluída.
+Posts válidos mantidos: 4
+- noticias/posts/analise-completa-ROBO_2_AFILIADO-2026-06-03-02-47-39.html
+- noticias/posts/analise-completa-ROBO_2_AFILIADO-2026-06-03-02-45-49.html
+- noticias/posts/analise-completa-ROBO_2_AFILIADO-2026-06-03-02-45-25.html
+- noticias/posts/analise-completa-MLB3755400429-2026-06-03-02-43-17.html
+Sitemaps gerados:
+- sitemap-paginas.xml: 16
+- sitemap-categorias.xml: 7
+- sitemap-guias.xml: 4
+- sitemap-noticias.xml: 4
+- sitemap-produtos.xml: 0
+- sitemap.xml: 5
+
+[92m✓ 6️⃣  Finalizando blog e regenerando sitemaps concluído com sucesso[0m
+
+[94m============================================================[0m
+[94m📊 RESUMO DO CICLO DE AUTOMAÇÃO[0m
+[94m============================================================[0m
+[92m✓[0m 1️⃣  Buscando novos produtos do Mercado Livre
+[92m✓[0m 2️⃣  Pontuando produtos por relevância
+[92m✓[0m 3️⃣  Gerando novo artigo de blog
+[92m✓[0m 4️⃣  Atualizando homepage com novos produtos
+[92m✓[0m 5️⃣  Gerando índice de radar
+[92m✓[0m 6️⃣  Finalizando blog e regenerando sitemaps
+
+[94mResultado: 6/6 etapas concluídas[0m
+[92m✓ Ciclo de automação concluído com sucesso![0m
+[92m✓ Blog atualizado com novo artigo[0m
+[92m✓ Novos produtos adicionados à homepage[0m
+[92m✓ Sitemaps regenerados[0m

@@ -1,23 +1,5 @@
 [
   {
-    "id": "TESTE_ROBO_2026",
-    "name": "Produto de Teste do Robô - Auditoria Manus",
-    "title": "Produto de Teste do Robô - Auditoria Manus",
-    "price": 99.9,
-    "originalPrice": 199.9,
-    "original_price": 199.9,
-    "permalink": "https://www.mercadolivre.com.br/p/MLB_TESTE",
-    "image": "https://http2.mlstatic.com/D_Q_NP_2X_785197-MLA98861184401_112025-AB.webp",
-    "thumbnail": "https://http2.mlstatic.com/D_Q_NP_2X_785197-MLA98861184401_112025-AB.webp",
-    "custom_category_slug": "tecnologia",
-    "custom_discount_pct": 50,
-    "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB_TESTE?matt_tool=vendas0nline",
-    "status": "expired",
-    "source_origin": "Teste Manual de Auditoria",
-    "timestamp": "2026-06-03T02:34:27.807312",
-    "score": 560.0
-  },
-  {
     "id": "MLB62321219",
     "name": "Asus ROG Ally Z1 Extreme 512GB",
     "title": "Asus ROG Ally Z1 Extreme 512GB",
@@ -31,7 +13,7 @@
     "custom_discount_pct": 47,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB62321219?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264560",
+    "last_seen": "2026-06-01T17:25:58.012722",
     "timestamp": "2026-06-01T18:55:56.285580",
     "score": 897.6
   },
@@ -49,7 +31,7 @@
     "custom_discount_pct": 46,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/asus-consola-portatil-512-gb-white-z2-rc73ya-nh003w-rog-xbox-ally-asus-ryzen-z2-wh-branco/p/MLB62321219?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264575",
+    "last_seen": "2026-06-01T17:25:58.012561",
     "timestamp": "2026-06-01T18:55:56.285487",
     "score": 872.6
   },
@@ -67,7 +49,7 @@
     "custom_discount_pct": 68,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/whey-protein-concentrado-100-900g-refil-dark-lab-sabor-morango/p/MLB26454796?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264578",
+    "last_seen": "2026-06-01T17:25:58.012540",
     "timestamp": "2026-06-01T18:55:56.285478",
     "score": 764.009
   },
@@ -85,7 +67,7 @@
     "custom_discount_pct": 67,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB26454796?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264581",
+    "last_seen": "2026-06-01T17:25:58.012733",
     "timestamp": "2026-06-01T18:55:56.285584",
     "score": 753.91
   },
@@ -103,7 +85,7 @@
     "custom_discount_pct": 65,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/creatina-monohidratada-pura-500g-dark-lab-unidade/p/MLB26796581?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264584",
+    "last_seen": "2026-06-01T17:25:58.012677",
     "timestamp": "2026-06-01T18:55:56.285560",
     "score": 708.5
   },
@@ -121,7 +103,7 @@
     "custom_discount_pct": 55,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/celular-samsung-galaxy-a07-256gb-8gb-cmera-50mp-tela-67-proteco-ip54-processador-6nm-preto/p/MLB54961556?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264586",
+    "last_seen": "2026-06-01T17:25:58.012617",
     "timestamp": "2026-06-01T18:55:56.285535",
     "score": 699.98
   },
@@ -139,7 +121,7 @@
     "custom_discount_pct": 55,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB54961556?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264588",
+    "last_seen": "2026-06-01T17:25:58.012718",
     "timestamp": "2026-06-01T18:55:56.285579",
     "score": 699.98
   },
@@ -157,7 +139,7 @@
     "custom_discount_pct": 55,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/celular-samsung-galaxy-a17-5g-com-ia-128gb-4gb-ram-cm-de-50mp-tela-de-67-nfc-ip54-cinza/p/MLB55521828?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264591",
+    "last_seen": "2026-06-01T17:25:58.012651",
     "timestamp": "2026-06-01T18:55:56.285551",
     "score": 698.99
   },
@@ -175,7 +157,7 @@
     "custom_discount_pct": 59,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/cooktop-a-gas-fischer-4-bocas-fit-line-trempe-esmaltada-aramado/p/MLB42641505?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264593",
+    "last_seen": "2026-06-01T17:25:58.012557",
     "timestamp": "2026-06-01T18:55:56.285485",
     "score": 688.204
   },
@@ -193,7 +175,7 @@
     "custom_discount_pct": 59,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB42641505?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264595",
+    "last_seen": "2026-06-01T17:25:58.012729",
     "timestamp": "2026-06-01T18:55:56.285583",
     "score": 687.89
   },
@@ -211,7 +193,7 @@
     "custom_discount_pct": 49,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/samsung-galaxy-tab-a11-5g-6gb-128gb-cinza/p/MLB63783529?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264597",
+    "last_seen": "2026-06-01T17:25:58.012594",
     "timestamp": "2026-06-01T18:55:56.285526",
     "score": 680.4
   },
@@ -229,7 +211,7 @@
     "custom_discount_pct": 48,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/smartphone-samsung-galaxy-a36-5g-128gb-6gb-ram-cmera-tripla-de-ate-50mp-selfie-de-12mp-ip67-super-amoled-67-nfc-recursos-ai-android-e-seguranca-snapdragon-preto/p/MLB47115842?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264599",
+    "last_seen": "2026-06-01T17:25:58.012673",
     "timestamp": "2026-06-01T18:55:56.285559",
     "score": 655.0
   },
@@ -247,7 +229,7 @@
     "custom_discount_pct": 42,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/smart-tv-philco-58-p58vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110220v/p/MLB67275824?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264602",
+    "last_seen": "2026-06-01T17:25:58.012583",
     "timestamp": "2026-06-01T18:55:56.285522",
     "score": 640.0
   },
@@ -265,7 +247,7 @@
     "custom_discount_pct": 57,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/parafusadeira-furadeira-c-2-baterias-maleta-kit-completo-led-eixo-flexivel-varios-niveis-torque/p/MLB50181290?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264604",
+    "last_seen": "2026-06-01T17:25:58.012605",
     "timestamp": "2026-06-01T18:55:56.285531",
     "score": 637.301
   },
@@ -283,7 +265,7 @@
     "custom_discount_pct": 43,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110220v/p/MLB67267597?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264606",
+    "last_seen": "2026-06-01T17:25:58.012620",
     "timestamp": "2026-06-01T18:55:56.285536",
     "score": 630.5
   },
@@ -301,7 +283,7 @@
     "custom_discount_pct": 57,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/kit-10-pote-de-vidro-marmita-hermetico-370ml-freezer-fitness-rishon/p/MLB66060206?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264608",
+    "last_seen": "2026-06-01T17:25:58.012545",
     "timestamp": "2026-06-01T18:55:56.285480",
     "score": 629.274
   },
@@ -319,7 +301,7 @@
     "custom_discount_pct": 57,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB66060206?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264610",
+    "last_seen": "2026-06-01T17:25:58.012737",
     "timestamp": "2026-06-01T18:55:56.285586",
     "score": 629.184
   },
@@ -337,7 +319,7 @@
     "custom_discount_pct": 56,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor/p/MLB25929487?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264613",
+    "last_seen": "2026-06-01T17:25:58.012700",
     "timestamp": "2026-06-01T18:55:56.285572",
     "score": 619.0
   },
@@ -355,7 +337,7 @@
     "custom_discount_pct": 44,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/smart-tv-43-philco-p43vik-roku-led-dolby-audio-wi-fi-hdmi-hdr-full-hd-110220v/p/MLB63040715?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264615",
+    "last_seen": "2026-06-01T17:25:58.012647",
     "timestamp": "2026-06-01T18:55:56.285549",
     "score": 600.0
   },
@@ -373,7 +355,7 @@
     "custom_discount_pct": 54,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/jogo-6-copos-diamond-egipcio-300ml-vidro-grosso-diamante-luxo-transparente-vitrex/p/MLB65966191?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264617",
+    "last_seen": "2026-06-01T17:25:58.012689",
     "timestamp": "2026-06-01T18:55:56.285567",
     "score": 592.988
   },
@@ -391,7 +373,7 @@
     "custom_discount_pct": 35,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25/p/MLB53610161?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264619",
+    "last_seen": "2026-06-01T17:25:58.012681",
     "timestamp": "2026-06-01T18:55:56.285562",
     "score": 576.0
   },
@@ -409,7 +391,7 @@
     "custom_discount_pct": 48,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/cadeira-escritorio-ergonmica-giratoria-com-apoio-lombar-da-python-fly/p/MLB54575876?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264621",
+    "last_seen": "2026-06-01T17:25:58.012549",
     "timestamp": "2026-06-01T18:55:56.285482",
     "score": 566.136
   },
@@ -427,7 +409,7 @@
     "custom_discount_pct": 48,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB54575876?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264623",
+    "last_seen": "2026-06-01T17:25:58.012741",
     "timestamp": "2026-06-01T18:55:56.285587",
     "score": 566.037
   },
@@ -445,7 +427,7 @@
     "custom_discount_pct": 50,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3386925565?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264625",
+    "last_seen": "2026-06-01T17:25:58.012745",
     "timestamp": "2026-06-01T18:55:56.285589",
     "score": 565.0
   },
@@ -463,7 +445,7 @@
     "custom_discount_pct": 49,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/kit-c-36-envelopes-252-cromos--copa-do-mundo-fifa-2026/up/MLBU3881327409?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264628",
+    "last_seen": "2026-06-01T17:25:58.012654",
     "timestamp": "2026-06-01T18:55:56.285552",
     "score": 563.7
   },
@@ -481,7 +463,7 @@
     "custom_discount_pct": 49,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/perfume-sedutor-arabe-sabah-100ml-original-feminino/up/MLBU3054985330?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264630",
+    "last_seen": "2026-06-01T17:25:58.012572",
     "timestamp": "2026-06-01T18:55:56.285517",
     "score": 551.39
   },
@@ -499,7 +481,7 @@
     "custom_discount_pct": 42,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/smart-tv-samsung-32-ls32h5000fgxzd-hd-led-wifi-hdmi-110220v/p/MLB66191173?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264632",
+    "last_seen": "2026-06-01T17:25:58.012696",
     "timestamp": "2026-06-01T18:55:56.285570",
     "score": 538.19
   },
@@ -517,7 +499,7 @@
     "custom_discount_pct": 48,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3247449553?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264634",
+    "last_seen": "2026-06-01T17:25:58.012748",
     "timestamp": "2026-06-01T18:55:56.285590",
     "score": 534.4
   },
@@ -535,7 +517,7 @@
     "custom_discount_pct": 47,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/aparador-de-pelos-multigroom-8-em-1-mg391715-philips/up/MLBU3347036149?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264636",
+    "last_seen": "2026-06-01T17:25:58.012628",
     "timestamp": "2026-06-01T18:55:56.285539",
     "score": 531.1320000000001
   },
@@ -553,7 +535,7 @@
     "custom_discount_pct": 46,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/lustre-led-sala-moderno-60w-3-arcos-pendente-luminaria-teto/up/MLBU3320959149?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264639",
+    "last_seen": "2026-06-01T17:25:58.012564",
     "timestamp": "2026-06-01T18:55:56.285513",
     "score": 523.8009999999999
   },
@@ -571,7 +553,7 @@
     "custom_discount_pct": 40,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/celular-samsung-galaxy-a17-com-ia-256gb-8gb-ram-cm-de-50mp-tela-de-67-nfc-ip54-cinza/p/MLB54984333?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264641",
+    "last_seen": "2026-06-01T17:25:58.012685",
     "timestamp": "2026-06-01T18:55:56.285563",
     "score": 522.0
   },
@@ -589,7 +571,7 @@
     "custom_discount_pct": 38,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110220v/p/MLB67270079?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264643",
+    "last_seen": "2026-06-01T17:25:58.012669",
     "timestamp": "2026-06-01T18:55:56.285558",
     "score": 510.0
   },
@@ -607,7 +589,7 @@
     "custom_discount_pct": 42,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/monitor-gamer-aoc-215-full-hd-gaming-120hz-1ms-22b30hm23-cor-preto/p/MLB50200257?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264645",
+    "last_seen": "2026-06-01T17:25:58.012624",
     "timestamp": "2026-06-01T18:55:56.285538",
     "score": 506.367
   },
@@ -625,7 +607,7 @@
     "custom_discount_pct": 34,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/caixa-de-som-boombox-aiwa-aws-bbs-01b-200w-ip66-30hs-de-bateria/p/MLB34113516?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264647",
+    "last_seen": "2026-06-01T17:25:58.012658",
     "timestamp": "2026-06-01T18:55:56.285553",
     "score": 457.6
   },
@@ -643,7 +625,7 @@
     "custom_discount_pct": 35,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB54963045?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264649",
+    "last_seen": "2026-06-01T17:25:58.012714",
     "timestamp": "2026-06-01T18:55:56.285577",
     "score": 440.505
   },
@@ -661,7 +643,7 @@
     "custom_discount_pct": 34,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/smartphone-motorola-moto-g35-5g-128gb-12gb-4gb-ram8gb-ram-boost-e-camera-50mp-com-ai-nfc-tela-67-com-superbrilho-grafite-vegan-leather/p/MLB41540844?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264652",
+    "last_seen": "2026-06-01T17:25:58.012707",
     "timestamp": "2026-06-01T18:55:56.285575",
     "score": 435.5
   },
@@ -679,7 +661,7 @@
     "custom_discount_pct": 38,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/creatina-monohidratada-250g-growth-supplements-sem-sabor-em-po/p/MLB19603205?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264654",
+    "last_seen": "2026-06-01T17:25:58.012639",
     "timestamp": "2026-06-01T18:55:56.285546",
     "score": 432.5
   },
@@ -697,7 +679,7 @@
     "custom_discount_pct": 36,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/secador-de-cabelos-philcopsc3500-4-em-1dobravelmotorbldc-prateado/p/MLB49652036?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264656",
+    "last_seen": "2026-06-01T17:25:58.012579",
     "timestamp": "2026-06-01T18:55:56.285521",
     "score": 431.65
   },
@@ -715,7 +697,7 @@
     "custom_discount_pct": 26,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3456789019?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264659",
+    "last_seen": "2026-06-01T17:25:58.012783",
     "timestamp": "2026-06-01T18:55:56.285607",
     "score": 430.0
   },
@@ -733,7 +715,7 @@
     "custom_discount_pct": 34,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/monitor-gamer-lg-ultragear-24-24gs60f-b-ips-full-hd-180hz-1ms-gtg-nvidia-g-sync-amd-freesync-hdr10-srgb-99-hdmi-displayport/p/MLB38947984?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264661",
+    "last_seen": "2026-06-01T17:25:58.012553",
     "timestamp": "2026-06-01T18:55:56.285483",
     "score": 429.288
   },
@@ -751,7 +733,7 @@
     "custom_discount_pct": 34,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB38947984?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264663",
+    "last_seen": "2026-06-01T17:25:58.012726",
     "timestamp": "2026-06-01T18:55:56.285582",
     "score": 429.188
   },
@@ -769,7 +751,7 @@
     "custom_discount_pct": 37,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3366914567?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264665",
+    "last_seen": "2026-06-01T17:25:58.012752",
     "timestamp": "2026-06-01T18:55:56.285591",
     "score": 427.0
   },
@@ -787,7 +769,7 @@
     "custom_discount_pct": 36,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/kit-body-splash-masculino-barbarius-enigma-midtown-200ml/p/MLB68104527?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264667",
+    "last_seen": "2026-06-01T17:25:58.012609",
     "timestamp": "2026-06-01T18:55:56.285532",
     "score": 415.098
   },
@@ -805,7 +787,7 @@
     "custom_discount_pct": 34,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3456789013?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264669",
+    "last_seen": "2026-06-01T17:25:58.012760",
     "timestamp": "2026-06-01T18:55:56.285593",
     "score": 407.0
   },
@@ -823,7 +805,7 @@
     "custom_discount_pct": 32,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/kit-700-figurinha-do-album-copa-do-mundo-2026-100-envelopes/up/MLBU3911772235?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264671",
+    "last_seen": "2026-06-01T17:25:58.012613",
     "timestamp": "2026-06-01T18:55:56.285534",
     "score": 402.1
   },
@@ -841,7 +823,7 @@
     "custom_discount_pct": 33,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/kit-com-48-pacotes-de-figurinhas-panini-para-o-album-copa-do-mundo-fifa-2026/p/MLB67578878?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264673",
+    "last_seen": "2026-06-01T17:25:58.012602",
     "timestamp": "2026-06-01T18:55:56.285529",
     "score": 395.5
   },
@@ -859,7 +841,7 @@
     "custom_discount_pct": 33,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3456789017?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264676",
+    "last_seen": "2026-06-01T17:25:58.012775",
     "timestamp": "2026-06-01T18:55:56.285597",
     "score": 390.0
   },
@@ -877,7 +859,7 @@
     "custom_discount_pct": 32,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes/up/MLBU3923332394?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264678",
+    "last_seen": "2026-06-01T17:25:58.012590",
     "timestamp": "2026-06-01T18:55:56.285525",
     "score": 389.3
   },
@@ -895,7 +877,7 @@
     "custom_discount_pct": 33,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3456789027?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264680",
+    "last_seen": "2026-06-01T17:25:58.012813",
     "timestamp": "2026-06-01T18:55:56.285594",
     "score": 383.0
   },
@@ -913,7 +895,7 @@
     "custom_discount_pct": 33,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3456789016?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264682",
+    "last_seen": "2026-06-01T17:25:58.012771",
     "timestamp": "2026-06-01T18:55:56.285596",
     "score": 383.0
   },
@@ -931,7 +913,7 @@
     "custom_discount_pct": 24,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3456789028?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264684",
+    "last_seen": "2026-06-01T17:25:58.012817",
     "timestamp": "2026-06-01T18:55:56.285610",
     "score": 370.0
   },
@@ -949,7 +931,7 @@
     "custom_discount_pct": 31,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3456789026?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264686",
+    "last_seen": "2026-06-01T17:25:58.012809",
     "timestamp": "2026-06-01T18:55:56.285598",
     "score": 366.0
   },
@@ -967,7 +949,7 @@
     "custom_discount_pct": 30,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes/up/MLBU3911738233?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264688",
+    "last_seen": "2026-06-01T17:25:58.012575",
     "timestamp": "2026-06-01T18:55:56.285519",
     "score": 362.0
   },
@@ -985,7 +967,7 @@
     "custom_discount_pct": 28,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/samsung-galaxy-a06-5g-dual-sim-128gb-preto/p/MLB48946861?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264690",
+    "last_seen": "2026-06-01T17:25:58.012587",
     "timestamp": "2026-06-01T18:55:56.285523",
     "score": 357.91
   },
@@ -1003,7 +985,7 @@
     "custom_discount_pct": 28,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB48946861?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264692",
+    "last_seen": "2026-06-01T17:25:58.012711",
     "timestamp": "2026-06-01T18:55:56.285576",
     "score": 357.91
   },
@@ -1021,7 +1003,7 @@
     "custom_discount_pct": 30,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3456789014?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264704",
+    "last_seen": "2026-06-01T17:25:58.012764",
     "timestamp": "2026-06-01T18:55:56.285600",
     "score": 357.0
   },
@@ -1039,7 +1021,7 @@
     "custom_discount_pct": 30,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/kit-70-figurinhas-do-album-copa-do-mundo-2026-pronta-entrega/up/MLBU3923294598?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264707",
+    "last_seen": "2026-06-01T17:25:58.012666",
     "timestamp": "2026-06-01T18:55:56.285556",
     "score": 353.0
   },
@@ -1057,7 +1039,7 @@
     "custom_discount_pct": 25,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3456789018?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264709",
+    "last_seen": "2026-06-01T17:25:58.012779",
     "timestamp": "2026-06-01T18:55:56.285609",
     "score": 350.0
   },
@@ -1075,7 +1057,7 @@
     "custom_discount_pct": 28,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3456789021?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264711",
+    "last_seen": "2026-06-01T17:25:58.012790",
     "timestamp": "2026-06-01T18:55:56.285603",
     "score": 340.0
   },
@@ -1093,7 +1075,7 @@
     "custom_discount_pct": 28,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3456789020?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264713",
+    "last_seen": "2026-06-01T17:25:58.012787",
     "timestamp": "2026-06-01T18:55:56.285604",
     "score": 340.0
   },
@@ -1111,7 +1093,7 @@
     "custom_discount_pct": 28,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3456789025?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264716",
+    "last_seen": "2026-06-01T17:25:58.012805",
     "timestamp": "2026-06-01T18:55:56.285601",
     "score": 331.4
   },
@@ -1129,7 +1111,7 @@
     "custom_discount_pct": 27,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3456789023?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264718",
+    "last_seen": "2026-06-01T17:25:58.012798",
     "timestamp": "2026-06-01T18:55:56.285606",
     "score": 327.0
   },
@@ -1147,7 +1129,7 @@
     "custom_discount_pct": 25,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/chuveiro-eletrnico-lorenzetti-acqua-duo-ultra-7800w-branco-220v/p/MLB12543508?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264720",
+    "last_seen": "2026-06-01T17:25:58.012515",
     "timestamp": "2026-06-01T18:55:56.285457",
     "score": 312.834
   },
@@ -1165,7 +1147,7 @@
     "custom_discount_pct": 22,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/smart-tv-43-britnia-hdr10-dolby-audio-roku-tv-b43kra/p/MLB65529879?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264722",
+    "last_seen": "2026-06-01T17:25:58.012598",
     "timestamp": "2026-06-01T18:55:56.285528",
     "score": 306.3
   },
@@ -1183,7 +1165,7 @@
     "custom_discount_pct": 23,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3456789024?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264724",
+    "last_seen": "2026-06-01T17:25:58.012801",
     "timestamp": "2026-06-01T18:55:56.285611",
     "score": 295.1
   },
@@ -1201,7 +1183,7 @@
     "custom_discount_pct": 23,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/perfume-arabe-yara-lattafa-eau-de-parfum-100ml-original-c-nf/up/MLBU3619526469?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264726",
+    "last_seen": "2026-06-01T17:25:58.012692",
     "timestamp": "2026-06-01T18:55:56.285569",
     "score": 285.54200000000003
   },
@@ -1219,7 +1201,7 @@
     "custom_discount_pct": 20,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3456789012?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264728",
+    "last_seen": "2026-06-01T17:25:58.012756",
     "timestamp": "2026-06-01T18:55:56.285613",
     "score": 270.0
   },
@@ -1237,7 +1219,7 @@
     "custom_discount_pct": 17,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3456789015?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264730",
+    "last_seen": "2026-06-01T17:25:58.012768",
     "timestamp": "2026-06-01T18:55:56.285614",
     "score": 230.0
   },
@@ -1255,7 +1237,7 @@
     "custom_discount_pct": 15,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/notebook-asus-vivobook-15-ryzen-7-8gb-512gb-15-w11h-bq966w-cool-silver/p/MLB68606855?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264733",
+    "last_seen": "2026-06-01T17:25:58.012568",
     "timestamp": "2026-06-01T18:55:56.285516",
     "score": 210.7
   },
@@ -1273,7 +1255,7 @@
     "custom_discount_pct": 18,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/impressora-multifuncional-cor-epson-ecotank-l3250/p/MLB26986602?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264735",
+    "last_seen": "2026-06-01T17:25:58.012643",
     "timestamp": "2026-06-01T18:55:56.285548",
     "score": 205.7
   },
@@ -1291,7 +1273,7 @@
     "custom_discount_pct": 14,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/console-playstation-5-slim-edico-digital-825-gb/p/MLB54963150?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264737",
+    "last_seen": "2026-06-01T17:25:58.012704",
     "timestamp": "2026-06-01T18:55:56.285573",
     "score": 205.0
   },
@@ -1309,7 +1291,7 @@
     "custom_discount_pct": 14,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB3456789022?matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264739",
+    "last_seen": "2026-06-01T17:25:58.012794",
     "timestamp": "2026-06-01T18:55:56.285616",
     "score": 147.0
   },
@@ -1327,7 +1309,7 @@
     "custom_discount_pct": 5,
     "custom_affiliate_url": "https://www.mercadolivre.com.br/galaxy-buds-core-preto/p/MLB58315694?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
     "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264741",
+    "last_seen": "2026-06-01T17:25:58.012662",
     "timestamp": "2026-06-01T18:55:56.285555",
     "score": 51.544
   }

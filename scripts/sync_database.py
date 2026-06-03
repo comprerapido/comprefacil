@@ -3,8 +3,8 @@ import os
 from datetime import datetime
 from logger import logger
 
-DB_PATH = "radar/data/database/all_products.json"
-NEW_OFFERS_PATH = "radar/data/new_offers.json"
+DB_PATH = "data/database/all_products.json"
+NEW_OFFERS_PATH = "data/new_offers.json"
 
 def sync_db():
     logger.info("Sincronizando banco de dados de produtos permanentes...")
