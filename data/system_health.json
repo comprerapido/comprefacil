@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-06-03T10:23:05.938438+00:00",
+  "status": "healthy",
+  "checks": {
+    "data/all_products.json": true,
+    "data/health_report.json": true,
+    "data/broken_pages_report.json": true,
+    "sitemap.xml": true,
+    "index.html": true,
+    "product_pages": 0,
+    "category_pages": 14
+  }
+}

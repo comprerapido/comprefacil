@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-03T10:17:05Z",
+  "updated_at": "2026-06-03T10:23:05Z",
   "default_site": {
     "domain": "comprerapido.github.io",
     "site_name": "Compre Rápido",
@@ -34,6 +34,14 @@
       "products": 12
     },
     {
+      "slug": "eletrodomesticos",
+      "name": "Eletrodomésticos",
+      "pillar": "/guias/guia-de-compra-eletrodomesticos-2026/",
+      "category_page": "/categorias/eletrodomesticos/",
+      "best_page": "/melhores-2026/melhores-eletrodomesticos-2026/",
+      "products": 7
+    },
+    {
       "slug": "ferramentas",
       "name": "Ferramentas",
       "pillar": "/guias/guia-de-compra-ferramentas-2026/",
@@ -50,12 +58,12 @@
       "products": 14
     },
     {
-      "slug": "eletrodomesticos",
-      "name": "Eletrodomésticos",
-      "pillar": "/guias/guia-de-compra-eletrodomesticos-2026/",
-      "category_page": "/categorias/eletrodomesticos/",
-      "best_page": "/melhores-2026/melhores-eletrodomesticos-2026/",
-      "products": 7
+      "slug": "informatica",
+      "name": "Informática e notebooks",
+      "pillar": "/guias/guia-de-compra-informatica-2026/",
+      "category_page": "/categorias/informatica/",
+      "best_page": "/melhores-2026/melhores-informatica-2026/",
+      "products": 9
     },
     {
       "slug": "casa",
@@ -80,14 +88,6 @@
       "category_page": "/categorias/tv-e-video/",
       "best_page": "/melhores-2026/melhores-tv-e-video-2026/",
       "products": 8
-    },
-    {
-      "slug": "informatica",
-      "name": "Informática e notebooks",
-      "pillar": "/guias/guia-de-compra-informatica-2026/",
-      "category_page": "/categorias/informatica/",
-      "best_page": "/melhores-2026/melhores-informatica-2026/",
-      "products": 9
     }
   ]
 }

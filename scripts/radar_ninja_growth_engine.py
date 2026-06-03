@@ -41,33 +41,6 @@ AUTHOR_NAME = os.getenv("SITE_AUTHOR", "Equipe Editorial Compre Rápido")
 TODAY = datetime.now(timezone.utc)
 TODAY_ISO = TODAY.replace(microsecond=0).isoformat().replace("+00:00", "Z")
 YEAR = 2026
-SITE_TEMPLATE = os.getenv("SITE_TEMPLATE", "default-deals")
-
-
-def apply_site_profile() -> None:
-    """Aplica perfil multi-site definido em data/sites_config.json.
-
-    O perfil é opcional. Quando SITE_PROFILE não é informado, o robô usa as
-    variáveis SITE_BASE_URL, SITE_NAME e SITE_AUTHOR ou os padrões atuais.
-    """
-    global BASE_URL, SITE_NAME, AUTHOR_NAME, SITE_TEMPLATE
-    profile_id = os.getenv("SITE_PROFILE")
-    if not profile_id:
-        return
-    config_path = DATA_DIR / "sites_config.json"
-    if not config_path.exists():
-        return
-    try:
-        config = json.loads(config_path.read_text(encoding="utf-8"))
-    except Exception:
-        return
-    for site in config.get("sites", []):
-        if site.get("id") == profile_id:
-            BASE_URL = os.getenv("SITE_BASE_URL", site.get("base_url", BASE_URL)).rstrip("/")
-            SITE_NAME = os.getenv("SITE_NAME", site.get("site_name", SITE_NAME))
-            AUTHOR_NAME = os.getenv("SITE_AUTHOR", site.get("author", AUTHOR_NAME))
-            SITE_TEMPLATE = os.getenv("SITE_TEMPLATE", site.get("template", SITE_TEMPLATE))
-            return
 
 
 CATEGORY_NAMES = {
@@ -710,7 +683,6 @@ def ensure_robots() -> None:
 
 
 def main() -> Dict[str, Any]:
-    apply_site_profile()
     products = load_json(DATA_DIR / "all_products.json", [])
     if not isinstance(products, list):
         raise RuntimeError("data/all_products.json não contém uma lista de produtos")
