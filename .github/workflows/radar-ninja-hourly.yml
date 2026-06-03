@@ -2,8 +2,21 @@ name: 🤖 Compre Rápido — Robô Radar Ninja
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    # Executa a cada 30 minutos (nos minutos 0 e 30)
+    - cron: '0,30 * * * *'
   workflow_dispatch:
+  # Dispara o workflow quando há um push no branch main para manter o Actions ativo e aquecido
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/auto_robot.py'
+      - '.github/workflows/radar-ninja-hourly.yml'
+
+# Garante que apenas uma execução ocorra por vez para evitar conflitos de commit
+concurrency:
+  group: radar-ninja-automation
+  cancel-in-progress: false
 
 jobs:
   update-site:
@@ -25,21 +38,21 @@ jobs:
 
       - name: 📦 Instalar dependências
         run: |
-          pip install requests
+          pip install requests beautifulsoup4
 
       - name: 🔍 Verificar conectividade com API do Mercado Livre
         run: |
           echo "Testando conectividade com api.mercadolibre.com..."
-          curl -s --max-time 10 "https://api.mercadolibre.com/sites/MLB/search?q=smartphone&limit=1" | python3 -c "import json,sys; d=json.load(sys.stdin); print(f'API OK — {len(d.get(\"results\",[]))} resultado(s) retornado(s)')" || echo "AVISO: API não respondeu no teste de conectividade"
+          curl -s --max-time 10 "https://api.mercadolibre.com/sites/MLB/search?q=smartphone&limit=1" | python3 -c "import json,sys; d=json.load(sys.stdin); print(f'API Status: {d.get(\"status\") or \"OK\"}')" || echo "AVISO: API não respondeu no teste de conectividade"
 
-      - name: 🤖 Executar Robô de Automação (fetch + score + publicação)
+      - name: 🤖 Executar Robô de Automação (fetch + score + publicação + SEO)
         env:
           SCRAPERAPI_KEY: ${{ secrets.SCRAPERAPI_KEY }}
         run: |
           cd $GITHUB_WORKSPACE
           python scripts/auto_robot.py
 
-      - name: 📊 Resumo da coleta
+      - name: 📊 Resumo da coleta e integridade dos dados
         run: |
           echo "=== Estado dos arquivos de dados ==="
           ls -lh data/ || true
@@ -56,11 +69,20 @@ jobs:
                   print(f'{fname}: NAO ENCONTRADO')
           " || true
 
-      - name: 🚀 Commit e Push das mudanças
+      - name: 🚀 Commit e Push das mudanças de forma robusta
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "Radar Ninja Bot"
+          # Tentar atualizar o repositório local antes do push para evitar rejeição por conflito
+          git pull --rebase origin main || echo "Pull rebase falhou ou sem mudanças"
           git add -A
           TIMESTAMP=$(date +'%d/%m/%Y %H:%M UTC')
           git commit -m "🤖 AUTO: Atualização de ofertas — ${TIMESTAMP} [skip ci]" || echo "Sem mudanças para commitar"
-          git push origin main || echo "Push falhou ou sem mudanças"
+          # Loop de retry para push caso falhe temporariamente por concorrência
+          for i in {1..3}; do
+            git push origin main && break || {
+              echo "Push falhou. Tentando rebase e push novamente (tentativa $i de 3)..."
+              git pull --rebase origin main
+              sleep 5
+            }
+          done
