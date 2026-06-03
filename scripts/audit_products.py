@@ -26,6 +26,9 @@ def audit_products(input_path: str, output_path: str, affiliate_tag: str):
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     }
 
+    from image_optimizer import download_and_optimize_image
+    from link_checker import check_link_status
+
     for i, p in enumerate(products):
         p_id = p.get('id', 'N/A')
         p_name = p.get('name', 'N/A')
@@ -33,17 +36,22 @@ def audit_products(input_path: str, output_path: str, affiliate_tag: str):
         aff_url = p.get('custom_affiliate_url', '')
         price = p.get('price', 0)
 
-        # 1. Verificar Imagem
+        # 1. Verificar Disponibilidade do Link (Novo)
+        status_code, is_available = check_link_status(aff_url)
+        if not is_available:
+            p['status'] = 'expired'
+            continue # Pula produtos indisponíveis na auditoria de novos
+
+        # 2. Verificar e Baixar Imagem Localmente (Novo)
         is_valid_img = False
         if img_url and "placehold.jp" not in img_url:
-            try:
-                # Verificar se a imagem realmente existe (HEAD request)
-                resp = requests.head(img_url, headers=headers, timeout=5, allow_redirects=True)
-                if resp.status_code == 200:
-                    is_valid_img = True
-                else:
-                    errors["image_failed"] += 1
-            except:
+            local_img = download_and_optimize_image(img_url, p_name)
+            if local_img:
+                p['image_remote'] = img_url
+                p['image'] = local_img
+                p['thumbnail'] = local_img
+                is_valid_img = True
+            else:
                 errors["image_failed"] += 1
         else:
             errors["placeholder_image"] += 1

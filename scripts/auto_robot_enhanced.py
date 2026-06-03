@@ -167,10 +167,18 @@ def run_full_cycle() -> Dict[str, Any]:
         "steps": {}
     }
     
-    # Passo 1: Auditoria de produtos
+    # Passo 1: Auditoria de produtos (Link Checker + Image Optimizer)
+    logger.info("Passo 1: Verificação de links e download de imagens...")
+    run_command(["python3", "scripts/link_checker.py"], "Verificador de Links")
+    run_command(["python3", "scripts/image_optimizer.py"], "Otimizador de Imagens")
     results["steps"]["product_audit"] = execute_product_audit()
     
-    # Passo 2: Motor de crescimento
+    # Passo 2: Inteligência de Produto (Novo)
+    logger.info("Passo 2: Aplicando inteligência de produto e histórico...")
+    results["steps"]["product_intelligence"] = run_command(["python3", "scripts/product_intelligence.py"], "Inteligência de Produto")
+    
+    # Passo 3: Motor de crescimento
+    logger.info("Passo 3: Gerando páginas e SEO...")
     results["steps"]["growth_engine"] = execute_growth_engine()
     
     # Passo 3: Relatório de saúde
