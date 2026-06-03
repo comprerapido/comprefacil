@@ -1,0 +1,64 @@
+name: 🤖 Compre Rápido — Robô Radar Ninja
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: 📥 Checkout do repositório
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: 🐍 Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Instalar dependências
+        run: |
+          pip install requests
+
+      - name: 🔍 Verificar conectividade com API do Mercado Livre
+        run: |
+          echo "Testando conectividade com api.mercadolibre.com..."
+          curl -s --max-time 10 "https://api.mercadolibre.com/sites/MLB/search?q=smartphone&limit=1" | python3 -c "import json,sys; d=json.load(sys.stdin); print(f'API OK — {len(d.get(\"results\",[]))} resultado(s) retornado(s)')" || echo "AVISO: API não respondeu no teste de conectividade"
+
+      - name: 🤖 Executar Robô de Automação (fetch + score + publicação)
+        run: |
+          cd $GITHUB_WORKSPACE
+          python scripts/auto_robot.py
+
+      - name: 📊 Resumo da coleta
+        run: |
+          echo "=== Estado dos arquivos de dados ==="
+          ls -lh data/ || true
+          echo ""
+          echo "=== Contagem de produtos ==="
+          python3 -c "
+          import json, os
+          for fname in ['data/all_products.json', 'data/scored_products.json', 'data/new_offers.json']:
+              if os.path.exists(fname):
+                  with open(fname) as f:
+                      d = json.load(f)
+                  print(f'{fname}: {len(d)} produtos')
+              else:
+                  print(f'{fname}: NAO ENCONTRADO')
+          " || true
+
+      - name: 🚀 Commit e Push das mudanças
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Radar Ninja Bot"
+          git add -A
+          TIMESTAMP=$(date +'%d/%m/%Y %H:%M UTC')
+          git commit -m "🤖 AUTO: Atualização de ofertas — ${TIMESTAMP} [skip ci]" || echo "Sem mudanças para commitar"
+          git push origin main || echo "Push falhou ou sem mudanças"
