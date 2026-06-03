@@ -83,7 +83,23 @@ def main():
     except Exception as e:
         log.error(f"❌ Falha no Growth Engine: {e}")
 
-    # 4. Verificação de Saúde (A cada 4 ciclos ou via cron específico)
+    # 4. Pós-publicação UX/SEO: garante que o site gerado fique navegável,
+    # com homepage estática de produtos reais, blog visível, links cruzados,
+    # design moderno e sitemap classificado corretamente.
+    post_publish_scripts = [
+        "fix_homepage_blog_product_integration.py",
+        "enhance_blog_product_crosslinks.py",
+        "enhance_internal_page_design.py",
+        "apply_seo_and_published_data.py",
+        "finalize_blog_and_sitemaps.py",
+    ]
+    for script in post_publish_scripts:
+        if os.path.exists(os.path.join(SCRIPTS_DIR, script)):
+            run_script(script)
+        else:
+            log.warning(f"Script de pós-publicação ausente: {script}")
+
+    # 5. Verificação de Saúde (A cada 4 ciclos ou via cron específico)
     # Implementaremos o verify_links_health.py a seguir
     if os.path.exists(os.path.join(SCRIPTS_DIR, "verify_links_health.py")):
         # Rodar verificação de saúde apenas em horários específicos (ex: 04:00 UTC)

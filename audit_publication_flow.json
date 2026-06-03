@@ -1,0 +1,165 @@
+{
+  "data_sources": {
+    "data/all_products.json": {
+      "exists": true,
+      "count": 81,
+      "sample_titles": [
+        "iPhone 15 Pro 256GB Titânio Natural",
+        "PlayStation 5 Slim Edição Digital",
+        "Kindle Paperwhite 16GB Tela 6.8",
+        "Smartphone Samsung Galaxy A55 5G 256GB 8GB RAM Tela 6.6 Câmera 50MP",
+        "Notebook Dell Inspiron 15 Intel Core i5 12ª Geração 8GB 512GB SSD Windows 11"
+      ]
+    },
+    "data/quality_products.json": {
+      "exists": true,
+      "count": 75,
+      "sample_titles": [
+        "Whey Protein Concentrado 100% 900g Refil Dark Lab Sabor Morango",
+        "Parafusadeira Furadeira C/ 2 Baterias Maleta Kit Completo Led Eixo Flexível Vários Níveis ",
+        "Creatina Monohidratada Pura 500g Dark Lab Unidade Sem Sabor",
+        "Kit 10 Pote De Vidro Marmita Hermético 370ml Freezer Fitness Rishon Transparente",
+        "Celular Samsung Galaxy A17 5g Com Ia, 128gb, 4gb Ram, Câm De 50mp, Tela De 6.7 , Nfc, Ip54"
+      ]
+    },
+    "data/scored_products.json": {
+      "exists": true,
+      "count": 66,
+      "sample_titles": [
+        "Whey Protein Concentrado 100% 900g Refil Dark Lab Sabor Morango",
+        "Whey Protein Concentrado 100% 900g Dark Lab",
+        "Creatina Monohidratada Pura 500g Dark Lab Unidade Sem Sabor",
+        "Cooktop A Gás Fischer 4 Bocas Fit Line Trempe Esmaltada Aramado Preto 127/220v",
+        "Cooktop A Gás Fischer 4 Bocas Fit Line"
+      ]
+    },
+    "data/real_promotions.json": {
+      "exists": true,
+      "count": 74,
+      "sample_titles": [
+        "Whey Protein Concentrado 100% 900g Refil Dark Lab Sabor Morango",
+        "Parafusadeira Furadeira C/ 2 Baterias Maleta Kit Completo Led Eixo Flexível Vários Níveis ",
+        "Creatina Monohidratada Pura 500g Dark Lab Unidade Sem Sabor",
+        "Kit 10 Pote De Vidro Marmita Hermético 370ml Freezer Fitness Rishon Transparente",
+        "Celular Samsung Galaxy A17 5g Com Ia, 128gb, 4gb Ram, Câm De 50mp, Tela De 6.7 , Nfc, Ip54"
+      ]
+    },
+    "data/new_offers.json": {
+      "exists": true,
+      "count": 12,
+      "sample_titles": [
+        "Smartphone Samsung Galaxy A55 5G 256GB 8GB RAM Tela 6.6 Câmera 50MP",
+        "Notebook Dell Inspiron 15 Intel Core i5 12ª Geração 8GB 512GB SSD Windows 11",
+        "Smart TV LG 55 OLED Evo C3 4K 120Hz Dolby Vision HDR10 ThinQ AI WebOS 23",
+        "Headset Gamer HyperX Cloud Alpha S 7.1 Surround USB PC PS4 Xbox Preto",
+        "Robô Aspirador Xiaomi Robot Vacuum S10+ Mop LiDAR 4000Pa Auto Esvaziamento"
+      ]
+    }
+  },
+  "generated_product_pages_produto_dir": 0,
+  "generated_product_pages_produtos_dir": 85,
+  "sample_product_urls": [
+    "produtos/beleza/aparador-de-pelos-multigroom-8-em-1-mg3917-15-philips-preto-127-220v-mlb5556558810/index.html",
+    "produtos/beleza/creatina-monohidratada-250g-growth-supplements-sem-sabor-em-po-mlb5872060016/index.html",
+    "produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742/index.html",
+    "produtos/beleza/creatina-monohidratada-pura-500g-dark-lab-unidade-sem-sabor-mlb4812143184/index.html",
+    "produtos/beleza/kit-body-splash-masculino-barbarius-enigma-midtown-200ml-mlb4645102377/index.html",
+    "produtos/beleza/kit-shampoo-e-condicionador-pantene-hidratacao-400ml-mlb3456789025/index.html",
+    "produtos/beleza/perfume-arabe-yara-lattafa-eau-de-parfum-100ml-original-c-nf-mlb4350686819/index.html",
+    "produtos/beleza/perfume-carolina-herrera-212-vip-men-100ml-mlb3456789024/index.html",
+    "produtos/beleza/perfume-masculino-sauvage-dior-eau-de-toilette-100ml-original-lacrado-mlb1023456789/index.html",
+    "produtos/beleza/perfume-sedutor-arabe-sabah-100ml-original-feminino-mlb3994439565/index.html"
+  ],
+  "home_product_link_count": 72,
+  "home_product_links_sample": [
+    "/produtos/beleza/whey-protein-concentrado-100-900g-refil-dark-lab-sabor-morango-mlb3755400429/",
+    "/produtos/beleza/whey-protein-concentrado-100-900g-refil-dark-lab-sabor-morango-mlb3755400429/",
+    "/produtos/beleza/whey-protein-concentrado-100-900g-refil-dark-lab-sabor-morango-mlb3755400429/",
+    "/produtos/beleza/whey-protein-concentrado-100-900g-dark-lab-mlb26454796/",
+    "/produtos/beleza/whey-protein-concentrado-100-900g-dark-lab-mlb26454796/",
+    "/produtos/beleza/whey-protein-concentrado-100-900g-dark-lab-mlb26454796/",
+    "/produtos/beleza/creatina-monohidratada-pura-500g-dark-lab-unidade-sem-sabor-mlb4812143184/",
+    "/produtos/beleza/creatina-monohidratada-pura-500g-dark-lab-unidade-sem-sabor-mlb4812143184/",
+    "/produtos/beleza/creatina-monohidratada-pura-500g-dark-lab-unidade-sem-sabor-mlb4812143184/",
+    "/produtos/eletrodomesticos/cooktop-a-gas-fischer-4-bocas-fit-line-trempe-esmaltada-aramado-preto-127-220v-mlb4292031849/",
+    "/produtos/eletrodomesticos/cooktop-a-gas-fischer-4-bocas-fit-line-trempe-esmaltada-aramado-preto-127-220v-mlb4292031849/",
+    "/produtos/eletrodomesticos/cooktop-a-gas-fischer-4-bocas-fit-line-trempe-esmaltada-aramado-preto-127-220v-mlb4292031849/",
+    "/produtos/eletrodomesticos/cooktop-a-gas-fischer-4-bocas-fit-line-mlb42641505/",
+    "/produtos/eletrodomesticos/cooktop-a-gas-fischer-4-bocas-fit-line-mlb42641505/",
+    "/produtos/eletrodomesticos/cooktop-a-gas-fischer-4-bocas-fit-line-mlb42641505/",
+    "/produtos/ferramentas/parafusadeira-furadeira-c-2-baterias-maleta-kit-completo-led-eixo-flexivel-varios-niveis-t-mlb4345564271/",
+    "/produtos/ferramentas/parafusadeira-furadeira-c-2-baterias-maleta-kit-completo-led-eixo-flexivel-varios-niveis-t-mlb4345564271/",
+    "/produtos/ferramentas/parafusadeira-furadeira-c-2-baterias-maleta-kit-completo-led-eixo-flexivel-varios-niveis-t-mlb4345564271/",
+    "/produtos/casa/kit-10-pote-de-vidro-marmita-hermetico-370ml-freezer-fitness-rishon-transparente-mlb4371605519/",
+    "/produtos/casa/kit-10-pote-de-vidro-marmita-hermetico-370ml-freezer-fitness-rishon-transparente-mlb4371605519/"
+  ],
+  "blog_pages_count_blog_dir": 0,
+  "blog_pages_count_noticias_dir": 16,
+  "blog_pages_count_guias_dir": 14,
+  "home_blog_link_count": 31,
+  "home_blog_links_sample": [
+    "/guias/",
+    "/noticias/",
+    "/noticias/",
+    "/noticias/posts/tendencias-beleza-2026/",
+    "/noticias/posts/tendencias-beleza-2026/",
+    "/noticias/posts/tendencias-casa-2026/",
+    "/noticias/posts/tendencias-casa-2026/",
+    "/noticias/posts/tendencias-celulares-2026/",
+    "/noticias/posts/tendencias-celulares-2026/",
+    "/noticias/posts/tendencias-eletrodomesticos-2026/",
+    "/noticias/posts/tendencias-eletrodomesticos-2026/",
+    "/noticias/posts/tendencias-esporte-2026/",
+    "/noticias/posts/tendencias-esporte-2026/",
+    "/noticias/posts/tendencias-ferramentas-2026/",
+    "/noticias/posts/tendencias-ferramentas-2026/",
+    "/guias/",
+    "/guias/guia-de-compra-beleza-2026/",
+    "/guias/guia-de-compra-casa-2026/",
+    "/guias/guia-de-compra-celulares-2026/",
+    "/guias/guia-de-compra-eletrodomesticos-2026/"
+  ],
+  "nav_links": [
+    [
+      "⚡ Achados",
+      "/ofertas-hoje/"
+    ],
+    [
+      "📦 Categorias",
+      "/categorias/"
+    ],
+    [
+      "🏆 Top 2026",
+      "/melhores-2026/"
+    ],
+    [
+      "📖 Guias",
+      "/guias/"
+    ],
+    [
+      "Blog",
+      "/noticias/"
+    ],
+    [
+      "Sobre Nós",
+      "/sobre/"
+    ]
+  ],
+  "has_blog_in_nav": true,
+  "has_latest_articles_block": true,
+  "has_buying_guides_block": true,
+  "sitemap_product_url_count": 85,
+  "sitemap_main_url_count": 5,
+  "sitemap_product_sample": [
+    "https://comprerapido.github.io/produtos/beleza/aparador-de-pelos-multigroom-8-em-1-mg3917-15-philips-preto-127-220v-mlb5556558810//",
+    "https://comprerapido.github.io/produtos/beleza/creatina-monohidratada-250g-growth-supplements-sem-sabor-em-po-mlb5872060016//",
+    "https://comprerapido.github.io/produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742//",
+    "https://comprerapido.github.io/produtos/beleza/creatina-monohidratada-pura-500g-dark-lab-unidade-sem-sabor-mlb4812143184//",
+    "https://comprerapido.github.io/produtos/beleza/kit-body-splash-masculino-barbarius-enigma-midtown-200ml-mlb4645102377//",
+    "https://comprerapido.github.io/produtos/beleza/kit-shampoo-e-condicionador-pantene-hidratacao-400ml-mlb3456789025//",
+    "https://comprerapido.github.io/produtos/beleza/perfume-arabe-yara-lattafa-eau-de-parfum-100ml-original-c-nf-mlb4350686819//",
+    "https://comprerapido.github.io/produtos/beleza/perfume-carolina-herrera-212-vip-men-100ml-mlb3456789024//",
+    "https://comprerapido.github.io/produtos/beleza/perfume-masculino-sauvage-dior-eau-de-toilette-100ml-original-lacrado-mlb1023456789//",
+    "https://comprerapido.github.io/produtos/beleza/perfume-sedutor-arabe-sabah-100ml-original-feminino-mlb3994439565//"
+  ]
+}

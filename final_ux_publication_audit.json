@@ -1,0 +1,31 @@
+{
+  "causa_raiz": "Os produtos eram gerados em /produtos/, mas partes do pipeline e do sitemap ainda tratavam /ofertas/ ou dependiam de renderização dinâmica; a homepage inicial não publicava cards estáticos suficientes com URLs internas válidas.",
+  "produtos_coletados_all_products": 81,
+  "produtos_qualificados": 75,
+  "paginas_produto_publicadas": 85,
+  "produtos_no_dataset_da_homepage": 77,
+  "cards_estaticos_homepage": 24,
+  "links_internos_produtos_homepage": 72,
+  "blog_no_menu": true,
+  "pagina_blog_existe": true,
+  "bloco_ultimos_artigos_homepage": true,
+  "bloco_guias_compra_homepage": true,
+  "faq_homepage_schema": true,
+  "sitemap_produtos_urls": 85,
+  "produtos_com_artigos_relacionados": 85,
+  "artigos_guias_com_produtos_relacionados": 28,
+  "dataset_dinamico_app_js": "/data/homepage_products.json",
+  "scripts_pos_publicacao_no_auto_robot": true,
+  "amostra_urls_produtos_homepage": [
+    "/produtos/beleza/whey-protein-concentrado-100-900g-refil-dark-lab-sabor-morango-mlb3755400429/",
+    "/produtos/beleza/whey-protein-concentrado-100-900g-dark-lab-mlb26454796/",
+    "/produtos/beleza/creatina-monohidratada-pura-500g-dark-lab-unidade-sem-sabor-mlb4812143184/",
+    "/produtos/eletrodomesticos/cooktop-a-gas-fischer-4-bocas-fit-line-trempe-esmaltada-aramado-preto-127-220v-mlb4292031849/",
+    "/produtos/eletrodomesticos/cooktop-a-gas-fischer-4-bocas-fit-line-mlb42641505/",
+    "/produtos/ferramentas/parafusadeira-furadeira-c-2-baterias-maleta-kit-completo-led-eixo-flexivel-varios-niveis-t-mlb4345564271/",
+    "/produtos/casa/kit-10-pote-de-vidro-marmita-hermetico-370ml-freezer-fitness-rishon-transparente-mlb4371605519/",
+    "/produtos/casa/kit-10-pote-de-vidro-marmita-hermetico-mlb66060206/",
+    "/produtos/celulares/celular-samsung-galaxy-a17-5g-com-ia-128gb-4gb-ram-cam-de-50mp-tela-de-6-7-nfc-ip54-cinza-mlb4238150607/",
+    "/produtos/celulares/celular-samsung-galaxy-a07-256gb-8gb-camera-50mp-tela-6-7-protecao-ip54-processador-6nm-pr-mlb6443434920/"
+  ]
+}

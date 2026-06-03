@@ -25,6 +25,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://comprerapido.github.io/guias/guia-de-compra-esporte-2026//</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://comprerapido.github.io/guias/guia-de-compra-ferramentas-2026//</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -38,6 +44,12 @@
   </url>
   <url>
     <loc>https://comprerapido.github.io/guias/guia-de-compra-informatica-2026//</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://comprerapido.github.io/guias/guia-de-compra-tecnologia-2026//</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

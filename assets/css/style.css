@@ -645,3 +645,106 @@ body {
     .footer-grid { grid-template-columns: 1fr; }
     .hero-section { padding: 50px 0 40px; }
 }
+
+/* ============================================================
+   UX Upgrade v2 — cards, blog, guias e responsividade
+   ============================================================ */
+.hero-section {
+    background:
+        radial-gradient(circle at 15% 20%, rgba(249,115,22,.22), transparent 28%),
+        radial-gradient(circle at 85% 0%, rgba(96,165,250,.24), transparent 30%),
+        linear-gradient(135deg, #0b1120 0%, #172554 52%, #111827 100%);
+}
+.hero-section h1 { max-width: 900px; margin-left: auto; margin-right: auto; }
+.hero-section p { color: rgba(255,255,255,.88); }
+.product-card-pro {
+    border: 1px solid rgba(148,163,184,.26);
+    border-radius: 22px;
+    box-shadow: 0 16px 40px rgba(15,23,42,.08);
+    background: linear-gradient(180deg, #fff 0%, #fbfdff 100%);
+}
+.product-media-link { display:block; position:relative; color:inherit; text-decoration:none; }
+.product-card-pro .product-img { height: 215px; background: linear-gradient(180deg,#f8fafc,#eef4ff); }
+.product-card-body { padding: 14px 16px 18px; display:flex; flex-direction:column; gap:10px; flex:1; }
+.category-pill {
+    width: fit-content;
+    display:inline-flex;
+    align-items:center;
+    border:1px solid #dbeafe;
+    background:#eff6ff;
+    color:#1d4ed8;
+    padding:3px 9px;
+    border-radius:999px;
+    font-size:.72rem;
+    font-weight:800;
+    text-transform:capitalize;
+}
+.product-card-pro .product-title { padding:0; font-size:.96rem; min-height:2.7em; }
+.product-card-pro .product-title a { color:var(--text); text-decoration:none; }
+.product-card-pro .product-title a:hover { color:var(--primary); }
+.visual-rating { display:flex; align-items:center; gap:7px; font-size:.82rem; color:var(--text-muted); }
+.visual-rating .stars { color:#f59e0b; letter-spacing:-1px; font-size:.86rem; }
+.visual-rating strong { color:#0f172a; }
+.visual-rating small { white-space:nowrap; }
+.price-history-mini { height:8px; background:#e2e8f0; border-radius:999px; overflow:hidden; }
+.price-history-mini span { display:block; height:100%; border-radius:999px; background:linear-gradient(90deg,#16a34a,#f97316); }
+.product-actions { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:auto; }
+.btn-analysis, .product-card-pro .btn-buy {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:42px;
+    margin:0;
+    border-radius:12px;
+    font-weight:800;
+    font-size:.86rem;
+    text-decoration:none;
+}
+.btn-analysis { color:#1d4ed8; background:#eff6ff; border:1px solid #bfdbfe; }
+.btn-analysis:hover { background:#dbeafe; }
+.product-card-pro .btn-buy { background:linear-gradient(135deg,var(--accent),var(--accent-dark)); box-shadow:0 10px 20px rgba(249,115,22,.22); }
+.articles-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+    margin-bottom:40px;
+}
+.article-card {
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:24px;
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+.article-card span { color:var(--accent); font-size:.78rem; font-weight:900; text-transform:uppercase; letter-spacing:.05em; }
+.article-card h3 { font-size:1.15rem; line-height:1.3; }
+.article-card h3 a { color:var(--text); text-decoration:none; }
+.article-card p { color:var(--text-muted); flex:1; }
+.read-more { font-weight:800; color:var(--primary); text-decoration:none; }
+.guide-chip-grid { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:48px; }
+.guide-chip {
+    background:#fff7ed;
+    color:#9a3412;
+    border:1px solid #fed7aa;
+    border-radius:999px;
+    padding:10px 15px;
+    font-weight:800;
+    text-decoration:none;
+    box-shadow:0 8px 20px rgba(249,115,22,.08);
+}
+.guide-chip:hover { background:#ffedd5; }
+@media (max-width: 768px) {
+    .header .container { flex-wrap:wrap; }
+    .search-bar { order:3; flex-basis:100%; max-width:none; }
+    .product-actions { grid-template-columns:1fr; }
+    .visual-rating { flex-wrap:wrap; }
+    .product-card-pro .product-img { height:190px; }
+}
+@media (max-width: 480px) {
+    .product-card-body { padding:12px; }
+    .articles-grid { grid-template-columns:1fr; }
+    .guide-chip-grid { display:grid; grid-template-columns:1fr; }
+}

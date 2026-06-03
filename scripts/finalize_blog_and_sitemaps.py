@@ -192,7 +192,7 @@ def page_priority(path: Path) -> str:
 
 def page_changefreq(path: Path) -> str:
     rel = path.relative_to(ROOT).as_posix()
-    if rel == "index.html" or rel.startswith("ofertas/") or rel.startswith("noticias/"):
+    if rel == "index.html" or rel.startswith("ofertas/") or rel.startswith("produtos/") or rel.startswith("noticias/"):
         return "daily"
     return "weekly"
 
@@ -208,7 +208,7 @@ def generate_sitemaps() -> dict[str, int]:
     }
     for path in files:
         rel = path.relative_to(ROOT).as_posix()
-        if rel.startswith("ofertas/"):
+        if rel.startswith("ofertas/") or rel.startswith("produtos/"):
             buckets["sitemap-produtos.xml"].append(path)
         elif rel.startswith("categorias/"):
             buckets["sitemap-categorias.xml"].append(path)

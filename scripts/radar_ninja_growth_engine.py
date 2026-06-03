@@ -260,7 +260,7 @@ def html_page(title: str, description: str, body: str, canonical: str, schema: L
   {schema_html}
 </head>
 <body>
-<header><div class="wrap top"><strong>{escape(SITE_NAME)}</strong><nav><a href="/">Início</a><a href="/ofertas-hoje/">Ofertas do dia</a><a href="/melhores-2026/">Melhores 2026</a><a href="/guias/">Guias</a><a href="/transparencia/">Transparência</a></nav></div></header>
+<header><div class="wrap top"><strong>{escape(SITE_NAME)}</strong><nav><a href="/">Início</a><a href="/ofertas-hoje/">Ofertas do dia</a><a href="/melhores-2026/">Melhores 2026</a><a href="/guias/">Guias</a><a href="/noticias/">Blog</a><a href="/transparencia/">Transparência</a></nav></div></header>
 <main class="wrap">{body}</main>
 <footer><div class="wrap small"><p><strong>{escape(SITE_NAME)}</strong> combina curadoria editorial, histórico de preços e critérios transparentes de seleção. Como participante de programas de afiliados, podemos receber comissão por compras qualificadas, sem custo adicional para você.</p><p><a href="/sobre/">Sobre</a> · <a href="/contato/">Contato</a> · <a href="/politica-afiliados/">Política de afiliados</a> · <a href="/privacidade/">Privacidade</a></p></div></footer>
 </body>

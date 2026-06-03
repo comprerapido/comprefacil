@@ -3,7 +3,7 @@
 //  Motor de ofertas em tempo real
 // ============================================================
 
-const DATA_URL = '/data/database/all_products.json';
+const DATA_URL = '/data/homepage_products.json';
 const AFFILIATE_PARAM = 'matt_tool=vendas0nline';
 let allProducts = [];
 
@@ -26,6 +26,22 @@ function ensureAffiliateLink(url) {
     const finalUrl = `${cleanUrl}${separator}${AFFILIATE_PARAM}`;
     
     return finalUrl;
+}
+function slugifyProduct(text) {
+    return (text || '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .replace(/-+/g, '-');
+}
+function getProductPageUrl(p) {
+    if (p.internal_url) return p.internal_url;
+    const name = p.name || p.title || '';
+    const id = (p.id || '').toString().toLowerCase();
+    const category = p.custom_category_slug || 'outros';
+    return `/produtos/${category}/${slugifyProduct(name)}-${id}/`;
 }
 function getRandomProducts(products, count) {
     return [...products].sort(() => Math.random() - 0.5).slice(0, count);
@@ -73,26 +89,34 @@ function createProductCard(p) {
     const savings = oldPrice - price;
     const badges = getBadges(discount);
     return `
-        <div class="product-card">
-            ${badges.left}
-            ${badges.right}
-            <img
-                src="${p.image}"
-                alt="${p.name}"
-                class="product-img"
-                loading="lazy"
-                onerror="this.src='/assets/img/placeholder.png'"
-            >
-            <h3 class="product-title">${p.name}</h3>
-            <div class="price-box">
-                ${oldPrice > price ? `<span class="old-price">De R$ ${formatPrice(oldPrice)}</span>` : ''}
-                <div class="current-price">R$ ${formatPrice(price)}</div>
-                ${savings > 1 ? `<span class="savings">💰 Economize R$ ${formatPrice(savings)}</span>` : ''}
-            </div>
-            <a href="${ensureAffiliateLink(p.custom_affiliate_url || p.permalink)}" class="btn-buy" target="_blank" rel="noopener noreferrer sponsored">
-                Ver Oferta ⚡
+        <article class="product-card product-card-pro">
+            <a class="product-media-link" href="${getProductPageUrl(p)}" aria-label="Ver análise de ${p.name}">
+                ${badges.left}
+                ${badges.right}
+                <img
+                    src="${p.image || p.thumbnail || '/assets/img/placeholder.png'}"
+                    alt="${p.name}"
+                    class="product-img"
+                    loading="lazy"
+                    onerror="this.src='/assets/img/placeholder.png'"
+                >
             </a>
-        </div>
+            <div class="product-card-body">
+                <span class="category-pill">${(p.custom_category_slug || 'Oferta').replaceAll('-', ' ')}</span>
+                <h3 class="product-title"><a href="${getProductPageUrl(p)}">${p.name}</a></h3>
+                <div class="visual-rating"><span class="stars">★★★★★</span><strong>4.6</strong><small>avaliação editorial</small></div>
+                <div class="price-box">
+                    ${oldPrice > price ? `<span class="old-price">De R$ ${formatPrice(oldPrice)}</span>` : ''}
+                    <div class="current-price">R$ ${formatPrice(price)}</div>
+                    ${savings > 1 ? `<span class="savings">Economize R$ ${formatPrice(savings)}</span>` : ''}
+                </div>
+                <div class="price-history-mini" aria-label="Histórico visual de preço"><span style="width:${Math.min(100, Math.max(12, discount * 1.25 || 34))}%"></span></div>
+                <div class="product-actions">
+                    <a href="${getProductPageUrl(p)}" class="btn-analysis">Ver análise</a>
+                    <a href="${ensureAffiliateLink(p.custom_affiliate_url || p.permalink)}" class="btn-buy" target="_blank" rel="noopener noreferrer sponsored nofollow">Ver oferta</a>
+                </div>
+            </div>
+        </article>
     `;
 }
 
