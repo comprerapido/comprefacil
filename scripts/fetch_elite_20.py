@@ -3,6 +3,12 @@ import json
 import os
 from logger import logger
 
+DEFAULT_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36",
+    "Accept": "application/json,text/plain,*/*",
+    "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
+}
+
 def fetch_elite_products():
     categories = [
         {"id": "celular", "q": "smartphone"},
@@ -25,8 +31,10 @@ def fetch_elite_products():
             url = ml_url
             
         try:
-            resp = requests.get(url, timeout=30)
-            data = resp.json(); logger.info(f"API respondeu com {len(data.get("results", []))} resultados")
+            resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=30)
+            resp.raise_for_status()
+            data = resp.json()
+            logger.info(f"API respondeu com {len(data.get('results', []))} resultados")
             count = 0
             for item in data.get('results', []):
                 if count >= 5: break

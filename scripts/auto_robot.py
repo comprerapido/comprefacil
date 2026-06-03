@@ -1,12 +1,16 @@
 """
 auto_robot.py — Robô de automação principal do Compre Rápido
 Executa o ciclo completo: coleta → score → publicação → sitemap
+
+A ScraperAPI é opcional. Quando a coleta externa não retorna produtos, o robô
+usa a base local completa em data/database/all_products.json para manter a
+automação, rankings e arquivos públicos funcionando sem bloqueio.
 """
 import json
 import os
 import sys
 import logging
-from datetime import datetime
+from datetime import datetime, timezone
 
 # Configuração de log
 logging.basicConfig(
@@ -19,10 +23,49 @@ log = logging.getLogger("auto_robot")
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 PRODUCTS_DIR = os.path.join(DATA_DIR, "products")
+DATABASE_DIR = os.path.join(DATA_DIR, "database")
 SCORED_FILE = os.path.join(DATA_DIR, "scored_products.json")
 ALL_PRODUCTS_FILE = os.path.join(DATA_DIR, "all_products.json")
+DATABASE_PRODUCTS_FILE = os.path.join(DATABASE_DIR, "all_products.json")
 
 os.makedirs(PRODUCTS_DIR, exist_ok=True)
+os.makedirs(DATABASE_DIR, exist_ok=True)
+
+DEFAULT_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/125.0 Safari/537.36"
+    ),
+    "Accept": "application/json,text/plain,*/*",
+    "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
+}
+
+
+def utc_now_iso():
+    """Retorna data/hora UTC em formato ISO compatível com os dados do site."""
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+# ─── PASSO 0: Base local completa ─────────────────────────────────────────────
+
+def load_existing_products():
+    """Carrega a base local, priorizando o arquivo completo em data/database."""
+    for path in (DATABASE_PRODUCTS_FILE, ALL_PRODUCTS_FILE, SCORED_FILE):
+        if not os.path.exists(path):
+            continue
+        try:
+            with open(path, encoding="utf-8") as f:
+                products = json.load(f)
+            if isinstance(products, list) and products:
+                rel = os.path.relpath(path, BASE_DIR)
+                log.info(f"📂 Base local carregada: {len(products)} produtos em {rel}")
+                return products
+        except Exception as e:
+            rel = os.path.relpath(path, BASE_DIR)
+            log.warning(f"Não foi possível ler {rel}: {e}")
+    log.warning("Nenhuma base local de produtos foi encontrada.")
+    return []
+
 
 # ─── PASSO 1: Coleta via API do Mercado Livre ────────────────────────────────
 
@@ -30,11 +73,11 @@ def fetch_from_mercadolivre():
     import requests
 
     categories = [
-        {"id": "celular",    "q": "smartphone"},
-        {"id": "games",      "q": "console videogame"},
-        {"id": "tv",         "q": "smart tv 4k"},
-        {"id": "moda",       "q": "tenis masculino"},
-        {"id": "informatica","q": "notebook"},
+        {"id": "celular", "q": "smartphone"},
+        {"id": "games", "q": "console videogame"},
+        {"id": "tv", "q": "smart tv 4k"},
+        {"id": "moda", "q": "tenis masculino"},
+        {"id": "informatica", "q": "notebook"},
         {"id": "eletrodomesticos", "q": "air fryer"},
     ]
 
@@ -45,14 +88,14 @@ def fetch_from_mercadolivre():
         log.info(f"🔍 Buscando categoria: {cat['id']} (query: {cat['q']})")
         ml_url = f"https://api.mercadolibre.com/sites/MLB/search?q={cat['q']}&sort=relevance&limit=20"
         scraper_key = os.environ.get("SCRAPERAPI_KEY")
-        
+
         if scraper_key:
             url = f"http://api.scraperapi.com?api_key={scraper_key}&url={ml_url}"
         else:
             url = ml_url
-            
+
         try:
-            resp = requests.get(url, timeout=30)
+            resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=30)
             resp.raise_for_status()
             data = resp.json()
             results = data.get("results", [])
@@ -70,7 +113,7 @@ def fetch_from_mercadolivre():
                 if not img or "http" not in img:
                     continue
 
-                price = item.get("price", 0)
+                price = item.get("price", 0) or 0
                 original_price = item.get("original_price") or price
                 discount = 0
                 if original_price and original_price > price:
@@ -93,7 +136,8 @@ def fetch_from_mercadolivre():
                     "thumbnail": img.replace("-I.jpg", "-O.jpg").replace("-V.jpg", "-O.jpg"),
                     "image": img.replace("-I.jpg", "-O.jpg").replace("-V.jpg", "-O.jpg"),
                     "custom_category_slug": cat["id"],
-                    "fetched_at": datetime.utcnow().isoformat() + "Z",
+                    "status": "active",
+                    "fetched_at": utc_now_iso(),
                     "source": "mercadolivre_api"
                 })
                 seen_ids.add(item_id)
@@ -111,21 +155,15 @@ def fetch_from_mercadolivre():
 # ─── PASSO 2: Merge com base existente ──────────────────────────────────────
 
 def merge_with_existing(new_products):
-    existing = []
-    if os.path.exists(ALL_PRODUCTS_FILE):
-        try:
-            with open(ALL_PRODUCTS_FILE, encoding="utf-8") as f:
-                existing = json.load(f)
-            log.info(f"📂 Base existente: {len(existing)} produtos em all_products.json")
-        except Exception as e:
-            log.warning(f"Não foi possível ler all_products.json: {e}")
+    existing = load_existing_products()
+    existing_ids = {p.get("id") for p in existing if p.get("id")}
 
-    existing_ids = {p.get("id") for p in existing}
     new_count = 0
     for p in new_products:
-        if p.get("id") not in existing_ids:
+        p_id = p.get("id")
+        if p_id and p_id not in existing_ids:
             existing.append(p)
-            existing_ids.add(p.get("id"))
+            existing_ids.add(p_id)
             new_count += 1
 
     log.info(f"➕ Produtos novos adicionados: {new_count}")
@@ -137,9 +175,10 @@ def merge_with_existing(new_products):
 
 def score_and_select(products, top_n=80):
     def score(p):
-        discount = p.get("custom_discount_pct", 0) or 0
+        discount = p.get("custom_discount_pct", 0) or p.get("discount", 0) or 0
         price = p.get("price", 9999) or 9999
-        return discount * 2 - (price / 1000)
+        status_bonus = 5 if p.get("status", "active") == "active" else 0
+        return status_bonus + discount * 2 - (price / 1000)
 
     sorted_products = sorted(products, key=score, reverse=True)
     return sorted_products[:top_n]
@@ -150,21 +189,26 @@ def score_and_select(products, top_n=80):
 def save_data(all_products, scored_products, new_offers):
     with open(ALL_PRODUCTS_FILE, "w", encoding="utf-8") as f:
         json.dump(all_products, f, indent=2, ensure_ascii=False)
-    log.info(f"💾 all_products.json salvo com {len(all_products)} produtos")
+    log.info(f"💾 data/all_products.json salvo com {len(all_products)} produtos")
+
+    with open(DATABASE_PRODUCTS_FILE, "w", encoding="utf-8") as f:
+        json.dump(all_products, f, indent=2, ensure_ascii=False)
+    log.info(f"💾 data/database/all_products.json salvo com {len(all_products)} produtos")
 
     with open(SCORED_FILE, "w", encoding="utf-8") as f:
         json.dump(scored_products, f, indent=2, ensure_ascii=False)
     log.info(f"💾 scored_products.json salvo com {len(scored_products)} produtos")
 
     offers_file = os.path.join(PRODUCTS_DIR, "offers.json")
+    public_offers = new_offers if new_offers else scored_products[:20]
     with open(offers_file, "w", encoding="utf-8") as f:
-        json.dump(new_offers, f, indent=2, ensure_ascii=False)
-    log.info(f"💾 offers.json salvo com {len(new_offers)} produtos")
+        json.dump(public_offers, f, indent=2, ensure_ascii=False)
+    log.info(f"💾 offers.json salvo com {len(public_offers)} produtos")
 
     new_offers_file = os.path.join(DATA_DIR, "new_offers.json")
     with open(new_offers_file, "w", encoding="utf-8") as f:
         json.dump(scored_products, f, indent=2, ensure_ascii=False)
-    log.info(f"💾 new_offers.json atualizado")
+    log.info("💾 new_offers.json atualizado")
 
 
 # ─── PASSO 5: Atualizar homepage ─────────────────────────────────────────────
@@ -179,7 +223,7 @@ def update_homepage(scored_products):
         with open(index_path, encoding="utf-8") as f:
             content = f.read()
 
-        timestamp = datetime.utcnow().strftime("%d/%m/%Y %H:%M UTC")
+        timestamp = datetime.now(timezone.utc).strftime("%d/%m/%Y %H:%M UTC")
         marker = "<!-- LAST_UPDATE -->"
         new_marker = f"<!-- LAST_UPDATE -->{timestamp}"
 
@@ -201,35 +245,36 @@ def update_homepage(scored_products):
 def main():
     log.info("=" * 60)
     log.info("🤖 ROBÔ COMPRE RÁPIDO — INICIANDO CICLO DE AUTOMAÇÃO")
-    log.info(f"⏰ Data/Hora: {datetime.utcnow().isoformat()}Z")
+    log.info(f"⏰ Data/Hora: {utc_now_iso()}")
     log.info("=" * 60)
 
     # 1. Coleta
     new_products = fetch_from_mercadolivre()
 
     if not new_products:
-        log.warning("⚠️  Nenhum produto coletado via API. Usando base existente.")
-        if os.path.exists(SCORED_FILE):
-            log.info("Base existente mantida sem alterações.")
-        return
-
-    # 2. Merge
-    all_products, new_count = merge_with_existing(new_products)
+        log.warning("⚠️  Nenhum produto coletado via API. Usando a base local completa.")
+        all_products = load_existing_products()
+        if not all_products:
+            log.error("❌ Automação encerrada: não há produtos externos nem base local para publicar.")
+            sys.exit(1)
+        new_count = 0
+    else:
+        # 2. Merge
+        all_products, new_count = merge_with_existing(new_products)
 
     # 3. Score
     scored = score_and_select(all_products)
     log.info(f"🏆 Top {len(scored)} produtos selecionados por score")
 
-    # Exibir exemplo de produto capturado
-    if new_products:
-        ex = new_products[0]
-        log.info("\n📌 EXEMPLO DE PRODUTO CAPTURADO NESTA EXECUÇÃO:")
-        log.info(f"   Título:    {ex.get('title')}")
-        log.info(f"   Preço:     R$ {ex.get('price')}")
-        log.info(f"   Desconto:  {ex.get('custom_discount_pct')}%")
-        log.info(f"   Link:      {ex.get('permalink')}")
-        log.info(f"   Categoria: {ex.get('custom_category_slug')}")
-        log.info(f"   Coletado:  {ex.get('fetched_at')}")
+    # Exibir exemplo de produto capturado ou reaproveitado
+    sample = new_products[0] if new_products else scored[0]
+    log.info("\n📌 EXEMPLO DE PRODUTO DISPONÍVEL NESTA EXECUÇÃO:")
+    log.info(f"   Título:    {sample.get('title') or sample.get('name')}")
+    log.info(f"   Preço:     R$ {sample.get('price')}")
+    log.info(f"   Desconto:  {sample.get('custom_discount_pct', 0)}%")
+    log.info(f"   Link:      {sample.get('permalink') or sample.get('custom_affiliate_url')}")
+    log.info(f"   Categoria: {sample.get('custom_category_slug')}")
+    log.info(f"   Origem:    {'API Mercado Livre' if new_products else 'Base local completa'}")
 
     # 4. Salvar
     save_data(all_products, scored, new_products)
