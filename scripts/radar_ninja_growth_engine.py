@@ -95,6 +95,10 @@ def load_json(path: Path, default: Any) -> Any:
     except Exception:
         return default
 
+# Globais para histórico e vereditos
+PRICE_HISTORY = load_json(DATA_DIR / "price_history.json", {})
+PRODUCT_VERDICTS = load_json(DATA_DIR / "product_verdicts.json", {})
+
 
 def save_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -192,12 +196,15 @@ def quality_score(product: Dict[str, Any], history: Dict[str, List[Dict[str, Any
     score += 30 if status == "active" else -80
     score -= 60 if p <= 0 else 0
     score -= 45 if len(title) < 18 else 0
-    if history:
-        entries = history.get(product_id(product), [])
+    
+    # Usar a global se history não for passado
+    hist = history if history is not None else PRICE_HISTORY
+    if hist:
+        entries = hist.get(product_id(product), [])
         if len(entries) >= 2:
             prices = [float(e.get("price", 0) or 0) for e in entries if float(e.get("price", 0) or 0) > 0]
             if prices and p <= min(prices):
-                score += 35
+                score += 45 # Aumentado para valorizar ofertas reais
     return round(score, 2)
 
 
@@ -398,6 +405,7 @@ def generate_product_pages(products: List[Dict[str, Any]], history: Dict[str, Li
             <p>{'Oferta com indícios fortes de promoção real pelo desconto e/ou histórico local.' if real else 'Oferta monitorada; confira o histórico antes de decidir.'}</p>
             <a class="cta" href="{escape(affiliate_url(product))}" rel="nofollow sponsored noopener" target="_blank">Ver preço atualizado na loja</a>
             <p class="note">Podemos receber comissão por compras qualificadas. O preço final deve ser confirmado na loja.</p>
+            {f'<div class="card" style="margin-top:20px; border-left:4px solid var(--brand); background:#f0f7ff;"><p><strong>💡 Veredito do Especialista:</strong> {PRODUCT_VERDICTS.get(product_id(product), "")}</p></div>' if PRODUCT_VERDICTS.get(product_id(product)) else ""}
           </div>
         </section>
         <section class="card"><h2>Resumo da análise</h2><p>O {escape(title)} aparece no radar de {escape(cat_name)} por combinar preço atual de <strong>{money(price(product))}</strong>, desconto estimado de <strong>{discount_pct(product)}%</strong> e relevância dentro da categoria. A curadoria prioriza produtos ativos, títulos completos, preços plausíveis e sinais de vantagem frente ao preço de referência.</p><p>Para evitar conteúdo superficial, esta página reúne critérios práticos, FAQ, histórico de preços, alternativas relacionadas e marcação estruturada para buscadores. A decisão de compra deve considerar necessidade real, frete, reputação do vendedor e política de devolução.</p></section>

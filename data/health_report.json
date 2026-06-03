@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-06-03T15:28:16Z",
-  "status": "healthy",
+  "updated_at": "2026-06-03T16:12:48Z",
+  "status": "warning",
   "checks": {
-    "total_products": 75,
-    "quality_products": 75,
-    "real_promotions": 74,
-    "product_pages": 75,
+    "total_products": 81,
+    "quality_products": 78,
+    "real_promotions": 77,
+    "product_pages": 78,
     "category_pages": 10,
     "comparisons": 24,
     "guides": 10,
@@ -13,8 +13,8 @@
     "best_pages": 10,
     "daily_deals": 30,
     "eeat_pages": 9,
-    "sitemap_urls": 304,
-    "broken_links": 0
+    "sitemap_urls": 306,
+    "broken_links": 62
   },
   "recovery": {
     "product_pages": "Regeneradas automaticamente a partir de data/all_products.json.",

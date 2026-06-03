@@ -1,0 +1,133 @@
+2026-06-03 15:59:35,053 [INFO] ============================================================
+2026-06-03 15:59:35,053 [INFO] 🤖 RADAR NINJA — CICLO DE AUTOMAÇÃO: 2026-06-03T15:59:35.053663+00:00
+2026-06-03 15:59:35,053 [INFO] ============================================================
+2026-06-03 15:59:35,053 [INFO] 🚀 Executando: cleanup_database.py
+2026-06-03 15:59:35,082 [INFO] ✅ cleanup_database.py concluído com sucesso.
+2026-06-03 15:59:35,082 [INFO] 🚀 Executando: fetch_real_products.py
+2026-06-03 16:00:12,870 [WARNING] ⚠️ fetch_real_products.py falhou (code 1).
+2026-06-03 16:00:12,870 [WARNING] Erro fetch_real_products.py:
+2026-06-03 15:59:35,397 [INFO] ============================================================
+2026-06-03 15:59:35,397 [INFO] 🔍 FETCH REAL — Iniciando coleta de novos produtos
+2026-06-03 15:59:35,397 [INFO] ⏰ 2026-06-03T15:59:35Z
+2026-06-03 15:59:35,397 [INFO] ============================================================
+2026-06-03 15:59:35,398 [INFO] 📂 Base existente: 81 produtos
+2026-06-03 15:59:35,398 [INFO] 📊 Produtos existentes: 81 | IDs únicos: 81
+2026-06-03 15:59:35,398 [INFO] 
+🔍 Categoria: celular | Query: smartphone samsung
+2026-06-03 15:59:35,398 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=smartphone+samsung&lim...
+2026-06-03 15:59:37,362 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 15:59:37,362 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=smartphone+samsung&lim...
+2026-06-03 15:59:38,673 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 15:59:38,674 [INFO]    ↳ 0 coletados | 0 novos
+2026-06-03 15:59:39,175 [INFO] 
+🔍 Categoria: celular | Query: iphone apple
+2026-06-03 15:59:39,175 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=iphone+apple&limit=15&...
+2026-06-03 15:59:40,409 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 15:59:40,409 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=iphone+apple&limit=10...
+2026-06-03 15:59:42,029 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 15:59:42,030 [INFO]    ↳ 0 coletados | 0 novos
+2026-06-03 15:59:42,530 [INFO] 
+🔍 Categoria: games | Query: console nintendo switch
+2026-06-03 15:59:42,531 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=console+nintendo+switc...
+2026-06-03 15:59:44,364 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 15:59:44,364 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=console+nintendo+switc...
+2026-06-03 15:59:46,226 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 15:59:46,227 [INFO]    ↳ 0 coletados | 0 novos
+2026-06-03 15:59:46,727 [INFO] 
+🔍 Categoria: games | Query: playstation 5
+2026-06-03 15:59:46,727 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=playstation+5&limit=15...
+2026-06-03 15:59:48,325 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 15:59:48,325 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=playstation+5&limit=10...
+2026-06-03 15:59:50,161 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 15:59:50,162 [INFO]    ↳ 0 coletados | 0 novos
+2026-06-03 15:59:50,663 [INFO] 
+🔍 Categoria: tv | Query: smart tv samsung 55
+2026-06-03 15:59:50,663 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=smart+tv+samsung+55&li...
+2026-06-03 15:59:52,301 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 15:59:52,301 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=smart+tv+samsung+55&li...
+2026-06-03 15:59:53,962 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 15:59:53,963 [INFO]    ↳ 0 coletados | 0 novos
+2026-06-03 15:59:54,464 [INFO] 
+🔍 Categoria: informatica | Query: notebook lenovo
+2026-06-03 15:59:54,464 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=notebook+lenovo&limit=...
+2026-06-03 15:59:56,086 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 15:59:56,086 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=notebook+lenovo&limit=...
+2026-06-03 15:59:57,393 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 15:59:57,394 [INFO]    ↳ 0 coletados | 0 novos
+2026-06-03 15:59:57,895 [INFO] 
+🔍 Categoria: eletrodomesticos | Query: air fryer philco
+2026-06-03 15:59:57,895 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=air+fryer+philco&limit...
+2026-06-03 15:59:59,519 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 15:59:59,519 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=air+fryer+philco&limit...
+2026-06-03 16:00:01,230 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 16:00:01,231 [INFO]    ↳ 0 coletados | 0 novos
+2026-06-03 16:00:01,732 [INFO] 
+🔍 Categoria: casa | Query: aspirador de po robo
+2026-06-03 16:00:01,732 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=aspirador+de+po+robo&l...
+2026-06-03 16:00:03,329 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 16:00:03,329 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=aspirador+de+po+robo&l...
+2026-06-03 16:00:04,943 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 16:00:04,944 [INFO]    ↳ 0 coletados | 0 novos
+2026-06-03 16:00:05,444 [INFO] 
+🔍 Categoria: beleza | Query: perfume importado masculino
+2026-06-03 16:00:05,444 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=perfume+importado+masc...
+2026-06-03 16:00:07,078 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 16:00:07,078 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=perfume+importado+masc...
+2026-06-03 16:00:08,924 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 16:00:08,925 [INFO]    ↳ 0 coletados | 0 novos
+2026-06-03 16:00:09,425 [INFO] 
+🔍 Categoria: esporte | Query: tenis running nike
+2026-06-03 16:00:09,425 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=tenis+running+nike&lim...
+2026-06-03 16:00:11,035 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 16:00:11,035 [INFO]   Tentando: https://api.mercadolibre.com/sites/MLB/search?q=tenis+running+nike&lim...
+2026-06-03 16:00:12,339 [WARNING]   403 Forbidden — IP bloqueado pelo ML
+2026-06-03 16:00:12,341 [INFO]    ↳ 0 coletados | 0 novos
+2026-06-03 16:00:12,841 [INFO] 
+📊 RESULTADO: 0 produtos novos coletados | 10 erros
+2026-06-03 16:00:12,841 [WARNING] ⚠️ Nenhum produto novo coletado — mantendo base existente
+
+2026-06-03 16:00:12,870 [INFO] Coleta satisfatória (12 itens).
+{
+  "total_products": 81,
+  "quality_products": 78,
+  "real_promotions": 77,
+  "product_pages": 78,
+  "category_pages": 10,
+  "comparisons": 24,
+  "guides": 10,
+  "articles": 10,
+  "best_pages": 10,
+  "daily_deals": 30,
+  "eeat_pages": 9,
+  "sitemap_urls": 308,
+  "broken_links": 0
+}
+2026-06-03 16:00:13,143 [INFO] 📈 Growth Engine Stats: {
+  "total_products": 81,
+  "quality_products": 78,
+  "real_promotions": 77,
+  "product_pages": 78,
+  "category_pages": 10,
+  "comparisons": 24,
+  "guides": 10,
+  "articles": 10,
+  "best_pages": 10,
+  "daily_deals": 30,
+  "eeat_pages": 9,
+  "sitemap_urls": 308,
+  "broken_links": 0,
+  "timestamp": "2026-06-03T16:00:13.143554+00:00"
+}
+2026-06-03 16:00:13,143 [INFO] 🚀 Executando: fix_homepage_blog_product_integration.py
+2026-06-03 16:00:13,196 [INFO] ✅ fix_homepage_blog_product_integration.py concluído com sucesso.
+2026-06-03 16:00:13,196 [INFO] 🚀 Executando: enhance_blog_product_crosslinks.py
+2026-06-03 16:00:13,275 [INFO] ✅ enhance_blog_product_crosslinks.py concluído com sucesso.
+2026-06-03 16:00:13,275 [INFO] 🚀 Executando: enhance_internal_page_design.py
+2026-06-03 16:00:13,322 [INFO] ✅ enhance_internal_page_design.py concluído com sucesso.
+2026-06-03 16:00:13,322 [INFO] 🚀 Executando: apply_seo_and_published_data.py
+2026-06-03 16:00:13,367 [INFO] ✅ apply_seo_and_published_data.py concluído com sucesso.
+2026-06-03 16:00:13,367 [INFO] 🚀 Executando: finalize_blog_and_sitemaps.py
+2026-06-03 16:00:13,916 [INFO] ✅ finalize_blog_and_sitemaps.py concluído com sucesso.
+2026-06-03 16:00:13,917 [INFO] ============================================================
+2026-06-03 16:00:13,917 [INFO] 🏁 CICLO FINALIZADO
+2026-06-03 16:00:13,917 [INFO] ============================================================

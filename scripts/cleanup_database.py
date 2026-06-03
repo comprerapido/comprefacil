@@ -23,6 +23,22 @@ def main():
     for path in [db_path, all_path]:
         with open(path, 'w') as f:
             json.dump(products, f, indent=2, ensure_ascii=False)
+    
+    # Remover arquivos HTML de produtos que não estão mais no catálogo (Otimização de Git)
+    valid_ids = {p.get('id') for p in products if p.get('id')}
+    prod_dir = 'produtos'
+    if os.path.exists(prod_dir):
+        import shutil
+        for cat in os.listdir(prod_dir):
+            cat_path = os.path.join(prod_dir, cat)
+            if os.path.isdir(cat_path):
+                for p_folder in os.listdir(cat_path):
+                    # O ID do produto costuma ser o final do slug da pasta
+                    p_id = p_folder.split('-')[-1]
+                    if p_id not in valid_ids:
+                        full_p_path = os.path.join(cat_path, p_folder)
+                        print(f"Removendo produto antigo: {p_folder}")
+                        shutil.rmtree(full_p_path)
             
     print(f"Limpeza concluída: {initial_count} -> {len(products)} produtos.")
 

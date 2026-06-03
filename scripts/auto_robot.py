@@ -56,6 +56,9 @@ def main():
     # Tentativa A: API Real (ou Scraping via fetch_real_products)
     run_script("fetch_real_products.py")
     
+    # Atualizar histórico de preços
+    run_script("price_history_manager.py")
+    
     # Verificar se a coleta trouxe resultados suficientes
     new_offers_path = os.path.join(BASE_DIR, "data", "new_offers.json")
     new_count = 0
@@ -74,6 +77,9 @@ def main():
         log.info(f"Coleta satisfatória ({new_count} itens).")
 
     # 3. Motor de Crescimento (SEO, Páginas, Sitemap)
+    # Gerar vereditos com IA antes de rodar o growth engine
+    run_script("generate_verdicts.py")
+
     # Importar e rodar o growth engine
     sys.path.insert(0, SCRIPTS_DIR)
     try:
