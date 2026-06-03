@@ -1,128 +1,104 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
-<head><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Contato | Fale com a Equipe do Radar de Preços</title>
-<meta content="Entre em contato com o Radar de Preços para dúvidas, parcerias, sugestões ou suporte técnico. Estamos prontos para ajudar você a economizar." name="description"/>
-<link href="https://comprerapido.github.io/contato/" rel="canonical"/>
-<link href="../assets/css/style.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "Radar de Preços",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "contato@radardeprecos.com",
-        "contactType": "customer service",
-        "availableLanguage": "Portuguese"
-      }
-    }
-  }
-  </script>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P0X4Z9Y7B2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-P0X4Z9Y7B2');
-</script>
-<script>
-  // Rastreamento de cliques em afiliados
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('a[href*="mercadolivre.com"]').forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        gtag('event', 'affiliate_click', {
-          'event_category': 'engagement',
-          'event_label': this.href,
-          'link_url': this.href,
-          'product_name': this.getAttribute('title') || this.innerText
-        });
-      });
-    });
-  });
-</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato — Compre Rápido | Fale Conosco</title>
+    <meta name="description" content="Entre em contato com o Compre Rápido. Sugestões, parcerias, reportar erros ou dúvidas sobre nossas ofertas e metodologia.">
+    <link rel="canonical" href="https://comprerapido.github.io/contato/">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap">
+    <style>
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 900px; margin: 60px auto; padding: 0 16px; }
+        .contact-info h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 20px; color: var(--primary); }
+        .contact-info p { color: var(--text-muted); line-height: 1.7; margin-bottom: 16px; }
+        .contact-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; }
+        .contact-item .icon { font-size: 1.5rem; flex-shrink: 0; }
+        .contact-form { background: var(--card); border-radius: var(--radius-lg); padding: 36px; border: 1px solid var(--border); }
+        .contact-form h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 24px; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.95rem; font-family: inherit; transition: border-color 0.2s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px var(--primary-glow); }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .btn-submit { width: 100%; padding: 14px; background: var(--accent); color: white; border: none; border-radius: var(--radius-sm); font-size: 1rem; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+        .btn-submit:hover { background: var(--accent-dark); }
+        @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
 <header class="header">
-<div class="container header-inner">
-<a class="logo" href="../">📊 <strong>Radar de Preços</strong></a>
-<div class="search-bar">
-<input id="searchInput" placeholder="Buscar ofertas..." type="text"/>
-</div>
-<button id="themeToggle">🌙</button>
-</div>
+    <div class="container">
+        <a href="/" class="logo"><div class="logo-icon">⚡</div>Compre<span>Rápido</span></a>
+        <div class="search-bar"><input id="mainSearch" type="text" placeholder="Busque por produto..."></div>
+        <button class="menu-toggle" aria-label="Menu">☰</button>
+        <nav class="nav-links">
+            <a href="/ofertas-hoje/">⚡ Achados</a>
+            <a href="/categorias/">📦 Categorias</a>
+            <a href="/melhores-2026/">🏆 Top 2026</a>
+            <a href="/guias/">📖 Guias</a>
+            <a href="/sobre/" class="btn-primary">Sobre Nós</a>
+        </nav>
+    </div>
 </header>
-<nav class="cat-nav">
-<div class="container cat-tabs" id="catTabs">
-<a class="cat-tab" href="../">Início</a>
-<a class="cat-tab" href="../categorias/celulares/">Celulares</a>
-<a class="cat-tab" href="../categorias/informatica/">Informática</a>
-<a class="cat-tab" href="../categorias/eletrodomesticos/">Eletrodomésticos</a>
-<a class="cat-tab" href="../categorias/tv-e-video/">TV e Vídeo</a>
-</div>
-</nav>
-<main class="container static-page">
-<h1>Fale Conosco</h1>
-<p>O <strong>Radar de Preços</strong> valoriza imensamente o feedback da nossa comunidade. Se você encontrou um erro, tem uma sugestão de melhoria ou deseja propor uma parceria comercial, estamos à disposição para ouvir.</p>
-<h2>Canais de Atendimento</h2>
-<p>Para garantir que sua mensagem chegue ao departamento correto o mais rápido possível, por favor, utilize o e-mail adequado para a sua solicitação:</p>
-<ul>
-<li><strong>Suporte ao Usuário e Dúvidas Gerais:</strong><br/>
-        📧 <a href="mailto:contato@radardeprecos.com">contato@radardeprecos.com</a><br/>
-<em>Tempo de resposta estimado: 24 a 48 horas úteis.</em></li>
-<li><strong>Parcerias Comerciais e Imprensa:</strong><br/>
-        📧 <a href="mailto:parcerias@radardeprecos.com">parcerias@radardeprecos.com</a><br/>
-<em>Para propostas de publicidade, afiliação e entrevistas.</em></li>
-<li><strong>Reportar Erros ou Ofertas Falsas:</strong><br/>
-        📧 <a href="mailto:bug@radardeprecos.com">bug@radardeprecos.com</a><br/>
-<em>Nosso algoritmo é inteligente, mas não é infalível. Se você encontrou um preço errado ou um link quebrado, avise-nos!</em></li>
-</ul>
-<h2>Dúvidas Frequentes (FAQ)</h2>
-<p>Antes de enviar um e-mail, verifique se a sua dúvida já não foi respondida abaixo:</p>
-<h3>Vocês vendem os produtos anunciados?</h3>
-<p><strong>Não.</strong> O Radar de Preços é apenas um agregador e comparador de ofertas. Todas as compras são finalizadas diretamente no site do lojista (como o Mercado Livre). Não somos responsáveis pela entrega, garantia ou pagamento dos itens.</p>
-<h3>Por que o preço no site da loja está diferente do Radar?</h3>
-<p>Os preços no e-commerce mudam a todo instante. Nosso robô atualiza a base de dados a cada hora, mas promoções relâmpago podem acabar em minutos. Sempre verifique o preço final no carrinho da loja antes de fechar a compra.</p>
-<h3>Como posso anunciar no Radar de Preços?</h3>
-<p>Aceitamos parcerias estratégicas com lojas e marcas que respeitem nossos critérios rigorosos de transparência. Não aceitamos pagamento para alterar o Radar Score™ ou maquiar o histórico de preços. Para anúncios via banners, utilizamos a rede do Google AdSense.</p>
-<h2>Redes Sociais</h2>
-<p>Em breve, lançaremos nossos canais oficiais no Instagram, Twitter (X) e Telegram para alertas de ofertas em tempo real. Fique ligado!</p>
+<section class="page-hero"><div class="container"><h1>Fale Conosco</h1><p>Sua opinião é fundamental para continuarmos melhorando.</p></div></section>
+<main>
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h2>Como podemos ajudar?</h2>
+            <p>Estamos sempre abertos para ouvir nossos usuários. Se você encontrou um erro, tem uma sugestão de melhoria ou quer propor uma parceria, entre em contato.</p>
+            <div class="contact-item">
+                <span class="icon">🐛</span>
+                <div><strong>Reportar um erro</strong><p style="margin:0;font-size:0.88rem;color:var(--text-muted);">Encontrou um preço errado ou link quebrado? Nos avise!</p></div>
+            </div>
+            <div class="contact-item">
+                <span class="icon">💡</span>
+                <div><strong>Sugestões</strong><p style="margin:0;font-size:0.88rem;color:var(--text-muted);">Tem uma ideia para melhorar o Compre Rápido? Adoramos ouvir.</p></div>
+            </div>
+            <div class="contact-item">
+                <span class="icon">🤝</span>
+                <div><strong>Parcerias</strong><p style="margin:0;font-size:0.88rem;color:var(--text-muted);">Quer divulgar seus produtos ou serviços? Fale com nossa equipe.</p></div>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h2>Envie sua mensagem</h2>
+            <div class="form-group">
+                <label for="name">Seu nome</label>
+                <input type="text" id="name" placeholder="Como devemos te chamar?">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="seu@email.com">
+            </div>
+            <div class="form-group">
+                <label for="subject">Assunto</label>
+                <select id="subject">
+                    <option>Reportar um erro</option>
+                    <option>Sugestão de melhoria</option>
+                    <option>Proposta de parceria</option>
+                    <option>Dúvida geral</option>
+                    <option>Outro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Mensagem</label>
+                <textarea id="message" placeholder="Descreva sua mensagem com detalhes..."></textarea>
+            </div>
+            <button class="btn-submit" onclick="alert('Mensagem enviada! Responderemos em até 48 horas.')">Enviar Mensagem</button>
+        </div>
+    </div>
 </main>
 <footer class="footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-col">
-<h3>Radar de Preços</h3>
-<p>O seu assistente inteligente para compras online. Monitoramos milhares de produtos para garantir que você pague o menor preço real.</p>
-</div>
-<div class="footer-col">
-<h4>Navegação</h4>
-<a href="../">Início</a>
-<a href="../guias/">Guias de Compra</a>
-<a href="../ofertas-hoje/">Ofertas de Hoje</a>
-<a href="../cupons/">Cupons</a>
-</div>
-<div class="footer-col">
-<h4>Institucional</h4>
-<a href="../sobre/">Sobre Nós</a>
-<a href="./">Contato</a>
-<a href="../privacidade/">Privacidade</a>
-<a href="../termos/">Termos de Uso</a>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 Radar de Preços. Todos os direitos reservados. Atualizado via API oficial.</p>
-</div>
-</div>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col"><span class="footer-logo">⚡ Compre<span>Rápido</span></span><p>O portal de inteligência de compras que rastreia o mercado para você economizar de verdade.</p></div>
+            <div class="footer-col"><h4>Explorar</h4><ul><li><a href="/ofertas-hoje/">Achados do Dia</a></li><li><a href="/categorias/">Categorias</a></li><li><a href="/melhores-2026/">Rankings 2026</a></li><li><a href="/guias/">Guias de Compra</a></li></ul></div>
+            <div class="footer-col"><h4>Institucional</h4><ul><li><a href="/sobre/">Sobre Nós</a></li><li><a href="/metodologia/">Metodologia</a></li><li><a href="/contato/">Contato</a></li></ul></div>
+            <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacidade/">Privacidade</a></li><li><a href="/termos/">Termos de Uso</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div>
+        </div>
+        <div class="footer-bottom">© 2026 Compre Rápido — Encontre Rápido. Compre Melhor.</div>
+    </div>
 </footer>
-<script src="../assets/js/app.js"></script>
+<script src="/assets/js/app.js"></script>
 </body>
 </html>

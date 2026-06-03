@@ -1,597 +1,239 @@
+// ============================================================
+//  COMPRE RÁPIDO — app.js v1.0
+//  Motor de ofertas em tempo real
+// ============================================================
 
-// Achado Certo - Script Principal Profissional v2.1 (Correção de Scroll e Renderização)
-
-function getAchadoCertoBasePrefix() {
-  const path = window.location.pathname;
-  const isRoot = path === '/' || path === '/index.html';
-  if (isRoot) return '';
-
-  const cleanPath = path.replace(/\/$/, '');
-  let parts = cleanPath.split('/').filter(Boolean);
-  if (parts.length && parts[parts.length - 1].includes('.')) parts = parts.slice(0, -1);
-  
-  const radarIndex = parts.indexOf('radar');
-  if (radarIndex === -1) return ''; // Se 'radar' não estiver no caminho, assumimos que estamos na raiz ou em um subdiretório sem 'radar'
-
-  const depth = parts.length - radarIndex - 1;
-  return '../'.repeat(Math.max(0, depth));
-}
-const ACHADO_CERTO_BASE_PREFIX = getAchadoCertoBasePrefix();
-const DATA_URL = ACHADO_CERTO_BASE_PREFIX + 'data/database/all_products.json';
-
-
+const DATA_URL = '/data/database/all_products.json';
 let allProducts = [];
-let currentSlide = 0;
-let carouselInterval;
-let favoriteIds = new Set();
-let alertIds = new Set();
 
-// --- Utilitários ---
+// ========== UTILITÁRIOS ==========
 function formatPrice(value) {
-  return parseFloat(value).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    return parseFloat(value).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+function getRandomProducts(products, count) {
+    return [...products].sort(() => Math.random() - 0.5).slice(0, count);
 }
 
-function escapeHtml(text) {
-  const div = document.createElement('div');
-  div.textContent = text || '';
-  return div.innerHTML;
-}
-
-function safeAffiliateUrl(product) {
-  const aff = product.custom_affiliate_url || '';
-  if (aff && !aff.includes('/social/') && !aff.includes('vendas0nline?')) {
-    return aff;
-  }
-  return product.permalink || product.url || '';
-}
-
-// --- Deduplicação ---
-function deduplicateProducts(products) {
-  const uniqueMap = new Map();
-  const nameNormalizer = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, '').substring(0, 40);
-  
-  products.forEach(p => {
-    let key = p.id;
-    if (!key) {
-      const normalizedName = nameNormalizer(p.name || '');
-      const price = Math.round(p.price || 0);
-      key = `${normalizedName}_${price}`;
-    }
-    if (!uniqueMap.has(key)) {
-      uniqueMap.set(key, p);
-    } else {
-      const existing = uniqueMap.get(key);
-      if ((p.custom_discount_pct || 0) > (existing.custom_discount_pct || 0)) {
-        uniqueMap.set(key, p);
-      }
-    }
-  });
-  return Array.from(uniqueMap.values());
-}
-
-// --- Estatísticas Dinâmicas ---
-function animateCounter(element, target, duration = 1500) {
-  const start = 0;
-  const increment = target / (duration / 16);
-  let current = start;
-  
-  const timer = setInterval(() => {
-    current += increment;
-    if (current >= target) {
-      element.textContent = target.toLocaleString();
-      clearInterval(timer);
-    } else {
-      element.textContent = Math.floor(current).toLocaleString();
-    }
-  }, 16);
-}
-
-function renderStats(products) {
-  const statsContainer = document.getElementById('statsBar');
-  if (!statsContainer) return;
-
-  const total = products.length;
-  const avgDiscount = total > 0 ? Math.round(products.reduce((acc, p) => acc + (p.custom_discount_pct || 0), 0) / total) : 0;
-  const offersToday = Math.round(total * 0.25);
-  
-  statsContainer.innerHTML = `
-    <div class="stat-card">
-      <span class="stat-value"><span class="stat-counter">0</span></span>
-      <span class="stat-label">📦 Produtos</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value"><span class="stat-counter">0</span>%</span>
-      <span class="stat-label">💸 Economia Média</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value"><span class="stat-counter">0</span></span>
-      <span class="stat-label">🛒 Ofertas Hoje</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">⚡ Ativo</span>
-      <span class="stat-label">Atualizado Agora</span>
-    </div>
-  `;
-  
-  setTimeout(() => {
-    const counters = statsContainer.querySelectorAll('.stat-counter');
-    if (counters[0]) animateCounter(counters[0], total);
-    if (counters[1]) animateCounter(counters[1], avgDiscount);
-    if (counters[2]) animateCounter(counters[2], offersToday);
-  }, 100);
-}
-
-// --- Achado Certo Premium ---
-function renderRadarPremium(products) {
-  const premiumContainer = document.getElementById('radarPremium');
-  if (!premiumContainer) return [];
-
-  const premiumItems = [...products]
-    .sort((a, b) => (b.score || 0) - (a.score || 0))
-    .slice(0, 5);
-
-  premiumContainer.innerHTML = `
-    <div class="section-header"><h2>👑 Achado Certo Premium</h2></div>
-    <div class="premium-grid">
-      ${premiumItems.map(p => `
-        <div class="product-card radar-premium-card">
-          <span class="badge badge-premium-choice">👑 Escolha do Achado Certo</span>
-          <div class="card-img"><img src="${escapeHtml(p.image || p.thumbnail)}" alt="${escapeHtml(p.name)}" loading="lazy"></div>
-          <h3>${escapeHtml(p.name).substring(0, 50)}...</h3>
-          <div class="price-tag">R$ ${formatPrice(p.price)}</div>
-          <a href="${escapeHtml(safeAffiliateUrl(p))}" class="btn" style="width:100%; background: #b8860b; font-size: 12px; padding: 8px 5px;">Ver Oferta Premium</a>
-        </div>
-      `).join('')}
-    </div>
-  `;
-  return premiumItems;
-}
-
-// --- Badges ---
-function getProfessionalBadges(product, idx) {
-  let badges = [];
-  const discount = product.custom_discount_pct || 0;
-  const price = product.price || 0;
-  
-  if (idx < 3) badges.push('<span class="badge badge-novidade">✨ NOVIDADE</span>');
-  
-  if (discount >= 60) {
-    badges.push('<span class="badge badge-explosiva">💥 OFERTA EXPLOSIVA</span>');
-  } else if (discount >= 50) {
-    badges.push('<span class="badge badge-quente">🔥 OFERTA QUENTE</span>');
-  } else if (discount >= 30) {
-    badges.push('<span class="badge badge-oportunidade">💎 OPORTUNIDADE</span>');
-  }
-
-  if (price < 100 && discount > 40) {
-    badges.push('<span class="badge badge-pechincha">💸 PECHINCHA</span>');
-  }
-  
-  if (product.shipping === 'free' || product.free_shipping) {
-    badges.push('<span class="badge badge-frete-gratis">🚚 FRETE GRÁTIS</span>');
-  }
-  
-  return badges.join('');
-}
-
-// --- Carrossel ---
-function renderCarousel(products) {
-  const container = document.getElementById('heroProduct');
-  if (!container) return;
-
-  const carouselProducts = products.slice(0, 8);
-  
-  let slidesHtml = carouselProducts.map((p, idx) => {
-    const isFirst = idx === 0;
-    const badgeHtml = isFirst ? '<span class="badge badge-promo-dia" style="position:static; display:inline-block; margin-bottom:10px;">🔥 OFERTA IMPERDÍVEL</span>' : '';
-    
+// ========== SKELETON LOADING ==========
+function createSkeletonCard() {
     return `
-      <div class="carousel-slide ${isFirst ? 'featured' : ''}">
-        <div class="carousel-info">
-          ${badgeHtml}
-          <h2>${escapeHtml(p.name)}</h2>
-          <p>Aproveite esta oferta selecionada com ${p.custom_discount_pct}% de desconto!</p>
-          <div class="price-tag">R$ ${formatPrice(p.price)} <span class="old-price">R$ ${formatPrice(p.originalPrice)}</span></div>
-          <a href="${escapeHtml(safeAffiliateUrl(p))}" class="btn" target="_blank">🛒 Ver Oferta no Mercado Livre</a>
+        <div class="product-card skeleton-card">
+            <div class="skeleton skeleton-image"></div>
+            <div class="skeleton skeleton-text" style="height: 18px; margin-bottom: 10px;"></div>
+            <div class="skeleton skeleton-text" style="height: 14px; width: 80%; margin-bottom: 10px;"></div>
+            <div class="skeleton skeleton-text short" style="height: 22px; margin-bottom: 10px;"></div>
+            <div class="skeleton skeleton-text short" style="height: 38px;"></div>
         </div>
-        <div class="carousel-img">
-          <img src="${escapeHtml(p.image || p.thumbnail)}" alt="${escapeHtml(p.name)}" loading="lazy">
-        </div>
-      </div>
     `;
-  }).join('');
-
-  container.innerHTML = `
-    <div class="carousel-container">
-      <div class="carousel-track" id="carouselTrack">${slidesHtml}</div>
-      <div class="carousel-nav">
-        <button class="carousel-btn" id="prevBtn">❮</button>
-        <button class="carousel-btn" id="nextBtn">❯</button>
-      </div>
-      <div class="carousel-indicators" id="carouselIndicators">
-        ${carouselProducts.map((_, i) => `<div class="indicator ${i === 0 ? 'active' : ''}" data-index="${i}"></div>`).join('')}
-      </div>
-    </div>
-  `;
-
-  setupCarouselLogic(carouselProducts.length);
+}
+function showSkeletonLoading(gridId, count = 12) {
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+    grid.innerHTML = Array(count).fill(0).map(() => createSkeletonCard()).join('');
 }
 
-function setupCarouselLogic(count) {
-  const track = document.getElementById('carouselTrack');
-  const indicators = document.querySelectorAll('.indicator');
-  if (!track) return;
-  
-  function goToSlide(n) {
-    currentSlide = (n + count) % count;
-    track.style.transform = `translateX(-${currentSlide * 100}%)`;
-    indicators.forEach((ind, i) => ind.classList.toggle('active', i === currentSlide));
-  }
-
-  document.getElementById('nextBtn')?.addEventListener('click', (e) => { e.preventDefault(); goToSlide(currentSlide + 1); });
-  document.getElementById('prevBtn')?.addEventListener('click', (e) => { e.preventDefault(); goToSlide(currentSlide - 1); });
-  
-  indicators.forEach(ind => {
-    ind.addEventListener('click', (e) => { e.preventDefault(); goToSlide(parseInt(ind.dataset.index)); });
-  });
-
-  if (carouselInterval) clearInterval(carouselInterval);
-  carouselInterval = setInterval(() => goToSlide(currentSlide + 1), 5000);
+// ========== LÓGICA DE SELOS ==========
+function getBadges(discount) {
+    const badges = { left: '', right: '' };
+    if (discount >= 60) {
+        badges.left = `<span class="badge-best-price">⭐ Melhor Preço</span>`;
+    } else if (discount > 5) {
+        badges.left = `<span class="badge-discount">${discount}% OFF</span>`;
+    }
+    if (discount > 50) {
+        badges.right = `<span class="badge-hot">🔥 HOT</span>`;
+    } else if (discount >= 30) {
+        badges.right = `<span class="badge-flash">⚡ Relâmpago</span>`;
+    }
+    return badges;
 }
 
-// --- Grid de Produtos ---
-function renderGrid(products, excludeItems = []) {
-  const grid = document.getElementById('featuredGrid');
-  if (!grid) return;
-
-  const excludeIds = new Set(excludeItems.map(p => p.id));
-  const isTodayPage = window.location.pathname.includes('/ofertas-hoje/');
-  const limit = isTodayPage ? 50 : 24;
-  const gridProducts = products.filter(p => !excludeIds.has(p.id)).slice(0, limit);
-
-  if (gridProducts.length === 0) {
-      grid.innerHTML = '<div class="no-results"><p>Nenhuma oferta encontrada.</p></div>';
-    return;
-  }
-
-  grid.innerHTML = gridProducts.map((p, idx) => {
-    const badges = getProfessionalBadges(p, idx);
-    const favClass = isFavorite(p.id) ? 'active' : '';
-    const alertClass = hasAlert(p.id) ? 'active' : '';
-    const decision = getAchadoCertoDecision(p);
+// ========== RENDERIZAÇÃO DE PRODUTOS ==========
+function createProductCard(p) {
+    const discount = p.custom_discount_pct || 0;
+    const price = parseFloat(p.price);
+    const oldPrice = p.original_price ? parseFloat(p.original_price) : (price / (1 - discount / 100));
+    const savings = oldPrice - price;
+    const badges = getBadges(discount);
     return `
-      <div class="product-card" data-product-id="${escapeHtml(p.id)}" data-category="${escapeHtml(p.custom_category_slug || '')}">
-        <button class="fav-btn ${favClass}" title="Favoritar" onclick="event.preventDefault(); toggleFavorite('${p.id}')">♥</button>
-        <button class="alert-mini-btn ${alertClass}" title="Criar alerta" onclick="event.preventDefault(); openQuickAlert('${p.id}')">🔔</button>
-        <span class="badge discount-badge">↓ ${p.custom_discount_pct}% OFF</span>
-        ${badges}
-        <div class="card-img"><img src="${escapeHtml(p.image || p.thumbnail)}" alt="${escapeHtml(p.name)}" loading="lazy"></div>
-        <h3>${escapeHtml(p.name).substring(0, 60)}...</h3>
-        <div class="achado-certo-decision ${decision.className}">${decision.label}</div>
-        <div class="price-tag">R$ ${formatPrice(p.price)}</div>
-        <a href="${escapeHtml(safeAffiliateUrl(p))}" class="btn btn-primary" target="_blank" rel="nofollow sponsored" onclick="trackOfferClick('${p.id}')" style="width:100%; font-weight: 600; letter-spacing: 0.5px;">🛒 VER OFERTA</a>
-      </div>
-    `;
-  }).join('');
-}
-
-// --- Notícias ---
-function renderNews() {
-  const main = document.querySelector('main');
-  if (!main || document.getElementById('newsSection')) return;
-
-  const newsData = [
-    { title: "Melhores Ofertas de Celulares Hoje", summary: "Monitoramos as quedas de preço em tempo real no Mercado Livre para você.", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400", url: "noticias/index.html" },
-    { title: "Guia de Moda 2026: Como Economizar", summary: "Novas categorias de moda integradas com descontos de até 70%.", img: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=400", url: "noticias/index.html" },
-    { title: "Como Identificar Ofertas Reais", summary: "Aprenda a usar nossa metodologia de score para não cair em falsas promoções.", img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400", url: "noticias/index.html" }
-  ];
-
-  const newsHtml = `
-    <section class="news-section" id="newsSection">
-      <div class="section-header"><h2>📰 Novas Postagens</h2></div>
-      <div class="news-carousel">
-        <div class="news-track" id="newsTrack">
-          ${newsData.map(n => `
-            <div class="news-slide">
-              <div class="news-img"><img src="${n.img}" alt="${n.title}" loading="lazy"></div>
-              <div class="news-info">
-                <h3>${n.title}</h3>
-                <p>${n.summary}</p>
-                <a href="${n.url}" class="btn" style="padding: 8px 20px; font-size: 14px; margin-top:0">Ler Mais</a>
-              </div>
+        <div class="product-card">
+            ${badges.left}
+            ${badges.right}
+            <img
+                src="${p.image}"
+                alt="${p.name}"
+                class="product-img"
+                loading="lazy"
+                onerror="this.src='/assets/img/placeholder.png'"
+            >
+            <h3 class="product-title">${p.name}</h3>
+            <div class="price-box">
+                ${oldPrice > price ? `<span class="old-price">De R$ ${formatPrice(oldPrice)}</span>` : ''}
+                <div class="current-price">R$ ${formatPrice(price)}</div>
+                ${savings > 1 ? `<span class="savings">💰 Economize R$ ${formatPrice(savings)}</span>` : ''}
             </div>
-          `).join('')}
+            <a href="${p.custom_affiliate_url}" class="btn-buy" target="_blank" rel="noopener noreferrer sponsored">
+                Ver Oferta ⚡
+            </a>
         </div>
-      </div>
-    </section>
-  `;
+    `;
+}
 
-  const gridSection = document.querySelector('.section');
-  if (gridSection) {
-    gridSection.insertAdjacentHTML('beforebegin', newsHtml);
-  }
-
-  let newsIndex = 0;
-  setInterval(() => {
-    const track = document.getElementById('newsTrack');
-    if (track) {
-      newsIndex = (newsIndex + 1) % newsData.length;
-      track.style.transform = `translateY(-${newsIndex * 200}px)`;
+function renderProducts(products, gridId = 'featuredGrid', limit = 24) {
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+    if (!products || products.length === 0) {
+        grid.innerHTML = '<p style="text-align:center;padding:40px;grid-column:1/-1;color:var(--text-muted);">Nenhuma oferta encontrada no momento.</p>';
+        return;
     }
-  }, 6000);
+    const sorted = [...products].sort((a, b) => (b.custom_discount_pct || 0) - (a.custom_discount_pct || 0));
+    const diversified = [];
+    const seenCats = {};
+    for (const p of sorted) {
+        const cat = p.custom_category_slug || 'outros';
+        seenCats[cat] = (seenCats[cat] || 0) + 1;
+        if (seenCats[cat] <= 4) diversified.push(p);
+        if (diversified.length >= limit) break;
+    }
+    grid.innerHTML = diversified.map(p => createProductCard(p)).join('');
+    const cards = grid.querySelectorAll('.product-card');
+    cards.forEach((card, index) => {
+        card.style.animation = `fadeIn 0.45s ease-out ${index * 0.04}s both`;
+    });
 }
 
-// --- Inicialização Principal ---
-async function init() {
-  try {
-    const res = await fetch(DATA_URL + '?t=' + Date.now());
-    if (!res.ok) throw new Error('Falha ao carregar dados');
-      let rawProducts = await res.json();
-      
-      allProducts = deduplicateProducts(rawProducts);
-      await loadUserState();
-    // Ordenação por timestamp para garantir que os novos produtos apareçam no topo
-    const sorted = [...allProducts].sort((a, b) => {
-      const dateA = new Date(a.timestamp || a.last_seen || 0);
-      const dateB = new Date(b.timestamp || b.last_seen || 0);
-      return dateB - dateA;
-    });
-    
-    const carouselProducts = sorted.slice(0, 8);
-    renderCarousel(carouselProducts);
-    renderStats(allProducts);
-    const premiumItems = renderRadarPremium(allProducts);
-    // Excluir: Carrossel (8) + Premium (5) + primeiros 12 ordenados = até 25 produtos
-    const excludedIds = new Set([...carouselProducts, ...premiumItems, ...sorted.slice(0, 12)].map(p => p.id));
-    renderGrid(allProducts, Array.from(excludedIds).map(id => ({ id })));
-    renderNews();
-    
-    setupCategoryFilters();
-    setupSearch();
-  } catch (e) {
-    console.error('Erro ao carregar ofertas:', e);
-    const grid = document.getElementById('featuredGrid');
-    if (grid) grid.innerHTML = '<p style="text-align:center; padding: 20px;">Ocorreu um erro ao carregar as ofertas. Por favor, tente novamente mais tarde.</p>';
-  }
+// ========== ESTATÍSTICAS ==========
+function updateStats(products) {
+    const totalEl = document.getElementById('statTotal');
+    const discountEl = document.getElementById('statDiscount');
+    if (totalEl) totalEl.textContent = products.length.toLocaleString('pt-BR') + '+';
+    if (discountEl) {
+        const maxDiscount = Math.max(...products.map(p => p.custom_discount_pct || 0));
+        discountEl.textContent = maxDiscount + '%';
+    }
 }
 
-function setupCategoryFilters() {
-  const tabs = document.querySelectorAll('.cat-tab');
-  tabs.forEach(tab => {
-    tab.addEventListener('click', (e) => {
-      const category = tab.getAttribute('data-cat');
-      if (!category) return; // Se for um link <a> para outra página, segue o link normalmente
-      
-      e.preventDefault();
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      
-      if (category === 'todos') {
-        // Ordenação por timestamp para garantir que os novos produtos apareçam no topo
-    const sorted = [...allProducts].sort((a, b) => {
-      const dateA = new Date(a.timestamp || a.last_seen || 0);
-      const dateB = new Date(b.timestamp || b.last_seen || 0);
-      return dateB - dateA;
-    });
-        const premiumItems = [...allProducts].sort((a, b) => {
-          const dateA = new Date(a.last_seen || 0);
-          const dateB = new Date(b.last_seen || 0);
-          return dateB - dateA; // Mais recente primeiro
-        }).slice(0, 5);
-        renderGrid(allProducts, [...premiumItems, ...sorted.slice(0, 12)]);
-      } else {
-        const filtered = allProducts.filter(p => p.custom_category_slug === category);
-        renderGrid(filtered);
-      }
-    });
-  });
-}
-
-// --- Busca Inteligente com Autocomplete ---
+// ========== BUSCA ==========
 function setupSearch() {
-  const searchInput = document.getElementById('searchInput');
-  if (!searchInput) return;
-  
-  // Criar container de resultados do autocomplete
-  const autocompleteContainer = document.createElement('div');
-  autocompleteContainer.id = 'autocompleteResults';
-  autocompleteContainer.className = 'autocomplete-container';
-  searchInput.parentElement.appendChild(autocompleteContainer);
-
-  let searchTimeout;
-  searchInput.addEventListener('input', (e) => {
-    const query = e.target.value.toLowerCase().trim();
-    clearTimeout(searchTimeout);
-    
-    if (query.length < 2) {
-      autocompleteContainer.style.display = 'none';
-      if (query.length === 0) init();
-      return;
-    }
-
-    const suggestions = allProducts.filter(p => 
-      (p.name || '').toLowerCase().includes(query)
-    ).slice(0, 5);
-
-    if (suggestions.length > 0) {
-      autocompleteContainer.innerHTML = suggestions.map(p => `
-        <div class="autocomplete-item" onclick="window.location.href='${safeAffiliateUrl(p)}'">
-          <img src="${p.image || p.thumbnail}" width="30">
-          <span>${p.name.substring(0, 40)}...</span>
-        </div>
-      `).join('');
-      autocompleteContainer.style.display = 'block';
-    } else {
-      autocompleteContainer.style.display = 'none';
-    }
-
-    searchTimeout = setTimeout(() => {
-      const filtered = allProducts.filter(p => 
-        (p.name || '').toLowerCase().includes(query) ||
-        (p.custom_category_slug || '').toLowerCase().includes(query)
-      );
-      renderGrid(filtered);
-    }, 300);
-  });
-
-  // Fechar autocomplete ao clicar fora
-  document.addEventListener('click', (e) => {
-    if (!searchInput.contains(e.target)) autocompleteContainer.style.display = 'none';
-  });
+    const searchInput = document.getElementById('mainSearch');
+    if (!searchInput) return;
+    let searchTimeout;
+    searchInput.addEventListener('input', (e) => {
+        clearTimeout(searchTimeout);
+        const query = e.target.value.toLowerCase().trim();
+        if (query.length === 0) {
+            renderProducts(allProducts, 'featuredGrid', 24);
+            return;
+        }
+        searchTimeout = setTimeout(() => {
+            const filtered = allProducts.filter(p =>
+                (p.name || '').toLowerCase().includes(query) ||
+                (p.custom_category_slug || '').toLowerCase().includes(query)
+            );
+            renderProducts(filtered, 'featuredGrid', 48);
+        }, 300);
+    });
 }
 
-// --- Ecossistema Radar: favoritos, alertas e comportamento ---
-async function loadUserState() {
-  if (!window.RadarAuth) return;
-  await window.RadarAuth.init();
-  const [favorites, alerts] = await Promise.all([
-    window.RadarAuth.getCollection('favorites', []),
-    window.RadarAuth.getCollection('alerts', [])
-  ]);
-  favoriteIds = new Set(favorites.map(item => String(item.productId || item.id)));
-  alertIds = new Set(alerts.filter(item => item.active !== false).map(item => String(item.productId || item.id)));
+// ========== MENU MOBILE ==========
+function setupMobileMenu() {
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+    if (!toggle || !nav) return;
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        toggle.textContent = nav.classList.contains('open') ? '✕' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('open');
+            toggle.textContent = '☰';
+        });
+    });
 }
 
-function productSnapshot(product) {
-  return {
-    id: product.id,
-    productId: product.id,
-    name: product.name || product.title,
-    title: product.title || product.name,
-    price: Number(product.price || 0),
-    originalPrice: Number(product.originalPrice || product.original_price || product.price || 0),
-    image: product.image || product.thumbnail || '',
-    thumbnail: product.thumbnail || product.image || '',
-    category: product.custom_category_slug || '',
-    discount: Number(product.custom_discount_pct || 0),
-    url: safeAffiliateUrl(product),
-    addedAt: new Date().toISOString()
-  };
-}
-
-async function toggleFavorite(productId) {
-  const product = allProducts.find(item => String(item.id) === String(productId));
-  if (!product || !window.RadarAuth) return;
-  await window.RadarAuth.init();
-  if (favoriteIds.has(String(productId))) {
-    await window.RadarAuth.removeItem('favorites', productId);
-    favoriteIds.delete(String(productId));
-  } else {
-    await window.RadarAuth.upsertItem('favorites', productSnapshot(product));
-    favoriteIds.add(String(productId));
-  }
-  renderGrid(allProducts);
-}
-
-function isFavorite(productId) {
-  return favoriteIds.has(String(productId));
-}
-
-function hasAlert(productId) {
-  return alertIds.has(String(productId));
-}
-
-async function openQuickAlert(productId) {
-  const product = allProducts.find(item => String(item.id) === String(productId));
-  if (!product || !window.RadarAuth) return;
-  await window.RadarAuth.init();
-  const suggested = Math.max(1, Math.floor(Number(product.price || 0) * 0.92));
-  const value = prompt(`Avisar quando ${product.name || product.title} chegar em qual preço?`, suggested);
-  if (!value) return;
-  const targetPrice = Number(String(value).replace(',', '.'));
-  if (!targetPrice || targetPrice <= 0) return alert('Informe um preço válido.');
-  await window.RadarAuth.upsertItem('alerts', {
-    id: product.id,
-    productId: product.id,
-    product: productSnapshot(product),
-    targetPrice,
-    currentPrice: Number(product.price || 0),
-    active: true,
-    createdAt: new Date().toISOString(),
-    history: buildPriceHistory(product)
-  });
-  alertIds.add(String(product.id));
-  alert('Alerta criado. Você pode acompanhar tudo em Minha lista.');
-  renderGrid(allProducts);
-}
-
-function buildPriceHistory(product) {
-  const price = Number(product.price || 0);
-  const original = Number(product.originalPrice || product.original_price || price);
-  return [
-    { label: 'Hoje', price },
-    { label: 'Ontem', price: Math.round(price * 1.01 * 100) / 100 },
-    { label: '7 dias atrás', price: Math.round(((price + original) / 2) * 100) / 100 },
-    { label: '30 dias atrás', price: original }
-  ];
-}
-
-function getAchadoCertoDecision(product) {
-  const discount = Number(product.custom_discount_pct || 0);
-  const price = Number(product.price || 0);
-  const original = Number(product.originalPrice || product.original_price || price);
-  const ratio = original > 0 ? price / original : 1;
-  if (discount >= 35 || ratio <= 0.72) return { label: 'Comprar agora', className: '' };
-  if (discount >= 18 || ratio <= 0.88) return { label: 'Preço justo', className: '' };
-  if (discount >= 8) return { label: 'Esperar queda', className: 'wait' };
-  return { label: 'Acima da média', className: 'expensive' };
-}
-
-function trackOfferClick(productId) {
-  const product = allProducts.find(item => String(item.id) === String(productId));
-  if (product && window.RadarAuth) window.RadarAuth.trackProductClick(productSnapshot(product));
-}
-
-// Theme Toggle
-const themeToggle = document.getElementById('themeToggle');
-if (themeToggle) {
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-  themeToggle.innerText = savedTheme === 'dark' ? '☀️' : '🌙';
-  themeToggle.addEventListener('click', () => {
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    const newTheme = isDark ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    themeToggle.innerText = isDark ? '🌙' : '☀️';
-  });
-}
-
-// Iniciar apenas uma vez
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    init();
-    injectExplorarMenu();
-  });
-} else {
-  init();
-  injectExplorarMenu();
-}
-
-async function injectExplorarMenu() {
-    const container = document.getElementById('explorarMenuContainer');
-    if (!container) return;
-
+// ========== INICIALIZAÇÃO ==========
+async function init() {
     try {
-        const isGithub = window.location.hostname.includes('github.io');
-        const pathParts = window.location.pathname.split('/').filter(p => p);
-        let prefix = './';
-        
-        if (isGithub) {
-            // No GitHub Pages (/radar/...), o primeiro elemento é 'radar'
-            const depth = pathParts.length - 1; 
-            if (depth > 0) prefix = '../'.repeat(depth);
-        } else {
-            const depth = pathParts.length;
-            if (depth > 0) prefix = '../'.repeat(depth);
+        showSkeletonLoading('featuredGrid', 12);
+        showSkeletonLoading('offersGrid', 24);
+        showSkeletonLoading('comparativesGrid', 12);
+        showSkeletonLoading('guidesGrid', 12);
+
+        const response = await fetch(DATA_URL + '?t=' + Date.now());
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        allProducts = Array.isArray(data) ? data : [];
+
+        updateStats(allProducts);
+
+        if (document.getElementById('featuredGrid')) {
+            renderProducts(allProducts, 'featuredGrid', 24);
         }
-        
-        const response = await fetch(`${prefix}templates/explorar_menu.html`);
-        if (response.ok) {
-            const html = await response.text();
-            container.innerHTML = html;
+        if (document.getElementById('offersGrid')) {
+            renderProducts(allProducts, 'offersGrid', 50);
         }
-    } catch (e) {
-        console.error('Erro ao carregar menu explorar:', e);
+        if (document.getElementById('comparativesGrid')) {
+            renderProducts(getRandomProducts(allProducts, 12), 'comparativesGrid', 12);
+        }
+        if (document.getElementById('guidesGrid')) {
+            renderProducts(getRandomProducts(allProducts, 12), 'guidesGrid', 12);
+        }
+
+        setupSearch();
+        setupMobileMenu();
+        console.log('✅ Compre Rápido carregado!', allProducts.length, 'ofertas disponíveis.');
+    } catch (error) {
+        console.error('❌ Erro ao carregar dados:', error);
+        const grid = document.getElementById('featuredGrid');
+        if (grid) {
+            grid.innerHTML = '<p style="text-align:center;padding:40px;grid-column:1/-1;color:var(--danger);">Não foi possível carregar as ofertas. Tente novamente em instantes.</p>';
+        }
     }
 }
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}
+
+// ========== LAZY LOADING ==========
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    observer.unobserve(img);
+                }
+            }
+        });
+    });
+    document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
+}
+
+// ========== SMOOTH SCROLL ==========
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+});
+
+// ========== ANALYTICS ==========
+function trackEvent(category, action, label) {
+    if (typeof gtag !== 'undefined') {
+        gtag('event', action, { event_category: category, event_label: label });
+    }
+}
+document.addEventListener('click', (e) => {
+    const buyBtn = e.target.closest('.btn-buy');
+    if (buyBtn) {
+        const productTitle = buyBtn.closest('.product-card')?.querySelector('.product-title')?.textContent || 'Desconhecido';
+        trackEvent('engajamento', 'clique_oferta', productTitle);
+    }
+});

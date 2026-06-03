@@ -1,101 +1,86 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
-<head><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>🔥 Melhores Ofertas do Dia - Radar de Preços</title>
-<meta content="Confira o ranking das 50 melhores ofertas do dia monitoradas pelo nosso robô. Descontos reais e atualizados em tempo real." name="description"/>
-<link href="https://comprerapido.github.io/ofertas-hoje/" rel="canonical"/>
-<link href="../assets/css/style.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Melhores Ofertas do Dia",
-    "description": "As 50 maiores quedas de preço das últimas 24 horas, monitoradas pelo Radar de Preços."
-  }
-  </script>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P0X4Z9Y7B2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-P0X4Z9Y7B2');
-</script>
-<script>
-  // Rastreamento de cliques em afiliados
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('a[href*="mercadolivre.com"]').forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        gtag('event', 'affiliate_click', {
-          'event_category': 'engagement',
-          'event_label': this.href,
-          'link_url': this.href,
-          'product_name': this.getAttribute('title') || this.innerText
-        });
-      });
-    });
-  });
-</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achados do Dia — Compre Rápido | Melhores Ofertas Agora</title>
+    <meta name="description" content="As melhores ofertas e promoções do dia, selecionadas em tempo real pelo Compre Rápido. Descontos reais em eletrônicos, eletrodomésticos, moda e muito mais.">
+    <link rel="canonical" href="https://comprerapido.github.io/ofertas-hoje/">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap">
 </head>
 <body>
+
 <header class="header">
-<div class="container header-inner">
-<a class="logo" href="../">📊 <strong>Radar de Preços</strong></a>
-<div class="search-bar"><input id="searchInput" placeholder="Buscar ofertas..." type="text"/></div>
-<button id="themeToggle">🌙</button>
-</div>
+    <div class="container">
+        <a href="/" class="logo">
+            <div class="logo-icon">⚡</div>
+            Compre<span>Rápido</span>
+        </a>
+        <div class="search-bar">
+            <input id="mainSearch" type="text" placeholder="Busque por produto, marca ou categoria...">
+        </div>
+        <button class="menu-toggle" aria-label="Menu">☰</button>
+        <nav class="nav-links">
+            <a href="/ofertas-hoje/">⚡ Achados</a>
+            <a href="/categorias/">📦 Categorias</a>
+            <a href="/melhores-2026/">🏆 Top 2026</a>
+            <a href="/guias/">📖 Guias</a>
+            <a href="/sobre/" class="btn-primary">Sobre Nós</a>
+        </nav>
+    </div>
 </header>
-<nav class="cat-nav">
-<div class="container cat-tabs" id="catTabs">
-<a class="cat-tab" href="../">Início</a>
-<a class="cat-tab" href="../categorias/celulares/">Celulares</a>
-<a class="cat-tab" href="../categorias/informatica/">Informática</a>
-<a class="cat-tab" href="../categorias/eletrodomesticos/">Eletrodomésticos</a>
-<a class="cat-tab" href="../categorias/tv-e-video/">TV e Vídeo</a>
-</div>
-</nav>
-<main class="container section">
-<div class="main-hero" style="padding: 40px 20px; border-radius: 20px; margin-bottom: 30px;">
-<h1>🔥 Ofertas do Dia</h1>
-<p>As 50 maiores quedas de preço das últimas 24 horas, monitoradas em tempo real pelo nosso algoritmo.</p>
-</div>
-<div class="stats-bar" id="statsBar"></div>
-<div class="products-grid" id="featuredGrid">
-<!-- Renderizado via JS -->
-</div>
+
+<section class="page-hero">
+    <div class="container">
+        <h1>⚡ Achados do Dia</h1>
+        <p>As melhores oportunidades rastreadas em tempo real. Preços verificados e atualizados a cada 5 minutos.</p>
+    </div>
+</section>
+
+<main class="container">
+    <div id="offersGrid" class="products-grid" style="margin-top: 40px;"></div>
 </main>
+
 <footer class="footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-col">
-<h3>Radar de Preços</h3>
-<p>O seu assistente inteligente para compras online. Monitoramos milhares de produtos para garantir que você pague o menor preço real.</p>
-</div>
-<div class="footer-col">
-<h4>Navegação</h4>
-<a href="../">Início</a>
-<a href="../guias/">Guias de Compra</a>
-<a href="./">Ofertas de Hoje</a>
-<a href="../cupons/">Cupons</a>
-</div>
-<div class="footer-col">
-<h4>Institucional</h4>
-<a href="../sobre/">Sobre Nós</a>
-<a href="../contato/">Contato</a>
-<a href="../privacidade/">Privacidade</a>
-<a href="../termos/">Termos de Uso</a>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 Radar de Preços. Todos os direitos reservados. Atualizado via API oficial.</p>
-</div>
-</div>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <span class="footer-logo">⚡ Compre<span>Rápido</span></span>
+                <p>O portal de inteligência de compras que rastreia o mercado para você economizar de verdade.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explorar</h4>
+                <ul>
+                    <li><a href="/ofertas-hoje/">Achados do Dia</a></li>
+                    <li><a href="/categorias/">Categorias</a></li>
+                    <li><a href="/melhores-2026/">Rankings 2026</a></li>
+                    <li><a href="/guias/">Guias de Compra</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Institucional</h4>
+                <ul>
+                    <li><a href="/sobre/">Sobre Nós</a></li>
+                    <li><a href="/metodologia/">Metodologia</a></li>
+                    <li><a href="/contato/">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="/privacidade/">Privacidade</a></li>
+                    <li><a href="/termos/">Termos de Uso</a></li>
+                    <li><a href="/disclaimer/">Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Compre Rápido — Encontre Rápido. Compre Melhor.
+        </div>
+    </div>
 </footer>
-<script src="../assets/js/app.js"></script>
+
+<script src="/assets/js/app.js"></script>
 </body>
 </html>
