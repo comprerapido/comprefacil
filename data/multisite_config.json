@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-03T15:16:17Z",
+  "updated_at": "2026-06-03T15:28:16Z",
   "default_site": {
     "domain": "comprerapido.github.io",
     "site_name": "Compre Rápido",
@@ -37,6 +37,14 @@
       "products": 4
     },
     {
+      "slug": "eletrodomesticos",
+      "name": "Eletrodomésticos",
+      "pillar": "/guias/guia-de-compra-eletrodomesticos-2026/",
+      "category_page": "/categorias/eletrodomesticos/",
+      "best_page": "/melhores-2026/melhores-eletrodomesticos-2026/",
+      "products": 7
+    },
+    {
       "slug": "celulares",
       "name": "Celulares",
       "pillar": "/guias/guia-de-compra-celulares-2026/",
@@ -50,14 +58,6 @@
       "pillar": "/guias/guia-de-compra-casa-2026/",
       "category_page": "/categorias/casa/",
       "best_page": "/melhores-2026/melhores-casa-2026/",
-      "products": 9
-    },
-    {
-      "slug": "eletrodomesticos",
-      "name": "Eletrodomésticos",
-      "pillar": "/guias/guia-de-compra-eletrodomesticos-2026/",
-      "category_page": "/categorias/eletrodomesticos/",
-      "best_page": "/melhores-2026/melhores-eletrodomesticos-2026/",
       "products": 8
     },
     {
@@ -69,20 +69,20 @@
       "products": 11
     },
     {
-      "slug": "games",
-      "name": "Games e consoles",
-      "pillar": "/guias/guia-de-compra-games-2026/",
-      "category_page": "/categorias/games/",
-      "best_page": "/melhores-2026/melhores-games-2026/",
-      "products": 11
-    },
-    {
       "slug": "tv-e-video",
       "name": "Tv E Video",
       "pillar": "/guias/guia-de-compra-tv-e-video-2026/",
       "category_page": "/categorias/tv-e-video/",
       "best_page": "/melhores-2026/melhores-tv-e-video-2026/",
       "products": 6
+    },
+    {
+      "slug": "games",
+      "name": "Games e consoles",
+      "pillar": "/guias/guia-de-compra-games-2026/",
+      "category_page": "/categorias/games/",
+      "best_page": "/melhores-2026/melhores-games-2026/",
+      "products": 10
     },
     {
       "slug": "tecnologia",
