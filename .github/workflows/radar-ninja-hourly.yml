@@ -33,6 +33,8 @@ jobs:
           curl -s --max-time 10 "https://api.mercadolibre.com/sites/MLB/search?q=smartphone&limit=1" | python3 -c "import json,sys; d=json.load(sys.stdin); print(f'API OK — {len(d.get(\"results\",[]))} resultado(s) retornado(s)')" || echo "AVISO: API não respondeu no teste de conectividade"
 
       - name: 🤖 Executar Robô de Automação (fetch + score + publicação)
+        env:
+          SCRAPERAPI_KEY: ${{ secrets.SCRAPERAPI_KEY }}
         run: |
           cd $GITHUB_WORKSPACE
           python scripts/auto_robot.py

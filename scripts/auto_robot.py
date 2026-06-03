@@ -43,9 +43,16 @@ def fetch_from_mercadolivre():
 
     for cat in categories:
         log.info(f"🔍 Buscando categoria: {cat['id']} (query: {cat['q']})")
-        url = f"https://api.mercadolibre.com/sites/MLB/search?q={cat['q']}&sort=relevance&limit=20"
+        ml_url = f"https://api.mercadolibre.com/sites/MLB/search?q={cat['q']}&sort=relevance&limit=20"
+        scraper_key = os.environ.get("SCRAPERAPI_KEY")
+        
+        if scraper_key:
+            url = f"http://api.scraperapi.com?api_key={scraper_key}&url={ml_url}"
+        else:
+            url = ml_url
+            
         try:
-            resp = requests.get(url, timeout=15)
+            resp = requests.get(url, timeout=30)
             resp.raise_for_status()
             data = resp.json()
             results = data.get("results", [])

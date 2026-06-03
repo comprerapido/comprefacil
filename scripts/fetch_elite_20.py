@@ -16,9 +16,16 @@ def fetch_elite_products():
     
     for cat in categories:
         logger.info(f"Buscando elite para: {cat['id']}")
-        url = f"https://api.mercadolibre.com/sites/MLB/search?q={cat['q']}&limit=10"
+        ml_url = f"https://api.mercadolibre.com/sites/MLB/search?q={cat['q']}&limit=10"
+        scraper_key = os.environ.get("SCRAPERAPI_KEY")
+        
+        if scraper_key:
+            url = f"http://api.scraperapi.com?api_key={scraper_key}&url={ml_url}"
+        else:
+            url = ml_url
+            
         try:
-            resp = requests.get(url, timeout=10)
+            resp = requests.get(url, timeout=30)
             data = resp.json(); logger.info(f"API respondeu com {len(data.get("results", []))} resultados")
             count = 0
             for item in data.get('results', []):
