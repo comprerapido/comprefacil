@@ -144,24 +144,6 @@
     "score": 637.301
   },
   {
-    "id": "MLB4812130742",
-    "name": "Creatina Monohidratada Pura 1kg Dark Lab Unidade Sem Sabor",
-    "title": "Creatina Monohidratada Pura 1kg Dark Lab Unidade Sem Sabor",
-    "price": 69.9,
-    "originalPrice": 159.9,
-    "original_price": 159.9,
-    "permalink": "https://www.mercadolivre.com.br/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor/p/MLB25929487?pdp_filters=deal%3AMLB779362-1",
-    "image": "https://http2.mlstatic.com/D_Q_NP_2X_848860-MLA99964507641_112025-AB.webp",
-    "thumbnail": "https://http2.mlstatic.com/D_Q_NP_2X_848860-MLA99964507641_112025-AB.webp",
-    "custom_category_slug": "beleza",
-    "custom_discount_pct": 56,
-    "custom_affiliate_url": "https://www.mercadolivre.com.br/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor/p/MLB25929487?pdp_filters=deal%3AMLB779362-1&matt_tool=vendas0nline",
-    "status": "active",
-    "last_seen": "2026-06-03T02:58:17.264613",
-    "timestamp": "2026-06-01T18:55:56.285572",
-    "score": 619.0
-  },
-  {
     "id": "MLB6443434920",
     "name": "Celular Samsung Galaxy A07 256gb, 8gb, Câmera 50mp, Tela 6.7 , Proteção Ip54, Processador 6nm - Preto",
     "title": "Celular Samsung Galaxy A07 256gb, 8gb, Câmera 50mp, Tela 6.7 , Proteção Ip54, Processador 6nm - Preto",
@@ -358,5 +340,23 @@
     "last_seen": "2026-06-03T02:58:17.264623",
     "timestamp": "2026-06-01T18:55:56.285587",
     "score": 566.037
+  },
+  {
+    "id": "TESTE_ROBO_2026",
+    "name": "Produto de Teste do Robô - Auditoria Manus",
+    "title": "Produto de Teste do Robô - Auditoria Manus",
+    "price": 99.9,
+    "originalPrice": 199.9,
+    "original_price": 199.9,
+    "permalink": "https://www.mercadolivre.com.br/p/MLB_TESTE",
+    "image": "https://http2.mlstatic.com/D_Q_NP_2X_785197-MLA98861184401_112025-AB.webp",
+    "thumbnail": "https://http2.mlstatic.com/D_Q_NP_2X_785197-MLA98861184401_112025-AB.webp",
+    "custom_category_slug": "tecnologia",
+    "custom_discount_pct": 50,
+    "custom_affiliate_url": "https://www.mercadolivre.com.br/p/MLB_TESTE?matt_tool=vendas0nline",
+    "status": "expired",
+    "source_origin": "Teste Manual de Auditoria",
+    "timestamp": "2026-06-03T02:34:27.807312",
+    "score": 560.0
   }
 ]

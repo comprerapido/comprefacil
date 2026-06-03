@@ -384,6 +384,9 @@ def generate_product_pages(products: List[Dict[str, Any]], history: Dict[str, Li
         criteria_html = "".join(f"<li><strong>{escape(c.capitalize())}</strong>: avalie esse ponto antes de comprar para evitar escolhas baseadas apenas no desconto.</li>" for c in criteria)
         body = f"""
         {crumbs}
+        <div class="card" style="text-align:center; margin-bottom:20px;">
+            <a class="cta" href="{escape(affiliate_url(product))}" rel="nofollow sponsored noopener" target="_blank" style="width:100%; display:block;">🔥 VER OFERTA NO MERCADO LIVRE (TOPO)</a>
+        </div>
         <section class="hero">
           <div><img src="{escape(product_image(product))}" alt="{escape(title)}" class="product-img" loading="lazy"></div>
           <div class="card">
@@ -403,6 +406,9 @@ def generate_product_pages(products: List[Dict[str, Any]], history: Dict[str, Li
         <section><h2>Perguntas frequentes</h2><div class="grid">{faq_html}</div></section>
         <section class="card"><h2>Produtos relacionados</h2><ul>{related_html or '<li>Novas alternativas serão adicionadas automaticamente conforme o robô ampliar a base.</li>'}</ul></section>
         <section class="card"><h2>Transparência editorial</h2><p>Esta análise foi criada a partir de dados de produto, histórico interno de preço e regras editoriais automatizadas. O conteúdo tem finalidade informativa e não substitui a verificação final no marketplace.</p></section>
+        <div class="card" style="text-align:center; margin-top:20px;">
+            <a class="cta" href="{escape(affiliate_url(product))}" rel="nofollow sponsored noopener" target="_blank" style="width:100%; display:block;">🚀 COMPRAR AGORA NO MERCADO LIVRE (FINAL)</a>
+        </div>
         """
         description = f"Preço, histórico, FAQ e análise do {title}. Veja se a oferta é real e compare alternativas em {cat_name}."
         html = html_page(f"{title}: preço, análise e histórico | {SITE_NAME}", description, body, product_url(product), product_schema(product, real))

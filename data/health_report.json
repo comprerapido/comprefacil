@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-06-03T10:23:05Z",
+  "updated_at": "2026-06-03T11:35:18Z",
   "status": "healthy",
   "checks": {
-    "total_products": 74,
-    "quality_products": 73,
-    "real_promotions": 72,
-    "product_pages": 73,
+    "total_products": 66,
+    "quality_products": 65,
+    "real_promotions": 64,
+    "product_pages": 65,
     "category_pages": 8,
     "comparisons": 23,
     "guides": 8,
@@ -13,7 +13,7 @@
     "best_pages": 8,
     "daily_deals": 30,
     "eeat_pages": 9,
-    "sitemap_urls": 235,
+    "sitemap_urls": 244,
     "broken_links": 0
   },
   "recovery": {
