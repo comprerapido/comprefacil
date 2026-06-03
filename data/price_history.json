@@ -686,5 +686,29 @@
       "original_price": 2099.0,
       "discount_pct": 29
     }
+  ],
+  "MLB3456789030": [
+    {
+      "date": "2026-06-03T15:16:17Z",
+      "price": 7299.0,
+      "original_price": 8294.32,
+      "discount_pct": 12
+    }
+  ],
+  "MLB3456789031": [
+    {
+      "date": "2026-06-03T15:16:17Z",
+      "price": 3499.0,
+      "original_price": 4267.07,
+      "discount_pct": 18
+    }
+  ],
+  "MLB3456789032": [
+    {
+      "date": "2026-06-03T15:16:17Z",
+      "price": 799.0,
+      "original_price": 918.39,
+      "discount_pct": 13
+    }
   ]
 }

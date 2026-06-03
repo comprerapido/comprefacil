@@ -2,14 +2,14 @@
 
 | Métrica | Valor |
 | --- | --- |
-| Atualizado em | 2026-06-03T14:14:13Z |
+| Atualizado em | 2026-06-03T15:16:17Z |
 | Status | healthy |
-| Produtos de qualidade | 75 |
-| Páginas de produto | 75 |
+| Produtos de qualidade | 78 |
+| Páginas de produto | 78 |
 | Comparações | 24 |
 | Guias | 10 |
 | Artigos | 10 |
-| URLs no sitemap | 288 |
+| URLs no sitemap | 298 |
 | Links internos quebrados | 0 |
 
 ## Recuperação automática

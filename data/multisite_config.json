@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-03T14:14:13Z",
+  "updated_at": "2026-06-03T15:16:17Z",
   "default_site": {
     "domain": "comprerapido.github.io",
     "site_name": "Compre Rápido",
@@ -37,20 +37,20 @@
       "products": 4
     },
     {
+      "slug": "celulares",
+      "name": "Celulares",
+      "pillar": "/guias/guia-de-compra-celulares-2026/",
+      "category_page": "/categorias/celulares/",
+      "best_page": "/melhores-2026/melhores-celulares-2026/",
+      "products": 13
+    },
+    {
       "slug": "casa",
       "name": "Casa e cozinha",
       "pillar": "/guias/guia-de-compra-casa-2026/",
       "category_page": "/categorias/casa/",
       "best_page": "/melhores-2026/melhores-casa-2026/",
       "products": 9
-    },
-    {
-      "slug": "celulares",
-      "name": "Celulares",
-      "pillar": "/guias/guia-de-compra-celulares-2026/",
-      "category_page": "/categorias/celulares/",
-      "best_page": "/melhores-2026/melhores-celulares-2026/",
-      "products": 12
     },
     {
       "slug": "eletrodomesticos",
@@ -74,7 +74,7 @@
       "pillar": "/guias/guia-de-compra-games-2026/",
       "category_page": "/categorias/games/",
       "best_page": "/melhores-2026/melhores-games-2026/",
-      "products": 10
+      "products": 11
     },
     {
       "slug": "tv-e-video",
@@ -90,7 +90,7 @@
       "pillar": "/guias/guia-de-compra-tecnologia-2026/",
       "category_page": "/categorias/tecnologia/",
       "best_page": "/melhores-2026/melhores-tecnologia-2026/",
-      "products": 2
+      "products": 3
     },
     {
       "slug": "esporte",
