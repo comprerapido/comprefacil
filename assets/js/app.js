@@ -4,11 +4,19 @@
 // ============================================================
 
 const DATA_URL = '/data/database/all_products.json';
+const AFFILIATE_PARAM = 'matt_tool=vendas0nline';
 let allProducts = [];
 
 // ========== UTILITÁRIOS ==========
 function formatPrice(value) {
     return parseFloat(value).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function ensureAffiliateLink(url) {
+    if (!url) return '#';
+    if (url.includes(AFFILIATE_PARAM)) return url;
+    const separator = url.includes('?') ? '&' : '?';
+    return `${url}${separator}${AFFILIATE_PARAM}`;
 }
 function getRandomProducts(products, count) {
     return [...products].sort(() => Math.random() - 0.5).slice(0, count);
@@ -72,7 +80,7 @@ function createProductCard(p) {
                 <div class="current-price">R$ ${formatPrice(price)}</div>
                 ${savings > 1 ? `<span class="savings">💰 Economize R$ ${formatPrice(savings)}</span>` : ''}
             </div>
-            <a href="${p.custom_affiliate_url}" class="btn-buy" target="_blank" rel="noopener noreferrer sponsored">
+            <a href="${ensureAffiliateLink(p.custom_affiliate_url || p.permalink)}" class="btn-buy" target="_blank" rel="noopener noreferrer sponsored">
                 Ver Oferta ⚡
             </a>
         </div>
