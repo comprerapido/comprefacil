@@ -1,0 +1,594 @@
+{
+  "TESTE_ROBO_2026": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 99.9,
+      "original_price": 199.9,
+      "discount_pct": 50
+    }
+  ],
+  "MLB62321219": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 4223.0,
+      "original_price": 7999.0,
+      "discount_pct": 47
+    }
+  ],
+  "MLB6070039800": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 4223.0,
+      "original_price": 7849.0,
+      "discount_pct": 46
+    }
+  ],
+  "MLB3755400429": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 159.9,
+      "original_price": 499.99,
+      "discount_pct": 68
+    }
+  ],
+  "MLB26454796": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 159.9,
+      "original_price": 499.0,
+      "discount_pct": 68
+    }
+  ],
+  "MLB4812143184": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 44.9,
+      "original_price": 129.9,
+      "discount_pct": 65
+    }
+  ],
+  "MLB6443434920": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 799.2,
+      "original_price": 1799.0,
+      "discount_pct": 56
+    }
+  ],
+  "MLB54961556": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 799.2,
+      "original_price": 1799.0,
+      "discount_pct": 56
+    }
+  ],
+  "MLB4238150607": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 809.1,
+      "original_price": 1799.0,
+      "discount_pct": 55
+    }
+  ],
+  "MLB4292031849": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 332.1,
+      "original_price": 814.14,
+      "discount_pct": 59
+    }
+  ],
+  "MLB42641505": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 332.1,
+      "original_price": 811.0,
+      "discount_pct": 59
+    }
+  ],
+  "MLB6233727450": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 1451.0,
+      "original_price": 2855.0,
+      "discount_pct": 49
+    }
+  ],
+  "MLB6756182602": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 1349.0,
+      "original_price": 2599.0,
+      "discount_pct": 48
+    }
+  ],
+  "MLB4571470859": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 2299.0,
+      "original_price": 3999.0,
+      "discount_pct": 43
+    }
+  ],
+  "MLB4345564271": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 125.99,
+      "original_price": 299.0,
+      "discount_pct": 58
+    }
+  ],
+  "MLB6539025322": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 1994.0,
+      "original_price": 3499.0,
+      "discount_pct": 43
+    }
+  ],
+  "MLB4371605519": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 67.16,
+      "original_price": 159.9,
+      "discount_pct": 58
+    }
+  ],
+  "MLB66060206": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 67.16,
+      "original_price": 159.0,
+      "discount_pct": 58
+    }
+  ],
+  "MLB4812130742": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 69.9,
+      "original_price": 159.9,
+      "discount_pct": 56
+    }
+  ],
+  "MLB4367472775": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 1399.0,
+      "original_price": 2499.0,
+      "discount_pct": 44
+    }
+  ],
+  "MLB6600589630": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 25.12,
+      "original_price": 55.0,
+      "discount_pct": 54
+    }
+  ],
+  "MLB4179239349": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 3239.0,
+      "original_price": 4999.0,
+      "discount_pct": 35
+    }
+  ],
+  "MLB5664473412": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 388.63,
+      "original_price": 749.99,
+      "discount_pct": 48
+    }
+  ],
+  "MLB54575876": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 388.63,
+      "original_price": 749.0,
+      "discount_pct": 48
+    }
+  ],
+  "MLB3386925565": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 149.9,
+      "original_price": 299.9,
+      "discount_pct": 50
+    }
+  ],
+  "MLB6582857986": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 242.0,
+      "original_price": 479.0,
+      "discount_pct": 49
+    }
+  ],
+  "MLB3994439565": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 116.1,
+      "original_price": 230.0,
+      "discount_pct": 50
+    }
+  ],
+  "MLB6444937486": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 917.1,
+      "original_price": 1599.0,
+      "discount_pct": 43
+    }
+  ],
+  "MLB3247449553": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 45.9,
+      "original_price": 89.9,
+      "discount_pct": 49
+    }
+  ],
+  "MLB5556558810": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 122.31,
+      "original_price": 233.63,
+      "discount_pct": 48
+    }
+  ],
+  "MLB5522151066": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 159.99,
+      "original_price": 298.0,
+      "discount_pct": 46
+    }
+  ],
+  "MLB4594905683": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 1079.0,
+      "original_price": 1799.0,
+      "discount_pct": 40
+    }
+  ],
+  "MLB4571467199": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 1299.0,
+      "original_price": 2099.0,
+      "discount_pct": 38
+    }
+  ],
+  "MLB4089347501": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 486.23,
+      "original_price": 849.9,
+      "discount_pct": 43
+    }
+  ],
+  "MLB4056119063": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 1269.0,
+      "original_price": 1945.0,
+      "discount_pct": 35
+    }
+  ],
+  "MLB54963045": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 736.95,
+      "original_price": 1142.0,
+      "discount_pct": 35
+    }
+  ],
+  "MLB4079715491": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 869.0,
+      "original_price": 1324.0,
+      "discount_pct": 34
+    }
+  ],
+  "MLB5872060016": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 39.9,
+      "original_price": 64.9,
+      "discount_pct": 39
+    }
+  ],
+  "MLB6486861240": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 382.5,
+      "original_price": 599.0,
+      "discount_pct": 36
+    }
+  ],
+  "MLB3456789019": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 3299.0,
+      "original_price": 4499.0,
+      "discount_pct": 27
+    }
+  ],
+  "MLB3925829485": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 747.12,
+      "original_price": 1140.0,
+      "discount_pct": 34
+    }
+  ],
+  "MLB38947984": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 747.12,
+      "original_price": 1139.0,
+      "discount_pct": 34
+    }
+  ],
+  "MLB3366914567": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 119.0,
+      "original_price": 189.0,
+      "discount_pct": 37
+    }
+  ],
+  "MLB4645102377": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 89.02,
+      "original_price": 140.0,
+      "discount_pct": 36
+    }
+  ],
+  "MLB3456789013": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 329.0,
+      "original_price": 499.0,
+      "discount_pct": 34
+    }
+  ],
+  "MLB4627337521": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 679.0,
+      "original_price": 1000.0,
+      "discount_pct": 32
+    }
+  ],
+  "MLB4674562069": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 304.0,
+      "original_price": 459.0,
+      "discount_pct": 34
+    }
+  ],
+  "MLB3456789017": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 199.0,
+      "original_price": 299.0,
+      "discount_pct": 33
+    }
+  ],
+  "MLB4627337165": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 407.0,
+      "original_price": 600.0,
+      "discount_pct": 32
+    }
+  ],
+  "MLB3456789027": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 59.9,
+      "original_price": 89.9,
+      "discount_pct": 33
+    }
+  ],
+  "MLB3456789016": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 59.9,
+      "original_price": 89.9,
+      "discount_pct": 33
+    }
+  ],
+  "MLB3456789028": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 2499.0,
+      "original_price": 3299.0,
+      "discount_pct": 24
+    }
+  ],
+  "MLB3456789026": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 129.0,
+      "original_price": 189.0,
+      "discount_pct": 32
+    }
+  ],
+  "MLB6657082608": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 280.0,
+      "original_price": 400.0,
+      "discount_pct": 30
+    }
+  ],
+  "MLB4475360653": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 709.9,
+      "original_price": 989.0,
+      "discount_pct": 28
+    }
+  ],
+  "MLB48946861": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 709.9,
+      "original_price": 989.0,
+      "discount_pct": 28
+    }
+  ],
+  "MLB3456789014": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 159.0,
+      "original_price": 229.0,
+      "discount_pct": 31
+    }
+  ],
+  "MLB4627310495": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 70.0,
+      "original_price": 100.0,
+      "discount_pct": 30
+    }
+  ],
+  "MLB3456789018": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 1499.0,
+      "original_price": 1999.0,
+      "discount_pct": 25
+    }
+  ],
+  "MLB3456789021": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 249.0,
+      "original_price": 349.0,
+      "discount_pct": 29
+    }
+  ],
+  "MLB3456789020": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 249.0,
+      "original_price": 349.0,
+      "discount_pct": 29
+    }
+  ],
+  "MLB3456789025": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 35.9,
+      "original_price": 49.9,
+      "discount_pct": 28
+    }
+  ],
+  "MLB3456789023": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 189.0,
+      "original_price": 259.0,
+      "discount_pct": 27
+    }
+  ],
+  "MLB5978099410": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 383.15,
+      "original_price": 511.49,
+      "discount_pct": 25
+    }
+  ],
+  "MLB6423251554": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 1236.0,
+      "original_price": 1599.0,
+      "discount_pct": 23
+    }
+  ],
+  "MLB3456789024": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 499.0,
+      "original_price": 650.0,
+      "discount_pct": 23
+    }
+  ],
+  "MLB4350686819": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 184.48,
+      "original_price": 239.9,
+      "discount_pct": 23
+    }
+  ],
+  "MLB3456789012": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 799.0,
+      "original_price": 999.0,
+      "discount_pct": 20
+    }
+  ],
+  "MLB3456789015": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 2899.0,
+      "original_price": 3499.0,
+      "discount_pct": 17
+    }
+  ],
+  "MLB4642810529": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 3292.0,
+      "original_price": 3899.0,
+      "discount_pct": 16
+    }
+  ],
+  "MLB5275428302": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 1099.0,
+      "original_price": 1356.0,
+      "discount_pct": 19
+    }
+  ],
+  "MLB6046653990": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 3949.0,
+      "original_price": 4599.0,
+      "discount_pct": 14
+    }
+  ],
+  "MLB3456789022": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 429.0,
+      "original_price": 499.0,
+      "discount_pct": 14
+    }
+  ],
+  "MLB5783097440": [
+    {
+      "date": "2026-06-03T10:11:45Z",
+      "price": 273.56,
+      "original_price": 289.0,
+      "discount_pct": 5
+    }
+  ]
+}

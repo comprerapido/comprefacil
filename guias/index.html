@@ -1,141 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guias de Compra — Compre Rápido | Aprenda a Comprar Melhor</title>
-    <meta name="description" content="Guias completos e análises aprofundadas para você tomar as melhores decisões de compra. Smartphones, eletrodomésticos, fones, notebooks e muito mais.">
-    <link rel="canonical" href="https://comprerapido.github.io/guias/">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guias de compra | Compre Rápido</title>
+  <meta name="description" content="Guias completos de compra por categoria.">
+  <link rel="canonical" href="https://comprerapido.github.io/guias/">
+  <meta property="og:title" content="Guias de compra | Compre Rápido">
+  <meta property="og:description" content="Guias completos de compra por categoria.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://comprerapido.github.io/guias/">
+  <style>
+    :root { --bg:#f7f8fb; --card:#fff; --text:#172033; --muted:#5b6475; --brand:#0f62fe; --ok:#0a7f3f; --warn:#a15c00; --border:#dfe4ee; }
+    * { box-sizing:border-box; } body { margin:0; font-family:Inter,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+    a { color:var(--brand); text-decoration:none; } a:hover { text-decoration:underline; }
+    header, footer { background:#101827; color:white; } header a, footer a { color:white; }
+    .wrap { width:min(1120px, 92vw); margin:0 auto; } .top { display:flex; justify-content:space-between; gap:16px; align-items:center; padding:18px 0; flex-wrap:wrap; }
+    nav a { margin-right:14px; font-weight:700; } main { padding:26px 0 48px; } .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(245px,1fr)); gap:18px; }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:18px; padding:20px; box-shadow:0 8px 22px rgba(16,24,39,.06); }
+    .hero { display:grid; grid-template-columns:minmax(260px, 430px) 1fr; gap:26px; align-items:start; }
+    .hero img, .product-img { width:100%; max-height:420px; object-fit:contain; background:white; border:1px solid var(--border); border-radius:18px; padding:16px; }
+    .price { font-size:2rem; font-weight:900; color:var(--ok); } .old { color:var(--muted); text-decoration:line-through; } .badge { display:inline-block; background:#e8f5ee; color:var(--ok); border-radius:999px; padding:4px 10px; font-weight:800; }
+    .cta { display:inline-block; background:var(--brand); color:white; border-radius:12px; padding:14px 20px; font-weight:900; margin:12px 0; }
+    .note { color:var(--muted); font-size:.95rem; } .crumbs { color:var(--muted); font-size:.92rem; margin:12px 0 20px; }
+    table { width:100%; border-collapse:collapse; background:white; border-radius:12px; overflow:hidden; } th, td { border:1px solid var(--border); padding:10px; text-align:left; } th { background:#eef3ff; }
+    h1 { line-height:1.18; font-size:clamp(2rem,4vw,3.3rem); } h2 { margin-top:34px; } .toc li { margin-bottom:8px; }
+    footer { padding:28px 0; margin-top:40px; } .small { font-size:.9rem; }
+    @media (max-width:760px) { .hero { grid-template-columns:1fr; } nav a { display:inline-block; margin:4px 8px 4px 0; } }
+  </style>
+  
 </head>
 <body>
-
-<header class="header">
-    <div class="container">
-        <a href="/" class="logo">
-            <div class="logo-icon">⚡</div>
-            Compre<span>Rápido</span>
-        </a>
-        <div class="search-bar">
-            <input id="mainSearch" type="text" placeholder="Busque por produto, marca ou categoria...">
-        </div>
-        <button class="menu-toggle" aria-label="Menu">☰</button>
-        <nav class="nav-links">
-            <a href="/ofertas-hoje/">⚡ Achados</a>
-            <a href="/categorias/">📦 Categorias</a>
-            <a href="/melhores-2026/">🏆 Top 2026</a>
-            <a href="/guias/">📖 Guias</a>
-            <a href="/sobre/" class="btn-primary">Sobre Nós</a>
-        </nav>
-    </div>
-</header>
-
-<section class="page-hero">
-    <div class="container">
-        <h1>📖 Guias de Compra</h1>
-        <p>Economize tempo e dinheiro com nossas análises aprofundadas. Conteúdo independente, sem viés comercial.</p>
-    </div>
-</section>
-
-<main class="container">
-    <div class="guides-grid" style="margin-top: 40px;">
-        <div class="guide-card">
-            <div class="guide-thumb">💻</div>
-            <div class="guide-body">
-                <h3>Como escolher o melhor smartphone em 2026</h3>
-                <p>Processador, câmera, bateria ou tela? Descubra o que realmente importa antes de trocar de celular este ano e evite pagar por recursos que você não vai usar.</p>
-                <a href="/guias/melhor-smartphone-2026/" class="btn-guide">Ler Guia Completo</a>
-            </div>
-        </div>
-        <div class="guide-card">
-            <div class="guide-thumb">🎧</div>
-            <div class="guide-body">
-                <h3>Fones Bluetooth: Guia Definitivo 2026</h3>
-                <p>Cancelamento de ruído ativo, autonomia de bateria, qualidade sonora e conforto. Tudo o que você precisa saber antes de comprar.</p>
-                <a href="/guias/melhores-fones-bluetooth/" class="btn-guide">Ler Guia Completo</a>
-            </div>
-        </div>
-        <div class="guide-card">
-            <div class="guide-thumb">🏠</div>
-            <div class="guide-body">
-                <h3>Air Fryer: Vale a pena comprar em 2026?</h3>
-                <p>Analisamos os modelos mais vendidos, comparamos capacidade, potência e custo-benefício para diferentes perfis de uso doméstico.</p>
-                <a href="/guias/melhor-air-fryer-2026/" class="btn-guide">Ler Guia Completo</a>
-            </div>
-        </div>
-        <div class="guide-card">
-            <div class="guide-thumb">🖥️</div>
-            <div class="guide-body">
-                <h3>Notebook para Trabalho e Estudo: Guia 2026</h3>
-                <p>Processador, RAM, armazenamento e autonomia — o que priorizar dependendo do seu perfil de uso e orçamento disponível.</p>
-                <a href="/guias/melhor-notebook-trabalho-2026/" class="btn-guide">Ler Guia Completo</a>
-            </div>
-        </div>
-        <div class="guide-card">
-            <div class="guide-thumb">📺</div>
-            <div class="guide-body">
-                <h3>Smart TV 4K: Como escolher o tamanho ideal</h3>
-                <p>Resolução, taxa de atualização, HDR e sistemas operacionais. Um guia completo para você não errar na compra da sua próxima televisão.</p>
-                <a href="/guias/melhor-smart-tv-4k-2026/" class="btn-guide">Ler Guia Completo</a>
-            </div>
-        </div>
-        <div class="guide-card">
-            <div class="guide-thumb">🎮</div>
-            <div class="guide-body">
-                <h3>Console ou PC Gamer: Qual comprar em 2026?</h3>
-                <p>Comparamos custo de entrada, biblioteca de jogos, desempenho e longevidade para ajudar você a tomar a melhor decisão.</p>
-                <a href="/guias/console-vs-pc-gamer-2026/" class="btn-guide">Ler Guia Completo</a>
-            </div>
-        </div>
-    </div>
-
-    <div style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 40px; border-radius: 20px; text-align: center; margin: 60px 0;">
-        <h2 style="margin-bottom: 12px;">Receba os melhores achados no seu e-mail</h2>
-        <p style="opacity: 0.9; margin-bottom: 24px;">Cadastre-se e seja o primeiro a saber quando uma oferta imperdível aparecer.</p>
-        <a href="/newsletter/" style="background: var(--accent); color: white; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 700; display: inline-block; transition: background 0.2s;">Quero Economizar!</a>
-    </div>
-</main>
-
-<footer class="footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <span class="footer-logo">⚡ Compre<span>Rápido</span></span>
-                <p>O portal de inteligência de compras que rastreia o mercado para você economizar de verdade.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Explorar</h4>
-                <ul>
-                    <li><a href="/ofertas-hoje/">Achados do Dia</a></li>
-                    <li><a href="/categorias/">Categorias</a></li>
-                    <li><a href="/melhores-2026/">Rankings 2026</a></li>
-                    <li><a href="/guias/">Guias de Compra</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Institucional</h4>
-                <ul>
-                    <li><a href="/sobre/">Sobre Nós</a></li>
-                    <li><a href="/metodologia/">Metodologia</a></li>
-                    <li><a href="/contato/">Contato</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="/privacidade/">Privacidade</a></li>
-                    <li><a href="/termos/">Termos de Uso</a></li>
-                    <li><a href="/disclaimer/">Disclaimer</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            © 2026 Compre Rápido — Encontre Rápido. Compre Melhor.
-        </div>
-    </div>
-</footer>
-
-<script src="/assets/js/app.js"></script>
+<header><div class="wrap top"><strong>Compre Rápido</strong><nav><a href="/">Início</a><a href="/ofertas-hoje/">Ofertas do dia</a><a href="/melhores-2026/">Melhores 2026</a><a href="/guias/">Guias</a><a href="/transparencia/">Transparência</a></nav></div></header>
+<main class="wrap"><h1>Guias de compra</h1><ul><li><a href='/guias/guia-de-compra-ferramentas-2026/'>Guia de compra de Ferramentas</a></li><li><a href='/guias/guia-de-compra-beleza-2026/'>Guia de compra de Beleza e cuidados pessoais</a></li><li><a href='/guias/guia-de-compra-eletrodomesticos-2026/'>Guia de compra de Eletrodomésticos</a></li><li><a href='/guias/guia-de-compra-casa-2026/'>Guia de compra de Casa e cozinha</a></li><li><a href='/guias/guia-de-compra-celulares-2026/'>Guia de compra de Celulares</a></li><li><a href='/guias/guia-de-compra-informatica-2026/'>Guia de compra de Informática e notebooks</a></li><li><a href='/guias/guia-de-compra-games-2026/'>Guia de compra de Games e consoles</a></li><li><a href='/guias/guia-de-compra-tv-e-video-2026/'>Guia de compra de Tv E Video</a></li></ul></main>
+<footer><div class="wrap small"><p><strong>Compre Rápido</strong> combina curadoria editorial, histórico de preços e critérios transparentes de seleção. Como participante de programas de afiliados, podemos receber comissão por compras qualificadas, sem custo adicional para você.</p><p><a href="/sobre/">Sobre</a> · <a href="/contato/">Contato</a> · <a href="/politica-afiliados/">Política de afiliados</a> · <a href="/privacidade/">Privacidade</a></p></div></footer>
 </body>
 </html>

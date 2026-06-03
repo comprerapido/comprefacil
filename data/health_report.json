@@ -1,0 +1,24 @@
+{
+  "updated_at": "2026-06-03T10:16:08Z",
+  "status": "healthy",
+  "checks": {
+    "total_products": 74,
+    "quality_products": 73,
+    "real_promotions": 72,
+    "product_pages": 73,
+    "category_pages": 8,
+    "comparisons": 23,
+    "guides": 8,
+    "articles": 8,
+    "best_pages": 8,
+    "daily_deals": 30,
+    "eeat_pages": 9,
+    "sitemap_urls": 221,
+    "broken_links": 0
+  },
+  "recovery": {
+    "product_pages": "Regeneradas automaticamente a partir de data/all_products.json.",
+    "sitemap": "Recriado automaticamente a partir dos arquivos HTML existentes.",
+    "broken_pages": "Links internos são auditados e listados em data/broken_pages_report.json."
+  }
+}

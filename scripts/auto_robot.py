@@ -284,20 +284,15 @@ def main():
     save_data(all_products, scored, all_collected)
     update_homepage(scored)
     
-    # SEO e Sitemaps (Importação dinâmica para evitar falha se arquivos não existirem)
+    # Evolução completa: SEO avançado, conteúdo longo, histórico de preços,
+    # promoções reais, E-E-A-T, clusters, multi-site, auditoria e sitemap final.
     try:
-        from generate_product_pages_v2 import generate_all_product_pages_v2
-        generate_all_product_pages_v2()
-        log.info("✅ Geração de páginas SEO v2 concluída!")
+        from radar_ninja_growth_engine import main as growth_engine_main
+        growth_stats = growth_engine_main()
+        log.info(f"✅ Motor de crescimento executado: {growth_stats}")
     except Exception as e:
-        log.error(f"Erro ao gerar páginas SEO: {e}")
-
-    try:
-        from generate_sitemaps import main as gen_sitemaps
-        gen_sitemaps()
-        log.info("✅ Sitemaps atualizados com sucesso!")
-    except Exception as e:
-        log.error(f"Erro ao atualizar sitemaps: {e}")
+        errors += 1
+        log.error(f"Erro no motor de crescimento Radar Ninja: {e}")
     
     generate_report({"new_count": new_count, "total_count": len(scored), "errors": errors})
 
