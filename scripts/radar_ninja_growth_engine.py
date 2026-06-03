@@ -588,7 +588,7 @@ def generate_multisite_config(groups: Dict[str, List[Dict[str, Any]]]) -> None:
         },
         "supported_sites": [
             {"domain": "comprerapido.github.io", "niche_strategy": "ofertas amplas com clusters por categoria", "template": "default-editorial-affiliate"},
-            {"domain": "comparaoferta.github.io", "niche_strategy": "comparações e rankings para evitar duplicidade", "template": "comparison-first"},
+
         ],
         "duplicate_content_policy": {
             "same_product_across_sites": "reescrever título, introdução, FAQ e ordem dos blocos; usar canonicals próprios; priorizar ângulo editorial diferente por domínio",
