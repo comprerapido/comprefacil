@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-03T16:12:48Z",
+  "updated_at": "2026-06-03T16:14:09Z",
   "stats": {
     "total_products": 81,
     "quality_products": 78,
@@ -12,7 +12,7 @@
     "best_pages": 10,
     "daily_deals": 30,
     "eeat_pages": 9,
-    "sitemap_urls": 306,
+    "sitemap_urls": 308,
     "broken_links": 62
   }
 }

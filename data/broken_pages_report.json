@@ -1,35 +1,15 @@
 {
-  "updated_at": "2026-06-03T16:12:48Z",
+  "updated_at": "2026-06-03T16:14:09Z",
   "broken_internal_links": [
     {
-      "page": "comparacoes/beleza/creatina-monohidratada-pura-500g-dark-lab-unidade-sem-sabor-vs-creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor/index.html",
-      "href": "/produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742/",
-      "expected": "produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742"
+      "page": "comparacoes/celulares/samsung-galaxy-tab-a11-5g-6gb-128gb-cinza-vs-celular-samsung-galaxy-a17-com-ia-256gb-8gb-ram-cam-de-50mp-tela-de-6-7-nfc-ip54-cinza/index.html",
+      "href": "/produtos/celulares/celular-samsung-galaxy-a17-com-ia-256gb-8gb-ram-cam-de-50mp-tela-de-6-7-nfc-ip54-cinza-mlb4594905683/",
+      "expected": "produtos/celulares/celular-samsung-galaxy-a17-com-ia-256gb-8gb-ram-cam-de-50mp-tela-de-6-7-nfc-ip54-cinza-mlb4594905683"
     },
     {
-      "page": "comparacoes/beleza/creatina-monohidratada-pura-500g-dark-lab-unidade-sem-sabor-vs-creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor/index.html",
-      "href": "/produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742/",
-      "expected": "produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742"
-    },
-    {
-      "page": "comparacoes/beleza/whey-protein-concentrado-100-900g-dark-lab-vs-creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor/index.html",
-      "href": "/produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742/",
-      "expected": "produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742"
-    },
-    {
-      "page": "comparacoes/beleza/whey-protein-concentrado-100-900g-dark-lab-vs-creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor/index.html",
-      "href": "/produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742/",
-      "expected": "produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742"
-    },
-    {
-      "page": "comparacoes/beleza/whey-protein-concentrado-100-900g-refil-dark-lab-sabor-morango-vs-creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor/index.html",
-      "href": "/produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742/",
-      "expected": "produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742"
-    },
-    {
-      "page": "comparacoes/beleza/whey-protein-concentrado-100-900g-refil-dark-lab-sabor-morango-vs-creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor/index.html",
-      "href": "/produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742/",
-      "expected": "produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742"
+      "page": "comparacoes/celulares/samsung-galaxy-tab-a11-5g-6gb-128gb-cinza-vs-celular-samsung-galaxy-a17-com-ia-256gb-8gb-ram-cam-de-50mp-tela-de-6-7-nfc-ip54-cinza/index.html",
+      "href": "/produtos/celulares/celular-samsung-galaxy-a17-com-ia-256gb-8gb-ram-cam-de-50mp-tela-de-6-7-nfc-ip54-cinza-mlb4594905683/",
+      "expected": "produtos/celulares/celular-samsung-galaxy-a17-com-ia-256gb-8gb-ram-cam-de-50mp-tela-de-6-7-nfc-ip54-cinza-mlb4594905683"
     },
     {
       "page": "comparacoes/celulares/celular-samsung-galaxy-a17-com-ia-256gb-8gb-ram-cam-de-50mp-tela-de-6-7-nfc-ip54-cinza-vs-samsung-galaxy-tab-a11-5g-6gb-128gb-cinza/index.html",
@@ -42,104 +22,14 @@
       "expected": "produtos/celulares/celular-samsung-galaxy-a17-com-ia-256gb-8gb-ram-cam-de-50mp-tela-de-6-7-nfc-ip54-cinza-mlb4594905683"
     },
     {
-      "page": "comparacoes/celulares/samsung-galaxy-tab-a11-5g-6gb-128gb-cinza-vs-celular-samsung-galaxy-a17-com-ia-256gb-8gb-ram-cam-de-50mp-tela-de-6-7-nfc-ip54-cinza/index.html",
-      "href": "/produtos/celulares/celular-samsung-galaxy-a17-com-ia-256gb-8gb-ram-cam-de-50mp-tela-de-6-7-nfc-ip54-cinza-mlb4594905683/",
-      "expected": "produtos/celulares/celular-samsung-galaxy-a17-com-ia-256gb-8gb-ram-cam-de-50mp-tela-de-6-7-nfc-ip54-cinza-mlb4594905683"
+      "page": "comparacoes/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-vs-smart-tv-samsung-32-ls32h5000fgxzd-hd-led-wifi-hdmi-110-220v/index.html",
+      "href": "/produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322/",
+      "expected": "produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322"
     },
     {
-      "page": "comparacoes/celulares/samsung-galaxy-tab-a11-5g-6gb-128gb-cinza-vs-celular-samsung-galaxy-a17-com-ia-256gb-8gb-ram-cam-de-50mp-tela-de-6-7-nfc-ip54-cinza/index.html",
-      "href": "/produtos/celulares/celular-samsung-galaxy-a17-com-ia-256gb-8gb-ram-cam-de-50mp-tela-de-6-7-nfc-ip54-cinza-mlb4594905683/",
-      "expected": "produtos/celulares/celular-samsung-galaxy-a17-com-ia-256gb-8gb-ram-cam-de-50mp-tela-de-6-7-nfc-ip54-cinza-mlb4594905683"
-    },
-    {
-      "page": "comparacoes/games/asus-rog-ally-z1-extreme-512gb-vs-kit-c-36-envelopes-252-cromos-copa-do-mundo-fifa-2026/index.html",
-      "href": "/produtos/games/asus-rog-ally-z1-extreme-512gb-mlb62321219/",
-      "expected": "produtos/games/asus-rog-ally-z1-extreme-512gb-mlb62321219"
-    },
-    {
-      "page": "comparacoes/games/asus-rog-ally-z1-extreme-512gb-vs-kit-c-36-envelopes-252-cromos-copa-do-mundo-fifa-2026/index.html",
-      "href": "/produtos/games/asus-rog-ally-z1-extreme-512gb-mlb62321219/",
-      "expected": "produtos/games/asus-rog-ally-z1-extreme-512gb-mlb62321219"
-    },
-    {
-      "page": "comparacoes/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-vs-kit-70-figurinhas-do-album-copa-do-mundo-2026-pronta-entrega/index.html",
-      "href": "/produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608/",
-      "expected": "produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608"
-    },
-    {
-      "page": "comparacoes/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-vs-kit-70-figurinhas-do-album-copa-do-mundo-2026-pronta-entrega/index.html",
-      "href": "/produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608/",
-      "expected": "produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608"
-    },
-    {
-      "page": "comparacoes/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-vs-kit-com-48-pacotes-de-figurinhas-panini-para-o-album-copa-do-mundo-fifa-2026/index.html",
-      "href": "/produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608/",
-      "expected": "produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608"
-    },
-    {
-      "page": "comparacoes/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-vs-kit-com-48-pacotes-de-figurinhas-panini-para-o-album-copa-do-mundo-fifa-2026/index.html",
-      "href": "/produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608/",
-      "expected": "produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608"
-    },
-    {
-      "page": "comparacoes/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-vs-kit-70-figurinhas-do-album-copa-do-mundo-2026-pronta-entrega/index.html",
-      "href": "/produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165/",
-      "expected": "produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165"
-    },
-    {
-      "page": "comparacoes/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-vs-kit-70-figurinhas-do-album-copa-do-mundo-2026-pronta-entrega/index.html",
-      "href": "/produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165/",
-      "expected": "produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165"
-    },
-    {
-      "page": "comparacoes/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-vs-kit-700-figurinha-do-album-copa-do-mundo-2026-100-envelopes/index.html",
-      "href": "/produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165/",
-      "expected": "produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165"
-    },
-    {
-      "page": "comparacoes/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-vs-kit-700-figurinha-do-album-copa-do-mundo-2026-100-envelopes/index.html",
-      "href": "/produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165/",
-      "expected": "produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165"
-    },
-    {
-      "page": "comparacoes/games/kit-70-figurinhas-do-album-copa-do-mundo-2026-pronta-entrega-vs-kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes/index.html",
-      "href": "/produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165/",
-      "expected": "produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165"
-    },
-    {
-      "page": "comparacoes/games/kit-70-figurinhas-do-album-copa-do-mundo-2026-pronta-entrega-vs-kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes/index.html",
-      "href": "/produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165/",
-      "expected": "produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165"
-    },
-    {
-      "page": "comparacoes/games/kit-c-36-envelopes-252-cromos-copa-do-mundo-fifa-2026-vs-asus-rog-ally-z1-extreme-512gb/index.html",
-      "href": "/produtos/games/asus-rog-ally-z1-extreme-512gb-mlb62321219/",
-      "expected": "produtos/games/asus-rog-ally-z1-extreme-512gb-mlb62321219"
-    },
-    {
-      "page": "comparacoes/games/kit-c-36-envelopes-252-cromos-copa-do-mundo-fifa-2026-vs-asus-rog-ally-z1-extreme-512gb/index.html",
-      "href": "/produtos/games/asus-rog-ally-z1-extreme-512gb-mlb62321219/",
-      "expected": "produtos/games/asus-rog-ally-z1-extreme-512gb-mlb62321219"
-    },
-    {
-      "page": "comparacoes/games/kit-com-48-pacotes-de-figurinhas-panini-para-o-album-copa-do-mundo-fifa-2026-vs-kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes/index.html",
-      "href": "/produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608/",
-      "expected": "produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608"
-    },
-    {
-      "page": "comparacoes/games/kit-com-48-pacotes-de-figurinhas-panini-para-o-album-copa-do-mundo-fifa-2026-vs-kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes/index.html",
-      "href": "/produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608/",
-      "expected": "produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608"
-    },
-    {
-      "page": "comparacoes/games/kit-com-48-pacotes-de-figurinhas-panini-para-o-album-copa-do-mundo-fifa-2026-vs-kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes/index.html",
-      "href": "/produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165/",
-      "expected": "produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165"
-    },
-    {
-      "page": "comparacoes/games/kit-com-48-pacotes-de-figurinhas-panini-para-o-album-copa-do-mundo-fifa-2026-vs-kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes/index.html",
-      "href": "/produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165/",
-      "expected": "produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165"
+      "page": "comparacoes/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-vs-smart-tv-samsung-32-ls32h5000fgxzd-hd-led-wifi-hdmi-110-220v/index.html",
+      "href": "/produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322/",
+      "expected": "produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322"
     },
     {
       "page": "comparacoes/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-vs-smart-tv-43-philco-p43vik-roku-led-dolby-audio-wi-fi-hdmi-h/index.html",
@@ -152,22 +42,12 @@
       "expected": "produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349"
     },
     {
-      "page": "comparacoes/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-vs-smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-h/index.html",
-      "href": "/produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349/",
-      "expected": "produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349"
-    },
-    {
-      "page": "comparacoes/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-vs-smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-h/index.html",
+      "page": "comparacoes/tv-e-video/smart-tv-samsung-32-ls32h5000fgxzd-hd-led-wifi-hdmi-110-220v-vs-smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-22/index.html",
       "href": "/produtos/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-mlb4571467199/",
       "expected": "produtos/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-mlb4571467199"
     },
     {
-      "page": "comparacoes/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-vs-smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-h/index.html",
-      "href": "/produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349/",
-      "expected": "produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349"
-    },
-    {
-      "page": "comparacoes/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-vs-smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-h/index.html",
+      "page": "comparacoes/tv-e-video/smart-tv-samsung-32-ls32h5000fgxzd-hd-led-wifi-hdmi-110-220v-vs-smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-22/index.html",
       "href": "/produtos/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-mlb4571467199/",
       "expected": "produtos/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-mlb4571467199"
     },
@@ -202,6 +82,16 @@
       "expected": "produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349"
     },
     {
+      "page": "comparacoes/tv-e-video/smart-tv-philco-58-p58vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-vs-smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-a/index.html",
+      "href": "/produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349/",
+      "expected": "produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349"
+    },
+    {
+      "page": "comparacoes/tv-e-video/smart-tv-philco-58-p58vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-vs-smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-a/index.html",
+      "href": "/produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349/",
+      "expected": "produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349"
+    },
+    {
       "page": "comparacoes/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-vs-smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-f/index.html",
       "href": "/produtos/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-mlb4571467199/",
       "expected": "produtos/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-mlb4571467199"
@@ -232,46 +122,6 @@
       "expected": "produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322"
     },
     {
-      "page": "comparacoes/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-vs-smart-tv-philco-58-p58vik-4k-uhd-led-roku-dolby-audio-wi-fi-hd/index.html",
-      "href": "/produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322/",
-      "expected": "produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322"
-    },
-    {
-      "page": "comparacoes/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-vs-smart-tv-philco-58-p58vik-4k-uhd-led-roku-dolby-audio-wi-fi-hd/index.html",
-      "href": "/produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322/",
-      "expected": "produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322"
-    },
-    {
-      "page": "comparacoes/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-vs-smart-tv-samsung-32-ls32h5000fgxzd-hd-led-wifi-hdmi-110-220v/index.html",
-      "href": "/produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322/",
-      "expected": "produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322"
-    },
-    {
-      "page": "comparacoes/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-vs-smart-tv-samsung-32-ls32h5000fgxzd-hd-led-wifi-hdmi-110-220v/index.html",
-      "href": "/produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322/",
-      "expected": "produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322"
-    },
-    {
-      "page": "comparacoes/tv-e-video/smart-tv-philco-58-p58vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-vs-smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-a/index.html",
-      "href": "/produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349/",
-      "expected": "produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349"
-    },
-    {
-      "page": "comparacoes/tv-e-video/smart-tv-philco-58-p58vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-vs-smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-a/index.html",
-      "href": "/produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349/",
-      "expected": "produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349"
-    },
-    {
-      "page": "comparacoes/tv-e-video/smart-tv-philco-58-p58vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-vs-smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr/index.html",
-      "href": "/produtos/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-mlb4571467199/",
-      "expected": "produtos/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-mlb4571467199"
-    },
-    {
-      "page": "comparacoes/tv-e-video/smart-tv-philco-58-p58vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-vs-smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr/index.html",
-      "href": "/produtos/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-mlb4571467199/",
-      "expected": "produtos/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-mlb4571467199"
-    },
-    {
       "page": "comparacoes/tv-e-video/smart-tv-philco-58-p58vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-vs-smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hd/index.html",
       "href": "/produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322/",
       "expected": "produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322"
@@ -292,12 +142,22 @@
       "expected": "produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349"
     },
     {
-      "page": "comparacoes/tv-e-video/smart-tv-samsung-32-ls32h5000fgxzd-hd-led-wifi-hdmi-110-220v-vs-smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-22/index.html",
+      "page": "comparacoes/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-vs-smart-tv-philco-58-p58vik-4k-uhd-led-roku-dolby-audio-wi-fi-hd/index.html",
+      "href": "/produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322/",
+      "expected": "produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322"
+    },
+    {
+      "page": "comparacoes/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-vs-smart-tv-philco-58-p58vik-4k-uhd-led-roku-dolby-audio-wi-fi-hd/index.html",
+      "href": "/produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322/",
+      "expected": "produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322"
+    },
+    {
+      "page": "comparacoes/tv-e-video/smart-tv-philco-58-p58vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-vs-smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr/index.html",
       "href": "/produtos/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-mlb4571467199/",
       "expected": "produtos/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-mlb4571467199"
     },
     {
-      "page": "comparacoes/tv-e-video/smart-tv-samsung-32-ls32h5000fgxzd-hd-led-wifi-hdmi-110-220v-vs-smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-22/index.html",
+      "page": "comparacoes/tv-e-video/smart-tv-philco-58-p58vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-vs-smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr/index.html",
       "href": "/produtos/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-mlb4571467199/",
       "expected": "produtos/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-mlb4571467199"
     },
@@ -310,6 +170,146 @@
       "page": "comparacoes/tv-e-video/smart-tv-samsung-32-ls32h5000fgxzd-hd-led-wifi-hdmi-110-220v-vs-smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v/index.html",
       "href": "/produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322/",
       "expected": "produtos/tv-e-video/smart-tv-philco-50-p50vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110-220v-mlb6539025322"
+    },
+    {
+      "page": "comparacoes/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-vs-smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-h/index.html",
+      "href": "/produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349/",
+      "expected": "produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349"
+    },
+    {
+      "page": "comparacoes/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-vs-smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-h/index.html",
+      "href": "/produtos/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-mlb4571467199/",
+      "expected": "produtos/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-mlb4571467199"
+    },
+    {
+      "page": "comparacoes/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-vs-smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-h/index.html",
+      "href": "/produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349/",
+      "expected": "produtos/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-mlb4179239349"
+    },
+    {
+      "page": "comparacoes/tv-e-video/smart-tv-lg-uhd-ai-ua75-65-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25-vs-smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-h/index.html",
+      "href": "/produtos/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-mlb4571467199/",
+      "expected": "produtos/tv-e-video/smart-tv-philco-40-p40vik-led-roku-dolby-audio-wi-fi-hdmi-hdr-full-hd-110-220v-mlb4571467199"
+    },
+    {
+      "page": "comparacoes/games/kit-70-figurinhas-do-album-copa-do-mundo-2026-pronta-entrega-vs-kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes/index.html",
+      "href": "/produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165/",
+      "expected": "produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165"
+    },
+    {
+      "page": "comparacoes/games/kit-70-figurinhas-do-album-copa-do-mundo-2026-pronta-entrega-vs-kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes/index.html",
+      "href": "/produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165/",
+      "expected": "produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165"
+    },
+    {
+      "page": "comparacoes/games/kit-c-36-envelopes-252-cromos-copa-do-mundo-fifa-2026-vs-asus-rog-ally-z1-extreme-512gb/index.html",
+      "href": "/produtos/games/asus-rog-ally-z1-extreme-512gb-mlb62321219/",
+      "expected": "produtos/games/asus-rog-ally-z1-extreme-512gb-mlb62321219"
+    },
+    {
+      "page": "comparacoes/games/kit-c-36-envelopes-252-cromos-copa-do-mundo-fifa-2026-vs-asus-rog-ally-z1-extreme-512gb/index.html",
+      "href": "/produtos/games/asus-rog-ally-z1-extreme-512gb-mlb62321219/",
+      "expected": "produtos/games/asus-rog-ally-z1-extreme-512gb-mlb62321219"
+    },
+    {
+      "page": "comparacoes/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-vs-kit-700-figurinha-do-album-copa-do-mundo-2026-100-envelopes/index.html",
+      "href": "/produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165/",
+      "expected": "produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165"
+    },
+    {
+      "page": "comparacoes/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-vs-kit-700-figurinha-do-album-copa-do-mundo-2026-100-envelopes/index.html",
+      "href": "/produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165/",
+      "expected": "produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165"
+    },
+    {
+      "page": "comparacoes/games/kit-com-48-pacotes-de-figurinhas-panini-para-o-album-copa-do-mundo-fifa-2026-vs-kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes/index.html",
+      "href": "/produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165/",
+      "expected": "produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165"
+    },
+    {
+      "page": "comparacoes/games/kit-com-48-pacotes-de-figurinhas-panini-para-o-album-copa-do-mundo-fifa-2026-vs-kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes/index.html",
+      "href": "/produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165/",
+      "expected": "produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165"
+    },
+    {
+      "page": "comparacoes/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-vs-kit-70-figurinhas-do-album-copa-do-mundo-2026-pronta-entrega/index.html",
+      "href": "/produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165/",
+      "expected": "produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165"
+    },
+    {
+      "page": "comparacoes/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-vs-kit-70-figurinhas-do-album-copa-do-mundo-2026-pronta-entrega/index.html",
+      "href": "/produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165/",
+      "expected": "produtos/games/kit-420-figurinhas-do-album-copa-do-mundo-2026-60-envelopes-mlb4627337165"
+    },
+    {
+      "page": "comparacoes/games/asus-rog-ally-z1-extreme-512gb-vs-kit-c-36-envelopes-252-cromos-copa-do-mundo-fifa-2026/index.html",
+      "href": "/produtos/games/asus-rog-ally-z1-extreme-512gb-mlb62321219/",
+      "expected": "produtos/games/asus-rog-ally-z1-extreme-512gb-mlb62321219"
+    },
+    {
+      "page": "comparacoes/games/asus-rog-ally-z1-extreme-512gb-vs-kit-c-36-envelopes-252-cromos-copa-do-mundo-fifa-2026/index.html",
+      "href": "/produtos/games/asus-rog-ally-z1-extreme-512gb-mlb62321219/",
+      "expected": "produtos/games/asus-rog-ally-z1-extreme-512gb-mlb62321219"
+    },
+    {
+      "page": "comparacoes/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-vs-kit-70-figurinhas-do-album-copa-do-mundo-2026-pronta-entrega/index.html",
+      "href": "/produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608/",
+      "expected": "produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608"
+    },
+    {
+      "page": "comparacoes/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-vs-kit-70-figurinhas-do-album-copa-do-mundo-2026-pronta-entrega/index.html",
+      "href": "/produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608/",
+      "expected": "produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608"
+    },
+    {
+      "page": "comparacoes/games/kit-com-48-pacotes-de-figurinhas-panini-para-o-album-copa-do-mundo-fifa-2026-vs-kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes/index.html",
+      "href": "/produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608/",
+      "expected": "produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608"
+    },
+    {
+      "page": "comparacoes/games/kit-com-48-pacotes-de-figurinhas-panini-para-o-album-copa-do-mundo-fifa-2026-vs-kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes/index.html",
+      "href": "/produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608/",
+      "expected": "produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608"
+    },
+    {
+      "page": "comparacoes/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-vs-kit-com-48-pacotes-de-figurinhas-panini-para-o-album-copa-do-mundo-fifa-2026/index.html",
+      "href": "/produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608/",
+      "expected": "produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608"
+    },
+    {
+      "page": "comparacoes/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-vs-kit-com-48-pacotes-de-figurinhas-panini-para-o-album-copa-do-mundo-fifa-2026/index.html",
+      "href": "/produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608/",
+      "expected": "produtos/games/kit-280-figurinhas-do-album-copa-do-mundo-2026-40-envelopes-mlb6657082608"
+    },
+    {
+      "page": "comparacoes/beleza/whey-protein-concentrado-100-900g-dark-lab-vs-creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor/index.html",
+      "href": "/produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742/",
+      "expected": "produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742"
+    },
+    {
+      "page": "comparacoes/beleza/whey-protein-concentrado-100-900g-dark-lab-vs-creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor/index.html",
+      "href": "/produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742/",
+      "expected": "produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742"
+    },
+    {
+      "page": "comparacoes/beleza/whey-protein-concentrado-100-900g-refil-dark-lab-sabor-morango-vs-creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor/index.html",
+      "href": "/produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742/",
+      "expected": "produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742"
+    },
+    {
+      "page": "comparacoes/beleza/whey-protein-concentrado-100-900g-refil-dark-lab-sabor-morango-vs-creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor/index.html",
+      "href": "/produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742/",
+      "expected": "produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742"
+    },
+    {
+      "page": "comparacoes/beleza/creatina-monohidratada-pura-500g-dark-lab-unidade-sem-sabor-vs-creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor/index.html",
+      "href": "/produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742/",
+      "expected": "produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742"
+    },
+    {
+      "page": "comparacoes/beleza/creatina-monohidratada-pura-500g-dark-lab-unidade-sem-sabor-vs-creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor/index.html",
+      "href": "/produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742/",
+      "expected": "produtos/beleza/creatina-monohidratada-pura-1kg-dark-lab-unidade-sem-sabor-mlb4812130742"
     }
   ],
   "broken_count": 62
