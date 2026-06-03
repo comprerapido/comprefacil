@@ -3,8 +3,21 @@
   <url><loc>https://comprerapido.github.io/</loc><changefreq>hourly</changefreq><priority>1.0</priority></url>
   <url><loc>https://comprerapido.github.io/ofertas-hoje/</loc><changefreq>hourly</changefreq><priority>0.9</priority></url>
   <url><loc>https://comprerapido.github.io/categorias/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://comprerapido.github.io/categorias/smartphones-informatica/</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://comprerapido.github.io/categorias/casa-inteligente/</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://comprerapido.github.io/categorias/esporte-bem-estar/</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://comprerapido.github.io/categorias/entretenimento/</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://comprerapido.github.io/categorias/moda-estilo/</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://comprerapido.github.io/categorias/universo-infantil/</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://comprerapido.github.io/melhores-2026/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://comprerapido.github.io/melhores-2026/melhores-smartphones-2026.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://comprerapido.github.io/melhores-2026/melhores-eletrodomesticos-2026.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://comprerapido.github.io/melhores-2026/melhores-fones-2026.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://comprerapido.github.io/melhores-2026/melhores-notebooks-2026.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://comprerapido.github.io/guias/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://comprerapido.github.io/guias/melhor-smartphone-2026/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://comprerapido.github.io/guias/melhores-fones-bluetooth/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://comprerapido.github.io/guias/melhor-air-fryer-2026/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://comprerapido.github.io/sobre/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://comprerapido.github.io/metodologia/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://comprerapido.github.io/contato/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
