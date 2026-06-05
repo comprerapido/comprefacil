@@ -1203,23 +1203,6 @@
     "internal_url": "/produtos/celulares/samsung-galaxy-a06-5g-dual-sim-128gb-preto-mlb4475360653/"
   },
   {
-    "id": "MLB1134567890",
-    "title": "Tablet Samsung Galaxy Tab A9+ 5G 128GB 8GB RAM Tela 11 Snapdragon 695",
-    "name": "Tablet Samsung Galaxy Tab A9+ 5G 128GB 8GB RAM Tela 11 Snapdragon 695",
-    "price": 1299.0,
-    "original_price": 1799.0,
-    "custom_discount_pct": 28,
-    "permalink": "https://www.mercadolivre.com.br/tablet-samsung-galaxy-tab-a9-plus-5g/p/MLB1134567890?matt_tool=vendas0nline",
-    "custom_affiliate_url": "https://www.mercadolivre.com.br/tablet-samsung-galaxy-tab-a9-plus-5g/p/MLB1134567890?matt_tool=vendas0nline",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_134567-MLB1134567890_102024-O.webp",
-    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_134567-MLB1134567890_102024-O.webp",
-    "custom_category_slug": "tecnologia",
-    "status": "active",
-    "fetched_at": "2026-06-03T14:14:05Z",
-    "source": "curated_real",
-    "internal_url": "/produtos/tecnologia/tablet-samsung-galaxy-tab-a9-5g-128gb-8gb-ram-tela-11-snapdragon-695-mlb1134567890/"
-  },
-  {
     "id": "MLB5678234190",
     "title": "Smart TV LG 55 OLED Evo C3 4K 120Hz Dolby Vision HDR10 ThinQ AI WebOS 23",
     "name": "Smart TV LG 55 OLED Evo C3 4K 120Hz Dolby Vision HDR10 ThinQ AI WebOS 23",
@@ -1235,6 +1218,23 @@
     "fetched_at": "2026-06-03T14:14:05Z",
     "source": "curated_real",
     "internal_url": "/produtos/tv-e-video/smart-tv-lg-55-oled-evo-c3-4k-120hz-dolby-vision-hdr10-thinq-ai-webos-23-mlb5678234190/"
+  },
+  {
+    "id": "MLB1134567890",
+    "title": "Tablet Samsung Galaxy Tab A9+ 5G 128GB 8GB RAM Tela 11 Snapdragon 695",
+    "name": "Tablet Samsung Galaxy Tab A9+ 5G 128GB 8GB RAM Tela 11 Snapdragon 695",
+    "price": 1299.0,
+    "original_price": 1799.0,
+    "custom_discount_pct": 28,
+    "permalink": "https://www.mercadolivre.com.br/tablet-samsung-galaxy-tab-a9-plus-5g/p/MLB1134567890?matt_tool=vendas0nline",
+    "custom_affiliate_url": "https://www.mercadolivre.com.br/tablet-samsung-galaxy-tab-a9-plus-5g/p/MLB1134567890?matt_tool=vendas0nline",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_134567-MLB1134567890_102024-O.webp",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_134567-MLB1134567890_102024-O.webp",
+    "custom_category_slug": "tecnologia",
+    "status": "active",
+    "fetched_at": "2026-06-03T14:14:05Z",
+    "source": "curated_real",
+    "internal_url": "/produtos/tecnologia/tablet-samsung-galaxy-tab-a9-5g-128gb-8gb-ram-tela-11-snapdragon-695-mlb1134567890/"
   },
   {
     "id": "MLB3456789023",
@@ -1367,23 +1367,6 @@
     "internal_url": "/produtos/informatica/impressora-multifuncional-hp-deskjet-2874-wireless-colorida-scanner-copiadora-mlb1356789012/"
   },
   {
-    "id": "MLB6901345278",
-    "title": "Headset Gamer HyperX Cloud Alpha S 7.1 Surround USB PC PS4 Xbox Preto",
-    "name": "Headset Gamer HyperX Cloud Alpha S 7.1 Surround USB PC PS4 Xbox Preto",
-    "price": 449.9,
-    "original_price": 599.0,
-    "custom_discount_pct": 25,
-    "permalink": "https://www.mercadolivre.com.br/headset-hyperx-cloud-alpha-s-71/p/MLB6901345278?matt_tool=vendas0nline",
-    "custom_affiliate_url": "https://www.mercadolivre.com.br/headset-hyperx-cloud-alpha-s-71/p/MLB6901345278?matt_tool=vendas0nline",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_901345-MLB6901345278_052024-O.webp",
-    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_901345-MLB6901345278_052024-O.webp",
-    "custom_category_slug": "games",
-    "status": "active",
-    "fetched_at": "2026-06-03T14:14:05Z",
-    "source": "curated_real",
-    "internal_url": "/produtos/games/headset-gamer-hyperx-cloud-alpha-s-7-1-surround-usb-pc-ps4-xbox-preto-mlb6901345278/"
-  },
-  {
     "id": "MLB8345678901",
     "title": "Fritadeira Elétrica Air Fryer Mondial AF-40 4L Digital Timer 1500W 127V",
     "name": "Fritadeira Elétrica Air Fryer Mondial AF-40 4L Digital Timer 1500W 127V",
@@ -1399,6 +1382,23 @@
     "fetched_at": "2026-06-03T14:14:05Z",
     "source": "curated_real",
     "internal_url": "/produtos/eletrodomesticos/fritadeira-eletrica-air-fryer-mondial-af-40-4l-digital-timer-1500w-127v-mlb8345678901/"
+  },
+  {
+    "id": "MLB6901345278",
+    "title": "Headset Gamer HyperX Cloud Alpha S 7.1 Surround USB PC PS4 Xbox Preto",
+    "name": "Headset Gamer HyperX Cloud Alpha S 7.1 Surround USB PC PS4 Xbox Preto",
+    "price": 449.9,
+    "original_price": 599.0,
+    "custom_discount_pct": 25,
+    "permalink": "https://www.mercadolivre.com.br/headset-hyperx-cloud-alpha-s-71/p/MLB6901345278?matt_tool=vendas0nline",
+    "custom_affiliate_url": "https://www.mercadolivre.com.br/headset-hyperx-cloud-alpha-s-71/p/MLB6901345278?matt_tool=vendas0nline",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_901345-MLB6901345278_052024-O.webp",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_901345-MLB6901345278_052024-O.webp",
+    "custom_category_slug": "games",
+    "status": "active",
+    "fetched_at": "2026-06-03T14:14:05Z",
+    "source": "curated_real",
+    "internal_url": "/produtos/games/headset-gamer-hyperx-cloud-alpha-s-7-1-surround-usb-pc-ps4-xbox-preto-mlb6901345278/"
   },
   {
     "id": "MLB3456789028",
