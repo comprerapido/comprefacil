@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T18:29:57Z",
+  "updated_at": "2026-06-05T22:45:27Z",
   "default_site": {
     "domain": "comprerapido.github.io",
     "site_name": "Compre Rápido",
@@ -29,22 +29,6 @@
       "products": 12
     },
     {
-      "slug": "casa",
-      "name": "Casa e cozinha",
-      "pillar": "/guias/guia-de-compra-casa-2026/",
-      "category_page": "/categorias/casa/",
-      "best_page": "/melhores-2026/melhores-casa-2026/",
-      "products": 9
-    },
-    {
-      "slug": "ferramentas",
-      "name": "Ferramentas",
-      "pillar": "/guias/guia-de-compra-ferramentas-2026/",
-      "category_page": "/categorias/ferramentas/",
-      "best_page": "/melhores-2026/melhores-ferramentas-2026/",
-      "products": 4
-    },
-    {
       "slug": "eletrodomesticos",
       "name": "Eletrodomésticos",
       "pillar": "/guias/guia-de-compra-eletrodomesticos-2026/",
@@ -61,12 +45,20 @@
       "products": 13
     },
     {
-      "slug": "tv-e-video",
-      "name": "Tv E Video",
-      "pillar": "/guias/guia-de-compra-tv-e-video-2026/",
-      "category_page": "/categorias/tv-e-video/",
-      "best_page": "/melhores-2026/melhores-tv-e-video-2026/",
-      "products": 6
+      "slug": "casa",
+      "name": "Casa e cozinha",
+      "pillar": "/guias/guia-de-compra-casa-2026/",
+      "category_page": "/categorias/casa/",
+      "best_page": "/melhores-2026/melhores-casa-2026/",
+      "products": 9
+    },
+    {
+      "slug": "ferramentas",
+      "name": "Ferramentas",
+      "pillar": "/guias/guia-de-compra-ferramentas-2026/",
+      "category_page": "/categorias/ferramentas/",
+      "best_page": "/melhores-2026/melhores-ferramentas-2026/",
+      "products": 4
     },
     {
       "slug": "informatica",
@@ -75,6 +67,14 @@
       "category_page": "/categorias/informatica/",
       "best_page": "/melhores-2026/melhores-informatica-2026/",
       "products": 11
+    },
+    {
+      "slug": "tv-e-video",
+      "name": "Tv E Video",
+      "pillar": "/guias/guia-de-compra-tv-e-video-2026/",
+      "category_page": "/categorias/tv-e-video/",
+      "best_page": "/melhores-2026/melhores-tv-e-video-2026/",
+      "products": 6
     },
     {
       "slug": "games",
