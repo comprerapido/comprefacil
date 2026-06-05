@@ -1203,23 +1203,6 @@
     "internal_url": "/produtos/celulares/samsung-galaxy-a06-5g-dual-sim-128gb-preto-mlb4475360653/"
   },
   {
-    "id": "MLB5678234190",
-    "title": "Smart TV LG 55 OLED Evo C3 4K 120Hz Dolby Vision HDR10 ThinQ AI WebOS 23",
-    "name": "Smart TV LG 55 OLED Evo C3 4K 120Hz Dolby Vision HDR10 ThinQ AI WebOS 23",
-    "price": 4299.0,
-    "original_price": 5999.0,
-    "custom_discount_pct": 28,
-    "permalink": "https://www.mercadolivre.com.br/smart-tv-lg-55-oled-c3-4k/p/MLB5678234190?matt_tool=vendas0nline",
-    "custom_affiliate_url": "https://www.mercadolivre.com.br/smart-tv-lg-55-oled-c3-4k/p/MLB5678234190?matt_tool=vendas0nline",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_678234-MLB5678234190_042024-O.webp",
-    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_678234-MLB5678234190_042024-O.webp",
-    "custom_category_slug": "tv-e-video",
-    "status": "active",
-    "fetched_at": "2026-06-03T14:14:05Z",
-    "source": "curated_real",
-    "internal_url": "/produtos/tv-e-video/smart-tv-lg-55-oled-evo-c3-4k-120hz-dolby-vision-hdr10-thinq-ai-webos-23-mlb5678234190/"
-  },
-  {
     "id": "MLB1134567890",
     "title": "Tablet Samsung Galaxy Tab A9+ 5G 128GB 8GB RAM Tela 11 Snapdragon 695",
     "name": "Tablet Samsung Galaxy Tab A9+ 5G 128GB 8GB RAM Tela 11 Snapdragon 695",
@@ -1235,6 +1218,23 @@
     "fetched_at": "2026-06-03T14:14:05Z",
     "source": "curated_real",
     "internal_url": "/produtos/tecnologia/tablet-samsung-galaxy-tab-a9-5g-128gb-8gb-ram-tela-11-snapdragon-695-mlb1134567890/"
+  },
+  {
+    "id": "MLB5678234190",
+    "title": "Smart TV LG 55 OLED Evo C3 4K 120Hz Dolby Vision HDR10 ThinQ AI WebOS 23",
+    "name": "Smart TV LG 55 OLED Evo C3 4K 120Hz Dolby Vision HDR10 ThinQ AI WebOS 23",
+    "price": 4299.0,
+    "original_price": 5999.0,
+    "custom_discount_pct": 28,
+    "permalink": "https://www.mercadolivre.com.br/smart-tv-lg-55-oled-c3-4k/p/MLB5678234190?matt_tool=vendas0nline",
+    "custom_affiliate_url": "https://www.mercadolivre.com.br/smart-tv-lg-55-oled-c3-4k/p/MLB5678234190?matt_tool=vendas0nline",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_678234-MLB5678234190_042024-O.webp",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_678234-MLB5678234190_042024-O.webp",
+    "custom_category_slug": "tv-e-video",
+    "status": "active",
+    "fetched_at": "2026-06-03T14:14:05Z",
+    "source": "curated_real",
+    "internal_url": "/produtos/tv-e-video/smart-tv-lg-55-oled-evo-c3-4k-120hz-dolby-vision-hdr10-thinq-ai-webos-23-mlb5678234190/"
   },
   {
     "id": "MLB3456789023",
@@ -1350,23 +1350,6 @@
     "internal_url": "/produtos/celulares/smartphone-motorola-moto-g54-5g-256gb-verde-mlb3456789018/"
   },
   {
-    "id": "MLB8345678901",
-    "title": "Fritadeira Elétrica Air Fryer Mondial AF-40 4L Digital Timer 1500W 127V",
-    "name": "Fritadeira Elétrica Air Fryer Mondial AF-40 4L Digital Timer 1500W 127V",
-    "price": 299.9,
-    "original_price": 399.0,
-    "custom_discount_pct": 25,
-    "permalink": "https://www.mercadolivre.com.br/air-fryer-mondial-af40-4l-digital/p/MLB8345678901?matt_tool=vendas0nline",
-    "custom_affiliate_url": "https://www.mercadolivre.com.br/air-fryer-mondial-af40-4l-digital/p/MLB8345678901?matt_tool=vendas0nline",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_345678-MLB8345678901_072024-O.webp",
-    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_345678-MLB8345678901_072024-O.webp",
-    "custom_category_slug": "eletrodomesticos",
-    "status": "active",
-    "fetched_at": "2026-06-03T14:14:05Z",
-    "source": "curated_real",
-    "internal_url": "/produtos/eletrodomesticos/fritadeira-eletrica-air-fryer-mondial-af-40-4l-digital-timer-1500w-127v-mlb8345678901/"
-  },
-  {
     "id": "MLB1356789012",
     "title": "Impressora Multifuncional HP DeskJet 2874 Wireless Colorida Scanner Copiadora",
     "name": "Impressora Multifuncional HP DeskJet 2874 Wireless Colorida Scanner Copiadora",
@@ -1399,6 +1382,23 @@
     "fetched_at": "2026-06-03T14:14:05Z",
     "source": "curated_real",
     "internal_url": "/produtos/games/headset-gamer-hyperx-cloud-alpha-s-7-1-surround-usb-pc-ps4-xbox-preto-mlb6901345278/"
+  },
+  {
+    "id": "MLB8345678901",
+    "title": "Fritadeira Elétrica Air Fryer Mondial AF-40 4L Digital Timer 1500W 127V",
+    "name": "Fritadeira Elétrica Air Fryer Mondial AF-40 4L Digital Timer 1500W 127V",
+    "price": 299.9,
+    "original_price": 399.0,
+    "custom_discount_pct": 25,
+    "permalink": "https://www.mercadolivre.com.br/air-fryer-mondial-af40-4l-digital/p/MLB8345678901?matt_tool=vendas0nline",
+    "custom_affiliate_url": "https://www.mercadolivre.com.br/air-fryer-mondial-af40-4l-digital/p/MLB8345678901?matt_tool=vendas0nline",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_345678-MLB8345678901_072024-O.webp",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_345678-MLB8345678901_072024-O.webp",
+    "custom_category_slug": "eletrodomesticos",
+    "status": "active",
+    "fetched_at": "2026-06-03T14:14:05Z",
+    "source": "curated_real",
+    "internal_url": "/produtos/eletrodomesticos/fritadeira-eletrica-air-fryer-mondial-af-40-4l-digital-timer-1500w-127v-mlb8345678901/"
   },
   {
     "id": "MLB3456789028",
