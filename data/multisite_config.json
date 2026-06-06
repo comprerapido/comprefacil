@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-06T08:17:26Z",
+  "updated_at": "2026-06-06T12:19:22Z",
   "default_site": {
     "domain": "comprerapido.github.io",
     "site_name": "Compre Rápido",
@@ -37,20 +37,20 @@
       "products": 4
     },
     {
-      "slug": "eletrodomesticos",
-      "name": "Eletrodomésticos",
-      "pillar": "/guias/guia-de-compra-eletrodomesticos-2026/",
-      "category_page": "/categorias/eletrodomesticos/",
-      "best_page": "/melhores-2026/melhores-eletrodomesticos-2026/",
-      "products": 8
-    },
-    {
       "slug": "celulares",
       "name": "Celulares",
       "pillar": "/guias/guia-de-compra-celulares-2026/",
       "category_page": "/categorias/celulares/",
       "best_page": "/melhores-2026/melhores-celulares-2026/",
       "products": 13
+    },
+    {
+      "slug": "eletrodomesticos",
+      "name": "Eletrodomésticos",
+      "pillar": "/guias/guia-de-compra-eletrodomesticos-2026/",
+      "category_page": "/categorias/eletrodomesticos/",
+      "best_page": "/melhores-2026/melhores-eletrodomesticos-2026/",
+      "products": 8
     },
     {
       "slug": "casa",
