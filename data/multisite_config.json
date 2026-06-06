@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-06T16:41:48Z",
+  "updated_at": "2026-06-06T20:47:25Z",
   "default_site": {
     "domain": "comprerapido.github.io",
     "site_name": "Compre Rápido",
@@ -29,20 +29,20 @@
       "products": 12
     },
     {
-      "slug": "casa",
-      "name": "Casa e cozinha",
-      "pillar": "/guias/guia-de-compra-casa-2026/",
-      "category_page": "/categorias/casa/",
-      "best_page": "/melhores-2026/melhores-casa-2026/",
-      "products": 9
-    },
-    {
       "slug": "eletrodomesticos",
       "name": "Eletrodomésticos",
       "pillar": "/guias/guia-de-compra-eletrodomesticos-2026/",
       "category_page": "/categorias/eletrodomesticos/",
       "best_page": "/melhores-2026/melhores-eletrodomesticos-2026/",
       "products": 8
+    },
+    {
+      "slug": "casa",
+      "name": "Casa e cozinha",
+      "pillar": "/guias/guia-de-compra-casa-2026/",
+      "category_page": "/categorias/casa/",
+      "best_page": "/melhores-2026/melhores-casa-2026/",
+      "products": 9
     },
     {
       "slug": "ferramentas",

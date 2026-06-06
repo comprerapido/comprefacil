@@ -2,14 +2,14 @@
 
 | Métrica | Valor |
 | --- | --- |
-| Atualizado em | 2026-06-06T16:41:48Z |
+| Atualizado em | 2026-06-06T20:47:25Z |
 | Status | warning |
 | Produtos de qualidade | 78 |
 | Páginas de produto | 78 |
 | Comparações | 24 |
 | Guias | 10 |
 | Artigos | 10 |
-| URLs no sitemap | 325 |
+| URLs no sitemap | 328 |
 | Links internos quebrados | 62 |
 
 ## Recuperação automática
