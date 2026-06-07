@@ -8,22 +8,6 @@
     "products": 12
   },
   {
-    "slug": "eletrodomesticos",
-    "name": "Eletrodomésticos",
-    "pillar": "/guias/guia-de-compra-eletrodomesticos-2026/",
-    "category_page": "/categorias/eletrodomesticos/",
-    "best_page": "/melhores-2026/melhores-eletrodomesticos-2026/",
-    "products": 8
-  },
-  {
-    "slug": "casa",
-    "name": "Casa e cozinha",
-    "pillar": "/guias/guia-de-compra-casa-2026/",
-    "category_page": "/categorias/casa/",
-    "best_page": "/melhores-2026/melhores-casa-2026/",
-    "products": 9
-  },
-  {
     "slug": "ferramentas",
     "name": "Ferramentas",
     "pillar": "/guias/guia-de-compra-ferramentas-2026/",
@@ -40,12 +24,20 @@
     "products": 13
   },
   {
-    "slug": "informatica",
-    "name": "Informática e notebooks",
-    "pillar": "/guias/guia-de-compra-informatica-2026/",
-    "category_page": "/categorias/informatica/",
-    "best_page": "/melhores-2026/melhores-informatica-2026/",
-    "products": 11
+    "slug": "eletrodomesticos",
+    "name": "Eletrodomésticos",
+    "pillar": "/guias/guia-de-compra-eletrodomesticos-2026/",
+    "category_page": "/categorias/eletrodomesticos/",
+    "best_page": "/melhores-2026/melhores-eletrodomesticos-2026/",
+    "products": 8
+  },
+  {
+    "slug": "casa",
+    "name": "Casa e cozinha",
+    "pillar": "/guias/guia-de-compra-casa-2026/",
+    "category_page": "/categorias/casa/",
+    "best_page": "/melhores-2026/melhores-casa-2026/",
+    "products": 9
   },
   {
     "slug": "games",
@@ -53,6 +45,14 @@
     "pillar": "/guias/guia-de-compra-games-2026/",
     "category_page": "/categorias/games/",
     "best_page": "/melhores-2026/melhores-games-2026/",
+    "products": 11
+  },
+  {
+    "slug": "informatica",
+    "name": "Informática e notebooks",
+    "pillar": "/guias/guia-de-compra-informatica-2026/",
+    "category_page": "/categorias/informatica/",
+    "best_page": "/melhores-2026/melhores-informatica-2026/",
     "products": 11
   },
   {
@@ -64,19 +64,19 @@
     "products": 6
   },
   {
-    "slug": "esporte",
-    "name": "Esporte e bem-estar",
-    "pillar": "/guias/guia-de-compra-esporte-2026/",
-    "category_page": "/categorias/esporte/",
-    "best_page": "/melhores-2026/melhores-esporte-2026/",
-    "products": 1
-  },
-  {
     "slug": "tecnologia",
     "name": "Tecnologia",
     "pillar": "/guias/guia-de-compra-tecnologia-2026/",
     "category_page": "/categorias/tecnologia/",
     "best_page": "/melhores-2026/melhores-tecnologia-2026/",
     "products": 3
+  },
+  {
+    "slug": "esporte",
+    "name": "Esporte e bem-estar",
+    "pillar": "/guias/guia-de-compra-esporte-2026/",
+    "category_page": "/categorias/esporte/",
+    "best_page": "/melhores-2026/melhores-esporte-2026/",
+    "products": 1
   }
 ]
