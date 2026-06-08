@@ -1073,23 +1073,6 @@
     "internal_url": "/produtos/eletrodomesticos/liquidificador-oster-turbo-power-2-2l-vermelho-mlb3456789014/"
   },
   {
-    "id": "MLB1023456789",
-    "title": "Perfume Masculino Sauvage Dior Eau de Toilette 100ml Original Lacrado",
-    "name": "Perfume Masculino Sauvage Dior Eau de Toilette 100ml Original Lacrado",
-    "price": 389.9,
-    "original_price": 549.0,
-    "custom_discount_pct": 29,
-    "permalink": "https://www.mercadolivre.com.br/perfume-dior-sauvage-edt-100ml/p/MLB1023456789?matt_tool=vendas0nline",
-    "custom_affiliate_url": "https://www.mercadolivre.com.br/perfume-dior-sauvage-edt-100ml/p/MLB1023456789?matt_tool=vendas0nline",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_023456-MLB1023456789_092024-O.webp",
-    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_023456-MLB1023456789_092024-O.webp",
-    "custom_category_slug": "beleza",
-    "status": "active",
-    "fetched_at": "2026-06-03T14:14:05Z",
-    "source": "curated_real",
-    "internal_url": "/produtos/beleza/perfume-masculino-sauvage-dior-eau-de-toilette-100ml-original-lacrado-mlb1023456789/"
-  },
-  {
     "id": "MLB1467890123",
     "title": "Fone de Ouvido Bluetooth Sony WH-1000XM5 Cancelamento de Ruído 30h Preto",
     "name": "Fone de Ouvido Bluetooth Sony WH-1000XM5 Cancelamento de Ruído 30h Preto",
@@ -1105,6 +1088,23 @@
     "fetched_at": "2026-06-03T14:14:05Z",
     "source": "curated_real",
     "internal_url": "/produtos/tecnologia/fone-de-ouvido-bluetooth-sony-wh-1000xm5-cancelamento-de-ruido-30h-preto-mlb1467890123/"
+  },
+  {
+    "id": "MLB1023456789",
+    "title": "Perfume Masculino Sauvage Dior Eau de Toilette 100ml Original Lacrado",
+    "name": "Perfume Masculino Sauvage Dior Eau de Toilette 100ml Original Lacrado",
+    "price": 389.9,
+    "original_price": 549.0,
+    "custom_discount_pct": 29,
+    "permalink": "https://www.mercadolivre.com.br/perfume-dior-sauvage-edt-100ml/p/MLB1023456789?matt_tool=vendas0nline",
+    "custom_affiliate_url": "https://www.mercadolivre.com.br/perfume-dior-sauvage-edt-100ml/p/MLB1023456789?matt_tool=vendas0nline",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_023456-MLB1023456789_092024-O.webp",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_023456-MLB1023456789_092024-O.webp",
+    "custom_category_slug": "beleza",
+    "status": "active",
+    "fetched_at": "2026-06-03T14:14:05Z",
+    "source": "curated_real",
+    "internal_url": "/produtos/beleza/perfume-masculino-sauvage-dior-eau-de-toilette-100ml-original-lacrado-mlb1023456789/"
   },
   {
     "id": "MLB3456789025",
@@ -1350,6 +1350,23 @@
     "internal_url": "/produtos/celulares/smartphone-motorola-moto-g54-5g-256gb-verde-mlb3456789018/"
   },
   {
+    "id": "MLB6901345278",
+    "title": "Headset Gamer HyperX Cloud Alpha S 7.1 Surround USB PC PS4 Xbox Preto",
+    "name": "Headset Gamer HyperX Cloud Alpha S 7.1 Surround USB PC PS4 Xbox Preto",
+    "price": 449.9,
+    "original_price": 599.0,
+    "custom_discount_pct": 25,
+    "permalink": "https://www.mercadolivre.com.br/headset-hyperx-cloud-alpha-s-71/p/MLB6901345278?matt_tool=vendas0nline",
+    "custom_affiliate_url": "https://www.mercadolivre.com.br/headset-hyperx-cloud-alpha-s-71/p/MLB6901345278?matt_tool=vendas0nline",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_901345-MLB6901345278_052024-O.webp",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_901345-MLB6901345278_052024-O.webp",
+    "custom_category_slug": "games",
+    "status": "active",
+    "fetched_at": "2026-06-03T14:14:05Z",
+    "source": "curated_real",
+    "internal_url": "/produtos/games/headset-gamer-hyperx-cloud-alpha-s-7-1-surround-usb-pc-ps4-xbox-preto-mlb6901345278/"
+  },
+  {
     "id": "MLB1356789012",
     "title": "Impressora Multifuncional HP DeskJet 2874 Wireless Colorida Scanner Copiadora",
     "name": "Impressora Multifuncional HP DeskJet 2874 Wireless Colorida Scanner Copiadora",
@@ -1382,23 +1399,6 @@
     "fetched_at": "2026-06-03T14:14:05Z",
     "source": "curated_real",
     "internal_url": "/produtos/eletrodomesticos/fritadeira-eletrica-air-fryer-mondial-af-40-4l-digital-timer-1500w-127v-mlb8345678901/"
-  },
-  {
-    "id": "MLB6901345278",
-    "title": "Headset Gamer HyperX Cloud Alpha S 7.1 Surround USB PC PS4 Xbox Preto",
-    "name": "Headset Gamer HyperX Cloud Alpha S 7.1 Surround USB PC PS4 Xbox Preto",
-    "price": 449.9,
-    "original_price": 599.0,
-    "custom_discount_pct": 25,
-    "permalink": "https://www.mercadolivre.com.br/headset-hyperx-cloud-alpha-s-71/p/MLB6901345278?matt_tool=vendas0nline",
-    "custom_affiliate_url": "https://www.mercadolivre.com.br/headset-hyperx-cloud-alpha-s-71/p/MLB6901345278?matt_tool=vendas0nline",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_901345-MLB6901345278_052024-O.webp",
-    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_901345-MLB6901345278_052024-O.webp",
-    "custom_category_slug": "games",
-    "status": "active",
-    "fetched_at": "2026-06-03T14:14:05Z",
-    "source": "curated_real",
-    "internal_url": "/produtos/games/headset-gamer-hyperx-cloud-alpha-s-7-1-surround-usb-pc-ps4-xbox-preto-mlb6901345278/"
   },
   {
     "id": "MLB3456789028",
