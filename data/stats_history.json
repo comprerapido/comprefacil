@@ -350,5 +350,21 @@
     "sitemap_urls": 330,
     "broken_links": 62,
     "timestamp": "2026-06-08T21:14:02.685063+00:00"
+  },
+  {
+    "total_products": 81,
+    "quality_products": 12,
+    "real_promotions": 12,
+    "product_pages": 12,
+    "category_pages": 9,
+    "comparisons": 3,
+    "guides": 9,
+    "articles": 9,
+    "best_pages": 9,
+    "daily_deals": 12,
+    "eeat_pages": 9,
+    "sitemap_urls": 314,
+    "broken_links": 796,
+    "timestamp": "2026-06-09T10:42:55.813018+00:00"
   }
 ]
