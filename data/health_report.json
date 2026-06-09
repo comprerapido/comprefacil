@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-09T10:42:55Z",
+  "updated_at": "2026-06-09T18:33:08Z",
   "status": "warning",
   "checks": {
     "total_products": 81,
@@ -13,8 +13,8 @@
     "best_pages": 9,
     "daily_deals": 12,
     "eeat_pages": 9,
-    "sitemap_urls": 314,
-    "broken_links": 796
+    "sitemap_urls": 313,
+    "broken_links": 668
   },
   "recovery": {
     "product_pages": "Regeneradas automaticamente a partir de data/all_products.json.",
