@@ -3,8 +3,8 @@ import json
 from urllib.parse import urlparse, urlencode, parse_qs, urlunparse, urljoin
 from logger import logger
 
-# ID do afiliado: lido da variável de ambiente, com fallback para 'vendas0nline'
-AFILIADO_ID = os.environ.get("ML_AFILIADO_ID", "vendas0nline")
+# ID do afiliado: lido da variável de ambiente, com fallback para '60566305'
+AFILIADO_ID = os.environ.get("ML_AFILIADO_ID", "60566305")
 
 
 def build_affiliate_url(product: dict) -> str:
@@ -26,8 +26,8 @@ def build_affiliate_url(product: dict) -> str:
     is_invalid_affiliate = (
         not current_affiliate
         or "/social/" in current_affiliate
-        or "vendas0nline/lists" in current_affiliate
-        or "vendas0nline?" in current_affiliate
+        or "60566305/lists" in current_affiliate
+        or "60566305?" in current_affiliate
     )
 
     if not is_invalid_affiliate:

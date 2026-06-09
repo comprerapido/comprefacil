@@ -49,7 +49,7 @@ def generate_product_page(product: Dict[str, Any], template_path: str, output_di
     
     # URL de afiliado
     affiliate_url = product.get('custom_affiliate_url', '')
-    if not affiliate_url or '/social/' in affiliate_url or 'vendas0nline?' in affiliate_url:
+    if not affiliate_url or '/social/' in affiliate_url or '60566305?' in affiliate_url:
         affiliate_url = product.get('permalink', '')
     
     # Conteúdo gerado
