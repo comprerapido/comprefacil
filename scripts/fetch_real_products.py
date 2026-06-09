@@ -70,7 +70,7 @@ def fetch_from_ml_api(query: str, cat_id: str) -> List[Dict[str, Any]]:
                 title = str(item.get("title") or "")
                 if len(title) < 15: continue
                 img = str(item.get("thumbnail") or "").replace("-I.jpg", "-O.jpg")
-                permalink = str(item.get("permalink") or "").split("?")[0] + "?matt_tool=vendas0nline"
+                permalink = str(item.get("permalink") or "").split("?")[0] + "?matt_tool=60566305"
                 orig_price = float(item.get("original_price") or price * 1.15)
                 disc = int(round((orig_price - price) / orig_price * 100)) if orig_price > price else 5
                 products.append({

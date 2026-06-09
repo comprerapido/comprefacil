@@ -4,7 +4,7 @@
 // ============================================================
 
 const DATA_URL = '/data/homepage_products.json';
-const AFFILIATE_PARAM = 'matt_tool=vendas0nline';
+const AFFILIATE_PARAM = 'matt_tool=60566305';
 let allProducts = [];
 
 // ========== UTILITÁRIOS ==========

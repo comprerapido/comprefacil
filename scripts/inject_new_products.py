@@ -90,7 +90,7 @@ def fetch_dynamic_products():
                             discount = random.randint(10, 30)
                             orig_price = round(price / (1 - discount/100), 2)
                             
-                            affiliate_url = f"{link}?matt_tool=vendas0nline"
+                            affiliate_url = f"{link}?matt_tool=60566305"
                             
                             products.append({
                                 "id": prod_id,
@@ -123,8 +123,8 @@ def fetch_dynamic_products():
             products.append({
                 "id": p_id, "title": b["title"], "name": b["title"],
                 "price": price, "original_price": orig, "custom_discount_pct": discount,
-                "permalink": f"https://www.mercadolivre.com.br/p/{p_id}?matt_tool=vendas0nline",
-                "custom_affiliate_url": f"https://www.mercadolivre.com.br/p/{p_id}?matt_tool=vendas0nline",
+                "permalink": f"https://www.mercadolivre.com.br/p/{p_id}?matt_tool=60566305",
+                "custom_affiliate_url": f"https://www.mercadolivre.com.br/p/{p_id}?matt_tool=60566305",
                 "image": b["img"], "thumbnail": b["img"],
                 "custom_category_slug": b["cat"], "status": "active",
                 "fetched_at": utc_now_iso(), "source": "curated_backup"

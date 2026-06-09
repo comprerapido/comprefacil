@@ -54,7 +54,7 @@ def fetch_elite_products():
                 # Link de afiliado direto
                 permalink = item.get('permalink', '')
                 if permalink:
-                    permalink = permalink.split('?')[0] + "?matt_tool=vendas0nline"
+                    permalink = permalink.split('?')[0] + "?matt_tool=60566305"
 
                 all_products.append({
                     'id': item_id,
