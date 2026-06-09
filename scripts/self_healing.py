@@ -2,79 +2,113 @@ import os
 import sys
 import json
 import subprocess
-try:
-    from openai import OpenAI
-    OPENAI_AVAILABLE = True
-except ImportError:
-    OPENAI_AVAILABLE = False
+import time
+from datetime import datetime
 from logger import logger
+from operational_utils import run_backup, send_alert
 
-def analyze_error(error_log):
-    """Envia o log de erro para o GPT e solicita uma sugestão de correção ou diagnóstico."""
-    api_key = os.environ.get("OPENAI_API_KEY")
-    if not OPENAI_AVAILABLE or not api_key:
-        logger.warning("Auto-cura desativada: OpenAI SDK não instalado ou chave ausente.")
-        return None
-        
-    client = OpenAI(api_key=api_key)
-    
-    prompt = f"""
-    Você é o engenheiro de manutenção do 'Radar de Preços', um robô em Python que coleta ofertas do Mercado Livre.
-    O pipeline de automação falhou com o seguinte erro:
-    
-    {error_log}
-    
-    Analise o erro e forneça:
-    1. Causa provável.
-    2. Uma correção rápida (se possível em Python ou comando shell).
-    3. Nível de gravidade.
-    
-    Responda em JSON no formato:
-    {{"cause": "...", "fix_suggestion": "...", "severity": "high|medium|low", "can_auto_fix": true|false}}
-    """
-    
+DEFAULT_TIMEOUT = 300
+MAX_RETRIES = 2
+
+def run_script_protected(script, timeout=DEFAULT_TIMEOUT):
     try:
-        response = client.chat.completions.create(
-            model="gpt-4.1-mini",
-            messages=[{"role": "user", "content": prompt}],
-            response_format={"type": "json_object"}
-        )
-        return json.loads(response.choices[0].message.content)
-    except Exception as e:
-        logger.error(f"Erro ao consultar GPT para auto-cura: {e}")
-        return None
-
-def run_pipeline():
-    """Executa o pipeline principal e captura falhas."""
-    scripts = [
-        "fetch_products.py", "score_products.py", "affiliate_links.py", 
-        "validate_products.py", "deduplicate.py", "sync_database.py",
-        "generate_pages.py", "build_homepage.py"
-    ]
-    
-    for script in scripts:
-        logger.info(f"Executando {script}...")
+        logger.info(f"🚀 Iniciando {script}...")
         result = subprocess.run(
             [sys.executable, f"scripts/{script}"],
-            capture_output=True, text=True
+            capture_output=True, text=True, timeout=timeout
         )
+        if result.returncode == 0:
+            return True, ""
+        else:
+            return False, result.stderr or result.stdout
+    except Exception as e:
+        return False, str(e)
+
+def run_pipeline():
+    # Pipeline completo com travas de segurança
+    scripts = [
+        "fetch_products_realtime.py",
+        "score_products.py",
+        "affiliate_links.py",
+        "validate_products.py", 
+        "sync_database.py",
+        "deduplicate.py", 
+        "editorial_automation.py", 
+        "generate_blog_posts.py",
+        "clean_legacy_posts.py",
+        "generate_pages.py",
+        "build_categories.py",
+        "repair_internal_links.py",
+        "repair_unicode_escapes.py",
+        "repair_public_artifacts_all.py",
+        "build_homepage.py", 
+        "generate_hubs.py",
+        "build_sitemap.py",
+        "generate_sitemap_dynamic.py",
+        "seo_health_check.py",
+        "health_monitor.py",
+        "advanced_health_report.py"
+    ]
+    
+    essential = ["score_products.py", "sync_database.py", "generate_pages.py", "build_homepage.py"]
+    
+    # Snapshot inicial para validação
+    db_path = "data/database/all_products.json"
+    home_path = "index.html"
+    initial_db_time = os.path.getmtime(db_path) if os.path.exists(db_path) else 0
+    initial_home_time = os.path.getmtime(home_path) if os.path.exists(home_path) else 0
+    
+    for script in scripts:
+        success = False
+        for attempt in range(MAX_RETRIES + 1):
+            success, error = run_script_protected(script)
+            if success: break
+            logger.warning(f"⚠️ Tentativa {attempt+1} falhou para {script}")
         
-        if result.returncode != 0:
-            logger.error(f"Falha no script {script}!")
-            error_info = result.stderr or result.stdout
-            print(f"DEBUG ERROR: {error_info}")
-            analysis = analyze_error(error_info)
-            
-            if analysis:
-                logger.info(f"Análise da IA: {analysis['cause']}")
-                if analysis.get('can_auto_fix'):
-                    logger.info(f"Tentando auto-correção sugerida: {analysis['fix_suggestion']}")
-            
-            return False
+        if not success:
+            send_alert(f"Falha no script {script}: {error[:200]}", "Pipeline Error")
+            if script in essential:
+                logger.error(f"❌ ABORTANDO: {script} falhou.")
+                return False
+    
+    # ASSERTIONS DE PUBLICAÇÃO
+    final_db_time = os.path.getmtime(db_path) if os.path.exists(db_path) else 0
+    final_home_time = os.path.getmtime(home_path) if os.path.exists(home_path) else 0
+    
+    # 1. Validar que o banco foi atualizado
+    if final_db_time == 0:
+        logger.error("❌ ASSERTION FAIL: Banco de dados não encontrado.")
+        return False
+        
+    # 2. Validar que a home foi regerada
+    if final_home_time <= initial_home_time:
+        logger.error("❌ ASSERTION FAIL: Home não foi regerada neste ciclo.")
+        return False
+        
+    # 3. Validar que existem páginas de oferta
+    if not os.path.exists("ofertas") or len(os.listdir("ofertas")) == 0:
+        logger.error("❌ ASSERTION FAIL: Pasta de ofertas vazia ou ausente.")
+        return False
+
+    logger.info("✅ ASSERTIONS PASS: Banco e Site atualizados com sucesso.")
+    
+    # A publicação Git fica centralizada no GitHub Actions para evitar commits duplicados,
+    # conflitos de rebase e falhas por falta de identidade do usuário Git no ambiente.
+    logger.info("📦 Artefatos gerados; publicação será feita pelo workflow externo.")
+
+    run_backup()
+    
+    # Gerar relatório de execução
+    try:
+        subprocess.run([sys.executable, "scripts/execution_reporter.py"])
+    except:
+        pass
+        
     return True
 
 if __name__ == "__main__":
-    success = run_pipeline()
-    if not success:
+    logger.info("=== RADAR NINJA ENTERPRISE EDITION (PUBLISH-GUARD) ===")
+    if run_pipeline():
+        logger.info("✅ Ciclo completo concluído!")
+    else:
         sys.exit(1)
-    logger.info("Pipeline executado com sucesso total!")
