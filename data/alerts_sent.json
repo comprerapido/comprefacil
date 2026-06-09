@@ -1,0 +1,17 @@
+[
+  {
+    "timestamp": "2026-06-09T04:53:58.349937",
+    "subject": "Pipeline Error",
+    "message": "Falha no script fetch_products_realtime.py: /usr/bin/python3: can't open file '/home/ubuntu/repo_comprerapido/scripts/fetch_products_realtime.py': [Errno 2] No such file or directory\n"
+  },
+  {
+    "timestamp": "2026-06-09T04:53:58.648610",
+    "subject": "Pipeline Error",
+    "message": "Falha no script clean_legacy_posts.py: /usr/bin/python3: can't open file '/home/ubuntu/repo_comprerapido/scripts/clean_legacy_posts.py': [Errno 2] No such file or directory\n"
+  },
+  {
+    "timestamp": "2026-06-09T04:53:58.696689",
+    "subject": "Pipeline Error",
+    "message": "Falha no script generate_pages.py:   File \"/home/ubuntu/repo_comprerapido/scripts/generate_pages.py\", line 102\n    desc = product.get(\\'description\\', f\"Confira esta oferta de {product_name} no Mercado Livre! Produto selecionado pelo A"
+  }
+]
