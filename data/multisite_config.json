@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-11T12:30:28Z",
+  "updated_at": "2026-06-11T21:31:31Z",
   "default_site": {
     "domain": "comprerapido.github.io",
     "site_name": "Compre Rápido",
@@ -21,6 +21,14 @@
   },
   "content_clusters": [
     {
+      "slug": "esporte",
+      "name": "Esporte e bem-estar",
+      "pillar": "/guias/guia-de-compra-esporte-2026/",
+      "category_page": "/categorias/esporte/",
+      "best_page": "/melhores-2026/melhores-esporte-2026/",
+      "products": 1
+    },
+    {
       "slug": "casa",
       "name": "Casa e cozinha",
       "pillar": "/guias/guia-de-compra-casa-2026/",
@@ -35,22 +43,6 @@
       "category_page": "/categorias/tecnologia/",
       "best_page": "/melhores-2026/melhores-tecnologia-2026/",
       "products": 2
-    },
-    {
-      "slug": "tv-e-video",
-      "name": "Tv E Video",
-      "pillar": "/guias/guia-de-compra-tv-e-video-2026/",
-      "category_page": "/categorias/tv-e-video/",
-      "best_page": "/melhores-2026/melhores-tv-e-video-2026/",
-      "products": 1
-    },
-    {
-      "slug": "esporte",
-      "name": "Esporte e bem-estar",
-      "pillar": "/guias/guia-de-compra-esporte-2026/",
-      "category_page": "/categorias/esporte/",
-      "best_page": "/melhores-2026/melhores-esporte-2026/",
-      "products": 1
     },
     {
       "slug": "beleza",
@@ -69,12 +61,12 @@
       "products": 1
     },
     {
-      "slug": "games",
-      "name": "Games e consoles",
-      "pillar": "/guias/guia-de-compra-games-2026/",
-      "category_page": "/categorias/games/",
-      "best_page": "/melhores-2026/melhores-games-2026/",
-      "products": 2
+      "slug": "tv-e-video",
+      "name": "Tv E Video",
+      "pillar": "/guias/guia-de-compra-tv-e-video-2026/",
+      "category_page": "/categorias/tv-e-video/",
+      "best_page": "/melhores-2026/melhores-tv-e-video-2026/",
+      "products": 1
     },
     {
       "slug": "informatica",
@@ -82,6 +74,14 @@
       "pillar": "/guias/guia-de-compra-informatica-2026/",
       "category_page": "/categorias/informatica/",
       "best_page": "/melhores-2026/melhores-informatica-2026/",
+      "products": 2
+    },
+    {
+      "slug": "games",
+      "name": "Games e consoles",
+      "pillar": "/guias/guia-de-compra-games-2026/",
+      "category_page": "/categorias/games/",
+      "best_page": "/melhores-2026/melhores-games-2026/",
       "products": 2
     },
     {
