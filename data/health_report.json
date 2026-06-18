@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-18T11:58:05Z",
+  "updated_at": "2026-06-18T20:42:24Z",
   "status": "warning",
   "checks": {
     "total_products": 81,
@@ -13,7 +13,7 @@
     "best_pages": 9,
     "daily_deals": 12,
     "eeat_pages": 9,
-    "sitemap_urls": 314,
+    "sitemap_urls": 315,
     "broken_links": 668
   },
   "recovery": {
