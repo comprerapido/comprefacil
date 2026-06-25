@@ -11,22 +11,6 @@
     "best_pages": 10,
     "daily_deals": 30,
     "eeat_pages": 9,
-    "sitemap_urls": 325,
-    "broken_links": 62,
-    "timestamp": "2026-06-06T16:41:49.021145+00:00"
-  },
-  {
-    "total_products": 81,
-    "quality_products": 78,
-    "real_promotions": 77,
-    "product_pages": 78,
-    "category_pages": 10,
-    "comparisons": 24,
-    "guides": 10,
-    "articles": 10,
-    "best_pages": 10,
-    "daily_deals": 30,
-    "eeat_pages": 9,
     "sitemap_urls": 328,
     "broken_links": 62,
     "timestamp": "2026-06-06T20:47:25.645916+00:00"
@@ -798,5 +782,21 @@
     "sitemap_urls": 315,
     "broken_links": 668,
     "timestamp": "2026-06-25T17:33:45.363819+00:00"
+  },
+  {
+    "total_products": 81,
+    "quality_products": 12,
+    "real_promotions": 12,
+    "product_pages": 12,
+    "category_pages": 9,
+    "comparisons": 3,
+    "guides": 9,
+    "articles": 9,
+    "best_pages": 9,
+    "daily_deals": 12,
+    "eeat_pages": 9,
+    "sitemap_urls": 315,
+    "broken_links": 668,
+    "timestamp": "2026-06-25T23:01:51.387516+00:00"
   }
 ]
