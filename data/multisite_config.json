@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-03T11:22:25Z",
+  "updated_at": "2026-07-03T13:17:47Z",
   "default_site": {
     "domain": "comprerapido.github.io",
     "site_name": "Compre Rápido",
@@ -20,6 +20,14 @@
     "cluster_variation": "cada domínio deve ter clusters, palavras-chave e templates diferentes para reduzir sobreposição semântica"
   },
   "content_clusters": [
+    {
+      "slug": "tecnologia",
+      "name": "Tecnologia",
+      "pillar": "/guias/guia-de-compra-tecnologia-2026/",
+      "category_page": "/categorias/tecnologia/",
+      "best_page": "/melhores-2026/melhores-tecnologia-2026/",
+      "products": 2
+    },
     {
       "slug": "tv-e-video",
       "name": "Tv E Video",
@@ -43,14 +51,6 @@
       "category_page": "/categorias/esporte/",
       "best_page": "/melhores-2026/melhores-esporte-2026/",
       "products": 1
-    },
-    {
-      "slug": "tecnologia",
-      "name": "Tecnologia",
-      "pillar": "/guias/guia-de-compra-tecnologia-2026/",
-      "category_page": "/categorias/tecnologia/",
-      "best_page": "/melhores-2026/melhores-tecnologia-2026/",
-      "products": 2
     },
     {
       "slug": "games",
