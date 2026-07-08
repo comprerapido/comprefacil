@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-08T15:39:02Z",
+  "updated_at": "2026-07-08T17:15:04Z",
   "default_site": {
     "domain": "comprerapido.github.io",
     "site_name": "Compre Rápido",
@@ -26,6 +26,30 @@
       "pillar": "/guias/guia-de-compra-tecnologia-2026/",
       "category_page": "/categorias/tecnologia/",
       "best_page": "/melhores-2026/melhores-tecnologia-2026/",
+      "products": 2
+    },
+    {
+      "slug": "eletrodomesticos",
+      "name": "Eletrodomésticos",
+      "pillar": "/guias/guia-de-compra-eletrodomesticos-2026/",
+      "category_page": "/categorias/eletrodomesticos/",
+      "best_page": "/melhores-2026/melhores-eletrodomesticos-2026/",
+      "products": 1
+    },
+    {
+      "slug": "informatica",
+      "name": "Informática e notebooks",
+      "pillar": "/guias/guia-de-compra-informatica-2026/",
+      "category_page": "/categorias/informatica/",
+      "best_page": "/melhores-2026/melhores-informatica-2026/",
+      "products": 2
+    },
+    {
+      "slug": "games",
+      "name": "Games e consoles",
+      "pillar": "/guias/guia-de-compra-games-2026/",
+      "category_page": "/categorias/games/",
+      "best_page": "/melhores-2026/melhores-games-2026/",
       "products": 2
     },
     {
@@ -59,30 +83,6 @@
       "category_page": "/categorias/esporte/",
       "best_page": "/melhores-2026/melhores-esporte-2026/",
       "products": 1
-    },
-    {
-      "slug": "informatica",
-      "name": "Informática e notebooks",
-      "pillar": "/guias/guia-de-compra-informatica-2026/",
-      "category_page": "/categorias/informatica/",
-      "best_page": "/melhores-2026/melhores-informatica-2026/",
-      "products": 2
-    },
-    {
-      "slug": "eletrodomesticos",
-      "name": "Eletrodomésticos",
-      "pillar": "/guias/guia-de-compra-eletrodomesticos-2026/",
-      "category_page": "/categorias/eletrodomesticos/",
-      "best_page": "/melhores-2026/melhores-eletrodomesticos-2026/",
-      "products": 1
-    },
-    {
-      "slug": "games",
-      "name": "Games e consoles",
-      "pillar": "/guias/guia-de-compra-games-2026/",
-      "category_page": "/categorias/games/",
-      "best_page": "/melhores-2026/melhores-games-2026/",
-      "products": 2
     },
     {
       "slug": "celulares",
