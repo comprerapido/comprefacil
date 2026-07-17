@@ -16,11 +16,11 @@
     "products": 1
   },
   {
-    "slug": "games",
-    "name": "Games e consoles",
-    "pillar": "/guias/guia-de-compra-games-2026/",
-    "category_page": "/categorias/games/",
-    "best_page": "/melhores-2026/melhores-games-2026/",
+    "slug": "informatica",
+    "name": "Informática e notebooks",
+    "pillar": "/guias/guia-de-compra-informatica-2026/",
+    "category_page": "/categorias/informatica/",
+    "best_page": "/melhores-2026/melhores-informatica-2026/",
     "products": 2
   },
   {
@@ -40,20 +40,12 @@
     "products": 1
   },
   {
-    "slug": "informatica",
-    "name": "Informática e notebooks",
-    "pillar": "/guias/guia-de-compra-informatica-2026/",
-    "category_page": "/categorias/informatica/",
-    "best_page": "/melhores-2026/melhores-informatica-2026/",
+    "slug": "games",
+    "name": "Games e consoles",
+    "pillar": "/guias/guia-de-compra-games-2026/",
+    "category_page": "/categorias/games/",
+    "best_page": "/melhores-2026/melhores-games-2026/",
     "products": 2
-  },
-  {
-    "slug": "tv-e-video",
-    "name": "Tv E Video",
-    "pillar": "/guias/guia-de-compra-tv-e-video-2026/",
-    "category_page": "/categorias/tv-e-video/",
-    "best_page": "/melhores-2026/melhores-tv-e-video-2026/",
-    "products": 1
   },
   {
     "slug": "celulares",
@@ -69,6 +61,14 @@
     "pillar": "/guias/guia-de-compra-beleza-2026/",
     "category_page": "/categorias/beleza/",
     "best_page": "/melhores-2026/melhores-beleza-2026/",
+    "products": 1
+  },
+  {
+    "slug": "tv-e-video",
+    "name": "Tv E Video",
+    "pillar": "/guias/guia-de-compra-tv-e-video-2026/",
+    "category_page": "/categorias/tv-e-video/",
+    "best_page": "/melhores-2026/melhores-tv-e-video-2026/",
     "products": 1
   }
 ]
