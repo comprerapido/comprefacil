@@ -2,7 +2,7 @@
 
 | Métrica | Valor |
 | --- | --- |
-| Atualizado em | 2026-07-20T16:49:39Z |
+| Atualizado em | 2026-07-20T18:46:48Z |
 | Status | warning |
 | Produtos de qualidade | 12 |
 | Páginas de produto | 12 |
