@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-04T22:50:08Z",
+  "updated_at": "2026-08-04T23:51:07Z",
   "default_site": {
     "domain": "comprerapido.github.io",
     "site_name": "Compre Rápido",
@@ -29,22 +29,6 @@
       "products": 2
     },
     {
-      "slug": "eletrodomesticos",
-      "name": "Eletrodomésticos",
-      "pillar": "/guias/guia-de-compra-eletrodomesticos-2026/",
-      "category_page": "/categorias/eletrodomesticos/",
-      "best_page": "/melhores-2026/melhores-eletrodomesticos-2026/",
-      "products": 1
-    },
-    {
-      "slug": "beleza",
-      "name": "Beleza e cuidados pessoais",
-      "pillar": "/guias/guia-de-compra-beleza-2026/",
-      "category_page": "/categorias/beleza/",
-      "best_page": "/melhores-2026/melhores-beleza-2026/",
-      "products": 1
-    },
-    {
       "slug": "esporte",
       "name": "Esporte e bem-estar",
       "pillar": "/guias/guia-de-compra-esporte-2026/",
@@ -61,19 +45,11 @@
       "products": 1
     },
     {
-      "slug": "informatica",
-      "name": "Informática e notebooks",
-      "pillar": "/guias/guia-de-compra-informatica-2026/",
-      "category_page": "/categorias/informatica/",
-      "best_page": "/melhores-2026/melhores-informatica-2026/",
-      "products": 2
-    },
-    {
-      "slug": "celulares",
-      "name": "Celulares",
-      "pillar": "/guias/guia-de-compra-celulares-2026/",
-      "category_page": "/categorias/celulares/",
-      "best_page": "/melhores-2026/melhores-celulares-2026/",
+      "slug": "beleza",
+      "name": "Beleza e cuidados pessoais",
+      "pillar": "/guias/guia-de-compra-beleza-2026/",
+      "category_page": "/categorias/beleza/",
+      "best_page": "/melhores-2026/melhores-beleza-2026/",
       "products": 1
     },
     {
@@ -91,6 +67,30 @@
       "category_page": "/categorias/casa/",
       "best_page": "/melhores-2026/melhores-casa-2026/",
       "products": 1
+    },
+    {
+      "slug": "celulares",
+      "name": "Celulares",
+      "pillar": "/guias/guia-de-compra-celulares-2026/",
+      "category_page": "/categorias/celulares/",
+      "best_page": "/melhores-2026/melhores-celulares-2026/",
+      "products": 1
+    },
+    {
+      "slug": "eletrodomesticos",
+      "name": "Eletrodomésticos",
+      "pillar": "/guias/guia-de-compra-eletrodomesticos-2026/",
+      "category_page": "/categorias/eletrodomesticos/",
+      "best_page": "/melhores-2026/melhores-eletrodomesticos-2026/",
+      "products": 1
+    },
+    {
+      "slug": "informatica",
+      "name": "Informática e notebooks",
+      "pillar": "/guias/guia-de-compra-informatica-2026/",
+      "category_page": "/categorias/informatica/",
+      "best_page": "/melhores-2026/melhores-informatica-2026/",
+      "products": 2
     }
   ]
 }
