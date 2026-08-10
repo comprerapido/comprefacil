@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-10T03:03:20Z",
+  "updated_at": "2026-08-10T05:00:17Z",
   "default_site": {
     "domain": "comprerapido.github.io",
     "site_name": "Compre Rápido",
@@ -29,12 +29,12 @@
       "products": 1
     },
     {
-      "slug": "casa",
-      "name": "Casa e cozinha",
-      "pillar": "/guias/guia-de-compra-casa-2026/",
-      "category_page": "/categorias/casa/",
-      "best_page": "/melhores-2026/melhores-casa-2026/",
-      "products": 1
+      "slug": "tecnologia",
+      "name": "Tecnologia",
+      "pillar": "/guias/guia-de-compra-tecnologia-2026/",
+      "category_page": "/categorias/tecnologia/",
+      "best_page": "/melhores-2026/melhores-tecnologia-2026/",
+      "products": 2
     },
     {
       "slug": "esporte",
@@ -53,12 +53,28 @@
       "products": 1
     },
     {
-      "slug": "tecnologia",
-      "name": "Tecnologia",
-      "pillar": "/guias/guia-de-compra-tecnologia-2026/",
-      "category_page": "/categorias/tecnologia/",
-      "best_page": "/melhores-2026/melhores-tecnologia-2026/",
+      "slug": "informatica",
+      "name": "Informática e notebooks",
+      "pillar": "/guias/guia-de-compra-informatica-2026/",
+      "category_page": "/categorias/informatica/",
+      "best_page": "/melhores-2026/melhores-informatica-2026/",
       "products": 2
+    },
+    {
+      "slug": "casa",
+      "name": "Casa e cozinha",
+      "pillar": "/guias/guia-de-compra-casa-2026/",
+      "category_page": "/categorias/casa/",
+      "best_page": "/melhores-2026/melhores-casa-2026/",
+      "products": 1
+    },
+    {
+      "slug": "celulares",
+      "name": "Celulares",
+      "pillar": "/guias/guia-de-compra-celulares-2026/",
+      "category_page": "/categorias/celulares/",
+      "best_page": "/melhores-2026/melhores-celulares-2026/",
+      "products": 1
     },
     {
       "slug": "eletrodomesticos",
@@ -75,22 +91,6 @@
       "category_page": "/categorias/games/",
       "best_page": "/melhores-2026/melhores-games-2026/",
       "products": 2
-    },
-    {
-      "slug": "informatica",
-      "name": "Informática e notebooks",
-      "pillar": "/guias/guia-de-compra-informatica-2026/",
-      "category_page": "/categorias/informatica/",
-      "best_page": "/melhores-2026/melhores-informatica-2026/",
-      "products": 2
-    },
-    {
-      "slug": "celulares",
-      "name": "Celulares",
-      "pillar": "/guias/guia-de-compra-celulares-2026/",
-      "category_page": "/categorias/celulares/",
-      "best_page": "/melhores-2026/melhores-celulares-2026/",
-      "products": 1
     }
   ]
 }
