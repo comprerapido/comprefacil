@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-18T07:58:40Z",
+  "updated_at": "2026-08-18T08:30:52Z",
   "default_site": {
     "domain": "comprerapido.github.io",
     "site_name": "Compre Rápido",
@@ -29,20 +29,12 @@
       "products": 1
     },
     {
-      "slug": "tv-e-video",
-      "name": "Tv E Video",
-      "pillar": "/guias/guia-de-compra-tv-e-video-2026/",
-      "category_page": "/categorias/tv-e-video/",
-      "best_page": "/melhores-2026/melhores-tv-e-video-2026/",
+      "slug": "beleza",
+      "name": "Beleza e cuidados pessoais",
+      "pillar": "/guias/guia-de-compra-beleza-2026/",
+      "category_page": "/categorias/beleza/",
+      "best_page": "/melhores-2026/melhores-beleza-2026/",
       "products": 1
-    },
-    {
-      "slug": "informatica",
-      "name": "Informática e notebooks",
-      "pillar": "/guias/guia-de-compra-informatica-2026/",
-      "category_page": "/categorias/informatica/",
-      "best_page": "/melhores-2026/melhores-informatica-2026/",
-      "products": 2
     },
     {
       "slug": "tecnologia",
@@ -53,11 +45,19 @@
       "products": 2
     },
     {
-      "slug": "celulares",
-      "name": "Celulares",
-      "pillar": "/guias/guia-de-compra-celulares-2026/",
-      "category_page": "/categorias/celulares/",
-      "best_page": "/melhores-2026/melhores-celulares-2026/",
+      "slug": "informatica",
+      "name": "Informática e notebooks",
+      "pillar": "/guias/guia-de-compra-informatica-2026/",
+      "category_page": "/categorias/informatica/",
+      "best_page": "/melhores-2026/melhores-informatica-2026/",
+      "products": 2
+    },
+    {
+      "slug": "eletrodomesticos",
+      "name": "Eletrodomésticos",
+      "pillar": "/guias/guia-de-compra-eletrodomesticos-2026/",
+      "category_page": "/categorias/eletrodomesticos/",
+      "best_page": "/melhores-2026/melhores-eletrodomesticos-2026/",
       "products": 1
     },
     {
@@ -69,6 +69,14 @@
       "products": 2
     },
     {
+      "slug": "tv-e-video",
+      "name": "Tv E Video",
+      "pillar": "/guias/guia-de-compra-tv-e-video-2026/",
+      "category_page": "/categorias/tv-e-video/",
+      "best_page": "/melhores-2026/melhores-tv-e-video-2026/",
+      "products": 1
+    },
+    {
       "slug": "casa",
       "name": "Casa e cozinha",
       "pillar": "/guias/guia-de-compra-casa-2026/",
@@ -77,19 +85,11 @@
       "products": 1
     },
     {
-      "slug": "beleza",
-      "name": "Beleza e cuidados pessoais",
-      "pillar": "/guias/guia-de-compra-beleza-2026/",
-      "category_page": "/categorias/beleza/",
-      "best_page": "/melhores-2026/melhores-beleza-2026/",
-      "products": 1
-    },
-    {
-      "slug": "eletrodomesticos",
-      "name": "Eletrodomésticos",
-      "pillar": "/guias/guia-de-compra-eletrodomesticos-2026/",
-      "category_page": "/categorias/eletrodomesticos/",
-      "best_page": "/melhores-2026/melhores-eletrodomesticos-2026/",
+      "slug": "celulares",
+      "name": "Celulares",
+      "pillar": "/guias/guia-de-compra-celulares-2026/",
+      "category_page": "/categorias/celulares/",
+      "best_page": "/melhores-2026/melhores-celulares-2026/",
       "products": 1
     }
   ]
